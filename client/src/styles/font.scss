@@ -1,0 +1,14 @@
+@font-face {
+	font-display: swap;
+	font-family: 'Urbanist';
+	src: url('./fonts/Urbanist-Black.woff2') format('woff2'),
+		url('./fonts/Urbanist-Black.woff') format('woff'),
+		url('./fonts/Urbanist-Black.otf') format('otf');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Inter';
+	src: url('./fonts/Inter-Black.woff2') format('woff2'),
+		url('./fonts/Inter-Black.woff') format('woff'), url('./fonts/Inter-Black.otf') format('otf');
+}
