@@ -4,12 +4,7 @@ import { css } from '@emotion/react';
 import API from '../../api';
 import styled from 'styled-components';
 import colors from '../../constants/colors';
-
-const StyledEl = styled.span`
-	font-family: Urbanist;
-	font-size: 20px;
-	color: ${colors.text};
-`;
+import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 
 const DummyPage = () => {
 	useEffect(() => {
@@ -21,24 +16,11 @@ const DummyPage = () => {
 	}, []);
 	return (
 		<>
-			<span
-				css={css`
-					font-family: Inter;
-					font-size: 30px;
-					color: ${colors.text};
-				`}
-			>
-				dummy
-			</span>
-			<StyledEl>asd</StyledEl>
-			<span>basic font</span>
-			<span
-				css={css`
-					font-family: Inter;
-				`}
-			>
-				asdasd
-			</span>
+			<TopNavigation backClick />
+			<div style={{ height: '400px' }}>옷 공유 합니다 1234</div>
+			<div style={{ height: '400px' }}>testseet</div>
+			<div style={{ height: '400px' }}>옷 공유 합니다</div>
+			<div style={{ height: '400px' }}>옷 공유 합니다</div>
 		</>
 	);
 };
