@@ -12,3 +12,12 @@
 	src: url('./fonts/Inter-Black.woff2') format('woff2'),
 		url('./fonts/Inter-Black.woff') format('woff'), url('./fonts/Inter-Black.otf') format('otf');
 }
+
+@font-face {
+	font-display: swap;
+	font-family: 'NotoMid';
+	src: url('./fonts/NotoSansKR-Medium.woff2') format('woff2'),
+		url('./fonts/NotoSansKR-Medium.woff') format('woff'),
+		url('./fonts/NotoSansKR-Medium.otf') format('otf');
+}
+//https://feel5ny.github.io/2019/09/08/CSS_02/

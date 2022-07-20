@@ -9,6 +9,7 @@ ${reset}
         color : inherit;
   }
 	body {
+          height: 100vh;
 	        font-family : Urbanist,apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell , 'Helvetica Neue', sans-serif;
 	        font-size : 15px;
 	        background-color : $background;
