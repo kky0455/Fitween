@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import colors from '../../constants/colors';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import Button from '../../components/Common/Button/Button';
+import Input from '../../components/Common/Input/Input';
 
 const DummyPage = () => {
 	const [input, setInput] = useState('');
@@ -33,7 +34,7 @@ const DummyPage = () => {
 				onBackClick={() => {
 					alert('클릭');
 				}}
-				leftContent={<span>Fitwell</span>}
+				leftContent={<span>Fitween</span>}
 				rightMenu={
 					<>
 						<button>asd</button>
@@ -42,19 +43,35 @@ const DummyPage = () => {
 					</>
 				}
 			/>
-			<input type="text" value={input} onChange={e => setInput(e.target.value)} />
-			<div style={{ height: '400px' }}>옷 공유 합니다 1234</div>
-			<Button type="normal" label="다음 단계" style={{ marginBottom: 10 }} />
-			<Button type="kakao" label="다음 단계" style={{ marginBottom: 10 }} />
-			<Button type="active" label="다음 단계" style={{ marginBottom: 10 }} />
-			<Button
-				type={btnState ? 'active' : 'disabled'}
-				label="다음 단계"
-				style={{ marginBottom: 10 }}
-				onClick={() => {
-					alert('클릭');
-				}}
-			/>
+			<div className="wrapper" style={{ padding: 30, width: '100%' }}>
+				<Input
+					type="text"
+					value={input}
+					onChange={e => setInput(e.target.value)}
+					placeholder="별명"
+					error
+					errMsg="중복된 별명입니다."
+				/>
+				<Input
+					type="text"
+					value={input}
+					onChange={e => setInput(e.target.value)}
+					placeholder="별명"
+					unit="cm"
+				/>
+				<div style={{ height: '400px' }}>옷 공유 합니다 1234</div>
+				<Button type="normal" label="다음 단계" style={{ marginBottom: 10 }} />
+				<Button type="kakao" label="다음 단계" style={{ marginBottom: 10 }} />
+				<Button type="active" label="다음 단계" style={{ marginBottom: 10 }} />
+				<Button
+					type={btnState ? 'active' : 'disabled'}
+					label="다음 단계"
+					style={{ marginBottom: 10 }}
+					onClick={() => {
+						alert('클릭');
+					}}
+				/>
+			</div>
 		</>
 	);
 };
