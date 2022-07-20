@@ -23,7 +23,9 @@ const style = css`
 const TopNavigation = ({ backClick, onBackClick, leftContent, centerContent, rightMenu }) => {
 	return (
 		<div css={style}>
-			{backClick && <ArrowBackIcon onClick={onBackClick} />}
+			{backClick && (
+				<ArrowBackIcon onClick={onBackClick} width="28" height="28" fill={colors.text} />
+			)}
 			{leftContent && <div style={{ marginLeft: 20 }}>{leftContent}</div>}
 			{centerContent && (
 				<div style={{ position: 'absolute', left: '50%', transform: 'translate(-50%,0)' }}>
