@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 import './styles/colors.scss';
+import common from './constants/commonStyle';
 const GlobalStyles = createGlobalStyle`
 ${reset}
 	a {
@@ -31,7 +32,7 @@ ${reset}
           display: flex;
           justify-content: center;
           height: auto;
-          padding-top: 85px;
+          padding-top: ${common.topHeaderHeight};
   }
 `;
 export default GlobalStyles;

@@ -16,7 +16,17 @@ const DummyPage = () => {
 	}, []);
 	return (
 		<>
-			<TopNavigation backClick />
+			<TopNavigation
+				backClick
+				centerContent={<span>Fitwell</span>}
+				rightMenu={
+					<>
+						<button>asd</button>
+						<button>asd</button>
+						<button>asd</button>
+					</>
+				}
+			/>
 			<div style={{ height: '400px' }}>옷 공유 합니다 1234</div>
 			<div style={{ height: '400px' }}>testseet</div>
 			<div style={{ height: '400px' }}>옷 공유 합니다</div>
