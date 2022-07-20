@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { ReactComponent as ChatIcon } from '../../../assets/chat.svg';
@@ -8,17 +8,30 @@ import { ReactComponent as PersonIcon } from '../../../assets/person.svg';
 import styled from 'styled-components';
 import common from '../../../constants/commonStyle';
 import colors from '../../../constants/colors';
-const IconWrapper = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 25%;
-	gap: 5px;
-	font-size: 15px;
-	color: ${colors.text};
-`;
+
+const IconWrapper = ({ onClick, active, icon, label }) => {
+	return (
+		<div
+			css={css`
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 25%;
+				gap: 5px;
+				font-size: 15px;
+				color: ${active ? colors.green200 : colors.text};
+				fill: ${active ? colors.green200 : colors.text};
+			`}
+			onClick={onClick}
+		>
+			{icon}
+			<span>{label}</span>
+		</div>
+	);
+};
 const BottomNavigation = () => {
+	const [path, setPath] = useState('/home');
 	return (
 		<div
 			css={css`
@@ -33,22 +46,30 @@ const BottomNavigation = () => {
 				box-shadow: 0 0.2px ${colors.text};
 			`}
 		>
-			<IconWrapper>
-				<HomeIcon width={30} height={30} fill={colors.green200} />
-				<span>홈</span>
-			</IconWrapper>
-			<IconWrapper>
-				<HeartIcon width={30} height={30} fill={colors.text} />
-				<span>찜</span>
-			</IconWrapper>
-			<IconWrapper>
-				<ChatIcon width={30} height={30} fill={colors.text} />
-				<span>채팅</span>
-			</IconWrapper>
-			<IconWrapper>
-				<PersonIcon width={30} height={30} fill={colors.text} />
-				<span>나</span>
-			</IconWrapper>
+			<IconWrapper
+				onClick={e => setPath('home')}
+				active={path.includes('home')}
+				icon={<HomeIcon width={30} height={30} />}
+				label="홈"
+			/>
+			<IconWrapper
+				onClick={e => setPath('like')}
+				active={path.includes('like')}
+				icon={<HeartIcon width={30} height={30} />}
+				label="찜"
+			/>
+			<IconWrapper
+				onClick={e => setPath('chat')}
+				active={path.includes('chat')}
+				icon={<ChatIcon width={30} height={30} />}
+				label="채팅"
+			/>
+			<IconWrapper
+				onClick={e => setPath('myprofile')}
+				active={path.includes('myprofile')}
+				icon={<PersonIcon width={30} height={30} />}
+				label="나"
+			/>
 		</div>
 	);
 };
