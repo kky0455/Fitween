@@ -1,6 +1,6 @@
 const commonStyle = {
 	topHeaderHeight: '70px',
-	bottomHeaderHeight: '85px',
+	bottomHeaderHeight: '70px',
 };
 
 export default commonStyle;

@@ -32,8 +32,6 @@ ${reset}
           display: flex;
           justify-content: center;
           height: 100vh;
-          padding-top: ${common.topHeaderHeight};
-          padding-bottom: ${common.bottomHeaderHeight};
   }
 `;
 export default GlobalStyles;

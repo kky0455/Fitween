@@ -4,9 +4,11 @@ import { css } from '@emotion/react';
 import API from '../../api';
 import styled from 'styled-components';
 import colors from '../../constants/colors';
+import common from '../../constants/commonStyle';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import Button from '../../components/Common/Button/Button';
 import Input from '../../components/Common/Input/Input';
+import BottomNavigation from '../../components/Common/BottomNavigation/BottomNavigation';
 
 const DummyPage = () => {
 	const [input, setInput] = useState('');
@@ -43,7 +45,21 @@ const DummyPage = () => {
 					</>
 				}
 			/>
-			<div className="wrapper" style={{ padding: 30, width: '100%' }}>
+			<div
+				className="wrapper"
+				style={{
+					position: 'relative',
+					padding: '30',
+					width: '100%',
+					height: '100%',
+				}}
+			>
+				<div
+					css={css`
+						width: 100%;
+						height: ${common.topHeaderHeight};
+					`}
+				/>
 				<Input
 					type="text"
 					value={input}
@@ -71,7 +87,14 @@ const DummyPage = () => {
 						alert('클릭');
 					}}
 				/>
+				<div
+					css={css`
+						width: 100%;
+						height: ${common.bottomHeaderHeight};
+					`}
+				/>
 			</div>
+			<BottomNavigation />
 		</>
 	);
 };
