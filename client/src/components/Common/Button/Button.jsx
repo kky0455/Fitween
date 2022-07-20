@@ -51,7 +51,7 @@ const Button = ({ type, label, onClick, ...rest }) => {
 				font-size: 16px;
 				${getBtnStyle(type)}
 			`}
-			onClick={onClick}
+			onClick={type !== btnType.disabled ? onClick : null}
 			{...rest}
 		>
 			{label}
