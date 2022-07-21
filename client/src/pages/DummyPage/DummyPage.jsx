@@ -48,8 +48,7 @@ const DummyPage = () => {
 			<div
 				className="wrapper"
 				style={{
-					position: 'relative',
-					padding: '30',
+					padding: '30px',
 					width: '100%',
 					height: '100%',
 				}}
@@ -75,7 +74,17 @@ const DummyPage = () => {
 					placeholder="별명"
 					unit="cm"
 				/>
-				<div style={{ height: '400px' }}>옷 공유 합니다 1234</div>
+				<div style={{ height: '400px' }}>
+					<p style={{ fontFamily: 'Regular', fontSize: 100 }}>Test 테스트</p>
+					<p style={{ fontFamily: 'Medium', fontSize: 100 }}>Test 테스트</p>
+					<p style={{ fontFamily: 'Bold', fontSize: 100 }}>Test 테스트</p>
+					<p style={{ fontFamily: 'Black', fontSize: 100 }}>Test 테스트</p>
+				</div>
+				<div style={{ height: '400px' }}>
+					<p style={{ fontFamily: 'MulishMedium', fontSize: 100 }}>123</p>
+					<p style={{ fontFamily: 'MulishBold', fontSize: 100 }}>123</p>
+				</div>
+
 				<Button type="normal" label="다음 단계" style={{ marginBottom: 10 }} />
 				<Button type="kakao" label="다음 단계" style={{ marginBottom: 10 }} />
 				<Button type="active" label="다음 단계" style={{ marginBottom: 10 }} />

@@ -13,7 +13,6 @@ function Layout({ children }) {
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				height: auto;
 			`}
 		>
 			{children}

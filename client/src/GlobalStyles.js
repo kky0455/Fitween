@@ -10,7 +10,7 @@ ${reset}
   }
 	body {
           height: 100vh;
-	        font-family : Urbanist,apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell , 'Helvetica Neue', sans-serif;
+	        font-family : apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell , 'Helvetica Neue', sans-serif;
 	        font-size : 15px;
 	        background-color : $background;
           -ms-overflow-style: none !important; 
@@ -33,6 +33,16 @@ ${reset}
           display: flex;
           justify-content: center;
           height: 100vh;
+          -ms-overflow-style: none !important; 
+          scrollbar-width: none !important; 
+          ::-webkit-scrollbar {
+            display: none !important; 
+            width: 0 !important;  
+            height: 0 !important;
+            background: white !important;  
+            -webkit-appearance: none !important;
+            appearance: none !important;
+          }
   }
 `;
 export default GlobalStyles;
