@@ -7,12 +7,12 @@ function Layout({ children }) {
 	return (
 		<div
 			css={css`
+				width: 100%;
 				max-width: 1200px;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				height: auto;
 			`}
 		>
 			{children}
