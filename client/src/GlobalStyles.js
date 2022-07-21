@@ -23,6 +23,8 @@ ${reset}
             -webkit-appearance: none !important;
             appearance: none !important;
           }
+          padding-top: ${common.topHeaderHeight};
+          padding-bottom: ${common.bottomHeaderHeight};
         }
   *{
             box-sizing: border-box;

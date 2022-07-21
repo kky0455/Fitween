@@ -53,12 +53,6 @@ const DummyPage = () => {
 					height: '100%',
 				}}
 			>
-				<div
-					css={css`
-						width: 100%;
-						height: ${common.topHeaderHeight};
-					`}
-				/>
 				<Input
 					type="text"
 					value={input}
@@ -95,12 +89,6 @@ const DummyPage = () => {
 					onClick={() => {
 						alert('클릭');
 					}}
-				/>
-				<div
-					css={css`
-						width: 100%;
-						height: ${common.bottomHeaderHeight};
-					`}
 				/>
 			</div>
 			<BottomNavigation />
