@@ -8,7 +8,7 @@ const btnType = {
 	disabled: 'disabled',
 	active: 'active',
 	kakao: 'kakao',
-	normal: 'noraml',
+	normal: 'normal',
 };
 const getBtnStyle = type => {
 	const style = css`
