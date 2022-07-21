@@ -48,6 +48,7 @@ const Button = ({ type, label, onClick, ...rest }) => {
 				border: none;
 				border-radius: 100px;
 				box-shadow: 4px 8px 24px rgba(16, 16, 16, 0.25);
+				font-family: 'Bold';
 				font-size: 16px;
 				${getBtnStyle(type)}
 			`}

@@ -6,18 +6,18 @@ import colors from '../../../constants/colors';
 import common from '../../../constants/commonStyle';
 const style = css`
 	position: fixed;
-	/* left: calc (100vw - 1200px); */
 	top: 0;
 	width: 100%;
-	height: ${common.topHeaderHeight};
 	max-width: 1200px;
+	height: ${common.topHeaderHeight};
+	background-color: ${colors.background};
 	padding: 20px;
 	box-shadow: 0 0.2px ${colors.text};
 	z-index: 100;
 	display: flex;
 	align-items: center;
-	background-color: ${colors.background};
 	font-size: 24px;
+	font-family: 'Bold';
 `;
 
 const TopNavigation = ({ backClick, onBackClick, leftContent, centerContent, rightMenu }) => {

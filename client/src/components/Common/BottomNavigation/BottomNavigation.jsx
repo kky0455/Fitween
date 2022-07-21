@@ -19,7 +19,6 @@ const IconWrapper = ({ onClick, active, icon, label }) => {
 				align-items: center;
 				width: 25%;
 				gap: 5px;
-				font-size: 15px;
 				color: ${active ? colors.green200 : colors.text};
 				fill: ${active ? colors.green200 : colors.text};
 			`}
@@ -44,6 +43,8 @@ const BottomNavigation = () => {
 				z-index: 100;
 				height: ${common.bottomHeaderHeight};
 				box-shadow: 0 0.2px ${colors.text};
+				font-family: 'Medium';
+				font-size: 12px;
 			`}
 		>
 			<IconWrapper
