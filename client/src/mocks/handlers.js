@@ -7,9 +7,10 @@ export const handlers = [
 	rest.post('http://localhost:5000/user/login', async (req, res, ctx) => {
 		// 카카오에서 받은 인가코드 넘겨줌
 		const { accessToken } = await req.json();
-		if (accessToken === 'true') {
+		if (typeof accessToken === 'string') {
 			return res(
 				ctx.json({
+					result: 'needToJoin',
 					token: 'jkshfjkldASDJKHASFJKasd123asFJKAHSd',
 					userInfo: {
 						userId: 'id123',
@@ -30,7 +31,7 @@ export const handlers = [
 				}),
 			);
 		} else {
-			return res(ctx.status(403), ctx.json({ errMsg: '로그인 에러' }));
+			return res(ctx.json({ result: 'needToJoin' }));
 		}
 	}),
 
