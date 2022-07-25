@@ -4,11 +4,9 @@ import Button from '../../components/Common/Button/Button';
 import Input from '../../components/Common/Input/Input';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 
-const JoinInfo = () => {
-	const [info, setInfo] = useState({});
+const JoinInfo = ({ info, onChangeHandler }) => {
 	const [readyState, setReadyState] = useState(false);
 	const navigate = useNavigate();
-
 	// toDo : 별명 중복검사 필요
 	const check = info => {
 		return info.nickname &&
@@ -53,53 +51,33 @@ const JoinInfo = () => {
 					placeholder="별명"
 					errMsg="중복된 별명입니다"
 					type="text"
-					onChange={e =>
-						setInfo(prevState => {
-							return {
-								...prevState,
-								nickname: e.target.value,
-							};
-						})
-					}
+					onChange={onChangeHandler}
+					value={info.nickname}
+					name="nickname"
 				/>
 				<Input
 					placeholder="키"
 					unit="cm"
 					type="number"
-					onChange={e =>
-						setInfo(prevState => {
-							return {
-								...prevState,
-								height: e.target.value,
-							};
-						})
-					}
+					name="height"
+					onChange={onChangeHandler}
+					value={info.height}
 				/>
 				<Input
 					placeholder="몸무게"
 					unit="kg"
 					type="number"
-					onChange={e =>
-						setInfo(prevState => {
-							return {
-								...prevState,
-								weight: e.target.value,
-							};
-						})
-					}
+					name="weight"
+					onChange={onChangeHandler}
+					value={info.weight}
 				/>
 				<Input
 					placeholder="발사이즈"
 					unit="mm"
 					type="number"
-					onChange={e =>
-						setInfo(prevState => {
-							return {
-								...prevState,
-								footSize: e.target.value,
-							};
-						})
-					}
+					name="footSize"
+					onChange={onChangeHandler}
+					value={info.footSize}
 				/>
 				<Button
 					style={{
@@ -110,9 +88,8 @@ const JoinInfo = () => {
 					}}
 					type={readyState ? 'active' : 'disabled'}
 					label="다음 단계로"
-
 					// todo : 다음단계로 info state와 넘어가야함
-					// onClick={callKakaoLoginHandler}
+					onClick={() => navigate('/join/town')}
 				/>
 			</div>
 		</>
