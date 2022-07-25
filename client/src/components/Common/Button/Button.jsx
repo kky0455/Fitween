@@ -8,6 +8,7 @@ const btnType = {
 	disabled: 'disabled',
 	active: 'active',
 	kakao: 'kakao',
+	outlined: 'outlined',
 	normal: 'normal',
 };
 const getBtnStyle = type => {
@@ -31,6 +32,12 @@ const getBtnStyle = type => {
 				background-color: ${colors.kakao};
 				color: ${colors.black};
 				border-radius: 10px;
+			`;
+		case btnType.outlined:
+			return css`
+				color: ${colors.green100};
+				background-color: ${colors.background};
+				border: 1px solid ${colors.green100};
 			`;
 		default:
 			return css`
