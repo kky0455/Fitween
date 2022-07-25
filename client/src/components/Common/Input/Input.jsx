@@ -30,6 +30,11 @@ function Input({ value, onChange, error, errMsg, unit, ...rest }) {
 						outline: none;
 						border: 2px solid ${error ? colors.warn : colors.green100};
 					}
+					&[type='number']::-webkit-outer-spin-button,
+					&[type='number']::-webkit-inner-spin-button {
+						-webkit-appearance: none;
+						margin: 0;
+					}
 				`}
 				{...rest}
 			/>
