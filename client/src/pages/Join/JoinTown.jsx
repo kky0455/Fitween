@@ -88,19 +88,19 @@ const JoinTown = () => {
 						onClick={getLocation}
 					/>
 				</div>
+				<Button
+					style={{
+						position: 'absolute',
+						bottom: 0,
+						width: 'calc(100% - 60px)',
+						marginBottom: 50,
+					}}
+					type={readyState ? 'active' : 'disabled'}
+					label="회원가입 하기"
+					// todo : 다음단계로 info state와 넘어가야함
+					onClick={() => navigate('/join/town')}
+				/>
 			</div>
-			<Button
-				style={{
-					position: 'absolute',
-					bottom: 0,
-					width: 'calc(100% - 60px)',
-					marginBottom: 50,
-				}}
-				type={readyState ? 'active' : 'disabled'}
-				label="회원가입 하기"
-				// todo : 다음단계로 info state와 넘어가야함
-				onClick={() => navigate('/join/town')}
-			/>
 		</>
 	);
 };
