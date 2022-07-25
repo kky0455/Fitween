@@ -5,7 +5,9 @@ import ArticleRegist from './Article/ArticleRegist';
 import ChatList from './Chat/ChatList';
 import ChatRoom from './Chat/ChatRoom';
 import DummyPage from './DummyPage/DummyPage';
+import CallBackKakao from './Index/CallBackKakao';
 import Index from './Index/Index';
+import JoinIndex from './Join/JoinIndex';
 import JoinInfo from './Join/JoinInfo';
 import JoinTown from './Join/JoinTown';
 import Like from './Like/Like';
@@ -14,9 +16,12 @@ import ProfileInfoModify from './Profile/ProfileInfoModify';
 import ProfileTownModify from './Profile/ProfileTownModify';
 import ProfileUser from './Profile/ProfileUser';
 
+// todo : 회원가입 쪽 설계 다시 고민
 const Join = () => {
 	return (
 		<ReactRouterRoutes>
+			{/* 회원가입 안내페이지 */}
+			<Route path="index" element={<JoinIndex />} />
 			{/* 정보 입력 */}
 			<Route path="info" element={<JoinInfo />} />
 			{/* 동네 입력 */}
@@ -74,6 +79,8 @@ export const Routes = () => {
 
 			{/* 초기화면  */}
 			<Route path="/" element={<Index />} />
+			{/* 카카오 로그인 콜백  */}
+			<Route path="/kakao" element={<CallBackKakao />} />
 
 			{/* 추가정보입력 페이지 */}
 			<Route path="join/*" element={<Join />} />

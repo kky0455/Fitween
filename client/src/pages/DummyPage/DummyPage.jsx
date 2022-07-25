@@ -9,23 +9,44 @@ import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import Button from '../../components/Common/Button/Button';
 import Input from '../../components/Common/Input/Input';
 import BottomNavigation from '../../components/Common/BottomNavigation/BottomNavigation';
+import * as articleApi from '../../api/article';
 
 const DummyPage = () => {
 	const [input, setInput] = useState('');
 	const [btnState, setBtnState] = useState(false);
-	const check = () => {
-		if (input === '윤주혜') {
-			return true;
-		}
-		return false;
+	const check = value => {
+		return value === '윤주혜' ? true : false;
 	};
 	useEffect(() => {
-		setBtnState(check());
+		const fetch = async () => {
+			const res = await articleApi.modifyArticle('12314', { title: 'titiel' });
+			console.log(res);
+		};
+		fetch();
+	}, []);
+	useEffect(() => {
+		setBtnState(check(input));
 	}, [input]);
 	useEffect(() => {
 		const fetch = async () => {
-			const res = await API.get('/test');
-			console.log(res);
+			try {
+				const res = await API.post('/user/login', { accessToken: 'true' });
+				console.log(res);
+			} catch (err) {
+				console.log(err);
+				console.log(err.response.data);
+			}
+		};
+		fetch();
+	}, []);
+	useEffect(() => {
+		const fetch = async () => {
+			try {
+				const res = await API.post('/user/login', { accessToken: 'nottrue' });
+			} catch (err) {
+				console.log(err);
+				console.log(err.response.data);
+			}
 		};
 		fetch();
 	}, []);
