@@ -14,6 +14,7 @@ const Index = () => {
 				padding: '30px',
 				width: '100%',
 				height: '100%',
+				position: 'relative',
 			}}
 		>
 			<div>
@@ -21,9 +22,17 @@ const Index = () => {
 			</div>
 			<h2 className="fs-17 fw-700">너와 나의 공유 옷장</h2>
 			<h1 className="fs-47 fw-900 fc-g100">FITWEEN</h1>
-			<div style={{ marginTop: '100px' }}>
-				<Button type="kakao" label="카카오톡으로 계속하기" onClick={callKakaoLoginHandler} />
-			</div>
+			<Button
+				style={{
+					position: 'absolute',
+					bottom: 0,
+					width: 'calc(100% - 60px)',
+					marginBottom: 50,
+				}}
+				type="kakao"
+				label="카카오톡으로 계속하기"
+				onClick={callKakaoLoginHandler}
+			/>
 		</div>
 	);
 };
