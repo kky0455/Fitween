@@ -35,32 +35,6 @@ public class User {
     @Column(length = 10, nullable = false)
     String name;
 
-//    @Column(length = 30, nullable = false)
-//    String email;
-    // 기본이미지 url 저장
-//    @ColumnDefault("")
-//    String profileImg;
-
-//    @Column(nullable = false)
-//    int age;
-
-//    @Column(nullable = false)
-//    boolean gender;
-
-//    @Column(length = 10, nullable = false)
-//    String nickname;
-//
-//    @Column(nullable = false)
-//    int height;
-//
-//    @Column(nullable = false)
-//    int weight;
-//
-//    @Column(nullable = false)
-//    int footSize;
-//
-//    @Column(nullable = false)
-//    String region;
 
     @Builder
     public void updateUser(String user_name, String user_password) {
