@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import colors from '../../../constants/colors';
@@ -39,9 +39,10 @@ const getBtnStyle = type => {
 			`;
 	}
 };
-const Button = ({ type, label, onClick, ...rest }) => {
+const Button = forwardRef(function Button({ type, label, onClick, forwardedRef, ...rest }) {
 	return (
 		<button
+			ref={forwardedRef}
 			css={css`
 				width: 100%;
 				padding: 18px 16px;
@@ -58,6 +59,6 @@ const Button = ({ type, label, onClick, ...rest }) => {
 			{label}
 		</button>
 	);
-};
+});
 
 export default Button;
