@@ -1,12 +1,48 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Button from '../../components/Common/Button/Button';
 import Logo from '../../assets/FitweenLogoBg.png';
 
 const callKakaoLoginHandler = () => {
 	window.location.href = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${process.env.REACT_APP_KAKAO_REST_API_KEY}&redirect_uri=${process.env.REACT_APP_KAKAO_REDIRECT_URI}`;
 };
-
+const onGoogleSuccess = googleUser => {
+	console.log(googleUser.getAuthResponse().id_token);
+};
+const onGoogleFailure = err => {
+	alert('구글 로그인에 실패하였습니다');
+	console.log('err', err);
+};
 const Index = () => {
+	const googleButton = useRef(null);
+	useEffect(() => {
+		const loadScript = src =>
+			new Promise((resolve, reject) => {
+				if (document.querySelector(`script[src="${src}"]`)) return resolve();
+				const script = document.createElement('script');
+				script.src = src;
+				script.onload = () => resolve();
+				script.onerror = err => reject(err);
+				document.body.appendChild(script);
+			});
+		const src = 'https://apis.google.com/js/platform.js?onload=init';
+		loadScript(src)
+			.then(() => {
+				/*global gapi*/
+				gapi.load('client:auth2', () => {
+					gapi.client
+						.init({
+							client_id: process.env.REACT_APP_GOOGLE_CLIENT_KEY,
+							scope: 'profile email',
+							plugin_name: 'chat',
+						})
+						.then(() => {
+							const gauth = gapi.auth2.getAuthInstance();
+							gauth.attachClickHandler(googleButton.current, {}, onGoogleSuccess, onGoogleFailure);
+						});
+				});
+			})
+			.catch(console.error);
+	}, []);
 	return (
 		<div
 			className="wrapper"
@@ -23,6 +59,7 @@ const Index = () => {
 			<h1 className="fs-47 fw-900 fc-g100">FITWEEN</h1>
 			<div style={{ marginTop: '100px' }}>
 				<Button type="kakao" label="카카오톡으로 계속하기" onClick={callKakaoLoginHandler} />
+				<Button type="kakao" label="구글로 계속하기" forwardedRef={googleButton} />
 			</div>
 		</div>
 	);
