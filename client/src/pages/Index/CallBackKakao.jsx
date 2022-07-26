@@ -30,7 +30,7 @@ const CallBackKakao = () => {
 				console.log(err);
 			}
 		};
-		login();
+		// login();
 	}, []);
 	return (
 		<>

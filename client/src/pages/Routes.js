@@ -81,6 +81,7 @@ export const Routes = () => {
 			<Route path="/" element={<Index />} />
 			{/* 카카오 로그인 콜백  */}
 			<Route path="/kakao" element={<CallBackKakao />} />
+			<Route path="/oauth/redirect" element={<CallBackKakao />} />
 
 			{/* 추가정보입력 페이지 */}
 			<Route path="join/*" element={<Join />} />
