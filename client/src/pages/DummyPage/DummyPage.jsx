@@ -9,7 +9,7 @@ import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import Button from '../../components/Common/Button/Button';
 import Input from '../../components/Common/Input/Input';
 import BottomNavigation from '../../components/Common/BottomNavigation/BottomNavigation';
-
+import * as articleApi from '../../api/article';
 const DummyPage = () => {
 	const [input, setInput] = useState('');
 	const [btnState, setBtnState] = useState(false);
