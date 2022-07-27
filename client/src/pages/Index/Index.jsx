@@ -6,6 +6,7 @@ import { login } from '../../api/auth';
 const callKakaoLoginHandler = () => {
 	window.location.href = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${process.env.REACT_APP_KAKAO_REST_API_KEY}&redirect_uri=${process.env.REACT_APP_KAKAO_REDIRECT_URI}`;
 };
+
 const onGoogleSuccess = async googleUser => {
 	console.log(googleUser.getAuthResponse().id_token);
 	const token = googleUser.getAuthResponse().id_token;
@@ -15,17 +16,20 @@ const onGoogleSuccess = async googleUser => {
 		token: token,
 	};
 
-	// 서버로 id_toekn, 구글토큰임을 알리고
+	// 서버로 id_token, 구글토큰임을 알리고
 	const res = await login(body);
 	console.log(res);
 	// 로그인 회원가입 정하기
 };
+
 const onGoogleFailure = err => {
 	alert('구글 로그인에 실패하였습니다');
 	console.log('err', err);
 };
+
 const Index = () => {
-	const googleButton = useRef(null);
+	const googleButtonRef = useRef(null);
+
 	useEffect(() => {
 		const loadScript = src =>
 			new Promise((resolve, reject) => {
@@ -36,7 +40,9 @@ const Index = () => {
 				script.onerror = err => reject(err);
 				document.body.appendChild(script);
 			});
+
 		const src = 'https://apis.google.com/js/platform.js?onload=init';
+
 		loadScript(src)
 			.then(() => {
 				/*global gapi*/
@@ -50,7 +56,7 @@ const Index = () => {
 						.then(() => {
 							const gauth = gapi.auth2.getAuthInstance();
 							gauth.attachClickHandler(
-								googleButton.current,
+								googleButtonRef.current,
 								{ ux_mode: 'redirect', redirect_uri: 'http://localhost:3000/oauth/redirect' },
 
 								onGoogleSuccess,
@@ -61,6 +67,7 @@ const Index = () => {
 			})
 			.catch(console.error);
 	}, []);
+
 	return (
 		<div
 			className="wrapper"
@@ -78,7 +85,7 @@ const Index = () => {
 			<h1 className="fs-47 fw-900 fc-g100">FITWEEN</h1>
 			<div style={{ marginTop: '100px' }}>
 				<Button type="kakao" label="카카오톡으로 계속하기" onClick={callKakaoLoginHandler} />
-				<Button type="google" label="구글로 계속하기" forwardedRef={googleButton} />
+				<Button type="google" label="구글로 계속하기" ref={googleButtonRef} />
 			</div>
 		</div>
 	);

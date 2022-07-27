@@ -9,6 +9,7 @@ const Redirect = () => {
 	const navigate = useNavigate();
 	const kakaoToken = searchParams.get('code');
 	const googleToken = new URLSearchParams(location.hash).get('id_token');
+
 	useEffect(() => {
 		const login = async () => {
 			if (!kakaoToken && !googleToken) {
@@ -43,6 +44,7 @@ const Redirect = () => {
 		};
 		login();
 	}, []);
+
 	return (
 		<>
 			<Loading />
