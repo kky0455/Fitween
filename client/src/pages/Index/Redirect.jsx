@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
+
 import Loading from '../../components/Common/Loading/Loading';
 import * as authApi from '../../api/auth';
 
