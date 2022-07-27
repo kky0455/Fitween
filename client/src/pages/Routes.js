@@ -7,6 +7,7 @@ import ChatRoom from './Chat/ChatRoom';
 import DummyPage from './DummyPage/DummyPage';
 import CallBackKakao from './Index/CallBackKakao';
 import Index from './Index/Index';
+import Redirect from './Index/Redirect';
 import Join from './Join/Join';
 
 import Like from './Like/Like';
@@ -63,9 +64,8 @@ export const Routes = () => {
 
 			{/* 초기화면  */}
 			<Route path="/" element={<Index />} />
-			{/* 카카오 로그인 콜백  */}
-			<Route path="/kakao" element={<CallBackKakao />} />
-			<Route path="/oauth/redirect" element={<CallBackKakao />} />
+			{/* 소셜 로그인 리다이렉트  */}
+			<Route path="/oauth/redirect" element={<Redirect />} />
 
 			{/* 회원가입 페이지 */}
 			<Route path="join/*" element={<Join />} />

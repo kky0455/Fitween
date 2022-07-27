@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
 import Loading from '../../components/Common/Loading/Loading';
 import * as authApi from '../../api/auth';
 
-const CallBackKakao = () => {
+const Redirect = () => {
 	const [searchParams] = useSearchParams();
 	const location = useLocation();
 	const navigate = useNavigate();
@@ -50,4 +50,4 @@ const CallBackKakao = () => {
 		</>
 	);
 };
-export default CallBackKakao;
+export default Redirect;
