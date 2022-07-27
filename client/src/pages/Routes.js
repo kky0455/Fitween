@@ -5,7 +5,6 @@ import ArticleRegist from './Article/ArticleRegist';
 import ChatList from './Chat/ChatList';
 import ChatRoom from './Chat/ChatRoom';
 import DummyPage from './DummyPage/DummyPage';
-import CallBackKakao from './Index/CallBackKakao';
 import Index from './Index/Index';
 import Redirect from './Index/Redirect';
 import Join from './Join/Join';
