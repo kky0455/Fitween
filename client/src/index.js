@@ -6,13 +6,16 @@ import { BrowserRouter } from 'react-router-dom';
 
 // msw
 import { serviceWorker } from './mocks/browser';
+import { GlobalContextProvider } from './contexts/GlobalContext';
 serviceWorker.start({ onUnhandledRequest: 'bypass' });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
+		<GlobalContextProvider>
+			<BrowserRouter>
+				<App />
+			</BrowserRouter>
+		</GlobalContextProvider>
 	</React.StrictMode>,
 );
