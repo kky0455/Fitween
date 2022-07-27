@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { ReactComponent as ChatIcon } from '../../../assets/chat.svg';
@@ -8,6 +8,7 @@ import { ReactComponent as PersonIcon } from '../../../assets/person.svg';
 import styled from 'styled-components';
 import common from '../../../constants/commonStyle';
 import colors from '../../../constants/colors';
+import { useGlobalContext } from '../../../contexts/GlobalContext';
 
 const IconWrapper = ({ onClick, active, icon, label }) => {
 	return (
@@ -31,6 +32,14 @@ const IconWrapper = ({ onClick, active, icon, label }) => {
 };
 const BottomNavigation = () => {
 	const [path, setPath] = useState('/home');
+	const { setHasBottom } = useGlobalContext();
+	useEffect(() => {
+		setHasBottom(true);
+		return () => {
+			setHasBottom(false);
+		};
+	}, []);
+
 	return (
 		<div
 			css={css`
