@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { worker } from './mocks/browser';
 import './index.css';
 import App from './App';
+import { UserProvider } from './context/User/UserContext';
 
 if (process.env.NODE_ENV === 'development') {
 	worker.start();
@@ -13,8 +14,10 @@ if (process.env.NODE_ENV === 'development') {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
+		<UserProvider>
+			<BrowserRouter>
+				<App />
+			</BrowserRouter>
+		</UserProvider>
 	</React.StrictMode>,
 );

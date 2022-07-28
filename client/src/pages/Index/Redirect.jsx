@@ -5,6 +5,7 @@ import Loading from '../../components/Common/Loading/Loading';
 import * as authApi from '../../api/auth';
 import { setRefreshToken } from '../../storage/Cookie';
 import API from '../../api';
+import { useUserDispatch } from '../../context/User/UserContext';
 
 const Redirect = () => {
 	const [searchParams] = useSearchParams();
@@ -12,6 +13,7 @@ const Redirect = () => {
 	const navigate = useNavigate();
 	const kakaoToken = searchParams.get('code');
 	const googleToken = new URLSearchParams(location.hash).get('id_token');
+	const dispatch = useUserDispatch();
 
 	useEffect(() => {
 		const login = async () => {
@@ -37,6 +39,7 @@ const Redirect = () => {
 				if (res.result === 'success') {
 					setRefreshToken(res.refreshToken);
 					const { accessToken } = res;
+					dispatch({ type: 'LOGIN', accessToken: accessToken });
 					API.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
 					navigate('/main');
 				} else if (res.result === 'needToJoin') {
