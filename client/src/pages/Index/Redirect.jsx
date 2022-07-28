@@ -3,6 +3,8 @@ import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
 
 import Loading from '../../components/Common/Loading/Loading';
 import * as authApi from '../../api/auth';
+import { setRefreshToken } from '../../storage/Cookie';
+import API from '../../api';
 
 const Redirect = () => {
 	const [searchParams] = useSearchParams();
@@ -33,10 +35,11 @@ const Redirect = () => {
 			try {
 				const res = await authApi.login(body);
 				if (res.result === 'success') {
-					// todo: 클라이언트 로그인 로직 구현 필요
+					setRefreshToken(res.refreshToken);
+					const { accessToken } = res;
+					API.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
 					navigate('/main');
 				} else if (res.result === 'needToJoin') {
-					// todo :약관 동의 및 회원 가입 진행 페이지로 진입
 					navigate('/join/index');
 				}
 			} catch (err) {

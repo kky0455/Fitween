@@ -1,13 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
 import Button from '../../components/Common/Button/Button';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
+import API from '../../api';
+import { setRefreshToken } from '../../storage/Cookie';
+import * as authApi from '../../api/auth';
 
 const JoinTown = () => {
 	const [location, setLocation] = useState(null);
 	const [readyState, setReadyState] = useState(false);
 	const navigate = useNavigate();
+
+	const signupHandler = async () => {
+		try {
+			const res = await authApi.signup();
+			setRefreshToken(res.refreshToken);
+			const { accessToken } = res;
+			API.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+			navigate('/main');
+		} catch (err) {
+			throw err;
+		}
+	};
+
 	useEffect(() => {
 		if (location) setReadyState(true);
 	}, [location]);
@@ -98,7 +115,7 @@ const JoinTown = () => {
 					type={readyState ? 'active' : 'disabled'}
 					label="회원가입 하기"
 					// todo : 다음단계로 info state와 넘어가야함
-					onClick={() => navigate('/join/town')}
+					onClick={() => signupHandler()}
 				/>
 			</div>
 		</>
