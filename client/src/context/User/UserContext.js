@@ -1,6 +1,7 @@
 import { createContext, useContext, useReducer } from 'react';
 
 const initialState = {
+	user_id: null,
 	accessToken: null,
 };
 
@@ -8,10 +9,12 @@ const reducer = (state, action) => {
 	switch (action.type) {
 		case 'LOGIN':
 			return {
+				user_id: action.userId,
 				accessToken: action.accessToken,
 			};
 		case 'LOGOUT':
 			return {
+				user_id: null,
 				accessToken: null,
 			};
 		default:

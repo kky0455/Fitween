@@ -23,8 +23,8 @@ const JoinTown = ({ info }) => {
 			};
 			const res = await authApi.signup(body);
 			setRefreshToken(res.refreshToken);
-			const { accessToken } = res;
-			dispatch({ type: 'LOGIN', accessToken: accessToken });
+			const { accessToken, userId } = res;
+			dispatch({ type: 'LOGIN', userId: userId, accessToken: accessToken });
 			API.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
 			navigate('/main');
 		} catch (err) {
