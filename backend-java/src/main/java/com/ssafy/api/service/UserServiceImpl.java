@@ -32,16 +32,16 @@ public class UserServiceImpl implements UserService {
 		User user = new User();
 		user.setUserId(userRegisterInfo.getId());
 		user.setName(userRegisterInfo.getName());
-//		user.setProfileImg(userRegisterInfo.getProfileImg());
-//		user.setEmail(userRegisterInfo.getEmail());
-//		user.setAge(userRegisterInfo.getAge());
-//		user.setGender();
-//		user.setNickname(userRegisterInfo.getNickname());
-//		user.setHeight(userRegisterInfo.getHeight());
-//		user.setWeight(userRegisterInfo.getWeight());
-//		user.setFootSize(userRegisterInfo.getFootSize());
-//		user.setRegion(userRegisterInfo.getRegion());
-		// 보안을 위해서 유저 패스워드 암호화 하여 디비에 저장.
+		user.setProfileImg(userRegisterInfo.getProfileImg());
+		user.setEmail(userRegisterInfo.getEmail());
+		user.setAge(userRegisterInfo.getAge());
+		user.setGender(userRegisterInfo.getGender());
+		user.setNickname(userRegisterInfo.getNickname());
+		user.setHeight(userRegisterInfo.getHeight());
+		user.setWeight(userRegisterInfo.getWeight());
+		user.setFootSize(userRegisterInfo.getFootSize());
+		user.setRegion(userRegisterInfo.getRegion());
+		 //보안을 위해서 유저 패스워드 암호화 하여 디비에 저장.
 		user.setPassword(passwordEncoder.encode(userRegisterInfo.getPassword()));
 		return userRepository.save(user);
 	}
