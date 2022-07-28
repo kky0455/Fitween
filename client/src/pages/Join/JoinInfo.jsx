@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import Button from '../../components/Common/Button/Button';
 import Input from '../../components/Common/Input/Input';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
@@ -88,8 +89,7 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 					}}
 					type={readyState ? 'active' : 'disabled'}
 					label="다음 단계로"
-					// todo : 다음단계로 info state와 넘어가야함
-					onClick={() => navigate('/join/town')}
+					onClick={() => navigate('/join/town', { state: info })}
 				/>
 			</div>
 		</>
