@@ -10,7 +10,7 @@ export const handlers = [
 		if (typeof accessToken === 'string') {
 			return res(
 				ctx.json({
-					result: 'needToJoin',
+					result: 'success',
 					token: 'jkshfjkldASDJKHASFJKasd123asFJKAHSd',
 					userInfo: {
 						userId: 'id123',

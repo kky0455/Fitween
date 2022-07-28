@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 .fw-400 {
 	font-family: 'Regular';
 }
@@ -38,12 +40,25 @@
 .fs-18 {
 	font-size: 18px;
 }
+.fs-19 {
+	font-size: 19px;
+	line-height: 28px;
+}
 .fs-20 {
 	font-size: 20px;
 }
 .fs-22 {
 	font-size: 22px;
+	line-height: 30px;
 }
 .fs-24 {
 	font-size: 24px;
+}
+.fs-47 {
+	font-size: 47px;
+	line-height: 54px;
+}
+
+.fc-g100 {
+	color: $green100;
 }

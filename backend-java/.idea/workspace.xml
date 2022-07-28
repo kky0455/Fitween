@@ -4,45 +4,63 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/backend-java.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-07-27__11_29__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-07-27_오전_11_29_[Changes]/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-07-27_오전_11_29_[Changes]/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-07-27_오전_11_29_[Changes]/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-07-27_오전_11_29_[Changes]/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-07-27_오전_11_29_[Changes]/shelved.patch" beforeDir="false" />
+    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="refactor: 유저 info 수정">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/JwtServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/api/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/assets/FitweenLogoBg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/context/User/UserContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/context/User/UserTypes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/pages/Index/Redirect.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/pages/Join/Join.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/context/User/UserReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/context/User/UserState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/api/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/api/controller/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/api/request/UserLoginPostReq.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/api/request/UserLoginPostReq.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/common/auth/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/common/auth/JwtAuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/User$VoidBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/User$VoidBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/ssafy/api/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/ssafy/api/controller/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/ssafy/api/request/UserLoginPostReq.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/ssafy/api/request/UserLoginPostReq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/ssafy/api/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/ssafy/api/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/ssafy/api/request/UserRegisterPostReq.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/ssafy/api/request/UserRegisterPostReq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/ssafy/api/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/ssafy/api/service/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/ssafy/common/auth/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/ssafy/common/auth/JwtAuthenticationFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/ssafy/common/auth/SsafyUserDetailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/ssafy/common/auth/SsafyUserDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/ssafy/common/util/JwtTokenUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/ssafy/common/util/JwtTokenUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/ssafy/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/ssafy/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/ssafy/db/entity/QUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/ssafy/db/entity/QUser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/ssafy/db/entity/User$VoidBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/ssafy/db/entity/User$VoidBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/ssafy/db/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/ssafy/db/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/application-oauth.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application-oauth.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-oauth.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-oauth.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/GroupCallApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/GroupCallApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/request/UserRegisterPostReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/request/UserRegisterPostReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/common/auth/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/common/auth/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/common/auth/SsafyUserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/common/auth/FWUserDetailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/common/auth/SsafyUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/common/auth/FWUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/common/util/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/common/util/JwtTokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/db/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/db/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ssafy-web.log" beforeDir="false" afterPath="$PROJECT_DIR$/ssafy-web.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/public/mockServiceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/public/mockServiceWorker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/GlobalStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/GlobalStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/Common/Button/Button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/Common/Button/Button.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/Common/Input/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/Common/Input/Input.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/constants/colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/constants/colors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/mocks/handlers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/mocks/handlers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Index/CallBackKakao.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Index/Index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Index/Index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Join/JoinIndex.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Join/JoinIndex.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Join/JoinInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Join/JoinInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Join/JoinTown.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Join/JoinTown.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/styles/_typography.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/styles/colors.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,26 +75,65 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ssafy-web-project" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ssafy-web-project" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ssafy-web-project" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ssafy-web-project" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="compileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/5.4.6/173f486d585ca0d0918e4d1ff3343475da89cc09/spring-security-core-5.4.6-sources.jar!/org/springframework/security/core/userdetails/UserDetailsService.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
         <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
@@ -84,30 +141,97 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+    <option name="sortByName" value="true" />
+  </component>
   <component name="ProjectId" id="2CVbq4w5QD6p4TX6Qf4VPFRbkKe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "spring.configuration.checksum": "1c625e95bb42363b964eadb5c496c14e"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/ssafy/fitween_gitlab/backend-java&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;1c625e95bb42363b964eadb5c496c14e&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle lombok" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.GroupCallApplication">
+    <configuration name="backend-java [lombok]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="lombok" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TokenProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ssafy-web-project.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ssafy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ssafy" />
+      <option name="MAIN_CLASS_NAME" value="com.ssafy.TokenProviderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TokenProviderTest.토큰_생성하기" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ssafy-web-project.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ssafy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ssafy" />
+      <option name="MAIN_CLASS_NAME" value="com.ssafy.TokenProviderTest" />
+      <option name="METHOD_NAME" value="토큰_생성하기" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="backend-java" />
       <method v="2">
@@ -128,6 +252,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TokenProviderTest.토큰_생성하기" />
+        <item itemvalue="JUnit.TokenProviderTest" />
+        <item itemvalue="Gradle.backend-java [lombok]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -138,8 +269,19 @@
       <option name="presentableId" value="Default" />
       <updated>1658890891364</updated>
       <workItem from="1658890893063" duration="1165000" />
-      <workItem from="1658896432322" duration="1277000" />
+      <workItem from="1658896432322" duration="3239000" />
+      <workItem from="1658900632731" duration="7157000" />
+      <workItem from="1658973912340" duration="16498000" />
+      <workItem from="1658994824975" duration="2767000" />
     </task>
+    <task id="LOCAL-00001" summary="refactor: 유저 info 수정">
+      <created>1658995773074</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1658995773074</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,5 +297,13 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactor: 유저 info 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 유저 info 수정" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

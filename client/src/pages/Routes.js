@@ -5,31 +5,15 @@ import ArticleRegist from './Article/ArticleRegist';
 import ChatList from './Chat/ChatList';
 import ChatRoom from './Chat/ChatRoom';
 import DummyPage from './DummyPage/DummyPage';
-import CallBackKakao from './Index/CallBackKakao';
 import Index from './Index/Index';
-import JoinIndex from './Join/JoinIndex';
-import JoinInfo from './Join/JoinInfo';
-import JoinTown from './Join/JoinTown';
+import Redirect from './Index/Redirect';
+import Join from './Join/Join';
+
 import Like from './Like/Like';
 import Main from './Main/Main';
 import ProfileInfoModify from './Profile/ProfileInfoModify';
 import ProfileTownModify from './Profile/ProfileTownModify';
 import ProfileUser from './Profile/ProfileUser';
-
-// todo : 회원가입 쪽 설계 다시 고민
-const Join = () => {
-	return (
-		<ReactRouterRoutes>
-			{/* 회원가입 안내페이지 */}
-			<Route path="index" element={<JoinIndex />} />
-			{/* 정보 입력 */}
-			<Route path="info" element={<JoinInfo />} />
-			{/* 동네 입력 */}
-			<Route path="town" element={<JoinTown />} />
-			<Route path="*" element={<Navigate replace to="/" />} />
-		</ReactRouterRoutes>
-	);
-};
 
 const Article = () => {
 	return (
@@ -79,10 +63,10 @@ export const Routes = () => {
 
 			{/* 초기화면  */}
 			<Route path="/" element={<Index />} />
-			{/* 카카오 로그인 콜백  */}
-			<Route path="/kakao" element={<CallBackKakao />} />
+			{/* 소셜 로그인 리다이렉트  */}
+			<Route path="/oauth/redirect" element={<Redirect />} />
 
-			{/* 추가정보입력 페이지 */}
+			{/* 회원가입 페이지 */}
 			<Route path="join/*" element={<Join />} />
 
 			{/* 메인페이지 */}

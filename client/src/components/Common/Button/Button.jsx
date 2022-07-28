@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import colors from '../../../constants/colors';
@@ -8,6 +8,8 @@ const btnType = {
 	disabled: 'disabled',
 	active: 'active',
 	kakao: 'kakao',
+	google: 'google',
+	outlined: 'outlined',
 	normal: 'normal',
 };
 const getBtnStyle = type => {
@@ -32,6 +34,18 @@ const getBtnStyle = type => {
 				color: ${colors.black};
 				border-radius: 10px;
 			`;
+		case btnType.outlined:
+			return css`
+				color: ${colors.green100};
+				background-color: ${colors.background};
+				border: 1px solid ${colors.green100};
+			`;
+		case btnType.google:
+			return css`
+				color: ${colors.white};
+				background-color: ${colors.google};
+				border: 1px solid ${colors.green100};
+			`;
 		default:
 			return css`
 				background-color: ${colors.black};
@@ -39,9 +53,10 @@ const getBtnStyle = type => {
 			`;
 	}
 };
-const Button = ({ type, label, onClick, ...rest }) => {
+const Button = forwardRef(function Button({ type, label, onClick, forwardedRef, ...rest }) {
 	return (
 		<button
+			ref={forwardedRef}
 			css={css`
 				width: 100%;
 				padding: 18px 16px;
@@ -58,6 +73,6 @@ const Button = ({ type, label, onClick, ...rest }) => {
 			{label}
 		</button>
 	);
-};
+});
 
 export default Button;

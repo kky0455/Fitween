@@ -35,6 +35,32 @@ public class User {
     @Column(length = 10, nullable = false)
     String name;
 
+    @Column
+    String profileImg;
+
+    @Column
+    String email;
+
+    @Column
+    int age;
+
+    @Column
+    int gender;
+
+    @Column
+    String nickname;
+
+    @Column
+    int height;
+
+    @Column
+    int weight;
+
+    @Column
+    int footSize;
+
+    @Column
+    String region;
 
     @Builder
     public void updateUser(String user_name, String user_password) {
