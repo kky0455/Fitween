@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="10db14d8-b57f-4eee-a5af-5f2066e47566" name="Changes" comment="">
+    <list default="true" id="10db14d8-b57f-4eee-a5af-5f2066e47566" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend-java/out/production/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend-java/out/production/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-java/src/main/generated/com/ssafy/db/entity/QArticleInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-java/src/main/generated/com/ssafy/db/entity/QArticleInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-java/src/main/generated/com/ssafy/db/entity/QBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-java/src/main/generated/com/ssafy/db/entity/QBaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-java/src/main/generated/com/ssafy/db/entity/QFollow.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-java/src/main/generated/com/ssafy/db/entity/QFollow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-java/src/main/generated/com/ssafy/db/entity/QLikes.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-java/src/main/generated/com/ssafy/db/entity/QLikes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-java/src/main/generated/com/ssafy/db/entity/QUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-java/src/main/generated/com/ssafy/db/entity/QUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-java/src/main/java/com/ssafy/api/controller/ChatRoomController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-java/src/main/java/com/ssafy/api/controller/MessageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-java/src/main/java/com/ssafy/api/model/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-java/src/main/java/com/ssafy/config/SocketConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-java/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend-java/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend-java/ssafy-web.log" beforeDir="false" afterPath="$PROJECT_DIR$/backend-java/ssafy-web.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +29,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "project.structure.last.edited": "프로젝트",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
