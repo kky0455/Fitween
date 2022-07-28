@@ -7,17 +7,25 @@ import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import API from '../../api';
 import { setRefreshToken } from '../../storage/Cookie';
 import * as authApi from '../../api/auth';
+import { useUserDispatch } from '../../context/User/UserContext';
 
-const JoinTown = () => {
+const JoinTown = ({ info }) => {
 	const [location, setLocation] = useState(null);
 	const [readyState, setReadyState] = useState(false);
 	const navigate = useNavigate();
+	const dispatch = useUserDispatch();
 
 	const signupHandler = async () => {
 		try {
-			const res = await authApi.signup();
+			const body = {
+				...info,
+				location: location,
+			};
+			console.log(body);
+			const res = await authApi.signup(body);
 			setRefreshToken(res.refreshToken);
 			const { accessToken } = res;
+			dispatch({ type: 'LOGIN', accessToken: accessToken });
 			API.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
 			navigate('/main');
 		} catch (err) {

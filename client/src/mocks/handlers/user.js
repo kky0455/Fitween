@@ -33,7 +33,7 @@ export const login = rest.post('http://localhost:5000/auth/login', async (req, r
 });
 
 //회원가입
-export const signup = rest.get('http://localhost:5000/auth/signup', async (req, res, ctx) =>
+export const signup = rest.post('http://localhost:5000/auth/signup', async (req, res, ctx) =>
 	res(
 		ctx.json({
 			refreshToken: 'dfsa;difjsifjslkfjeifsjofj',

@@ -10,9 +10,9 @@ export const login = async body => {
 	}
 };
 
-export const signup = async () => {
+export const signup = async body => {
 	try {
-		const res = await API.get('/auth/signup');
+		const res = await API.post('/auth/signup', body);
 		return res.data;
 	} catch (err) {
 		throw err;
