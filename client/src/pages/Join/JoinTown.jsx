@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import Button from '../../components/Common/Button/Button';
@@ -21,7 +21,6 @@ const JoinTown = ({ info }) => {
 				...info,
 				location: location,
 			};
-			console.log(body);
 			const res = await authApi.signup(body);
 			setRefreshToken(res.refreshToken);
 			const { accessToken } = res;
@@ -41,7 +40,6 @@ const JoinTown = ({ info }) => {
 			const { latitude, longitude } = data.coords;
 			const res = await axios.get(
 				`https://dapi.kakao.com/v2/local/geo/coord2address.json?x=${longitude}&y=${latitude}`,
-				// `https://dapi.kakao.com/v2/local/geo/coord2address.json?x=37.552299654649&y=126.85316458424`,
 				{
 					headers: {
 						Authorization: `KakaoAK ${process.env.REACT_APP_KAKAO_REST_API_KEY}`,
@@ -122,7 +120,6 @@ const JoinTown = ({ info }) => {
 					}}
 					type={readyState ? 'active' : 'disabled'}
 					label="회원가입 하기"
-					// todo : 다음단계로 info state와 넘어가야함
 					onClick={() => signupHandler()}
 				/>
 			</div>
