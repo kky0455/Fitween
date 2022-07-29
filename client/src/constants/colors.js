@@ -18,6 +18,8 @@ const colors = {
 
 	yellow: '#fae100',
 	kakao: '#fae100',
+
+	google: '#4285f4',
 };
 
 export default colors;

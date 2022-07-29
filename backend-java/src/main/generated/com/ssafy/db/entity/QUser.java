@@ -19,13 +19,31 @@ public class QUser extends EntityPathBase<User> {
 
     public static final QUser user = new QUser("user");
 
+    public final NumberPath<Integer> age = createNumber("age", Integer.class);
+
+    public final StringPath email = createString("email");
+
+    public final NumberPath<Integer> footSize = createNumber("footSize", Integer.class);
+
+    public final NumberPath<Integer> gender = createNumber("gender", Integer.class);
+
+    public final NumberPath<Integer> height = createNumber("height", Integer.class);
+
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final StringPath name = createString("name");
 
+    public final StringPath nickname = createString("nickname");
+
     public final StringPath password = createString("password");
 
+    public final StringPath profileImg = createString("profileImg");
+
+    public final StringPath region = createString("region");
+
     public final StringPath userId = createString("userId");
+
+    public final NumberPath<Integer> weight = createNumber("weight", Integer.class);
 
     public QUser(String variable) {
         super(User.class, forVariable(variable));

@@ -9,7 +9,7 @@ ${reset}
         color : inherit;
   }
 	body {
-          height: auto;
+          height: 100vh;
 	        font-family : apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell , 'Helvetica Neue', sans-serif;
 	        font-size : 15px;
 	        background-color : $background;
@@ -34,7 +34,7 @@ ${reset}
           width: 100%;
           display: flex;
           justify-content: center;
-          height: auto;
+          height: 100%;
           -ms-overflow-style: none !important; 
           scrollbar-width: none !important; 
           ::-webkit-scrollbar {
