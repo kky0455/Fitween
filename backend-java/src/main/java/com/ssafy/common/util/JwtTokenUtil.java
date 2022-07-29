@@ -5,15 +5,17 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.*;
 
+import com.ssafy.common.auth.FWUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.oauth2.jose.jws.SignatureAlgorithm;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
-import java.util.List;
+import java.util.Map;
 
 import static com.google.common.collect.Lists.newArrayList;
 
@@ -23,17 +25,19 @@ import static com.google.common.collect.Lists.newArrayList;
 @Component
 public class JwtTokenUtil {
     private static String secretKey;
-    private static Integer expirationTime;
+    private final long refreshExpireTime = 1 * 60 * 2000L;  // 2분
+    private static long expirationTime =  1 * 60 * 1000L;   // 1분
 
     public static final String TOKEN_PREFIX = "Bearer ";
     public static final String HEADER_STRING = "Authorization";
     public static final String ISSUER = "ssafy.com";
-    
+
+
     @Autowired
-	public JwtTokenUtil(@Value("${jwt.secret}") String secretKey, @Value("${jwt.expiration}") Integer expirationTime) {
+	public JwtTokenUtil(@Value("${jwt.secret}") String secretKey, @Value("${jwt.expiration}") long expirationTime, FWUserDetailService fwUserDetailService) {
 		this.secretKey = secretKey;
 		this.expirationTime = expirationTime;
-	}
+    }
     
 	public void setExpirationTime() {
     		//JwtTokenUtil.expirationTime = Integer.parseInt(expirationTime);
@@ -66,7 +70,7 @@ public class JwtTokenUtil {
                 .sign(Algorithm.HMAC512(secretKey.getBytes()));
     }
     
-    public static Date getTokenExpiration(int expirationTime) {
+    public static Date getTokenExpiration(long expirationTime) {
     		Date now = new Date();
     		return new Date(now.getTime() + expirationTime);
     }
