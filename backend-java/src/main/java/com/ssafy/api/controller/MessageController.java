@@ -18,24 +18,28 @@ public class MessageController {
     @MessageMapping("/chat/message")
     public void enter(ChatMessage message) {
         //System.out.println(message.getRoomId() + message.getSender() + message.getMessage());
+
         LocalDate date = LocalDate.now();
         LocalTime time = LocalTime.now();
         message.setSendtime(time);
         message.setSenddate(date);
-        int roomId = CheckRoom(message.getSenderId(), message.getReceiverId());
-        if (roomId==-1){
-            //새로운 방을 만들어 줘야함
-            //방을 만드는 함수
 
-            roomId = makeRoom(message.getSenderId(), message.getReceiverId());
-            //새로 만들어진 roomId를 return 해주는 함수 구현
-            sendingOperations.convertAndSend("/topic/chat/room/"+roomId,message);
+
+        String roomId = message.getRoomId();
+        if(roomId == null){
+           String newroomId = makeRoom(message.getSenderId(), message.getReceiverId()) ;
+           message.setRoomId(newroomId);
+            sendingOperations.convertAndSend("/topic/chat/room/"+newroomId,message);
+
 
         }
         else{
             sendingOperations.convertAndSend("/topic/chat/room/"+roomId,message);
 
         }
+
+        sendingOperations.convertAndSend("/topic/chat/wait/"+message.getReceiverId(),message);
+
 
 
 
@@ -65,8 +69,8 @@ public class MessageController {
 
     }
 
-    public int makeRoom(String senderId, String receiverId){
-        return 2;
+    public String makeRoom(String senderId, String receiverId){
+        return "2";
 
     }
 }
