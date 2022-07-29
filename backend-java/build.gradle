@@ -170,18 +170,35 @@ dependencies {
 
     testImplementation("com.jayway.jsonpath:json-path:2.4.0")
 
-    implementation("com.auth0:java-jwt:3.10.3")
-    
+    //test
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    implementation 'junit:junit:4.12'
+
+    // JSONParser, JSONObject설정
+    implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
+
+    //jwt
+    implementation('com.auth0:java-jwt:3.19.2')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('io.jsonwebtoken:jjwt-api:0.11.1')
+    runtime('io.jsonwebtoken:jjwt-impl:0.11.1', 'io.jsonwebtoken:jjwt-jackson:0.11.1')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    // swagger2
     implementation("io.springfox:springfox-swagger2:3.0.0")
     implementation("io.springfox:springfox-swagger-ui:3.0.0")
+
     implementation("io.springfox:springfox-data-rest:3.0.0")
     implementation("io.springfox:springfox-bean-validators:3.0.0")
     implementation("io.springfox:springfox-boot-starter:3.0.0")
 
     compile("javax.annotation:javax.annotation-api:1.2")
 
-    implementation("org.projectlombok:lombok:1.18.20")
-    annotationProcessor("org.projectlombok:lombok:1.18.20")
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
