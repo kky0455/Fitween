@@ -69,10 +69,11 @@ public class AuthController {
 		GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(new NetHttpTransport(), new GsonFactory())
 
 				// Specify the CLIENT_ID of the app that accesses the backend:
-				.setAudience(Collections.singletonList(CLIENT_ID)
-				// Or, if multiple clients access the backend:
-				//.setAudience(Arrays.asList(CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3))
-				.build();
+				.setAudience(Collections.singletonList(CLIENT_ID))	//oauth 클라이언트 id
+						// Or, if multiple clients access the backend:
+						//.setAudience(Arrays.asList(CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3))
+						.build();
+
 
 		// (Receive idTokenString by HTTPS POST)
 
