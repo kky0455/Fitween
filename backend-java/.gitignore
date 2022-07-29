@@ -28,7 +28,7 @@ out/
 !**/src/main/**/out/
 
 !**/src/test/**/out/
-application-oauth.propertiesg
+application-oauth.properties
 
 
 ### NetBeans ###
