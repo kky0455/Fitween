@@ -35,7 +35,7 @@ const Chat = () => {
 			{/* 채팅리스트 */}
 			<Route path="list" element={<ChatList />} />
 			{/* 채팅상세 */}
-			<Route path=":chatRoomId" element={<ChatRoom />} />
+			<Route path="room" element={<ChatRoom />} />
 			<Route path="*" element={<Navigate replace to="list" />} />
 		</ReactRouterRoutes>
 	);
