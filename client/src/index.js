@@ -7,17 +7,18 @@ import './index.css';
 import App from './App';
 import { UserProvider } from './context/User/UserContext';
 
-if (process.env.NODE_ENV === 'development') {
-	worker.start();
-}
+// msw
+import { serviceWorker } from './mocks/browser';
+import { GlobalContextProvider } from './contexts/GlobalContext';
+serviceWorker.start({ onUnhandledRequest: 'bypass' });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
-		<UserProvider>
+		<GlobalContextProvider>
 			<BrowserRouter>
 				<App />
 			</BrowserRouter>
-		</UserProvider>
+		</GlobalContextProvider>
 	</React.StrictMode>,
 );

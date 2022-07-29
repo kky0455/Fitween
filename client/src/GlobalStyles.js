@@ -23,8 +23,8 @@ ${reset}
             -webkit-appearance: none !important;
             appearance: none !important;
           }
-          padding-top: ${common.topHeaderHeight};
-          padding-bottom: ${common.bottomHeaderHeight};
+          padding-top: ${({ hasTop }) => (hasTop ? common.topHeaderHeight : 0)};
+          padding-bottom: ${({ hasBottom }) => (hasBottom ? common.bottomHeaderHeight : 0)};
         }
   *{
             box-sizing: border-box;
