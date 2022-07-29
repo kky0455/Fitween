@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react';
 import { css } from '@emotion/react';
 import colors from '../../../constants/colors';
 
-// type: disabled,active,kakao, normal
+// type: disabled, active, kakao, normal
 const btnType = {
 	disabled: 'disabled',
 	active: 'active',
@@ -12,6 +12,7 @@ const btnType = {
 	outlined: 'outlined',
 	normal: 'normal',
 };
+
 const getBtnStyle = type => {
 	const style = css`
 		color: ${colors.white};
@@ -53,10 +54,11 @@ const getBtnStyle = type => {
 			`;
 	}
 };
-const Button = forwardRef(function Button({ type, label, onClick, forwardedRef, ...rest }) {
+
+const Button = ({ type, label, onClick, ...rest }, ref) => {
 	return (
 		<button
-			ref={forwardedRef}
+			ref={ref}
 			css={css`
 				width: 100%;
 				padding: 18px 16px;
@@ -73,6 +75,6 @@ const Button = forwardRef(function Button({ type, label, onClick, forwardedRef, 
 			{label}
 		</button>
 	);
-});
+};
 
-export default Button;
+export default forwardRef(Button);

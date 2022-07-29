@@ -1,8 +1,10 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
+
 import './styles/app.scss';
 import GlobalStyles from './GlobalStyles';
 import { Routes } from './pages/Routes';
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+
 function Layout({ children }) {
 	return (
 		<div

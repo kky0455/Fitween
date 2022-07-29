@@ -30,7 +30,7 @@ const Join = () => {
 				}
 			/>
 			{/* 동네 입력 */}
-			<Route path="town" element={<JoinTown />} />
+			<Route path="town" element={<JoinTown info={info} />} />
 			<Route path="*" element={<Navigate replace to="/" />} />
 		</ReactRouterRoutes>
 	);

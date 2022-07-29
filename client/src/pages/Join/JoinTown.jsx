@@ -1,13 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
 import Button from '../../components/Common/Button/Button';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
+import API from '../../api';
+import { setRefreshToken } from '../../storage/Cookie';
+import * as authApi from '../../api/auth';
+import { useUserDispatch } from '../../context/User/UserContext';
 
-const JoinTown = () => {
+const JoinTown = ({ info }) => {
 	const [location, setLocation] = useState(null);
 	const [readyState, setReadyState] = useState(false);
 	const navigate = useNavigate();
+	const dispatch = useUserDispatch();
+
+	const signupHandler = async () => {
+		try {
+			const body = {
+				...info,
+				location: location,
+			};
+			const res = await authApi.signup(body);
+			setRefreshToken(res.refreshToken);
+			const { accessToken, userId } = res;
+			dispatch({ type: 'LOGIN', userId: userId, accessToken: accessToken });
+			API.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+			navigate('/main');
+		} catch (err) {
+			throw err;
+		}
+	};
+
 	useEffect(() => {
 		if (location) setReadyState(true);
 	}, [location]);
@@ -16,7 +40,6 @@ const JoinTown = () => {
 			const { latitude, longitude } = data.coords;
 			const res = await axios.get(
 				`https://dapi.kakao.com/v2/local/geo/coord2address.json?x=${longitude}&y=${latitude}`,
-				// `https://dapi.kakao.com/v2/local/geo/coord2address.json?x=37.552299654649&y=126.85316458424`,
 				{
 					headers: {
 						Authorization: `KakaoAK ${process.env.REACT_APP_KAKAO_REST_API_KEY}`,
@@ -97,8 +120,7 @@ const JoinTown = () => {
 					}}
 					type={readyState ? 'active' : 'disabled'}
 					label="회원가입 하기"
-					// todo : 다음단계로 info state와 넘어가야함
-					onClick={() => navigate('/join/town')}
+					onClick={() => signupHandler()}
 				/>
 			</div>
 		</>
