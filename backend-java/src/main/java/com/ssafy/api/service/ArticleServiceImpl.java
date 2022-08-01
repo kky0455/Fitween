@@ -33,4 +33,10 @@ public class ArticleServiceImpl implements ArticleService{
         article.updateArticle(saveArticleDto);
         return article;
     }
+
+    @Transactional
+    @Override
+    public void deleteArticle(Article article) {
+        articleRepository.delete(article);
+    }
 }

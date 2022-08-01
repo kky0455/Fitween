@@ -10,4 +10,6 @@ public interface ArticleService {
     public Article findByArticleId(Long string);
 
     public Article updateArticle(Article article, SaveArticleDto saveArticleDto);
+
+    public void deleteArticle(Article article);
 }

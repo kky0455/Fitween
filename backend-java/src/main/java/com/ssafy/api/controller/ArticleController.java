@@ -23,9 +23,9 @@ import java.util.NoSuchElementException;
 @RestController
 @RequestMapping("/api/v1/articles")
 public class ArticleController {
-//    public static final Logger logger = LoggerFactory.getLogger(ArticleController.class);
+    public static final Logger logger = LoggerFactory.getLogger(ArticleController.class);
     private static final String SUCCESS = "success";
-//    private static final String FAIL = "fail";
+    private static final String FAIL = "fail";
 
     @Autowired
     ArticleService articleService;
@@ -75,6 +75,26 @@ public class ArticleController {
         Article updateArticle = articleService.updateArticle(article, saveArticleDto);
         System.out.println("업데이트 됨");
         return new ResponseEntity<String>(SUCCESS+"\n"+updateArticle.toString(), HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "해당 게시글 삭제", notes = "해당 게시글 삭제")
+    @ApiResponses({ @ApiResponse(code = 200, message = "게시글 삭제 성공"),
+            @ApiResponse(code = 401, message = "인증 실패"),
+            @ApiResponse(code = 404, message = "사용자 없음"),
+            @ApiResponse(code = 500, message = "해당 회원 없음")})
+    @DeleteMapping("/delete/{article_idx}")
+    public ResponseEntity<String> articledelete(@PathVariable("article_idx") Long article_idx) throws Exception {
+        Article article;
+        try {
+            article = articleService.findByArticleId(article_idx);
+            articleService.deleteArticle(article);
+        }catch(Exception e ) {
+            e.printStackTrace();
+            System.out.println("게시글 삭제 실패");
+            return  ResponseEntity.status(500).body("해당 게시글 없어서 삭제 "+FAIL);
+        }
+        logger.debug("해당 게시글 삭제 성공");
+        return ResponseEntity.status(200).body(article.getArticleIdx()+"번 해당 게시글 삭제"+SUCCESS);
     }
 
 }

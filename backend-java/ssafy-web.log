@@ -2834,3 +2834,122 @@ Board [articleIdx=1, title=현여친 ..., content=사이즈 M, price2000, lendSt
 2022-08-01 23:13:58.653  INFO 8780 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-08-01 23:13:58.653  INFO 8780 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-08-01 23:13:58.658  INFO 8780 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-01 23:22:44.177  INFO 13884 --- [restartedMain] com.ssafy.GroupCallApplication           : Starting GroupCallApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 13884 (C:\Users\multicampus\Desktop\backend-java\out\production\classes started by multicampus in C:\Users\multicampus\Desktop\backend-java)
+2022-08-01 23:22:44.177  INFO 13884 --- [restartedMain] com.ssafy.GroupCallApplication           : No active profile set, falling back to default profiles: default
+2022-08-01 23:22:44.219  INFO 13884 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-01 23:22:44.219  INFO 13884 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-01 23:22:45.227  INFO 13884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-01 23:22:45.287  INFO 13884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 2 JPA repository interfaces.
+2022-08-01 23:22:45.548  INFO 13884 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1addaf63' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 23:22:45.551  INFO 13884 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 23:22:45.767  INFO 13884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-01 23:22:45.777  INFO 13884 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-01 23:22:45.777  INFO 13884 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-08-01 23:22:45.882  INFO 13884 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-01 23:22:45.882  INFO 13884 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1663 ms
+2022-08-01 23:22:45.997 DEBUG 13884 --- [restartedMain] o.s.web.filter.CharacterEncodingFilter   : Filter 'characterEncodingFilter' configured for use
+2022-08-01 23:22:45.997 DEBUG 13884 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'commonsRequestLoggingFilter' configured for use
+2022-08-01 23:22:46.113  INFO 13884 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-01 23:22:46.247  INFO 13884 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-08-01 23:22:46.351  INFO 13884 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-01 23:22:46.432  INFO 13884 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-01 23:22:46.597  INFO 13884 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-01 23:22:46.612  INFO 13884 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-08-01 23:22:47.147  INFO 13884 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-01 23:22:47.158  INFO 13884 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 23:22:47.187  INFO 13884 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-01 23:22:47.568  WARN 13884 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-01 23:22:47.857 DEBUG 13884 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2022-08-01 23:22:47.957  INFO 13884 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-08-01 23:22:48.327  INFO 13884 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a76d9c, org.springframework.security.web.context.SecurityContextPersistenceFilter@40918de, org.springframework.security.web.header.HeaderWriterFilter@3e466331, org.springframework.web.filter.CorsFilter@714cb19, org.springframework.security.web.authentication.logout.LogoutFilter@4b043ac, com.ssafy.common.auth.JwtAuthenticationFilter@144b85a7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@34844bc9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5664a0de, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7f514556, org.springframework.security.web.session.SessionManagementFilter@6bd5e331, org.springframework.security.web.access.ExceptionTranslationFilter@53f9a30f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@27a0e7c0]
+2022-08-01 23:22:48.387  INFO 13884 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-08-01 23:22:48.407 DEBUG 13884 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-01 23:22:48.437 DEBUG 13884 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-08-01 23:22:48.453 DEBUG 13884 --- [restartedMain] o.s.w.s.c.annotation.WebMvcConfigurer    : Default resource handling disabled
+2022-08-01 23:22:48.627 DEBUG 13884 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/resources/**, /swagger-ui.html, /webjars/**, /css/**, /fonts/**, /icons/**, /img/**, /js/**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-08-01 23:22:48.632 DEBUG 13884 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-01 23:22:48.877  INFO 13884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-01 23:22:49.082  INFO 13884 --- [restartedMain] com.ssafy.GroupCallApplication           : Started GroupCallApplication in 5.202 seconds (JVM running for 6.138)
+2022-08-01 23:22:49.442  INFO 13884 --- [RMI TCP Connection(1)-192.168.219.131] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-01 23:22:49.442  INFO 13884 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-01 23:22:49.442 DEBUG 13884 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-08-01 23:22:49.442 DEBUG 13884 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-08-01 23:22:49.442 DEBUG 13884 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-08-01 23:22:49.442 DEBUG 13884 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@21cae016
+2022-08-01 23:22:49.442 DEBUG 13884 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@59bf6122
+2022-08-01 23:22:49.442 DEBUG 13884 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-08-01 23:22:49.442  INFO 13884 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-08-01 23:23:45.470 DEBUG 13884 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /api/v1/auth/login, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"f07284d9-602c-479a-a96f-c2331dbd22ca", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"86", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 23:23:45.472 DEBUG 13884 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2022-08-01 23:23:45.474 DEBUG 13884 --- [http-nio-127.0.0.1-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.AuthController#login(UserLoginPostReq)
+2022-08-01 23:23:45.500 DEBUG 13884 --- [http-nio-127.0.0.1-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.ssafy.api.request.UserLoginPostReq@79f07516]
+2022-08-01 23:23:45.728 DEBUG 13884 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 23:23:45.729 DEBUG 13884 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.ssafy.api.response.UserLoginPostRes@267c0478]
+2022-08-01 23:23:45.740 DEBUG 13884 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 23:23:45.742 DEBUG 13884 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : After request [POST /api/v1/auth/login, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"f07284d9-602c-479a-a96f-c2331dbd22ca", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"86", Content-Type:"application/json;charset=UTF-8"], payload={
+    "id" : "user1",
+    "password" : "1q2w3e4r!",
+    "name" : "김광용"
+}
+
+]
+2022-08-01 23:24:40.671  INFO 13884 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-08-01 23:24:40.678  INFO 13884 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 23:24:40.678  INFO 13884 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-01 23:24:40.687  INFO 13884 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-01 23:24:45.471  INFO 14968 --- [restartedMain] com.ssafy.GroupCallApplication           : Starting GroupCallApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 14968 (C:\Users\multicampus\Desktop\backend-java\out\production\classes started by multicampus in C:\Users\multicampus\Desktop\backend-java)
+2022-08-01 23:24:45.476  INFO 14968 --- [restartedMain] com.ssafy.GroupCallApplication           : No active profile set, falling back to default profiles: default
+2022-08-01 23:24:45.511  INFO 14968 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-01 23:24:45.511  INFO 14968 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-01 23:24:46.566  INFO 14968 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-01 23:24:46.621  INFO 14968 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 2 JPA repository interfaces.
+2022-08-01 23:24:46.886  INFO 14968 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@49b7faaa' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 23:24:46.891  INFO 14968 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 23:24:47.111  INFO 14968 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-01 23:24:47.116  INFO 14968 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-01 23:24:47.116  INFO 14968 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-08-01 23:24:47.221  INFO 14968 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-01 23:24:47.221  INFO 14968 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1710 ms
+2022-08-01 23:24:47.337 DEBUG 14968 --- [restartedMain] o.s.web.filter.CharacterEncodingFilter   : Filter 'characterEncodingFilter' configured for use
+2022-08-01 23:24:47.337 DEBUG 14968 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'commonsRequestLoggingFilter' configured for use
+2022-08-01 23:24:47.451  INFO 14968 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-01 23:24:47.551  INFO 14968 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-08-01 23:24:47.651  INFO 14968 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-01 23:24:47.731  INFO 14968 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-01 23:24:47.906  INFO 14968 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-01 23:24:47.916  INFO 14968 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-08-01 23:24:48.456  INFO 14968 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-01 23:24:48.461  INFO 14968 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 23:24:48.491  INFO 14968 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-01 23:24:48.846  WARN 14968 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-01 23:24:49.091 DEBUG 14968 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2022-08-01 23:24:49.191  INFO 14968 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-08-01 23:24:49.541  INFO 14968 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@be47c03, org.springframework.security.web.context.SecurityContextPersistenceFilter@2cc02956, org.springframework.security.web.header.HeaderWriterFilter@65af5b6a, org.springframework.web.filter.CorsFilter@627d0104, org.springframework.security.web.authentication.logout.LogoutFilter@6155569c, com.ssafy.common.auth.JwtAuthenticationFilter@6b4e284a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d655bfc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6e0955a5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@420ee7b1, org.springframework.security.web.session.SessionManagementFilter@325ed5eb, org.springframework.security.web.access.ExceptionTranslationFilter@6c2400ab, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5811e2bf]
+2022-08-01 23:24:49.596  INFO 14968 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-08-01 23:24:49.611 DEBUG 14968 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-01 23:24:49.637 DEBUG 14968 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-08-01 23:24:49.655 DEBUG 14968 --- [restartedMain] o.s.w.s.c.annotation.WebMvcConfigurer    : Default resource handling disabled
+2022-08-01 23:24:49.791 DEBUG 14968 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/resources/**, /swagger-ui.html, /webjars/**, /css/**, /fonts/**, /icons/**, /img/**, /js/**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-08-01 23:24:49.796 DEBUG 14968 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-01 23:24:50.001  INFO 14968 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-01 23:24:50.201  INFO 14968 --- [restartedMain] com.ssafy.GroupCallApplication           : Started GroupCallApplication in 5.027 seconds (JVM running for 5.948)
+2022-08-01 23:24:50.511  INFO 14968 --- [RMI TCP Connection(2)-192.168.219.131] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-01 23:24:50.516  INFO 14968 --- [RMI TCP Connection(2)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-01 23:24:50.516 DEBUG 14968 --- [RMI TCP Connection(2)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-08-01 23:24:50.516 DEBUG 14968 --- [RMI TCP Connection(2)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-08-01 23:24:50.516 DEBUG 14968 --- [RMI TCP Connection(2)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-08-01 23:24:50.516 DEBUG 14968 --- [RMI TCP Connection(2)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@43ebc7aa
+2022-08-01 23:24:50.516 DEBUG 14968 --- [RMI TCP Connection(2)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@26aa516f
+2022-08-01 23:24:50.516 DEBUG 14968 --- [RMI TCP Connection(2)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-08-01 23:24:50.516  INFO 14968 --- [RMI TCP Connection(2)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-08-01 23:25:02.068 DEBUG 14968 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [DELETE /api/v1/articles/delete/1, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1OTgyNSwiaWF0IjoxNjU5MzYzODI1fQ.bglCy7cVQYT90YB1jPqAzfqZp0xucyvimDr1oxDgeLv7u6UVtxIAbp1mzNsBJL0SlBvyJfaFWJwTfuQg_Ar5Nw", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"2a1bbdf1-dda5-4f1b-8e87-a242396732a7", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"86", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 23:25:02.070 DEBUG 14968 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : DELETE "/api/v1/articles/delete/1", parameters={}
+2022-08-01 23:25:02.072 DEBUG 14968 --- [http-nio-127.0.0.1-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.ArticleController#articledelete(Long)
+2022-08-01 23:25:02.147 DEBUG 14968 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2022-08-01 23:25:02.147 DEBUG 14968 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["1번 해당 게시글 삭제success"]
+2022-08-01 23:25:02.153 DEBUG 14968 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 23:25:02.155 DEBUG 14968 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : After request [DELETE /api/v1/articles/delete/1, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1OTgyNSwiaWF0IjoxNjU5MzYzODI1fQ.bglCy7cVQYT90YB1jPqAzfqZp0xucyvimDr1oxDgeLv7u6UVtxIAbp1mzNsBJL0SlBvyJfaFWJwTfuQg_Ar5Nw", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"2a1bbdf1-dda5-4f1b-8e87-a242396732a7", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"86", Content-Type:"application/json;charset=UTF-8"]]
+2022-08-01 23:25:26.986  INFO 14968 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-08-01 23:25:26.986  INFO 14968 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 23:25:26.991  INFO 14968 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-01 23:25:26.996  INFO 14968 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
