@@ -6,25 +6,14 @@ import ChatList from './Chat/ChatList';
 import ChatRoom from './Chat/ChatRoom';
 import DummyPage from './DummyPage/DummyPage';
 import Index from './Index/Index';
-import JoinInfo from './Join/JoinInfo';
-import JoinTown from './Join/JoinTown';
+import Redirect from './Index/Redirect';
+import Join from './Join/Join';
+
 import Like from './Like/Like';
 import Main from './Main/Main';
 import ProfileInfoModify from './Profile/ProfileInfoModify';
 import ProfileTownModify from './Profile/ProfileTownModify';
 import ProfileUser from './Profile/ProfileUser';
-
-const Join = () => {
-	return (
-		<ReactRouterRoutes>
-			{/* 정보 입력 */}
-			<Route path="info" element={<JoinInfo />} />
-			{/* 동네 입력 */}
-			<Route path="town" element={<JoinTown />} />
-			<Route path="*" element={<Navigate replace to="/" />} />
-		</ReactRouterRoutes>
-	);
-};
 
 const Article = () => {
 	return (
@@ -46,7 +35,7 @@ const Chat = () => {
 			{/* 채팅리스트 */}
 			<Route path="list" element={<ChatList />} />
 			{/* 채팅상세 */}
-			<Route path=":chatRoomId" element={<ChatRoom />} />
+			<Route path="room" element={<ChatRoom />} />
 			<Route path="*" element={<Navigate replace to="list" />} />
 		</ReactRouterRoutes>
 	);
@@ -74,8 +63,10 @@ export const Routes = () => {
 
 			{/* 초기화면  */}
 			<Route path="/" element={<Index />} />
+			{/* 소셜 로그인 리다이렉트  */}
+			<Route path="/oauth/redirect" element={<Redirect />} />
 
-			{/* 추가정보입력 페이지 */}
+			{/* 회원가입 페이지 */}
 			<Route path="join/*" element={<Join />} />
 
 			{/* 메인페이지 */}

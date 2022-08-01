@@ -3,6 +3,7 @@ const colors = {
 	white: '#ffffff',
 	black: '#000000',
 
+	grey50: '#d9d9d9',
 	grey100: '#c4c4c4',
 	border: '#c4c4c4',
 	grey200: '#999999',
@@ -10,6 +11,7 @@ const colors = {
 	grey300: '#212121',
 	text: '#212121',
 
+	green50: '#e2faf1',
 	green100: '#6cc4a1',
 	green200: '#03ae82',
 
@@ -18,6 +20,8 @@ const colors = {
 
 	yellow: '#fae100',
 	kakao: '#fae100',
+
+	google: '#4285f4',
 };
 
 export default colors;
