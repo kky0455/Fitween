@@ -97,7 +97,7 @@ const ChatRoom = () => {
 		stompClient.connect({}, onConnected, onError);
 
 		return () => {
-			if (stompClient) stompClient.disconnect();
+			if (stompClient.connected) stompClient.disconnect();
 		};
 	}, []);
 	return (
