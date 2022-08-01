@@ -1,7 +1,13 @@
 package com.ssafy.api.controller;
 
+import com.ssafy.api.model.ChatMessageForm;
 import com.ssafy.api.model.ChatMessage;
+import com.ssafy.api.model.ChatRoom;
+import com.ssafy.api.model.ChatRoomForm;
+import com.ssafy.db.repository.ChatRepository;
+import com.ssafy.db.repository.ChatRoomRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,7 +33,8 @@ public class MessageController {
 
         String roomId = message.getRoomId();
         if(roomId == null){
-           String newroomId = makeRoom(message.getSenderId(), message.getReceiverId()) ;
+           String newroomId = makeRoom(message.getSenderId(), message.getReceiverId()).getRoomId() ;
+            System.out.println("방만듬");
            message.setRoomId(newroomId);
             sendingOperations.convertAndSend("/topic/chat/room/"+newroomId,message);
 
@@ -40,6 +47,15 @@ public class MessageController {
 
         sendingOperations.convertAndSend("/topic/chat/wait/"+message.getReceiverId(),message);
 
+        //
+//        log.info(chatForm.toString());// 받아온 데이터 확인!
+////        // dto(데이터-전달-객체)를 entity(db-저장-객체)로 변경
+//        ChatMessage chatMessage = chatForm.toEntity();
+////        // 리파지터리에게(db-관리-객체) 전달
+//        ChatMessage saved = chatRepository.save(chatMessage);
+//        log.info(saved.toString());
+////         저장 엔티티의 id(PK)값 반환!
+//        return saved.getRoomId()+saved.getReceiverId()+saved.getSenderId();
 
 
 
@@ -69,10 +85,29 @@ public class MessageController {
 
     }
 
-    public String makeRoom(String senderId, String receiverId){
-        return "2";
+
+    @Autowired
+    private ChatRoomRepository chatRepository;
+    public ChatRoom makeRoom(String senderId, String receiverId){
+        ChatRoom newroom = new ChatRoom();
+        ChatRoomForm chatRoomForm = new ChatRoomForm();
+        newroom = newroom.create(senderId,receiverId);
+
+        chatRoomForm.setRoomId(newroom.getRoomId());
+        chatRoomForm.setReceiverId(newroom.getReceiverId());
+        chatRoomForm.setSenderId(newroom.getSenderId());
+
+        ChatRoom chatRoom = chatRoomForm.toEntity();
+        ChatRoom saved = chatRepository.save(chatRoom);
+
+        System.out.println("방 또 만듬");
+
+
+    return newroom;
 
     }
+
 }
+
 
 

@@ -36,9 +36,9 @@ public class ChatService {
     }
 
     //채팅방 생성
-    public ChatRoom createRoom(String name) {
-        ChatRoom chatRoom = ChatRoom.create(name);
-        chatRooms.put(chatRoom.getRoomId(), chatRoom);
-        return chatRoom;
-    }
+//    public ChatRoom createRoom(String name) {
+//        ChatRoom chatRoom = ChatRoom.create();
+//        chatRooms.put(chatRoom.getRoomId(), chatRoom);
+//        return chatRoom;
+//    }
 }
