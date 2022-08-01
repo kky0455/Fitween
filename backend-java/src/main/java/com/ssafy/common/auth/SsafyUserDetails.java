@@ -26,10 +26,11 @@ public class SsafyUserDetails implements UserDetails {
     		super();
     		this.user = user;
     }
-    
+
     public User getUser() {
     		return this.user;
     }
+	public Long getUserIdx() { return this.user.getUserIdx(); }
 	@Override
 	public String getPassword() {
 		return this.user.getPassword();
@@ -61,4 +62,5 @@ public class SsafyUserDetails implements UserDetails {
 	public void setAuthorities(List<GrantedAuthority> roles) {
 		this.roles = roles;
 	}
+
 }
