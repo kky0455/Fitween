@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { ReactComponent as ArrowBackIcon } from '../../../assets/arrow_back.svg';
 import colors from '../../../constants/colors';
 import common from '../../../constants/commonStyle';
+import { useGlobalContext } from '../../../contexts/GlobalContext';
 const style = css`
 	position: fixed;
 	top: 0;
@@ -21,6 +22,13 @@ const style = css`
 `;
 
 const TopNavigation = ({ backClick, onBackClick, leftContent, centerContent, rightMenu }) => {
+	const { setHasTop } = useGlobalContext();
+	useEffect(() => {
+		setHasTop(true);
+		return () => {
+			setHasTop(false);
+		};
+	}, []);
 	return (
 		<div css={style}>
 			{backClick && (

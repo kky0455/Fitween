@@ -10,13 +10,18 @@ import Button from '../../components/Common/Button/Button';
 import Input from '../../components/Common/Input/Input';
 import BottomNavigation from '../../components/Common/BottomNavigation/BottomNavigation';
 import * as articleApi from '../../api/article';
-
 const DummyPage = () => {
 	const [input, setInput] = useState('');
 	const [btnState, setBtnState] = useState(false);
-	const check = value => {
-		return value === '윤주혜' ? true : false;
+	const check = () => {
+		if (input === '윤주혜') {
+			return true;
+		}
+		return false;
 	};
+	useEffect(() => {
+		setBtnState(check());
+	}, [input]);
 	useEffect(() => {
 		const fetch = async () => {
 			const res = await articleApi.modifyArticle('12314', { title: 'titiel' });
