@@ -23297,3 +23297,1173 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'test.likes' doesn't exist
 2022-08-01 16:59:13.029  INFO 21244 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-08-01 16:59:13.033  INFO 21244 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-08-01 16:59:13.042  INFO 21244 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-01 17:09:40.865  INFO 2480 --- [restartedMain] com.ssafy.GroupCallApplication           : Starting GroupCallApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 2480 (C:\Users\multicampus\Desktop\stomp\S07P12C104\backend-java\out\production\classes started by multicampus in C:\Users\multicampus\Desktop\stomp\S07P12C104\backend-java)
+2022-08-01 17:09:40.869  INFO 2480 --- [restartedMain] com.ssafy.GroupCallApplication           : No active profile set, falling back to default profiles: default
+2022-08-01 17:09:40.952  INFO 2480 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-01 17:09:40.952  INFO 2480 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-01 17:09:42.880  INFO 2480 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-01 17:09:43.010  INFO 2480 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 118 ms. Found 3 JPA repository interfaces.
+2022-08-01 17:09:43.647  INFO 2480 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4ef59fb8' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 17:09:43.655  INFO 2480 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 17:09:44.999  INFO 2480 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-01 17:09:45.019  INFO 2480 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-01 17:09:45.020  INFO 2480 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-08-01 17:09:45.210  INFO 2480 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-01 17:09:45.211  INFO 2480 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4257 ms
+2022-08-01 17:09:45.464  INFO 2480 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-01 17:09:45.774  INFO 2480 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-01 17:09:45.780  INFO 2480 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://127.0.0.1:3306/test'
+2022-08-01 17:09:45.869 DEBUG 2480 --- [restartedMain] o.s.web.filter.CharacterEncodingFilter   : Filter 'characterEncodingFilter' configured for use
+2022-08-01 17:09:45.870 DEBUG 2480 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'commonsRequestLoggingFilter' configured for use
+2022-08-01 17:09:46.042  INFO 2480 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-01 17:09:46.106  INFO 2480 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-08-01 17:09:46.277  INFO 2480 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-01 17:09:46.399  INFO 2480 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-08-01 17:09:47.193  INFO 2480 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-01 17:09:47.204  INFO 2480 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 17:09:47.227  INFO 2480 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-01 17:09:48.106  WARN 2480 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-01 17:09:48.274  INFO 2480 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2022-08-01 17:09:48.284  INFO 2480 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2022-08-01 17:09:48.287  INFO 2480 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2022-08-01 17:09:48.696 DEBUG 2480 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2022-08-01 17:09:48.794  INFO 2480 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-08-01 17:09:48.879  INFO 2480 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2022-08-01 17:09:48.919 DEBUG 2480 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/ws/chat/**] in 'stompWebSocketHandlerMapping'
+2022-08-01 17:09:48.969 DEBUG 2480 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.AuthController:
+	
+2022-08-01 17:09:48.970 DEBUG 2480 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.ChatApiController:
+	
+2022-08-01 17:09:48.970 DEBUG 2480 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.ChatRoomController:
+	
+2022-08-01 17:09:48.976 DEBUG 2480 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.MessageController:
+	{[MESSAGE],[/chat/message]}: enter(ChatMessage)
+2022-08-01 17:09:48.977 DEBUG 2480 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.UserController:
+	
+2022-08-01 17:09:48.977 DEBUG 2480 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.s.w.Swagger2ControllerWebMvc:
+	
+2022-08-01 17:09:48.977 DEBUG 2480 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.s.w.ApiResourceController:
+	
+2022-08-01 17:09:48.978 DEBUG 2480 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.o.w.OpenApiControllerWebMvc:
+	
+2022-08-01 17:09:48.978 DEBUG 2480 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	
+2022-08-01 17:09:49.164  INFO 2480 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@10505b7c, org.springframework.security.web.context.SecurityContextPersistenceFilter@175dc75e, org.springframework.security.web.header.HeaderWriterFilter@3c4f58ba, org.springframework.web.filter.CorsFilter@24cda1d9, org.springframework.security.web.authentication.logout.LogoutFilter@5c8bb6e4, com.ssafy.common.auth.JwtAuthenticationFilter@4e6f1c3a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@157f68b5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@78ffcefb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1e07fc82, org.springframework.security.web.session.SessionManagementFilter@314dc1f5, org.springframework.security.web.access.ExceptionTranslationFilter@6d97d515, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@552c1330]
+2022-08-01 17:09:49.254 DEBUG 2480 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-01 17:09:49.328 DEBUG 2480 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-08-01 17:09:49.352 DEBUG 2480 --- [restartedMain] o.s.w.s.c.annotation.WebMvcConfigurer    : Default resource handling disabled
+2022-08-01 17:09:49.848 DEBUG 2480 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/resources/**, /swagger-ui.html, /webjars/**, /css/**, /fonts/**, /icons/**, /img/**, /js/**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-08-01 17:09:49.862 DEBUG 2480 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-01 17:09:50.248  INFO 2480 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-01 17:09:50.377  INFO 2480 --- [http-nio-192.168.100.52-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-01 17:09:50.377  INFO 2480 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-01 17:09:50.377 DEBUG 2480 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-08-01 17:09:50.377 DEBUG 2480 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-08-01 17:09:50.377 DEBUG 2480 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-08-01 17:09:50.379 DEBUG 2480 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@266ef370
+2022-08-01 17:09:50.380 DEBUG 2480 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@201007b3
+2022-08-01 17:09:50.380 DEBUG 2480 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-08-01 17:09:50.380  INFO 2480 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-08-01 17:09:50.462 DEBUG 2480 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/ws/chat/info?t=1659341388218", parameters={masked}
+2022-08-01 17:09:50.473 DEBUG 2480 --- [http-nio-192.168.100.52-8080-exec-1] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@58388d4f
+2022-08-01 17:09:50.477 DEBUG 2480 --- [http-nio-192.168.100.52-8080-exec-1] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://192.168.100.52:8080/ws/chat/info?t=1659341388218
+2022-08-01 17:09:50.481 DEBUG 2480 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 17:09:50.500 DEBUG 2480 --- [http-nio-192.168.100.52-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/ws/chat/133/hf1mnkt3/websocket", parameters={}
+2022-08-01 17:09:50.501 DEBUG 2480 --- [http-nio-192.168.100.52-8080-exec-2] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@58388d4f
+2022-08-01 17:09:50.503 DEBUG 2480 --- [http-nio-192.168.100.52-8080-exec-2] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://192.168.100.52:8080/ws/chat/133/hf1mnkt3/websocket
+2022-08-01 17:09:50.571 DEBUG 2480 --- [http-nio-192.168.100.52-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 101 SWITCHING_PROTOCOLS
+2022-08-01 17:09:50.601 DEBUG 2480 --- [http-nio-192.168.100.52-8080-exec-2] s.w.s.h.LoggingWebSocketHandlerDecorator : New WebSocketServerSockJsSession[id=hf1mnkt3]
+2022-08-01 17:09:50.657 DEBUG 2480 --- [restartedMain] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-08-01 17:09:50.657 DEBUG 2480 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-08-01 17:09:50.657  INFO 2480 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2022-08-01 17:09:50.657 DEBUG 2480 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4b27c7d6]
+2022-08-01 17:09:50.657 DEBUG 2480 --- [restartedMain] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4b27c7d6]
+2022-08-01 17:09:50.658  INFO 2480 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4b27c7d6]]
+2022-08-01 17:09:50.658  INFO 2480 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2022-08-01 17:09:50.659 DEBUG 2480 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:09:50.659 DEBUG 2480 --- [restartedMain] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:09:50.663 DEBUG 2480 --- [clientInboundChannel-2] org.springframework.web.SimpLogging      : Processing CONNECT session=hf1mnkt3
+2022-08-01 17:09:50.676 DEBUG 2480 --- [clientInboundChannel-5] org.springframework.web.SimpLogging      : Processing SUBSCRIBE /topic/chat/room/roomId1 id=sub-0 session=hf1mnkt3
+2022-08-01 17:09:50.682  INFO 2480 --- [restartedMain] com.ssafy.GroupCallApplication           : Started GroupCallApplication in 10.326 seconds (JVM running for 11.01)
+2022-08-01 17:09:51.020 DEBUG 2480 --- [clientInboundChannel-7] .WebSocketAnnotationMethodMessageHandler : Searching methods to handle SEND /app/chat/message session=hf1mnkt3, lookupDestination='/chat/message'
+2022-08-01 17:09:51.023 DEBUG 2480 --- [clientInboundChannel-7] .WebSocketAnnotationMethodMessageHandler : Invoking MessageController#enter[1 args]
+2022-08-01 17:09:51.248 DEBUG 2480 --- [clientInboundChannel-7] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/topic/chat/room/fb8eed6d-729c-4ddc-888a-51f2f8146731 session=null payload={"roomId":"fb8eed6d-729c-4ddc-888a-51f2f8146731","senderId":"myId","receiverId":...(truncated)
+2022-08-01 17:09:51.251 DEBUG 2480 --- [clientInboundChannel-7] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/topic/chat/wait/partnerId123 session=null payload={"roomId":"fb8eed6d-729c-4ddc-888a-51f2f8146731","senderId":"myId","receiverId":...(truncated)
+2022-08-01 17:09:55.451 DEBUG 2480 --- [clientInboundChannel-10] .WebSocketAnnotationMethodMessageHandler : Searching methods to handle SEND /app/chat/message session=hf1mnkt3, lookupDestination='/chat/message'
+2022-08-01 17:09:55.451 DEBUG 2480 --- [clientInboundChannel-10] .WebSocketAnnotationMethodMessageHandler : Invoking MessageController#enter[1 args]
+2022-08-01 17:09:55.469 DEBUG 2480 --- [clientInboundChannel-10] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/topic/chat/room/62b1c2a8-8f13-4e04-bec1-bae756ebffbc session=null payload={"roomId":"62b1c2a8-8f13-4e04-bec1-bae756ebffbc","senderId":"myId","receiverId":...(truncated)
+2022-08-01 17:09:55.469 DEBUG 2480 --- [clientInboundChannel-10] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/topic/chat/wait/partnerId123 session=null payload={"roomId":"62b1c2a8-8f13-4e04-bec1-bae756ebffbc","senderId":"myId","receiverId":...(truncated)
+2022-08-01 17:10:48.952  INFO 2480 --- [MessageBroker-3] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 1 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 12, active threads = 0, queued tasks = 0, completed tasks = 12], outboundChannel[pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 2, completed tasks = 14]
+2022-08-01 17:20:46.780 DEBUG 2480 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientOutboundChannel removed SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-08-01 17:20:46.780 DEBUG 2480 --- [SpringContextShutdownHook] s.w.s.s.t.s.WebSocketServerSockJsSession : Closing SockJS session hf1mnkt3 with CloseStatus[code=1001, reason=null]
+2022-08-01 17:20:46.781 DEBUG 2480 --- [SpringContextShutdownHook] o.s.w.s.adapter.NativeWebSocketSession   : Closing StandardWebSocketSession[id=16285b9e-e693-dc2b-c37b-e1fa92ecfa1e, uri=ws://192.168.100.52:8080/ws/chat/133/hf1mnkt3/websocket]
+2022-08-01 17:20:46.781 DEBUG 2480 --- [SpringContextShutdownHook] s.w.s.h.LoggingWebSocketHandlerDecorator : WebSocketServerSockJsSession[id=hf1mnkt3] closed with CloseStatus[code=1001, reason=null]
+2022-08-01 17:20:46.781 DEBUG 2480 --- [SpringContextShutdownHook] o.s.w.s.m.SubProtocolWebSocketHandler    : Clearing session hf1mnkt3
+2022-08-01 17:20:46.782 DEBUG 2480 --- [clientInboundChannel-14] org.springframework.web.SimpLogging      : Processing DISCONNECT session=hf1mnkt3
+2022-08-01 17:20:46.783 DEBUG 2480 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-08-01 17:20:46.783  INFO 2480 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2022-08-01 17:20:46.783  INFO 2480 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4b27c7d6]]
+2022-08-01 17:20:46.783 DEBUG 2480 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4b27c7d6]
+2022-08-01 17:20:46.783 DEBUG 2480 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4b27c7d6]
+2022-08-01 17:20:46.783  INFO 2480 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2022-08-01 17:20:46.783 DEBUG 2480 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:20:46.783 DEBUG 2480 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:20:46.812  INFO 2480 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2022-08-01 17:20:46.819  INFO 2480 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2022-08-01 17:20:46.819  INFO 2480 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2022-08-01 17:20:46.819  INFO 2480 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2022-08-01 17:20:46.821  INFO 2480 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 17:20:46.826  INFO 2480 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-01 17:20:46.837  INFO 2480 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-01 17:20:52.216  INFO 7796 --- [restartedMain] com.ssafy.GroupCallApplication           : Starting GroupCallApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 7796 (C:\Users\multicampus\Desktop\stomp\S07P12C104\backend-java\out\production\classes started by multicampus in C:\Users\multicampus\Desktop\stomp\S07P12C104\backend-java)
+2022-08-01 17:20:52.230  INFO 7796 --- [restartedMain] com.ssafy.GroupCallApplication           : No active profile set, falling back to default profiles: default
+2022-08-01 17:20:52.335  INFO 7796 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-01 17:20:52.335  INFO 7796 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-01 17:20:54.387  INFO 7796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-01 17:20:54.507  INFO 7796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 3 JPA repository interfaces.
+2022-08-01 17:20:55.129  INFO 7796 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6dd03220' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 17:20:55.137  INFO 7796 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 17:20:56.005  INFO 7796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-01 17:20:56.017  INFO 7796 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-01 17:20:56.017  INFO 7796 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-08-01 17:20:56.140  INFO 7796 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-01 17:20:56.140  INFO 7796 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3803 ms
+2022-08-01 17:20:56.351  INFO 7796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-01 17:20:56.639  INFO 7796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-01 17:20:56.646  INFO 7796 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://127.0.0.1:3306/test'
+2022-08-01 17:20:56.742 DEBUG 7796 --- [restartedMain] o.s.web.filter.CharacterEncodingFilter   : Filter 'characterEncodingFilter' configured for use
+2022-08-01 17:20:56.742 DEBUG 7796 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'commonsRequestLoggingFilter' configured for use
+2022-08-01 17:20:56.911  INFO 7796 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-01 17:20:56.977  INFO 7796 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-08-01 17:20:57.145  INFO 7796 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-01 17:20:57.268  INFO 7796 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-08-01 17:20:57.974  INFO 7796 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-01 17:20:57.984  INFO 7796 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 17:20:58.004  INFO 7796 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-01 17:20:58.709  WARN 7796 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-01 17:20:58.818  INFO 7796 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2022-08-01 17:20:58.825  INFO 7796 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2022-08-01 17:20:58.826  INFO 7796 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2022-08-01 17:20:59.187 DEBUG 7796 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2022-08-01 17:20:59.281  INFO 7796 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-08-01 17:20:59.396  INFO 7796 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2022-08-01 17:20:59.450 DEBUG 7796 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/ws/chat/**] in 'stompWebSocketHandlerMapping'
+2022-08-01 17:20:59.516 DEBUG 7796 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.AuthController:
+	
+2022-08-01 17:20:59.516 DEBUG 7796 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.ChatApiController:
+	
+2022-08-01 17:20:59.516 DEBUG 7796 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.ChatRoomController:
+	
+2022-08-01 17:20:59.523 DEBUG 7796 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.MessageController:
+	{[MESSAGE],[/chat/message]}: enter(ChatMessage)
+2022-08-01 17:20:59.523 DEBUG 7796 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.UserController:
+	
+2022-08-01 17:20:59.524 DEBUG 7796 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.s.w.Swagger2ControllerWebMvc:
+	
+2022-08-01 17:20:59.524 DEBUG 7796 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.s.w.ApiResourceController:
+	
+2022-08-01 17:20:59.524 DEBUG 7796 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.o.w.OpenApiControllerWebMvc:
+	
+2022-08-01 17:20:59.525 DEBUG 7796 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	
+2022-08-01 17:20:59.791  INFO 7796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c445eda, org.springframework.security.web.context.SecurityContextPersistenceFilter@73f0d68b, org.springframework.security.web.header.HeaderWriterFilter@62f6de35, org.springframework.web.filter.CorsFilter@5e7bc9b8, org.springframework.security.web.authentication.logout.LogoutFilter@2f8a070e, com.ssafy.common.auth.JwtAuthenticationFilter@12e843f7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@58b448fb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32eaedf6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@546b76d0, org.springframework.security.web.session.SessionManagementFilter@300b0601, org.springframework.security.web.access.ExceptionTranslationFilter@38a70080, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@72ebe452]
+2022-08-01 17:20:59.912 DEBUG 7796 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-01 17:20:59.976 DEBUG 7796 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-08-01 17:20:59.994 DEBUG 7796 --- [restartedMain] o.s.w.s.c.annotation.WebMvcConfigurer    : Default resource handling disabled
+2022-08-01 17:21:00.489 DEBUG 7796 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/resources/**, /swagger-ui.html, /webjars/**, /css/**, /fonts/**, /icons/**, /img/**, /js/**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-08-01 17:21:00.504 DEBUG 7796 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-01 17:21:00.841  INFO 7796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-01 17:21:01.210 DEBUG 7796 --- [restartedMain] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-08-01 17:21:01.210 DEBUG 7796 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-08-01 17:21:01.210  INFO 7796 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2022-08-01 17:21:01.210 DEBUG 7796 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@25b32b76]
+2022-08-01 17:21:01.210 DEBUG 7796 --- [restartedMain] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@25b32b76]
+2022-08-01 17:21:01.211  INFO 7796 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@25b32b76]]
+2022-08-01 17:21:01.211  INFO 7796 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2022-08-01 17:21:01.211 DEBUG 7796 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:21:01.212 DEBUG 7796 --- [restartedMain] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:21:01.229  INFO 7796 --- [restartedMain] com.ssafy.GroupCallApplication           : Started GroupCallApplication in 9.778 seconds (JVM running for 10.543)
+2022-08-01 17:21:16.776  INFO 7796 --- [http-nio-192.168.100.52-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-01 17:21:16.777  INFO 7796 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-01 17:21:16.777 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-08-01 17:21:16.777 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-08-01 17:21:16.777 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-08-01 17:21:16.779 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@207fbaa3
+2022-08-01 17:21:16.780 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@61343edd
+2022-08-01 17:21:16.780 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-08-01 17:21:16.780  INFO 7796 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-08-01 17:21:16.832 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/ws/chat/info?t=1659342076680", parameters={masked}
+2022-08-01 17:21:16.840 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-1] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@33d83a8d
+2022-08-01 17:21:16.842 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-1] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://192.168.100.52:8080/ws/chat/info?t=1659342076680
+2022-08-01 17:21:16.845 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 17:21:16.862 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/ws/chat/461/e2t4bi4x/websocket", parameters={}
+2022-08-01 17:21:16.863 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-2] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@33d83a8d
+2022-08-01 17:21:16.864 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-2] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://192.168.100.52:8080/ws/chat/461/e2t4bi4x/websocket
+2022-08-01 17:21:16.916 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 101 SWITCHING_PROTOCOLS
+2022-08-01 17:21:16.944 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-2] s.w.s.h.LoggingWebSocketHandlerDecorator : New WebSocketServerSockJsSession[id=e2t4bi4x]
+2022-08-01 17:21:16.988 DEBUG 7796 --- [clientInboundChannel-2] org.springframework.web.SimpLogging      : Processing CONNECT session=e2t4bi4x
+2022-08-01 17:21:16.997 DEBUG 7796 --- [clientInboundChannel-5] org.springframework.web.SimpLogging      : Processing SUBSCRIBE /topic/chat/room/roomId1 id=sub-0 session=e2t4bi4x
+2022-08-01 17:21:19.805 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-4] s.w.s.h.LoggingWebSocketHandlerDecorator : WebSocketServerSockJsSession[id=e2t4bi4x] closed with CloseStatus[code=1000, reason=null]
+2022-08-01 17:21:19.806 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-4] o.s.w.s.m.SubProtocolWebSocketHandler    : Clearing session e2t4bi4x
+2022-08-01 17:21:19.807 DEBUG 7796 --- [clientInboundChannel-8] org.springframework.web.SimpLogging      : Processing DISCONNECT session=e2t4bi4x
+2022-08-01 17:21:19.808 DEBUG 7796 --- [clientOutboundChannel-2] o.s.w.s.m.SubProtocolWebSocketHandler    : No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={org.springframework.messaging.simp.SimpAttributes.COMPLETED=true}, simpSessionId=e2t4bi4x}], simpSessionId=e2t4bi4x}]
+2022-08-01 17:21:20.281 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/ws/chat/info?t=1659342080278", parameters={masked}
+2022-08-01 17:21:20.282 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-5] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@33d83a8d
+2022-08-01 17:21:20.283 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-5] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://192.168.100.52:8080/ws/chat/info?t=1659342080278
+2022-08-01 17:21:20.283 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 17:21:20.289 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/ws/chat/697/cto5degc/websocket", parameters={}
+2022-08-01 17:21:20.290 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-6] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@33d83a8d
+2022-08-01 17:21:20.291 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-6] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://192.168.100.52:8080/ws/chat/697/cto5degc/websocket
+2022-08-01 17:21:20.292 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 101 SWITCHING_PROTOCOLS
+2022-08-01 17:21:20.293 DEBUG 7796 --- [http-nio-192.168.100.52-8080-exec-6] s.w.s.h.LoggingWebSocketHandlerDecorator : New WebSocketServerSockJsSession[id=cto5degc]
+2022-08-01 17:21:20.296 DEBUG 7796 --- [clientInboundChannel-11] org.springframework.web.SimpLogging      : Processing CONNECT session=cto5degc
+2022-08-01 17:21:20.299 DEBUG 7796 --- [clientInboundChannel-14] org.springframework.web.SimpLogging      : Processing SUBSCRIBE /topic/chat/room/roomId1 id=sub-0 session=cto5degc
+2022-08-01 17:21:23.178 DEBUG 7796 --- [clientInboundChannel-16] .WebSocketAnnotationMethodMessageHandler : Searching methods to handle SEND /app/chat/message session=cto5degc, lookupDestination='/chat/message'
+2022-08-01 17:21:23.180 DEBUG 7796 --- [clientInboundChannel-16] .WebSocketAnnotationMethodMessageHandler : Invoking MessageController#enter[1 args]
+2022-08-01 17:21:23.368 DEBUG 7796 --- [clientInboundChannel-16] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/topic/chat/room/1234 session=null payload={"roomId":"1234","senderId":"myId","receiverId":"partnerId123","message":"ㅎㅇ...(truncated)
+2022-08-01 17:21:23.375 DEBUG 7796 --- [clientInboundChannel-16] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/topic/chat/wait/partnerId123 session=null payload={"roomId":"1234","senderId":"myId","receiverId":"partnerId123","message":"ㅎㅇ...(truncated)
+2022-08-01 17:21:26.873 DEBUG 7796 --- [MessageBroker-3] o.s.w.s.s.t.h.DefaultSockJsService       : Closed 1 sessions: [e2t4bi4x]
+2022-08-01 17:21:59.483  INFO 7796 --- [MessageBroker-10] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 18, active threads = 0, queued tasks = 0, completed tasks = 18], outboundChannel[pool size = 3, active threads = 0, queued tasks = 0, completed tasks = 3], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 2, completed tasks = 10]
+2022-08-01 17:22:01.015 DEBUG 7796 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientOutboundChannel removed SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-08-01 17:22:01.015 DEBUG 7796 --- [SpringContextShutdownHook] s.w.s.s.t.s.WebSocketServerSockJsSession : Closing SockJS session cto5degc with CloseStatus[code=1001, reason=null]
+2022-08-01 17:22:01.016 DEBUG 7796 --- [SpringContextShutdownHook] o.s.w.s.adapter.NativeWebSocketSession   : Closing StandardWebSocketSession[id=0d6b6e93-11cb-ec01-ae08-ad6c2d10741f, uri=ws://192.168.100.52:8080/ws/chat/697/cto5degc/websocket]
+2022-08-01 17:22:01.017 DEBUG 7796 --- [SpringContextShutdownHook] s.w.s.h.LoggingWebSocketHandlerDecorator : WebSocketServerSockJsSession[id=cto5degc] closed with CloseStatus[code=1001, reason=null]
+2022-08-01 17:22:01.017 DEBUG 7796 --- [SpringContextShutdownHook] o.s.w.s.m.SubProtocolWebSocketHandler    : Clearing session cto5degc
+2022-08-01 17:22:01.017 DEBUG 7796 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-08-01 17:22:01.018 DEBUG 7796 --- [clientInboundChannel-20] org.springframework.web.SimpLogging      : Processing DISCONNECT session=cto5degc
+2022-08-01 17:22:01.018  INFO 7796 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2022-08-01 17:22:01.018  INFO 7796 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@25b32b76]]
+2022-08-01 17:22:01.018 DEBUG 7796 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@25b32b76]
+2022-08-01 17:22:01.018 DEBUG 7796 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@25b32b76]
+2022-08-01 17:22:01.018  INFO 7796 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2022-08-01 17:22:01.019 DEBUG 7796 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:22:01.019 DEBUG 7796 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:22:01.068  INFO 7796 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2022-08-01 17:22:01.075  INFO 7796 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2022-08-01 17:22:01.075  INFO 7796 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2022-08-01 17:22:01.075  INFO 7796 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2022-08-01 17:22:01.079  INFO 7796 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 17:22:01.086  INFO 7796 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-01 17:22:01.099  INFO 7796 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-01 17:22:06.257  INFO 18104 --- [restartedMain] com.ssafy.GroupCallApplication           : Starting GroupCallApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 18104 (C:\Users\multicampus\Desktop\stomp\S07P12C104\backend-java\out\production\classes started by multicampus in C:\Users\multicampus\Desktop\stomp\S07P12C104\backend-java)
+2022-08-01 17:22:06.262  INFO 18104 --- [restartedMain] com.ssafy.GroupCallApplication           : No active profile set, falling back to default profiles: default
+2022-08-01 17:22:06.341  INFO 18104 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-01 17:22:06.341  INFO 18104 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-01 17:22:08.041  INFO 18104 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-01 17:22:08.171  INFO 18104 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 117 ms. Found 3 JPA repository interfaces.
+2022-08-01 17:22:08.828  INFO 18104 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4f16883d' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 17:22:08.834  INFO 18104 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 17:22:10.180  INFO 18104 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-01 17:22:10.199  INFO 18104 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-01 17:22:10.200  INFO 18104 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-08-01 17:22:10.388  INFO 18104 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-01 17:22:10.389  INFO 18104 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4047 ms
+2022-08-01 17:22:10.732  INFO 18104 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-01 17:22:11.130  INFO 18104 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-01 17:22:11.137  INFO 18104 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://127.0.0.1:3306/test'
+2022-08-01 17:22:11.229 DEBUG 18104 --- [restartedMain] o.s.web.filter.CharacterEncodingFilter   : Filter 'characterEncodingFilter' configured for use
+2022-08-01 17:22:11.229 DEBUG 18104 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'commonsRequestLoggingFilter' configured for use
+2022-08-01 17:22:11.387  INFO 18104 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-01 17:22:11.451  INFO 18104 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-08-01 17:22:11.652  INFO 18104 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-01 17:22:11.771  INFO 18104 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-08-01 17:22:12.497  INFO 18104 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-01 17:22:12.507  INFO 18104 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 17:22:12.525  INFO 18104 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-01 17:22:13.205  WARN 18104 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-01 17:22:13.320  INFO 18104 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2022-08-01 17:22:13.326  INFO 18104 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2022-08-01 17:22:13.328  INFO 18104 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2022-08-01 17:22:13.676 DEBUG 18104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2022-08-01 17:22:13.776  INFO 18104 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-08-01 17:22:13.853  INFO 18104 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2022-08-01 17:22:13.890 DEBUG 18104 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/ws/chat/**] in 'stompWebSocketHandlerMapping'
+2022-08-01 17:22:13.932 DEBUG 18104 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.AuthController:
+	
+2022-08-01 17:22:13.933 DEBUG 18104 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.ChatApiController:
+	
+2022-08-01 17:22:13.933 DEBUG 18104 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.ChatRoomController:
+	
+2022-08-01 17:22:13.936 DEBUG 18104 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.MessageController:
+	{[MESSAGE],[/chat/message]}: enter(ChatMessage)
+2022-08-01 17:22:13.937 DEBUG 18104 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.UserController:
+	
+2022-08-01 17:22:13.937 DEBUG 18104 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.s.w.Swagger2ControllerWebMvc:
+	
+2022-08-01 17:22:13.938 DEBUG 18104 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.s.w.ApiResourceController:
+	
+2022-08-01 17:22:13.938 DEBUG 18104 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.o.w.OpenApiControllerWebMvc:
+	
+2022-08-01 17:22:13.938 DEBUG 18104 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	
+2022-08-01 17:22:14.087  INFO 18104 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2d166723, org.springframework.security.web.context.SecurityContextPersistenceFilter@2c70345f, org.springframework.security.web.header.HeaderWriterFilter@5401cedb, org.springframework.web.filter.CorsFilter@23966e58, org.springframework.security.web.authentication.logout.LogoutFilter@13286900, com.ssafy.common.auth.JwtAuthenticationFilter@4e97d945, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33c08a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2a9dce35, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1e5f8ba8, org.springframework.security.web.session.SessionManagementFilter@8284fe7, org.springframework.security.web.access.ExceptionTranslationFilter@465313c3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@a85b289]
+2022-08-01 17:22:14.164 DEBUG 18104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-01 17:22:14.213 DEBUG 18104 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-08-01 17:22:14.226 DEBUG 18104 --- [restartedMain] o.s.w.s.c.annotation.WebMvcConfigurer    : Default resource handling disabled
+2022-08-01 17:22:14.571 DEBUG 18104 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/resources/**, /swagger-ui.html, /webjars/**, /css/**, /fonts/**, /icons/**, /img/**, /js/**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-08-01 17:22:14.583 DEBUG 18104 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-01 17:22:14.834  INFO 18104 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-01 17:22:15.128 DEBUG 18104 --- [restartedMain] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-08-01 17:22:15.128 DEBUG 18104 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-08-01 17:22:15.128  INFO 18104 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2022-08-01 17:22:15.129 DEBUG 18104 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a696ff4]
+2022-08-01 17:22:15.129 DEBUG 18104 --- [restartedMain] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a696ff4]
+2022-08-01 17:22:15.129  INFO 18104 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a696ff4]]
+2022-08-01 17:22:15.129  INFO 18104 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2022-08-01 17:22:15.130 DEBUG 18104 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:22:15.130 DEBUG 18104 --- [restartedMain] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:22:15.150  INFO 18104 --- [restartedMain] com.ssafy.GroupCallApplication           : Started GroupCallApplication in 9.442 seconds (JVM running for 10.139)
+2022-08-01 17:22:26.508 DEBUG 18104 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientOutboundChannel removed SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-08-01 17:22:26.508 DEBUG 18104 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-08-01 17:22:26.508  INFO 18104 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2022-08-01 17:22:26.508  INFO 18104 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a696ff4]]
+2022-08-01 17:22:26.508 DEBUG 18104 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a696ff4]
+2022-08-01 17:22:26.508 DEBUG 18104 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a696ff4]
+2022-08-01 17:22:26.508  INFO 18104 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2022-08-01 17:22:26.508 DEBUG 18104 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:22:26.508 DEBUG 18104 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:22:26.534  INFO 18104 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2022-08-01 17:22:26.538  INFO 18104 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2022-08-01 17:22:26.538  INFO 18104 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2022-08-01 17:22:26.538  INFO 18104 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2022-08-01 17:22:26.540  INFO 18104 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 17:22:26.546  INFO 18104 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-01 17:22:26.562  INFO 18104 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-01 17:22:32.337  INFO 21268 --- [restartedMain] com.ssafy.GroupCallApplication           : Starting GroupCallApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 21268 (C:\Users\multicampus\Desktop\stomp\S07P12C104\backend-java\out\production\classes started by multicampus in C:\Users\multicampus\Desktop\stomp\S07P12C104\backend-java)
+2022-08-01 17:22:32.343  INFO 21268 --- [restartedMain] com.ssafy.GroupCallApplication           : No active profile set, falling back to default profiles: default
+2022-08-01 17:22:32.452  INFO 21268 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-01 17:22:32.452  INFO 21268 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-01 17:22:34.172  INFO 21268 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-01 17:22:34.266  INFO 21268 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 3 JPA repository interfaces.
+2022-08-01 17:22:34.780  INFO 21268 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@67f37083' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 17:22:34.785  INFO 21268 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 17:22:35.678  INFO 21268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-01 17:22:35.689  INFO 21268 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-01 17:22:35.689  INFO 21268 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-08-01 17:22:35.800  INFO 21268 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-01 17:22:35.800  INFO 21268 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3347 ms
+2022-08-01 17:22:36.020  INFO 21268 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-01 17:22:36.310  INFO 21268 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-01 17:22:36.318  INFO 21268 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://127.0.0.1:3306/test'
+2022-08-01 17:22:36.410 DEBUG 21268 --- [restartedMain] o.s.web.filter.CharacterEncodingFilter   : Filter 'characterEncodingFilter' configured for use
+2022-08-01 17:22:36.411 DEBUG 21268 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'commonsRequestLoggingFilter' configured for use
+2022-08-01 17:22:36.577  INFO 21268 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-01 17:22:36.657  INFO 21268 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-08-01 17:22:36.844  INFO 21268 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-01 17:22:36.985  INFO 21268 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-08-01 17:22:37.725  INFO 21268 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-01 17:22:37.734  INFO 21268 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 17:22:37.751  INFO 21268 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-01 17:22:38.641  WARN 21268 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-01 17:22:38.768  INFO 21268 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2022-08-01 17:22:38.781  INFO 21268 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2022-08-01 17:22:38.784  INFO 21268 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2022-08-01 17:22:39.181 DEBUG 21268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2022-08-01 17:22:39.282  INFO 21268 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-08-01 17:22:39.368  INFO 21268 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2022-08-01 17:22:39.410 DEBUG 21268 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/ws/chat/**] in 'stompWebSocketHandlerMapping'
+2022-08-01 17:22:39.461 DEBUG 21268 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.AuthController:
+	
+2022-08-01 17:22:39.462 DEBUG 21268 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.ChatApiController:
+	
+2022-08-01 17:22:39.462 DEBUG 21268 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.ChatRoomController:
+	
+2022-08-01 17:22:39.466 DEBUG 21268 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.MessageController:
+	{[MESSAGE],[/chat/message]}: enter(ChatMessage)
+2022-08-01 17:22:39.466 DEBUG 21268 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.UserController:
+	
+2022-08-01 17:22:39.467 DEBUG 21268 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.s.w.Swagger2ControllerWebMvc:
+	
+2022-08-01 17:22:39.467 DEBUG 21268 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.s.w.ApiResourceController:
+	
+2022-08-01 17:22:39.467 DEBUG 21268 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.o.w.OpenApiControllerWebMvc:
+	
+2022-08-01 17:22:39.468 DEBUG 21268 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	
+2022-08-01 17:22:39.662  INFO 21268 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2d61fed3, org.springframework.security.web.context.SecurityContextPersistenceFilter@101fb724, org.springframework.security.web.header.HeaderWriterFilter@426ff23d, org.springframework.web.filter.CorsFilter@29b54c8c, org.springframework.security.web.authentication.logout.LogoutFilter@3fc24fe1, com.ssafy.common.auth.JwtAuthenticationFilter@1063ed92, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@157b04a8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4d2929f2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6224d9ee, org.springframework.security.web.session.SessionManagementFilter@6c39e944, org.springframework.security.web.access.ExceptionTranslationFilter@5d8243e0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7f0e8984]
+2022-08-01 17:22:39.756 DEBUG 21268 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-01 17:22:39.811 DEBUG 21268 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-08-01 17:22:39.824 DEBUG 21268 --- [restartedMain] o.s.w.s.c.annotation.WebMvcConfigurer    : Default resource handling disabled
+2022-08-01 17:22:40.226 DEBUG 21268 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/resources/**, /swagger-ui.html, /webjars/**, /css/**, /fonts/**, /icons/**, /img/**, /js/**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-08-01 17:22:40.241 DEBUG 21268 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-01 17:22:40.622  INFO 21268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-01 17:22:40.943  INFO 21268 --- [http-nio-192.168.100.52-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-01 17:22:40.943  INFO 21268 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-01 17:22:40.943 DEBUG 21268 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-08-01 17:22:40.943 DEBUG 21268 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-08-01 17:22:40.944 DEBUG 21268 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-08-01 17:22:40.946 DEBUG 21268 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7f79c456
+2022-08-01 17:22:40.946 DEBUG 21268 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@758f53a
+2022-08-01 17:22:40.946 DEBUG 21268 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-08-01 17:22:40.947  INFO 21268 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2022-08-01 17:22:40.988 DEBUG 21268 --- [restartedMain] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-08-01 17:22:40.989 DEBUG 21268 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-08-01 17:22:40.989  INFO 21268 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2022-08-01 17:22:40.989 DEBUG 21268 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2e927fc7]
+2022-08-01 17:22:40.989 DEBUG 21268 --- [restartedMain] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2e927fc7]
+2022-08-01 17:22:40.989  INFO 21268 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2e927fc7]]
+2022-08-01 17:22:40.990  INFO 21268 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2022-08-01 17:22:40.990 DEBUG 21268 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:22:40.990 DEBUG 21268 --- [restartedMain] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:22:41.001 DEBUG 21268 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/ws/chat/info?t=1659342160569", parameters={masked}
+2022-08-01 17:22:41.002  INFO 21268 --- [restartedMain] com.ssafy.GroupCallApplication           : Started GroupCallApplication in 9.426 seconds (JVM running for 10.632)
+2022-08-01 17:22:41.007 DEBUG 21268 --- [http-nio-192.168.100.52-8080-exec-1] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@113f421e
+2022-08-01 17:22:41.010 DEBUG 21268 --- [http-nio-192.168.100.52-8080-exec-1] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://192.168.100.52:8080/ws/chat/info?t=1659342160569
+2022-08-01 17:22:41.012 DEBUG 21268 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 17:22:41.024 DEBUG 21268 --- [http-nio-192.168.100.52-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/ws/chat/528/auefpg1v/websocket", parameters={}
+2022-08-01 17:22:41.025 DEBUG 21268 --- [http-nio-192.168.100.52-8080-exec-2] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@113f421e
+2022-08-01 17:22:41.025 DEBUG 21268 --- [http-nio-192.168.100.52-8080-exec-2] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://192.168.100.52:8080/ws/chat/528/auefpg1v/websocket
+2022-08-01 17:22:41.070 DEBUG 21268 --- [http-nio-192.168.100.52-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 101 SWITCHING_PROTOCOLS
+2022-08-01 17:22:41.092 DEBUG 21268 --- [http-nio-192.168.100.52-8080-exec-2] s.w.s.h.LoggingWebSocketHandlerDecorator : New WebSocketServerSockJsSession[id=auefpg1v]
+2022-08-01 17:22:41.133 DEBUG 21268 --- [clientInboundChannel-2] org.springframework.web.SimpLogging      : Processing CONNECT session=auefpg1v
+2022-08-01 17:22:41.142 DEBUG 21268 --- [clientInboundChannel-5] org.springframework.web.SimpLogging      : Processing SUBSCRIBE /topic/chat/room/roomId1 id=sub-0 session=auefpg1v
+2022-08-01 17:22:42.447 DEBUG 21268 --- [clientInboundChannel-7] .WebSocketAnnotationMethodMessageHandler : Searching methods to handle SEND /app/chat/message session=auefpg1v, lookupDestination='/chat/message'
+2022-08-01 17:22:42.449 DEBUG 21268 --- [clientInboundChannel-7] .WebSocketAnnotationMethodMessageHandler : Invoking MessageController#enter[1 args]
+2022-08-01 17:22:42.584 DEBUG 21268 --- [clientInboundChannel-7] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/topic/chat/room/1234 session=null payload={"roomId":"1234","senderId":"myId","receiverId":"partnerId123","message":"ㅎㅇ...(truncated)
+2022-08-01 17:23:20.518 DEBUG 21268 --- [clientInboundChannel-10] .WebSocketAnnotationMethodMessageHandler : Searching methods to handle SEND /app/chat/message session=auefpg1v, lookupDestination='/chat/message'
+2022-08-01 17:23:20.519 DEBUG 21268 --- [clientInboundChannel-10] .WebSocketAnnotationMethodMessageHandler : Invoking MessageController#enter[1 args]
+2022-08-01 17:23:20.535 DEBUG 21268 --- [clientInboundChannel-10] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/topic/chat/room/1234 session=null payload={"roomId":"1234","senderId":"myId","receiverId":"partnerId123","message":"헬스...(truncated)
+2022-08-01 17:23:39.446  INFO 21268 --- [MessageBroker-5] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 1 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 12, active threads = 0, queued tasks = 0, completed tasks = 12], outboundChannel[pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 2, completed tasks = 14]
+2022-08-01 17:26:14.180 DEBUG 21268 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientOutboundChannel removed SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-08-01 17:26:14.180 DEBUG 21268 --- [SpringContextShutdownHook] s.w.s.s.t.s.WebSocketServerSockJsSession : Closing SockJS session auefpg1v with CloseStatus[code=1001, reason=null]
+2022-08-01 17:26:14.181 DEBUG 21268 --- [SpringContextShutdownHook] o.s.w.s.adapter.NativeWebSocketSession   : Closing StandardWebSocketSession[id=f1b77971-bcc5-7296-1ef7-94cc61467342, uri=ws://192.168.100.52:8080/ws/chat/528/auefpg1v/websocket]
+2022-08-01 17:26:14.181 DEBUG 21268 --- [SpringContextShutdownHook] s.w.s.h.LoggingWebSocketHandlerDecorator : WebSocketServerSockJsSession[id=auefpg1v] closed with CloseStatus[code=1001, reason=null]
+2022-08-01 17:26:14.181 DEBUG 21268 --- [SpringContextShutdownHook] o.s.w.s.m.SubProtocolWebSocketHandler    : Clearing session auefpg1v
+2022-08-01 17:26:14.182 DEBUG 21268 --- [clientInboundChannel-14] org.springframework.web.SimpLogging      : Processing DISCONNECT session=auefpg1v
+2022-08-01 17:26:14.183 DEBUG 21268 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-08-01 17:26:14.183  INFO 21268 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2022-08-01 17:26:14.183  INFO 21268 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2e927fc7]]
+2022-08-01 17:26:14.183 DEBUG 21268 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2e927fc7]
+2022-08-01 17:26:14.183 DEBUG 21268 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2e927fc7]
+2022-08-01 17:26:14.183  INFO 21268 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2022-08-01 17:26:14.183 DEBUG 21268 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:26:14.183 DEBUG 21268 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:26:14.212  INFO 21268 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2022-08-01 17:26:14.218  INFO 21268 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2022-08-01 17:26:14.218  INFO 21268 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2022-08-01 17:26:14.218  INFO 21268 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2022-08-01 17:26:14.220  INFO 21268 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 17:26:14.225  INFO 21268 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-01 17:26:14.236  INFO 21268 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-01 17:26:20.436  INFO 20184 --- [restartedMain] com.ssafy.GroupCallApplication           : Starting GroupCallApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 20184 (C:\Users\multicampus\Desktop\stomp\S07P12C104\backend-java\out\production\classes started by multicampus in C:\Users\multicampus\Desktop\stomp\S07P12C104\backend-java)
+2022-08-01 17:26:20.440  INFO 20184 --- [restartedMain] com.ssafy.GroupCallApplication           : No active profile set, falling back to default profiles: default
+2022-08-01 17:26:20.507  INFO 20184 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-01 17:26:20.508  INFO 20184 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-01 17:26:21.863  INFO 20184 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-01 17:26:21.952  INFO 20184 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80 ms. Found 3 JPA repository interfaces.
+2022-08-01 17:26:22.379  INFO 20184 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@360182c' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 17:26:22.387  INFO 20184 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 17:26:23.692  INFO 20184 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-01 17:26:23.712  INFO 20184 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-01 17:26:23.713  INFO 20184 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-08-01 17:26:23.896  INFO 20184 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-01 17:26:23.896  INFO 20184 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3387 ms
+2022-08-01 17:26:24.180  INFO 20184 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-01 17:26:24.577  INFO 20184 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-01 17:26:24.587  INFO 20184 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://127.0.0.1:3306/test'
+2022-08-01 17:26:24.715 DEBUG 20184 --- [restartedMain] o.s.web.filter.CharacterEncodingFilter   : Filter 'characterEncodingFilter' configured for use
+2022-08-01 17:26:24.716 DEBUG 20184 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'commonsRequestLoggingFilter' configured for use
+2022-08-01 17:26:24.926  INFO 20184 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-01 17:26:25.017  INFO 20184 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-08-01 17:26:25.284  INFO 20184 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-01 17:26:25.476  INFO 20184 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-08-01 17:26:26.549  INFO 20184 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-01 17:26:26.557  INFO 20184 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 17:26:26.575  INFO 20184 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-01 17:26:27.287  WARN 20184 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-01 17:26:27.395  INFO 20184 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2022-08-01 17:26:27.403  INFO 20184 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2022-08-01 17:26:27.405  INFO 20184 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2022-08-01 17:26:27.765 DEBUG 20184 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2022-08-01 17:26:27.868  INFO 20184 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-08-01 17:26:27.949  INFO 20184 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2022-08-01 17:26:27.993 DEBUG 20184 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/ws/chat/**] in 'stompWebSocketHandlerMapping'
+2022-08-01 17:26:28.041 DEBUG 20184 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.AuthController:
+	
+2022-08-01 17:26:28.041 DEBUG 20184 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.ChatApiController:
+	
+2022-08-01 17:26:28.041 DEBUG 20184 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.ChatRoomController:
+	
+2022-08-01 17:26:28.045 DEBUG 20184 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.MessageController:
+	{[MESSAGE],[/chat/message]}: enter(ChatMessage)
+2022-08-01 17:26:28.046 DEBUG 20184 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.UserController:
+	
+2022-08-01 17:26:28.046 DEBUG 20184 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.s.w.Swagger2ControllerWebMvc:
+	
+2022-08-01 17:26:28.046 DEBUG 20184 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.s.w.ApiResourceController:
+	
+2022-08-01 17:26:28.046 DEBUG 20184 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.o.w.OpenApiControllerWebMvc:
+	
+2022-08-01 17:26:28.047 DEBUG 20184 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	
+2022-08-01 17:26:28.212  INFO 20184 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@45206fd8, org.springframework.security.web.context.SecurityContextPersistenceFilter@508f0c09, org.springframework.security.web.header.HeaderWriterFilter@7db9805, org.springframework.web.filter.CorsFilter@d130791, org.springframework.security.web.authentication.logout.LogoutFilter@70e7f169, com.ssafy.common.auth.JwtAuthenticationFilter@3eee07f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5987a803, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@10f9c28a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@148a58ad, org.springframework.security.web.session.SessionManagementFilter@756a8269, org.springframework.security.web.access.ExceptionTranslationFilter@529c813e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2c46bf60]
+2022-08-01 17:26:28.292 DEBUG 20184 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-01 17:26:28.346 DEBUG 20184 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-08-01 17:26:28.361 DEBUG 20184 --- [restartedMain] o.s.w.s.c.annotation.WebMvcConfigurer    : Default resource handling disabled
+2022-08-01 17:26:28.708 DEBUG 20184 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/resources/**, /swagger-ui.html, /webjars/**, /css/**, /fonts/**, /icons/**, /img/**, /js/**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-08-01 17:26:28.717 DEBUG 20184 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-01 17:26:28.966  INFO 20184 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-01 17:26:29.220 DEBUG 20184 --- [restartedMain] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-08-01 17:26:29.220 DEBUG 20184 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-08-01 17:26:29.220  INFO 20184 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2022-08-01 17:26:29.221 DEBUG 20184 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@584dee49]
+2022-08-01 17:26:29.221 DEBUG 20184 --- [restartedMain] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@584dee49]
+2022-08-01 17:26:29.221  INFO 20184 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@584dee49]]
+2022-08-01 17:26:29.221  INFO 20184 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2022-08-01 17:26:29.221 DEBUG 20184 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:26:29.221 DEBUG 20184 --- [restartedMain] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:26:29.234  INFO 20184 --- [restartedMain] com.ssafy.GroupCallApplication           : Started GroupCallApplication in 9.327 seconds (JVM running for 10.053)
+2022-08-01 17:26:36.218  INFO 20184 --- [http-nio-192.168.100.52-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-01 17:26:36.219  INFO 20184 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-01 17:26:36.219 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-08-01 17:26:36.219 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-08-01 17:26:36.219 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-08-01 17:26:36.221 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@dcf11c5
+2022-08-01 17:26:36.222 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@59a8db83
+2022-08-01 17:26:36.222 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-08-01 17:26:36.222  INFO 20184 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-08-01 17:26:36.270 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/ws/chat/info?t=1659342396138", parameters={masked}
+2022-08-01 17:26:36.279 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-1] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@29ba55b1
+2022-08-01 17:26:36.283 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-1] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://192.168.100.52:8080/ws/chat/info?t=1659342396138
+2022-08-01 17:26:36.285 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 17:26:36.302 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/ws/chat/605/kyggnv03/websocket", parameters={}
+2022-08-01 17:26:36.304 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-2] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@29ba55b1
+2022-08-01 17:26:36.305 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-2] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://192.168.100.52:8080/ws/chat/605/kyggnv03/websocket
+2022-08-01 17:26:36.357 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 101 SWITCHING_PROTOCOLS
+2022-08-01 17:26:36.386 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-2] s.w.s.h.LoggingWebSocketHandlerDecorator : New WebSocketServerSockJsSession[id=kyggnv03]
+2022-08-01 17:26:36.428 DEBUG 20184 --- [clientInboundChannel-2] org.springframework.web.SimpLogging      : Processing CONNECT session=kyggnv03
+2022-08-01 17:26:36.436 DEBUG 20184 --- [clientInboundChannel-5] org.springframework.web.SimpLogging      : Processing SUBSCRIBE /topic/chat/room/roomId1 id=sub-0 session=kyggnv03
+2022-08-01 17:26:40.949 DEBUG 20184 --- [clientInboundChannel-7] .WebSocketAnnotationMethodMessageHandler : Searching methods to handle SEND /app/chat/message session=kyggnv03, lookupDestination='/chat/message'
+2022-08-01 17:26:40.951 DEBUG 20184 --- [clientInboundChannel-7] .WebSocketAnnotationMethodMessageHandler : Invoking MessageController#enter[1 args]
+2022-08-01 17:26:41.133  WARN 20184 --- [clientInboundChannel-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1062, SQLState: 23000
+2022-08-01 17:26:41.133 ERROR 20184 --- [clientInboundChannel-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry '1234' for key 'chat_message.PRIMARY'
+2022-08-01 17:26:41.142 DEBUG 20184 --- [clientInboundChannel-7] .WebSocketAnnotationMethodMessageHandler : Searching methods to handle DataIntegrityViolationException
+2022-08-01 17:26:41.149 ERROR 20184 --- [clientInboundChannel-7] .WebSocketAnnotationMethodMessageHandler : Unhandled exception from message handler method
+
+org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [chat_message.PRIMARY]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:276) ~[spring-orm-5.3.6.jar:5.3.6]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233) ~[spring-orm-5.3.6.jar:5.3.6]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:566) ~[spring-orm-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:654) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:407) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.6.jar:5.3.6]
+	at com.sun.proxy.$Proxy142.save(Unknown Source) ~[na:na]
+	at com.ssafy.api.controller.MessageController.saveMessage(MessageController.java:122) ~[classes/:na]
+	at com.ssafy.api.controller.MessageController.enter(MessageController.java:43) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_192]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171) ~[spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120) ~[spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565) [spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511) [spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94) [spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520) [spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454) [spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144) [spring-messaging-5.3.6.jar:5.3.6]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_192]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:59) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3297) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3824) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_192]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:345) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:93) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1362) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:453) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3212) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2380) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-5.3.6.jar:5.3.6]
+	... 31 common frames omitted
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1234' for key 'chat_message.PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.5.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	... 51 common frames omitted
+
+2022-08-01 17:27:00.672 DEBUG 20184 --- [clientInboundChannel-10] .WebSocketAnnotationMethodMessageHandler : Searching methods to handle SEND /app/chat/message session=kyggnv03, lookupDestination='/chat/message'
+2022-08-01 17:27:00.673 DEBUG 20184 --- [clientInboundChannel-10] .WebSocketAnnotationMethodMessageHandler : Invoking MessageController#enter[1 args]
+2022-08-01 17:27:00.692  WARN 20184 --- [clientInboundChannel-10] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1062, SQLState: 23000
+2022-08-01 17:27:00.692 ERROR 20184 --- [clientInboundChannel-10] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry '1234' for key 'chat_message.PRIMARY'
+2022-08-01 17:27:00.693 DEBUG 20184 --- [clientInboundChannel-10] .WebSocketAnnotationMethodMessageHandler : Searching methods to handle DataIntegrityViolationException
+2022-08-01 17:27:00.694 ERROR 20184 --- [clientInboundChannel-10] .WebSocketAnnotationMethodMessageHandler : Unhandled exception from message handler method
+
+org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [chat_message.PRIMARY]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:276) ~[spring-orm-5.3.6.jar:5.3.6]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233) ~[spring-orm-5.3.6.jar:5.3.6]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:566) ~[spring-orm-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:654) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:407) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.6.jar:5.3.6]
+	at com.sun.proxy.$Proxy142.save(Unknown Source) ~[na:na]
+	at com.ssafy.api.controller.MessageController.saveMessage(MessageController.java:122) ~[classes/:na]
+	at com.ssafy.api.controller.MessageController.enter(MessageController.java:43) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_192]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171) ~[spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120) ~[spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565) [spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511) [spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94) [spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520) [spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454) [spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144) [spring-messaging-5.3.6.jar:5.3.6]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_192]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:59) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3297) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3824) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_192]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:345) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:93) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1362) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:453) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3212) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2380) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-5.3.6.jar:5.3.6]
+	... 31 common frames omitted
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1234' for key 'chat_message.PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.5.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	... 51 common frames omitted
+
+2022-08-01 17:27:28.012  INFO 20184 --- [MessageBroker-5] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 1 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 12, active threads = 0, queued tasks = 0, completed tasks = 12], outboundChannel[pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 2, completed tasks = 13]
+2022-08-01 17:28:18.071 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-7] s.w.s.h.LoggingWebSocketHandlerDecorator : WebSocketServerSockJsSession[id=kyggnv03] closed with CloseStatus[code=1000, reason=null]
+2022-08-01 17:28:18.071 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-7] o.s.w.s.m.SubProtocolWebSocketHandler    : Clearing session kyggnv03
+2022-08-01 17:28:18.073 DEBUG 20184 --- [clientInboundChannel-14] org.springframework.web.SimpLogging      : Processing DISCONNECT session=kyggnv03
+2022-08-01 17:28:18.074 DEBUG 20184 --- [clientOutboundChannel-2] o.s.w.s.m.SubProtocolWebSocketHandler    : No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={org.springframework.messaging.simp.SimpAttributes.COMPLETED=true}, simpSessionId=kyggnv03}], simpSessionId=kyggnv03}]
+2022-08-01 17:28:18.390 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/ws/chat/info?t=1659342498387", parameters={masked}
+2022-08-01 17:28:18.392 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-8] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@29ba55b1
+2022-08-01 17:28:18.392 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-8] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://192.168.100.52:8080/ws/chat/info?t=1659342498387
+2022-08-01 17:28:18.392 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 17:28:18.400 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/ws/chat/731/auj5ntlw/websocket", parameters={}
+2022-08-01 17:28:18.401 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-9] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@29ba55b1
+2022-08-01 17:28:18.401 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-9] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://192.168.100.52:8080/ws/chat/731/auj5ntlw/websocket
+2022-08-01 17:28:18.403 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 101 SWITCHING_PROTOCOLS
+2022-08-01 17:28:18.404 DEBUG 20184 --- [http-nio-192.168.100.52-8080-exec-9] s.w.s.h.LoggingWebSocketHandlerDecorator : New WebSocketServerSockJsSession[id=auj5ntlw]
+2022-08-01 17:28:18.407 DEBUG 20184 --- [clientInboundChannel-17] org.springframework.web.SimpLogging      : Processing CONNECT session=auj5ntlw
+2022-08-01 17:28:18.412 DEBUG 20184 --- [clientInboundChannel-20] org.springframework.web.SimpLogging      : Processing SUBSCRIBE /topic/chat/room/roomId1 id=sub-0 session=auj5ntlw
+2022-08-01 17:28:23.689 DEBUG 20184 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientOutboundChannel removed SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-08-01 17:28:23.689 DEBUG 20184 --- [SpringContextShutdownHook] s.w.s.s.t.s.WebSocketServerSockJsSession : Closing SockJS session auj5ntlw with CloseStatus[code=1001, reason=null]
+2022-08-01 17:28:23.689 DEBUG 20184 --- [SpringContextShutdownHook] o.s.w.s.adapter.NativeWebSocketSession   : Closing StandardWebSocketSession[id=f8489daf-1b2f-cdb7-1548-48c3a370dade, uri=ws://192.168.100.52:8080/ws/chat/731/auj5ntlw/websocket]
+2022-08-01 17:28:23.690 DEBUG 20184 --- [SpringContextShutdownHook] s.w.s.h.LoggingWebSocketHandlerDecorator : WebSocketServerSockJsSession[id=auj5ntlw] closed with CloseStatus[code=1001, reason=null]
+2022-08-01 17:28:23.690 DEBUG 20184 --- [SpringContextShutdownHook] o.s.w.s.m.SubProtocolWebSocketHandler    : Clearing session auj5ntlw
+2022-08-01 17:28:23.691 DEBUG 20184 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-08-01 17:28:23.691 DEBUG 20184 --- [clientInboundChannel-23] org.springframework.web.SimpLogging      : Processing DISCONNECT session=auj5ntlw
+2022-08-01 17:28:23.691  INFO 20184 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2022-08-01 17:28:23.691  INFO 20184 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@584dee49]]
+2022-08-01 17:28:23.691 DEBUG 20184 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@584dee49]
+2022-08-01 17:28:23.691 DEBUG 20184 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@584dee49]
+2022-08-01 17:28:23.691  INFO 20184 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2022-08-01 17:28:23.692 DEBUG 20184 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:28:23.692 DEBUG 20184 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:28:23.723  INFO 20184 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2022-08-01 17:28:23.727  INFO 20184 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2022-08-01 17:28:23.728  INFO 20184 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2022-08-01 17:28:23.728  INFO 20184 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2022-08-01 17:28:23.731  INFO 20184 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 17:28:23.736  INFO 20184 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-01 17:28:23.745  INFO 20184 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-01 17:28:32.070  INFO 12520 --- [restartedMain] com.ssafy.GroupCallApplication           : Starting GroupCallApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 12520 (C:\Users\multicampus\Desktop\stomp\S07P12C104\backend-java\out\production\classes started by multicampus in C:\Users\multicampus\Desktop\stomp\S07P12C104\backend-java)
+2022-08-01 17:28:32.075  INFO 12520 --- [restartedMain] com.ssafy.GroupCallApplication           : No active profile set, falling back to default profiles: default
+2022-08-01 17:28:32.145  INFO 12520 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-01 17:28:32.145  INFO 12520 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-01 17:28:33.672  INFO 12520 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-01 17:28:33.758  INFO 12520 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 3 JPA repository interfaces.
+2022-08-01 17:28:34.360  INFO 12520 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@360182c' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 17:28:34.369  INFO 12520 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 17:28:35.782  INFO 12520 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-01 17:28:35.800  INFO 12520 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-01 17:28:35.801  INFO 12520 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-08-01 17:28:35.979  INFO 12520 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-01 17:28:35.979  INFO 12520 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3833 ms
+2022-08-01 17:28:36.296  INFO 12520 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-01 17:28:36.731  INFO 12520 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-01 17:28:36.742  INFO 12520 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://127.0.0.1:3306/test'
+2022-08-01 17:28:36.885 DEBUG 12520 --- [restartedMain] o.s.web.filter.CharacterEncodingFilter   : Filter 'characterEncodingFilter' configured for use
+2022-08-01 17:28:36.887 DEBUG 12520 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'commonsRequestLoggingFilter' configured for use
+2022-08-01 17:28:37.093  INFO 12520 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-01 17:28:37.184  INFO 12520 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-08-01 17:28:37.424  INFO 12520 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-01 17:28:37.619  INFO 12520 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-08-01 17:28:38.454  INFO 12520 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-01 17:28:38.465  INFO 12520 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 17:28:38.482  INFO 12520 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-01 17:28:39.213  WARN 12520 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-01 17:28:39.330  INFO 12520 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2022-08-01 17:28:39.337  INFO 12520 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2022-08-01 17:28:39.339  INFO 12520 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2022-08-01 17:28:39.687 DEBUG 12520 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2022-08-01 17:28:39.786  INFO 12520 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-08-01 17:28:39.861  INFO 12520 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2022-08-01 17:28:39.896 DEBUG 12520 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/ws/chat/**] in 'stompWebSocketHandlerMapping'
+2022-08-01 17:28:39.941 DEBUG 12520 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.AuthController:
+	
+2022-08-01 17:28:39.942 DEBUG 12520 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.ChatApiController:
+	
+2022-08-01 17:28:39.942 DEBUG 12520 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.ChatRoomController:
+	
+2022-08-01 17:28:39.946 DEBUG 12520 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.MessageController:
+	{[MESSAGE],[/chat/message]}: enter(ChatMessage)
+2022-08-01 17:28:39.946 DEBUG 12520 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.UserController:
+	
+2022-08-01 17:28:39.947 DEBUG 12520 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.s.w.Swagger2ControllerWebMvc:
+	
+2022-08-01 17:28:39.947 DEBUG 12520 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.s.w.ApiResourceController:
+	
+2022-08-01 17:28:39.947 DEBUG 12520 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.o.w.OpenApiControllerWebMvc:
+	
+2022-08-01 17:28:39.948 DEBUG 12520 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	
+2022-08-01 17:28:40.124  INFO 12520 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c6e94c9, org.springframework.security.web.context.SecurityContextPersistenceFilter@4263ffbf, org.springframework.security.web.header.HeaderWriterFilter@442f674e, org.springframework.web.filter.CorsFilter@632a223a, org.springframework.security.web.authentication.logout.LogoutFilter@785f14ab, com.ssafy.common.auth.JwtAuthenticationFilter@5c8159a3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@13077cfb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@45ffb34f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7aed1930, org.springframework.security.web.session.SessionManagementFilter@14ef3349, org.springframework.security.web.access.ExceptionTranslationFilter@4c81c6d7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3edfae2c]
+2022-08-01 17:28:40.217 DEBUG 12520 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-01 17:28:40.274 DEBUG 12520 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-08-01 17:28:40.288 DEBUG 12520 --- [restartedMain] o.s.w.s.c.annotation.WebMvcConfigurer    : Default resource handling disabled
+2022-08-01 17:28:40.622 DEBUG 12520 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/resources/**, /swagger-ui.html, /webjars/**, /css/**, /fonts/**, /icons/**, /img/**, /js/**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-08-01 17:28:40.633 DEBUG 12520 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-01 17:28:40.894  INFO 12520 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-01 17:28:41.161 DEBUG 12520 --- [restartedMain] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-08-01 17:28:41.162 DEBUG 12520 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-08-01 17:28:41.162  INFO 12520 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2022-08-01 17:28:41.162 DEBUG 12520 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@767c30a4]
+2022-08-01 17:28:41.162 DEBUG 12520 --- [restartedMain] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@767c30a4]
+2022-08-01 17:28:41.162  INFO 12520 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@767c30a4]]
+2022-08-01 17:28:41.163  INFO 12520 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2022-08-01 17:28:41.163 DEBUG 12520 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:28:41.163 DEBUG 12520 --- [restartedMain] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:28:41.174  INFO 12520 --- [restartedMain] com.ssafy.GroupCallApplication           : Started GroupCallApplication in 9.616 seconds (JVM running for 10.473)
+2022-08-01 17:29:39.927  INFO 12520 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2022-08-01 17:30:07.193 DEBUG 12520 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientOutboundChannel removed SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-08-01 17:30:07.194 DEBUG 12520 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-08-01 17:30:07.194  INFO 12520 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2022-08-01 17:30:07.194  INFO 12520 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@767c30a4]]
+2022-08-01 17:30:07.195 DEBUG 12520 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@767c30a4]
+2022-08-01 17:30:07.195 DEBUG 12520 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@767c30a4]
+2022-08-01 17:30:07.195  INFO 12520 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2022-08-01 17:30:07.195 DEBUG 12520 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:30:07.195 DEBUG 12520 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:30:07.221  INFO 12520 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2022-08-01 17:30:07.226  INFO 12520 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2022-08-01 17:30:07.226  INFO 12520 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2022-08-01 17:30:07.226  INFO 12520 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2022-08-01 17:30:07.228  INFO 12520 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 17:30:07.233  INFO 12520 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-01 17:30:07.243  INFO 12520 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-01 17:30:13.717  INFO 10640 --- [restartedMain] com.ssafy.GroupCallApplication           : Starting GroupCallApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 10640 (C:\Users\multicampus\Desktop\stomp\S07P12C104\backend-java\out\production\classes started by multicampus in C:\Users\multicampus\Desktop\stomp\S07P12C104\backend-java)
+2022-08-01 17:30:13.721  INFO 10640 --- [restartedMain] com.ssafy.GroupCallApplication           : No active profile set, falling back to default profiles: default
+2022-08-01 17:30:13.791  INFO 10640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-01 17:30:13.791  INFO 10640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-01 17:30:15.118  INFO 10640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-01 17:30:15.202  INFO 10640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 3 JPA repository interfaces.
+2022-08-01 17:30:15.611  INFO 10640 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@327fe185' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 17:30:15.615  INFO 10640 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 17:30:16.500  INFO 10640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-01 17:30:16.512  INFO 10640 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-01 17:30:16.512  INFO 10640 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-08-01 17:30:16.628  INFO 10640 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-01 17:30:16.628  INFO 10640 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2837 ms
+2022-08-01 17:30:16.827  INFO 10640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-01 17:30:17.092  INFO 10640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-01 17:30:17.100  INFO 10640 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://127.0.0.1:3306/test'
+2022-08-01 17:30:17.187 DEBUG 10640 --- [restartedMain] o.s.web.filter.CharacterEncodingFilter   : Filter 'characterEncodingFilter' configured for use
+2022-08-01 17:30:17.188 DEBUG 10640 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'commonsRequestLoggingFilter' configured for use
+2022-08-01 17:30:17.334  INFO 10640 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-01 17:30:17.397  INFO 10640 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-08-01 17:30:17.580  INFO 10640 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-01 17:30:17.819  INFO 10640 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-08-01 17:30:19.046  INFO 10640 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-01 17:30:19.061  INFO 10640 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 17:30:19.092  INFO 10640 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-01 17:30:20.178  WARN 10640 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-01 17:30:20.328  INFO 10640 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2022-08-01 17:30:20.336  INFO 10640 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2022-08-01 17:30:20.339  INFO 10640 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2022-08-01 17:30:20.833 DEBUG 10640 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2022-08-01 17:30:20.955  INFO 10640 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-08-01 17:30:21.057  INFO 10640 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2022-08-01 17:30:21.110 DEBUG 10640 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/ws/chat/**] in 'stompWebSocketHandlerMapping'
+2022-08-01 17:30:21.182 DEBUG 10640 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.AuthController:
+	
+2022-08-01 17:30:21.183 DEBUG 10640 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.ChatApiController:
+	
+2022-08-01 17:30:21.183 DEBUG 10640 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.ChatRoomController:
+	
+2022-08-01 17:30:21.189 DEBUG 10640 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.MessageController:
+	{[MESSAGE],[/chat/message]}: enter(ChatMessage)
+2022-08-01 17:30:21.190 DEBUG 10640 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.UserController:
+	
+2022-08-01 17:30:21.190 DEBUG 10640 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.s.w.Swagger2ControllerWebMvc:
+	
+2022-08-01 17:30:21.190 DEBUG 10640 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.s.w.ApiResourceController:
+	
+2022-08-01 17:30:21.191 DEBUG 10640 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.o.w.OpenApiControllerWebMvc:
+	
+2022-08-01 17:30:21.192 DEBUG 10640 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	
+2022-08-01 17:30:21.418  INFO 10640 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61ac399c, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e63bf83, org.springframework.security.web.header.HeaderWriterFilter@2fe6b5e, org.springframework.web.filter.CorsFilter@3b1b1299, org.springframework.security.web.authentication.logout.LogoutFilter@c03b10b, com.ssafy.common.auth.JwtAuthenticationFilter@69d15871, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@b99577d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a978694, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@488a8307, org.springframework.security.web.session.SessionManagementFilter@6d7de39, org.springframework.security.web.access.ExceptionTranslationFilter@3023825e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5d3e5368]
+2022-08-01 17:30:21.528 DEBUG 10640 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-01 17:30:21.579 DEBUG 10640 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-08-01 17:30:21.596 DEBUG 10640 --- [restartedMain] o.s.w.s.c.annotation.WebMvcConfigurer    : Default resource handling disabled
+2022-08-01 17:30:21.944 DEBUG 10640 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/resources/**, /swagger-ui.html, /webjars/**, /css/**, /fonts/**, /icons/**, /img/**, /js/**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-08-01 17:30:21.954 DEBUG 10640 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-01 17:30:22.199  INFO 10640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-01 17:30:22.450 DEBUG 10640 --- [restartedMain] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-08-01 17:30:22.450 DEBUG 10640 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-08-01 17:30:22.450  INFO 10640 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2022-08-01 17:30:22.451 DEBUG 10640 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@58c63ef8]
+2022-08-01 17:30:22.451 DEBUG 10640 --- [restartedMain] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@58c63ef8]
+2022-08-01 17:30:22.451  INFO 10640 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@58c63ef8]]
+2022-08-01 17:30:22.451  INFO 10640 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2022-08-01 17:30:22.451 DEBUG 10640 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:30:22.451 DEBUG 10640 --- [restartedMain] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:30:22.463  INFO 10640 --- [restartedMain] com.ssafy.GroupCallApplication           : Started GroupCallApplication in 9.422 seconds (JVM running for 10.566)
+2022-08-01 17:30:28.932  INFO 10640 --- [http-nio-192.168.100.52-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-01 17:30:28.932  INFO 10640 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-01 17:30:28.932 DEBUG 10640 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-08-01 17:30:28.932 DEBUG 10640 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-08-01 17:30:28.933 DEBUG 10640 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-08-01 17:30:28.934 DEBUG 10640 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@170682b3
+2022-08-01 17:30:28.935 DEBUG 10640 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@607ffcf5
+2022-08-01 17:30:28.935 DEBUG 10640 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-08-01 17:30:28.935  INFO 10640 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-08-01 17:30:28.987 DEBUG 10640 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/ws/chat/info?t=1659342628844", parameters={masked}
+2022-08-01 17:30:28.995 DEBUG 10640 --- [http-nio-192.168.100.52-8080-exec-1] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@5c55cdc
+2022-08-01 17:30:28.997 DEBUG 10640 --- [http-nio-192.168.100.52-8080-exec-1] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://192.168.100.52:8080/ws/chat/info?t=1659342628844
+2022-08-01 17:30:29.000 DEBUG 10640 --- [http-nio-192.168.100.52-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 17:30:29.024 DEBUG 10640 --- [http-nio-192.168.100.52-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/ws/chat/094/dzslsfiy/websocket", parameters={}
+2022-08-01 17:30:29.024 DEBUG 10640 --- [http-nio-192.168.100.52-8080-exec-2] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@5c55cdc
+2022-08-01 17:30:29.026 DEBUG 10640 --- [http-nio-192.168.100.52-8080-exec-2] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://192.168.100.52:8080/ws/chat/094/dzslsfiy/websocket
+2022-08-01 17:30:29.087 DEBUG 10640 --- [http-nio-192.168.100.52-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 101 SWITCHING_PROTOCOLS
+2022-08-01 17:30:29.114 DEBUG 10640 --- [http-nio-192.168.100.52-8080-exec-2] s.w.s.h.LoggingWebSocketHandlerDecorator : New WebSocketServerSockJsSession[id=dzslsfiy]
+2022-08-01 17:30:29.156 DEBUG 10640 --- [clientInboundChannel-2] org.springframework.web.SimpLogging      : Processing CONNECT session=dzslsfiy
+2022-08-01 17:30:29.165 DEBUG 10640 --- [clientInboundChannel-5] org.springframework.web.SimpLogging      : Processing SUBSCRIBE /topic/chat/room/roomId1 id=sub-0 session=dzslsfiy
+2022-08-01 17:30:32.480 DEBUG 10640 --- [clientInboundChannel-7] .WebSocketAnnotationMethodMessageHandler : Searching methods to handle SEND /app/chat/message session=dzslsfiy, lookupDestination='/chat/message'
+2022-08-01 17:30:32.483 DEBUG 10640 --- [clientInboundChannel-7] .WebSocketAnnotationMethodMessageHandler : Invoking MessageController#enter[1 args]
+2022-08-01 17:30:32.669  WARN 10640 --- [clientInboundChannel-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1062, SQLState: 23000
+2022-08-01 17:30:32.670 ERROR 10640 --- [clientInboundChannel-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry '1234' for key 'chat_message.PRIMARY'
+2022-08-01 17:30:32.679 DEBUG 10640 --- [clientInboundChannel-7] .WebSocketAnnotationMethodMessageHandler : Searching methods to handle DataIntegrityViolationException
+2022-08-01 17:30:32.688 ERROR 10640 --- [clientInboundChannel-7] .WebSocketAnnotationMethodMessageHandler : Unhandled exception from message handler method
+
+org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [chat_message.PRIMARY]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:276) ~[spring-orm-5.3.6.jar:5.3.6]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233) ~[spring-orm-5.3.6.jar:5.3.6]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:566) ~[spring-orm-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:654) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:407) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.6.jar:5.3.6]
+	at com.sun.proxy.$Proxy142.save(Unknown Source) ~[na:na]
+	at com.ssafy.api.controller.MessageController.saveMessage(MessageController.java:122) ~[classes/:na]
+	at com.ssafy.api.controller.MessageController.enter(MessageController.java:43) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_192]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171) ~[spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120) ~[spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565) [spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511) [spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94) [spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520) [spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454) [spring-messaging-5.3.6.jar:5.3.6]
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144) [spring-messaging-5.3.6.jar:5.3.6]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_192]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:59) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3297) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3824) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_192]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:345) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:93) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1362) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:453) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3212) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2380) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-5.3.6.jar:5.3.6]
+	... 31 common frames omitted
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1234' for key 'chat_message.PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.5.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197) ~[hibernate-core-5.4.30.Final.jar:5.4.30.Final]
+	... 51 common frames omitted
+
+2022-08-01 17:31:21.137  INFO 10640 --- [MessageBroker-3] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 1 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 9, active threads = 0, queued tasks = 0, completed tasks = 9], outboundChannel[pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 2, completed tasks = 13]
+2022-08-01 17:31:57.794 DEBUG 10640 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientOutboundChannel removed SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-08-01 17:31:57.796 DEBUG 10640 --- [SpringContextShutdownHook] s.w.s.s.t.s.WebSocketServerSockJsSession : Closing SockJS session dzslsfiy with CloseStatus[code=1001, reason=null]
+2022-08-01 17:31:57.796 DEBUG 10640 --- [SpringContextShutdownHook] o.s.w.s.adapter.NativeWebSocketSession   : Closing StandardWebSocketSession[id=3ab0e57c-0052-b4bd-5a8a-2f89dde805c2, uri=ws://192.168.100.52:8080/ws/chat/094/dzslsfiy/websocket]
+2022-08-01 17:31:57.797 DEBUG 10640 --- [SpringContextShutdownHook] s.w.s.h.LoggingWebSocketHandlerDecorator : WebSocketServerSockJsSession[id=dzslsfiy] closed with CloseStatus[code=1001, reason=null]
+2022-08-01 17:31:57.797 DEBUG 10640 --- [SpringContextShutdownHook] o.s.w.s.m.SubProtocolWebSocketHandler    : Clearing session dzslsfiy
+2022-08-01 17:31:57.798 DEBUG 10640 --- [clientInboundChannel-11] org.springframework.web.SimpLogging      : Processing DISCONNECT session=dzslsfiy
+2022-08-01 17:31:57.798 DEBUG 10640 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-08-01 17:31:57.798  INFO 10640 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2022-08-01 17:31:57.798  INFO 10640 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@58c63ef8]]
+2022-08-01 17:31:57.798 DEBUG 10640 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@58c63ef8]
+2022-08-01 17:31:57.799 DEBUG 10640 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@58c63ef8]
+2022-08-01 17:31:57.799  INFO 10640 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2022-08-01 17:31:57.799 DEBUG 10640 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:31:57.799 DEBUG 10640 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:31:57.836  INFO 10640 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2022-08-01 17:31:57.932  INFO 10640 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2022-08-01 17:31:57.932  INFO 10640 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2022-08-01 17:31:57.933  INFO 10640 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2022-08-01 17:31:57.934  INFO 10640 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 17:31:57.941  INFO 10640 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-01 17:31:57.951  INFO 10640 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-01 17:32:01.328  INFO 17492 --- [restartedMain] com.ssafy.GroupCallApplication           : Starting GroupCallApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 17492 (C:\Users\multicampus\Desktop\stomp\S07P12C104\backend-java\out\production\classes started by multicampus in C:\Users\multicampus\Desktop\stomp\S07P12C104\backend-java)
+2022-08-01 17:32:01.334  INFO 17492 --- [restartedMain] com.ssafy.GroupCallApplication           : No active profile set, falling back to default profiles: default
+2022-08-01 17:32:01.440  INFO 17492 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-01 17:32:01.441  INFO 17492 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-01 17:32:03.451  INFO 17492 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-01 17:32:03.572  INFO 17492 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 3 JPA repository interfaces.
+2022-08-01 17:32:04.195  INFO 17492 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7832492' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 17:32:04.203  INFO 17492 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 17:32:05.428  INFO 17492 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-01 17:32:05.443  INFO 17492 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-01 17:32:05.443  INFO 17492 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-08-01 17:32:05.557  INFO 17492 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-01 17:32:05.557  INFO 17492 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4115 ms
+2022-08-01 17:32:05.780  INFO 17492 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-01 17:32:06.063  INFO 17492 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-01 17:32:06.070  INFO 17492 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://127.0.0.1:3306/test'
+2022-08-01 17:32:06.159 DEBUG 17492 --- [restartedMain] o.s.web.filter.CharacterEncodingFilter   : Filter 'characterEncodingFilter' configured for use
+2022-08-01 17:32:06.159 DEBUG 17492 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'commonsRequestLoggingFilter' configured for use
+2022-08-01 17:32:06.325  INFO 17492 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-01 17:32:06.426  INFO 17492 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-08-01 17:32:06.615  INFO 17492 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-01 17:32:06.740  INFO 17492 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-08-01 17:32:08.080  INFO 17492 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-01 17:32:08.089  INFO 17492 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 17:32:08.106  INFO 17492 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-01 17:32:08.863  WARN 17492 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-01 17:32:08.977  INFO 17492 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2022-08-01 17:32:08.987  INFO 17492 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2022-08-01 17:32:08.989  INFO 17492 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2022-08-01 17:32:09.451 DEBUG 17492 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2022-08-01 17:32:09.621  INFO 17492 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-08-01 17:32:09.749  INFO 17492 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2022-08-01 17:32:09.806 DEBUG 17492 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/ws/chat/**] in 'stompWebSocketHandlerMapping'
+2022-08-01 17:32:09.873 DEBUG 17492 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.AuthController:
+	
+2022-08-01 17:32:09.874 DEBUG 17492 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.ChatApiController:
+	
+2022-08-01 17:32:09.874 DEBUG 17492 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.ChatRoomController:
+	
+2022-08-01 17:32:09.881 DEBUG 17492 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.MessageController:
+	{[MESSAGE],[/chat/message]}: enter(ChatMessage)
+2022-08-01 17:32:09.882 DEBUG 17492 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.s.a.c.UserController:
+	
+2022-08-01 17:32:09.883 DEBUG 17492 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.s.w.Swagger2ControllerWebMvc:
+	
+2022-08-01 17:32:09.883 DEBUG 17492 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.s.w.ApiResourceController:
+	
+2022-08-01 17:32:09.883 DEBUG 17492 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	s.d.o.w.OpenApiControllerWebMvc:
+	
+2022-08-01 17:32:09.884 DEBUG 17492 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	
+2022-08-01 17:32:10.171  INFO 17492 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@53c39bcd, org.springframework.security.web.context.SecurityContextPersistenceFilter@108612bc, org.springframework.security.web.header.HeaderWriterFilter@8458872, org.springframework.web.filter.CorsFilter@4ec4e9c3, org.springframework.security.web.authentication.logout.LogoutFilter@37efcaf4, com.ssafy.common.auth.JwtAuthenticationFilter@7f388320, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@692859e1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54e4e39f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@b62d5fa, org.springframework.security.web.session.SessionManagementFilter@29297646, org.springframework.security.web.access.ExceptionTranslationFilter@23d19da8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@66408de1]
+2022-08-01 17:32:10.301 DEBUG 17492 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-01 17:32:10.370 DEBUG 17492 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-08-01 17:32:10.386 DEBUG 17492 --- [restartedMain] o.s.w.s.c.annotation.WebMvcConfigurer    : Default resource handling disabled
+2022-08-01 17:32:10.879 DEBUG 17492 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/resources/**, /swagger-ui.html, /webjars/**, /css/**, /fonts/**, /icons/**, /img/**, /js/**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-08-01 17:32:10.898 DEBUG 17492 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-01 17:32:11.259  INFO 17492 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-01 17:32:11.654 DEBUG 17492 --- [restartedMain] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-08-01 17:32:11.654 DEBUG 17492 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-08-01 17:32:11.654  INFO 17492 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2022-08-01 17:32:11.654 DEBUG 17492 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4a16be04]
+2022-08-01 17:32:11.654 DEBUG 17492 --- [restartedMain] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4a16be04]
+2022-08-01 17:32:11.655  INFO 17492 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4a16be04]]
+2022-08-01 17:32:11.655  INFO 17492 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2022-08-01 17:32:11.656 DEBUG 17492 --- [restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:32:11.656 DEBUG 17492 --- [restartedMain] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:32:11.673  INFO 17492 --- [restartedMain] com.ssafy.GroupCallApplication           : Started GroupCallApplication in 10.879 seconds (JVM running for 11.571)
+2022-08-01 17:32:16.737 DEBUG 17492 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientOutboundChannel removed SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-08-01 17:32:16.737 DEBUG 17492 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-08-01 17:32:16.737  INFO 17492 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2022-08-01 17:32:16.737  INFO 17492 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4a16be04]]
+2022-08-01 17:32:16.737 DEBUG 17492 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4a16be04]
+2022-08-01 17:32:16.737 DEBUG 17492 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4a16be04]
+2022-08-01 17:32:16.737  INFO 17492 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2022-08-01 17:32:16.737 DEBUG 17492 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:32:16.737 DEBUG 17492 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-08-01 17:32:16.764  INFO 17492 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2022-08-01 17:32:16.773  INFO 17492 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2022-08-01 17:32:16.773  INFO 17492 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2022-08-01 17:32:16.774  INFO 17492 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2022-08-01 17:32:16.776  INFO 17492 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 17:32:16.781  INFO 17492 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-01 17:32:16.791  INFO 17492 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

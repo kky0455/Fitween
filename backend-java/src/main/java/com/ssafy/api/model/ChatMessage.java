@@ -2,9 +2,7 @@ package com.ssafy.api.model;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -14,6 +12,8 @@ import java.time.LocalTime;
 @NoArgsConstructor
 public class ChatMessage {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
     //채팅방 ID
     @Column
@@ -36,6 +36,7 @@ public class ChatMessage {
 
     @Builder // 빌더 패턴 적용! 추후 설명..!
     public ChatMessage(String roomId, String senderId, String receiverId, String message) {
+        //this.id
         this.roomId = roomId;
         this.senderId = senderId;
         this.receiverId = receiverId;

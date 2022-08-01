@@ -19,6 +19,8 @@ public class QChatMessage extends EntityPathBase<ChatMessage> {
 
     public static final QChatMessage chatMessage = new QChatMessage("chatMessage");
 
+    public final NumberPath<Long> id = createNumber("id", Long.class);
+
     public final StringPath message = createString("message");
 
     public final StringPath receiverId = createString("receiverId");

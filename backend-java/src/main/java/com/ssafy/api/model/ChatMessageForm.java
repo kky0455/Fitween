@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class ChatMessageForm {
-
+    private long id;
     private String roomId;
     //보내는 사람
     private String senderId;

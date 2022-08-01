@@ -34,18 +34,19 @@ public class MessageController {
         String roomId = message.getRoomId();
         if(roomId == null){
            String newroomId = makeRoom(message.getSenderId(), message.getReceiverId()).getRoomId() ;
-            System.out.println("방만듬");
            message.setRoomId(newroomId);
             sendingOperations.convertAndSend("/topic/chat/room/"+newroomId,message);
 
 
         }
         else{
+            saveMessage(message.getRoomId(), message.getSenderId(), message.getReceiverId(), message.getMessage());
             sendingOperations.convertAndSend("/topic/chat/room/"+roomId,message);
 
         }
 
-        sendingOperations.convertAndSend("/topic/chat/wait/"+message.getReceiverId(),message);
+        //saveMessage(message.getRoomId(), message.getSenderId(), message.getReceiverId(), message.getMessage());
+       // sendingOperations.convertAndSend("/topic/chat/wait/"+message.getReceiverId(),message);
 
         //
 //        log.info(chatForm.toString());// 받아온 데이터 확인!
@@ -106,7 +107,26 @@ public class MessageController {
     return newroom;
 
     }
+    @Autowired
+    private ChatRepository chatMessageRepository;
+    public void saveMessage(String roomId,String senderId,String receiverId,String message){
 
+        ChatMessageForm chatMessageForm = new ChatMessageForm();
+        chatMessageForm.setMessage(message);
+        chatMessageForm.setRoomId(roomId);
+        chatMessageForm.setSenderId(senderId);
+        chatMessageForm.setReceiverId(receiverId);
+
+
+        ChatMessage chatMessage = chatMessageForm.toEntity();
+        ChatMessage saved = chatMessageRepository.save(chatMessage);
+        //ChatRoom chatRoom = chatRoomForm.toEntity();
+        //ChatRoom saved = chatMessageRepository.save(chatRoom);
+
+        System.out.println("메세지저장");
+
+
+    }
 }
 
 
