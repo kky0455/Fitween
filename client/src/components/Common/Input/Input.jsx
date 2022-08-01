@@ -30,26 +30,29 @@ function Input({ value, onChange, error, errMsg, unit, ...rest }) {
 						outline: none;
 						border: 2px solid ${error ? colors.warn : colors.green100};
 					}
+					&[type='number']::-webkit-outer-spin-button,
+					&[type='number']::-webkit-inner-spin-button {
+						-webkit-appearance: none;
+						margin: 0;
+					}
 				`}
 				{...rest}
 			/>
-			{error && (
-				<span
-					css={css`
-						padding: 10px;
-						color: ${colors.warn};
-						font-size: 14px;
-						font-family: 'Regular';
-					`}
-				>
-					{errMsg}
-				</span>
-			)}
+			<span
+				css={css`
+					padding: 10px;
+					color: ${colors.warn};
+					font-size: 14px;
+					font-family: 'Regular';
+				`}
+			>
+				{error && errMsg}
+			</span>
 			{unit && (
 				<span
 					css={css`
 						position: absolute;
-						top: 50%;
+						top: 40px;
 						right: 30px;
 						transform: translate(0, -50%);
 						font-family: 'Bold';
