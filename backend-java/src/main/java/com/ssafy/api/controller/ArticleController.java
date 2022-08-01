@@ -17,6 +17,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Api(value = "게시물 API", tags = { "Article" })
@@ -95,6 +96,18 @@ public class ArticleController {
         }
         logger.debug("해당 게시글 삭제 성공");
         return ResponseEntity.status(200).body(article.getArticleIdx()+"번 해당 게시글 삭제"+SUCCESS);
+    }
+
+    @ApiOperation(value="게시글 전체 조회", notes="<strong>게시글을 전체 조회를</strong>시켜줍니다.")
+    @ApiResponses({ @ApiResponse(code = 200, message = "성공"),
+            @ApiResponse(code = 401, message = "인증 실패"),
+            @ApiResponse(code = 404, message = "사용자 없음"),
+            @ApiResponse(code = 500, message = "서버 오류")})
+    @GetMapping("/list")
+    public ResponseEntity<List<Article>> findAllArticle(){
+        List<Article> articles = articleService.findAllArticle();
+
+        return new ResponseEntity<List<Article>>(articles,HttpStatus.OK);
     }
 
 }

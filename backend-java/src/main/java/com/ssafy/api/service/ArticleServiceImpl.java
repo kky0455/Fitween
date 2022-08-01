@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class ArticleServiceImpl implements ArticleService{
 
@@ -38,5 +40,11 @@ public class ArticleServiceImpl implements ArticleService{
     @Override
     public void deleteArticle(Article article) {
         articleRepository.delete(article);
+    }
+
+    @Override
+    public List<Article> findAllArticle() {
+        List<Article> articles = articleRepository.findAll();
+        return articles;
     }
 }
