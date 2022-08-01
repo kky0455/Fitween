@@ -1,5 +1,6 @@
 package com.ssafy.api.controller;
 
+import com.ssafy.api.request.SaveArticleDto;
 import com.ssafy.api.service.ArticleService;
 import com.ssafy.common.auth.SsafyUserDetails;
 import com.ssafy.common.model.response.BaseResponseBody;
@@ -108,6 +109,17 @@ public class ArticleController {
         List<Article> articles = articleService.findAllArticle();
 
         return new ResponseEntity<List<Article>>(articles,HttpStatus.OK);
+    }
+
+    @GetMapping("/detail/{article_idx}")
+    @ApiOperation(value ="게시글 상세  조회", notes ="해당 article_idx 게시판 정보 출력")
+    @ApiResponses({ @ApiResponse(code = 200, message = "성공"),
+            @ApiResponse(code = 401, message = "인증 실패"),
+            @ApiResponse(code = 404, message = "사용자 없음"),
+            @ApiResponse(code = 500, message = "서버 오류") })
+    public ResponseEntity<Article> findOneArticle(@PathVariable Long article_idx) {
+        Article article = articleService.findByArticleId(article_idx);
+        return new ResponseEntity<Article>(article, HttpStatus.OK);
     }
 
 }

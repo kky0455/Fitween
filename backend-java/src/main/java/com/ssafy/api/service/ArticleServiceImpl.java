@@ -1,6 +1,6 @@
 package com.ssafy.api.service;
 
-import com.ssafy.api.controller.SaveArticleDto;
+import com.ssafy.api.request.SaveArticleDto;
 import com.ssafy.db.entity.Article;
 import com.ssafy.db.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
