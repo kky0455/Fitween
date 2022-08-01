@@ -1,6 +1,8 @@
 package com.ssafy.api.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -28,10 +30,14 @@ public class ChatMessage {
     @Column
     private String message;
     //메세지 시각
-    @Column
+    @Column(columnDefinition = "TIMESTAMP")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, timezone = "Asia/Seoul")
+    @UpdateTimestamp
     private LocalTime sendtime;
     //메세지 날짜
-    @Column
+    @Column(columnDefinition = "TIMESTAMP")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, timezone = "Asia/Seoul")
+    @UpdateTimestamp
     private LocalDate senddate;
 
     @Builder // 빌더 패턴 적용! 추후 설명..!
@@ -41,6 +47,8 @@ public class ChatMessage {
         this.senderId = senderId;
         this.receiverId = receiverId;
         this.message = message;
+
+
     }
 
 
