@@ -1827,3 +1827,1010 @@ java.lang.IllegalArgumentException: eq(null) is not allowed. Use isNull() instea
     "content" : "사이즈 L",
     "lend_status" : true
 }]
+2022-08-01 21:59:26.907  INFO 8064 --- [restartedMain] com.ssafy.GroupCallApplication           : Starting GroupCallApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 8064 (C:\Users\multicampus\Desktop\backend-java\out\production\classes started by multicampus in C:\Users\multicampus\Desktop\backend-java)
+2022-08-01 21:59:26.912  INFO 8064 --- [restartedMain] com.ssafy.GroupCallApplication           : No active profile set, falling back to default profiles: default
+2022-08-01 21:59:26.946  INFO 8064 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-01 21:59:26.946  INFO 8064 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-01 21:59:28.443  INFO 8064 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-01 21:59:28.503  INFO 8064 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 2 JPA repository interfaces.
+2022-08-01 21:59:28.772  INFO 8064 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@335c1742' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 21:59:28.776  INFO 8064 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 21:59:29.017  INFO 8064 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-01 21:59:29.026  INFO 8064 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-01 21:59:29.026  INFO 8064 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-08-01 21:59:29.184  INFO 8064 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-01 21:59:29.185  INFO 8064 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2239 ms
+2022-08-01 21:59:29.351 DEBUG 8064 --- [restartedMain] o.s.web.filter.CharacterEncodingFilter   : Filter 'characterEncodingFilter' configured for use
+2022-08-01 21:59:29.352 DEBUG 8064 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'commonsRequestLoggingFilter' configured for use
+2022-08-01 21:59:29.475  INFO 8064 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-01 21:59:29.590  INFO 8064 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-08-01 21:59:29.709  INFO 8064 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-01 21:59:29.798  INFO 8064 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-01 21:59:30.007  INFO 8064 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-01 21:59:30.020  INFO 8064 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-08-01 21:59:30.718  INFO 8064 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-01 21:59:30.726  INFO 8064 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 21:59:30.761  INFO 8064 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-01 21:59:31.122  WARN 8064 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-01 21:59:31.393 DEBUG 8064 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 15 mappings in 'requestMappingHandlerMapping'
+2022-08-01 21:59:31.487  INFO 8064 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-08-01 21:59:31.847  INFO 8064 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@232073c8, org.springframework.security.web.context.SecurityContextPersistenceFilter@6e59f624, org.springframework.security.web.header.HeaderWriterFilter@3d6880b6, org.springframework.web.filter.CorsFilter@24411bc2, org.springframework.security.web.authentication.logout.LogoutFilter@1b26a13a, com.ssafy.common.auth.JwtAuthenticationFilter@3b2bfae8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2d995f71, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@17952f59, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4c7edb71, org.springframework.security.web.session.SessionManagementFilter@13f6288b, org.springframework.security.web.access.ExceptionTranslationFilter@23219f6e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@cd1d64b]
+2022-08-01 21:59:31.906  INFO 8064 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-08-01 21:59:31.917 DEBUG 8064 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-01 21:59:31.948 DEBUG 8064 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-08-01 21:59:31.961 DEBUG 8064 --- [restartedMain] o.s.w.s.c.annotation.WebMvcConfigurer    : Default resource handling disabled
+2022-08-01 21:59:32.136 DEBUG 8064 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/resources/**, /swagger-ui.html, /webjars/**, /css/**, /fonts/**, /icons/**, /img/**, /js/**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-08-01 21:59:32.148 DEBUG 8064 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-01 21:59:32.375  INFO 8064 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-01 21:59:32.578  INFO 8064 --- [restartedMain] com.ssafy.GroupCallApplication           : Started GroupCallApplication in 6.017 seconds (JVM running for 7.303)
+2022-08-01 21:59:32.711  INFO 8064 --- [RMI TCP Connection(1)-192.168.219.131] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-01 21:59:32.711  INFO 8064 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-01 21:59:32.711 DEBUG 8064 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-08-01 21:59:32.712 DEBUG 8064 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-08-01 21:59:32.712 DEBUG 8064 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-08-01 21:59:32.714 DEBUG 8064 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5c3e02cc
+2022-08-01 21:59:32.714 DEBUG 8064 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@30b3ff32
+2022-08-01 21:59:32.715 DEBUG 8064 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-08-01 21:59:32.715  INFO 8064 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2022-08-01 22:00:15.657  INFO 8064 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-08-01 22:00:15.660  INFO 8064 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 22:00:15.665  INFO 8064 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-01 22:00:15.669  INFO 8064 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-01 22:00:19.381  INFO 4024 --- [restartedMain] com.ssafy.GroupCallApplication           : Starting GroupCallApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 4024 (C:\Users\multicampus\Desktop\backend-java\out\production\classes started by multicampus in C:\Users\multicampus\Desktop\backend-java)
+2022-08-01 22:00:19.383  INFO 4024 --- [restartedMain] com.ssafy.GroupCallApplication           : No active profile set, falling back to default profiles: default
+2022-08-01 22:00:19.421  INFO 4024 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-01 22:00:19.421  INFO 4024 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-01 22:00:20.406  INFO 4024 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-01 22:00:20.463  INFO 4024 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 2 JPA repository interfaces.
+2022-08-01 22:00:20.723  INFO 4024 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@164bc484' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 22:00:20.727  INFO 4024 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 22:00:20.941  INFO 4024 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-01 22:00:20.950  INFO 4024 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-01 22:00:20.950  INFO 4024 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-08-01 22:00:21.055  INFO 4024 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-01 22:00:21.055  INFO 4024 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1633 ms
+2022-08-01 22:00:21.172 DEBUG 4024 --- [restartedMain] o.s.web.filter.CharacterEncodingFilter   : Filter 'characterEncodingFilter' configured for use
+2022-08-01 22:00:21.172 DEBUG 4024 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'commonsRequestLoggingFilter' configured for use
+2022-08-01 22:00:21.285  INFO 4024 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-01 22:00:21.381  INFO 4024 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-08-01 22:00:21.488  INFO 4024 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-01 22:00:21.567  INFO 4024 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-01 22:00:21.743  INFO 4024 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-01 22:00:21.754  INFO 4024 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-08-01 22:00:23.007  INFO 4024 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-01 22:00:23.014  INFO 4024 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 22:00:23.046  INFO 4024 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-01 22:00:23.396  WARN 4024 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-01 22:00:23.648 DEBUG 4024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 15 mappings in 'requestMappingHandlerMapping'
+2022-08-01 22:00:23.752  INFO 4024 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-08-01 22:00:24.132  INFO 4024 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f817273, org.springframework.security.web.context.SecurityContextPersistenceFilter@15dec468, org.springframework.security.web.header.HeaderWriterFilter@36c87e53, org.springframework.web.filter.CorsFilter@571da928, org.springframework.security.web.authentication.logout.LogoutFilter@56732a87, com.ssafy.common.auth.JwtAuthenticationFilter@5a7222c3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@77a04eb6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a290c25, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c59b602, org.springframework.security.web.session.SessionManagementFilter@6279fd4, org.springframework.security.web.access.ExceptionTranslationFilter@3b95612c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3836311a]
+2022-08-01 22:00:24.196  INFO 4024 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-08-01 22:00:24.210 DEBUG 4024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-01 22:00:24.241 DEBUG 4024 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-08-01 22:00:24.253 DEBUG 4024 --- [restartedMain] o.s.w.s.c.annotation.WebMvcConfigurer    : Default resource handling disabled
+2022-08-01 22:00:24.441 DEBUG 4024 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/resources/**, /swagger-ui.html, /webjars/**, /css/**, /fonts/**, /icons/**, /img/**, /js/**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-08-01 22:00:24.448 DEBUG 4024 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-01 22:00:24.645  INFO 4024 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-01 22:00:24.843  INFO 4024 --- [restartedMain] com.ssafy.GroupCallApplication           : Started GroupCallApplication in 5.871 seconds (JVM running for 6.952)
+2022-08-01 22:00:25.130  INFO 4024 --- [RMI TCP Connection(1)-192.168.219.131] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-01 22:00:25.130  INFO 4024 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-01 22:00:25.131 DEBUG 4024 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-08-01 22:00:25.131 DEBUG 4024 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-08-01 22:00:25.131 DEBUG 4024 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-08-01 22:00:25.132 DEBUG 4024 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7ea459c0
+2022-08-01 22:00:25.133 DEBUG 4024 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@54fb5a84
+2022-08-01 22:00:25.133 DEBUG 4024 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-08-01 22:00:25.133  INFO 4024 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-08-01 22:01:33.258 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /api/v1/users, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"dda6e716-3a84-4356-8271-2b23ee72ab54", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"82", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 22:01:33.259 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users", parameters={}
+2022-08-01 22:01:33.261 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.UserController#register(UserRegisterPostReq)
+2022-08-01 22:01:33.291 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.ssafy.api.request.UserRegisterPostReq@e250170]
+2022-08-01 22:01:33.455 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 22:01:33.456 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.ssafy.common.model.response.BaseResponseBody@35e43927]
+2022-08-01 22:01:33.469 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 22:01:33.470 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : After request [POST /api/v1/users, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"dda6e716-3a84-4356-8271-2b23ee72ab54", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"82", Content-Type:"application/json;charset=UTF-8"], payload={
+    "id" : "user1",
+    "password" : "1q2w3e4r!",
+    "name" : "김광용"
+}]
+2022-08-01 22:01:40.490 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /api/v1/auth/login, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"9a84d9f2-6597-47e0-9b16-68ba6beace7b", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"82", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 22:01:40.490 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2022-08-01 22:01:40.491 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.AuthController#login(UserLoginPostReq)
+2022-08-01 22:01:40.493 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.ssafy.api.request.UserLoginPostReq@673e579c]
+2022-08-01 22:01:40.690 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 22:01:40.690 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.ssafy.api.response.UserLoginPostRes@53e46ce5]
+2022-08-01 22:01:40.691 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 22:01:40.691 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : After request [POST /api/v1/auth/login, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"9a84d9f2-6597-47e0-9b16-68ba6beace7b", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"82", Content-Type:"application/json;charset=UTF-8"], payload={
+    "id" : "user1",
+    "password" : "1q2w3e4r!",
+    "name" : "김광용"
+}]
+2022-08-01 22:02:08.640 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-4] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /api/v1/articles/register, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1NDkwMCwiaWF0IjoxNjU5MzU4OTAwfQ.65gYKHD7qFBQDN79j0ul4gsbhTVLA2h7Wl70grjNOhpF5cGY-9UFwJc6BmV8GI3iN2yy_k-JYuTUSagfkSo9zw", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"4bab55e9-34cb-4d4c-940d-c1ed598f8288", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"117", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 22:02:08.641 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/articles/register", parameters={}
+2022-08-01 22:02:08.641 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.ArticleController#createArticle(SaveArticleDto, Authentication)
+2022-08-01 22:02:08.646 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [SaveArticleDto(title=전여친 ..., price=3000, content=사이즈 L, lend_status=true, user_idx=null)]
+2022-08-01 22:02:08.674 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 22:02:08.674 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.ssafy.common.model.response.BaseResponseBody@640cdb58]
+2022-08-01 22:02:08.675 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 22:02:08.677 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-4] o.s.w.f.CommonsRequestLoggingFilter      : After request [POST /api/v1/articles/register, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1NDkwMCwiaWF0IjoxNjU5MzU4OTAwfQ.65gYKHD7qFBQDN79j0ul4gsbhTVLA2h7Wl70grjNOhpF5cGY-9UFwJc6BmV8GI3iN2yy_k-JYuTUSagfkSo9zw", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"4bab55e9-34cb-4d4c-940d-c1ed598f8288", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"117", Content-Type:"application/json;charset=UTF-8"], payload={
+    "title" : "전여친 ...",
+    "price" : 3000,
+    "content" : "사이즈 L",
+    "lend_status" : true
+}
+]
+2022-08-01 22:02:42.239 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-5] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /api/v1/articles/register, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1NDkwMCwiaWF0IjoxNjU5MzU4OTAwfQ.65gYKHD7qFBQDN79j0ul4gsbhTVLA2h7Wl70grjNOhpF5cGY-9UFwJc6BmV8GI3iN2yy_k-JYuTUSagfkSo9zw", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"60afcbd4-3f36-43c0-a7f3-4d27dc0b490b", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"91", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 22:02:42.240 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/articles/register", parameters={}
+2022-08-01 22:02:42.240 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.ArticleController#createArticle(SaveArticleDto, Authentication)
+2022-08-01 22:02:42.241 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-5] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity com.ssafy.api.controller.ArticleController.createArticle(com.ssafy.api.controller.SaveArticleDto,org.springframework.security.core.Authentication): JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('}' (code 125)): was expecting double-quote to start field name
+ at [Source: (PushbackInputStream); line: 5, column: 2]
+2022-08-01 22:02:42.244  WARN 4024 --- [http-nio-127.0.0.1-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('}' (code 125)): was expecting double-quote to start field name
+ at [Source: (PushbackInputStream); line: 5, column: 2]]
+2022-08-01 22:02:42.245 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2022-08-01 22:02:42.245 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-5] o.s.w.f.CommonsRequestLoggingFilter      : After request [POST /api/v1/articles/register, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1NDkwMCwiaWF0IjoxNjU5MzU4OTAwfQ.65gYKHD7qFBQDN79j0ul4gsbhTVLA2h7Wl70grjNOhpF5cGY-9UFwJc6BmV8GI3iN2yy_k-JYuTUSagfkSo9zw", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"60afcbd4-3f36-43c0-a7f3-4d27dc0b490b", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"91", Content-Type:"application/json;charset=UTF-8"], payload={
+    "title" : "현여친 ...",
+    "price" : 2000,
+    "content" : "사이즈 s",
+}
+]
+2022-08-01 22:02:42.248 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2022-08-01 22:02:42.250 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-08-01 22:02:42.254 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 22:02:42.254 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Mon Aug 01 22:02:42 KST 2022, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2022-08-01 22:02:42.258 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 400
+2022-08-01 22:02:57.902 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /api/v1/articles/register, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1NDkwMCwiaWF0IjoxNjU5MzU4OTAwfQ.65gYKHD7qFBQDN79j0ul4gsbhTVLA2h7Wl70grjNOhpF5cGY-9UFwJc6BmV8GI3iN2yy_k-JYuTUSagfkSo9zw", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"dc39a203-a42e-4254-95a6-fd57e6581d81", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"117", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 22:02:57.902 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/articles/register", parameters={}
+2022-08-01 22:02:57.903 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.ArticleController#createArticle(SaveArticleDto, Authentication)
+2022-08-01 22:02:57.904 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [SaveArticleDto(title=현여친 ..., price=2000, content=사이즈 s, lend_status=true, user_idx=null)]
+2022-08-01 22:02:57.911 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 22:02:57.911 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.ssafy.common.model.response.BaseResponseBody@3c16ed9d]
+2022-08-01 22:02:57.912 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 22:02:57.913 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : After request [POST /api/v1/articles/register, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1NDkwMCwiaWF0IjoxNjU5MzU4OTAwfQ.65gYKHD7qFBQDN79j0ul4gsbhTVLA2h7Wl70grjNOhpF5cGY-9UFwJc6BmV8GI3iN2yy_k-JYuTUSagfkSo9zw", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"dc39a203-a42e-4254-95a6-fd57e6581d81", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"117", Content-Type:"application/json;charset=UTF-8"], payload={
+    "title" : "현여친 ...",
+    "price" : 2000,
+    "content" : "사이즈 s",
+    "lend_status" : true
+}
+]
+2022-08-01 22:03:33.057 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-8] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /api/v1/users, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"91983420-80da-4256-a3d0-31a70af20947", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"84", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 22:03:33.057 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users", parameters={}
+2022-08-01 22:03:33.058 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.UserController#register(UserRegisterPostReq)
+2022-08-01 22:03:33.059 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.ssafy.api.request.UserRegisterPostReq@797e6efb]
+2022-08-01 22:03:33.141 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 22:03:33.141 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.ssafy.common.model.response.BaseResponseBody@4411b7b0]
+2022-08-01 22:03:33.142 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 22:03:33.142 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-8] o.s.w.f.CommonsRequestLoggingFilter      : After request [POST /api/v1/users, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"91983420-80da-4256-a3d0-31a70af20947", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"84", Content-Type:"application/json;charset=UTF-8"], payload={
+    "id" : "user2",
+    "password" : "1q2w3e4r!",
+    "name" : "김광용"
+}
+]
+2022-08-01 22:03:39.083 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-9] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /api/v1/auth/login, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"f7337b29-ec3a-4fdf-8393-3c515e48fbd4", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"84", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 22:03:39.083 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2022-08-01 22:03:39.083 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.AuthController#login(UserLoginPostReq)
+2022-08-01 22:03:39.084 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.ssafy.api.request.UserLoginPostReq@46c56e26]
+2022-08-01 22:03:39.162 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 22:03:39.162 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.ssafy.api.response.UserLoginPostRes@1ccf7efc]
+2022-08-01 22:03:39.163 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 22:03:39.163 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-9] o.s.w.f.CommonsRequestLoggingFilter      : After request [POST /api/v1/auth/login, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"f7337b29-ec3a-4fdf-8393-3c515e48fbd4", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"84", Content-Type:"application/json;charset=UTF-8"], payload={
+    "id" : "user2",
+    "password" : "1q2w3e4r!",
+    "name" : "김광용"
+}
+]
+2022-08-01 22:04:13.571 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /api/v1/articles/register, client=127.0.0.1, user=user2, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMiIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1NTAxOSwiaWF0IjoxNjU5MzU5MDE5fQ.bvbRwWGNovkRt71gQ2Uya7u34S61lJadBwCLoWRJ3RCKWNWiP4uuCxRCSYmNrC5tDiBqgdgv3cm59eSgfSCpog", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"405c9096-3387-4514-9ad2-aafa1f7226f7", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"119", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 22:04:13.571 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/articles/register", parameters={}
+2022-08-01 22:04:13.571 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.ArticleController#createArticle(SaveArticleDto, Authentication)
+2022-08-01 22:04:13.572 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [SaveArticleDto(title=전여친 ..., price=3000, content=사이즈 L, lend_status=true, user_idx=null)]
+2022-08-01 22:04:13.589 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 22:04:13.589 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.ssafy.common.model.response.BaseResponseBody@a5541d6]
+2022-08-01 22:04:13.589 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 22:04:13.590 DEBUG 4024 --- [http-nio-127.0.0.1-8080-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : After request [POST /api/v1/articles/register, client=127.0.0.1, user=user2, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMiIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1NTAxOSwiaWF0IjoxNjU5MzU5MDE5fQ.bvbRwWGNovkRt71gQ2Uya7u34S61lJadBwCLoWRJ3RCKWNWiP4uuCxRCSYmNrC5tDiBqgdgv3cm59eSgfSCpog", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"405c9096-3387-4514-9ad2-aafa1f7226f7", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"119", Content-Type:"application/json;charset=UTF-8"], payload={
+    "title" : "전여친 ...",
+    "price" : 3000,
+    "content" : "사이즈 L",
+    "lend_status" : true
+}
+
+]
+2022-08-01 22:04:34.291  INFO 4024 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-08-01 22:04:34.295  INFO 4024 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 22:04:34.298  INFO 4024 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-01 22:04:34.302  INFO 4024 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-01 22:13:24.929  INFO 1876 --- [restartedMain] com.ssafy.GroupCallApplication           : Starting GroupCallApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 1876 (C:\Users\multicampus\Desktop\backend-java\out\production\classes started by multicampus in C:\Users\multicampus\Desktop\backend-java)
+2022-08-01 22:13:24.937  INFO 1876 --- [restartedMain] com.ssafy.GroupCallApplication           : No active profile set, falling back to default profiles: default
+2022-08-01 22:13:25.041  INFO 1876 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-01 22:13:25.041  INFO 1876 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-01 22:13:26.917  INFO 1876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-01 22:13:27.020  INFO 1876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 2 JPA repository interfaces.
+2022-08-01 22:13:27.506  INFO 1876 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@371a53a3' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 22:13:27.513  INFO 1876 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 22:13:28.373  INFO 1876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-01 22:13:28.382  INFO 1876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-01 22:13:28.383  INFO 1876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-08-01 22:13:28.486  INFO 1876 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-01 22:13:28.486  INFO 1876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3443 ms
+2022-08-01 22:13:28.629 DEBUG 1876 --- [restartedMain] o.s.web.filter.CharacterEncodingFilter   : Filter 'characterEncodingFilter' configured for use
+2022-08-01 22:13:28.629 DEBUG 1876 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'commonsRequestLoggingFilter' configured for use
+2022-08-01 22:13:28.740  INFO 1876 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-01 22:13:28.776  INFO 1876 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-08-01 22:13:28.964  INFO 1876 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-01 22:13:29.041  INFO 1876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-01 22:13:29.213  INFO 1876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-01 22:13:29.224  INFO 1876 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-08-01 22:13:30.370  INFO 1876 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-01 22:13:30.378  INFO 1876 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 22:13:30.394  INFO 1876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-01 22:13:30.735  WARN 1876 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-01 22:13:30.982 DEBUG 1876 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 15 mappings in 'requestMappingHandlerMapping'
+2022-08-01 22:13:31.049  INFO 1876 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-08-01 22:13:31.228  INFO 1876 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@375a7d82, org.springframework.security.web.context.SecurityContextPersistenceFilter@c2ec2fb, org.springframework.security.web.header.HeaderWriterFilter@67d1cf79, org.springframework.web.filter.CorsFilter@4420115e, org.springframework.security.web.authentication.logout.LogoutFilter@6aecba95, com.ssafy.common.auth.JwtAuthenticationFilter@5f72a467, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@267d83dd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3df6ac4f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@121cc9b, org.springframework.security.web.session.SessionManagementFilter@84a4c47, org.springframework.security.web.access.ExceptionTranslationFilter@244c539, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2d81c5ef]
+2022-08-01 22:13:31.286  INFO 1876 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-08-01 22:13:31.299 DEBUG 1876 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-01 22:13:31.332 DEBUG 1876 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-08-01 22:13:31.346 DEBUG 1876 --- [restartedMain] o.s.w.s.c.annotation.WebMvcConfigurer    : Default resource handling disabled
+2022-08-01 22:13:31.711 DEBUG 1876 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/resources/**, /swagger-ui.html, /webjars/**, /css/**, /fonts/**, /icons/**, /img/**, /js/**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-08-01 22:13:31.718 DEBUG 1876 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-01 22:13:31.889  INFO 1876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-01 22:13:32.082  INFO 1876 --- [restartedMain] com.ssafy.GroupCallApplication           : Started GroupCallApplication in 8.091 seconds (JVM running for 9.431)
+2022-08-01 22:14:03.419  INFO 1876 --- [http-nio-127.0.0.1-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-01 22:14:03.420  INFO 1876 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-01 22:14:03.420 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-08-01 22:14:03.420 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-08-01 22:14:03.420 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-08-01 22:14:03.421 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6f870757
+2022-08-01 22:14:03.422 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@37782d1d
+2022-08-01 22:14:03.422 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-08-01 22:14:03.422  INFO 1876 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-08-01 22:14:03.448 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /api/v1/users, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"32e8c6ee-f55c-4aa1-bbac-bbfebd334e45", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"86", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 22:14:03.450 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users", parameters={}
+2022-08-01 22:14:03.453 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.UserController#register(UserRegisterPostReq)
+2022-08-01 22:14:03.497 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.ssafy.api.request.UserRegisterPostReq@3343bf7c]
+2022-08-01 22:14:03.670 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 22:14:03.670 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.ssafy.common.model.response.BaseResponseBody@76398cb1]
+2022-08-01 22:14:03.687 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 22:14:03.689 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : After request [POST /api/v1/users, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"32e8c6ee-f55c-4aa1-bbac-bbfebd334e45", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"86", Content-Type:"application/json;charset=UTF-8"], payload={
+    "id" : "user1",
+    "password" : "1q2w3e4r!",
+    "name" : "김광용"
+}
+
+]
+2022-08-01 22:14:09.491 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /api/v1/auth/login, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"8701a7eb-d9c7-4473-b097-ebe89b946553", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"86", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 22:14:09.492 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2022-08-01 22:14:09.492 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.AuthController#login(UserLoginPostReq)
+2022-08-01 22:14:09.494 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.ssafy.api.request.UserLoginPostReq@67836ced]
+2022-08-01 22:14:09.696 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 22:14:09.696 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.ssafy.api.response.UserLoginPostRes@46078d0]
+2022-08-01 22:14:09.697 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 22:14:09.697 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : After request [POST /api/v1/auth/login, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"8701a7eb-d9c7-4473-b097-ebe89b946553", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"86", Content-Type:"application/json;charset=UTF-8"], payload={
+    "id" : "user1",
+    "password" : "1q2w3e4r!",
+    "name" : "김광용"
+}
+
+]
+2022-08-01 22:14:33.667 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /api/v1/articles/register, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1NTY0OSwiaWF0IjoxNjU5MzU5NjQ5fQ.cgVOIqTIsoVrZ-gGK7dpkWmKlPKAzf10xxyoMdBTyY6jAvQJ0w24LboQtOCPNC5eRKMcYWzuoU35nrTubIbFbw", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"3ad2644b-2820-4786-b68a-2fb637120087", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"94", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 22:14:33.667 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/articles/register", parameters={}
+2022-08-01 22:14:33.668 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.ArticleController#createArticle(SaveArticleDto, Authentication)
+2022-08-01 22:14:33.673 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [SaveArticleDto(title=전여친 ..., price=3000, content=사이즈 L, user_idx=null)]
+2022-08-01 22:14:33.692 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 22:14:33.693 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.ssafy.common.model.response.BaseResponseBody@5b510031]
+2022-08-01 22:14:33.694 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 22:14:33.696 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : After request [POST /api/v1/articles/register, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1NTY0OSwiaWF0IjoxNjU5MzU5NjQ5fQ.cgVOIqTIsoVrZ-gGK7dpkWmKlPKAzf10xxyoMdBTyY6jAvQJ0w24LboQtOCPNC5eRKMcYWzuoU35nrTubIbFbw", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"3ad2644b-2820-4786-b68a-2fb637120087", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"94", Content-Type:"application/json;charset=UTF-8"], payload={
+    "title" : "전여친 ...",
+    "price" : 3000,
+    "content" : "사이즈 L"
+}
+
+
+]
+2022-08-01 22:35:51.884 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-9] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /api/v1/articles/register, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1NTY0OSwiaWF0IjoxNjU5MzU5NjQ5fQ.cgVOIqTIsoVrZ-gGK7dpkWmKlPKAzf10xxyoMdBTyY6jAvQJ0w24LboQtOCPNC5eRKMcYWzuoU35nrTubIbFbw", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"3994a22e-eec4-43f8-98a8-b7f887db38fd", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"94", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 22:35:51.884 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/articles/register", parameters={}
+2022-08-01 22:35:51.884 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.ArticleController#createArticle(SaveArticleDto, Authentication)
+2022-08-01 22:35:51.885 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [SaveArticleDto(title=전여친 ..., price=2000, content=사이즈 L, user_idx=null)]
+2022-08-01 22:35:51.891 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 22:35:51.892 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.ssafy.common.model.response.BaseResponseBody@38c05643]
+2022-08-01 22:35:51.893 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 22:35:51.893 DEBUG 1876 --- [http-nio-127.0.0.1-8080-exec-9] o.s.w.f.CommonsRequestLoggingFilter      : After request [POST /api/v1/articles/register, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1NTY0OSwiaWF0IjoxNjU5MzU5NjQ5fQ.cgVOIqTIsoVrZ-gGK7dpkWmKlPKAzf10xxyoMdBTyY6jAvQJ0w24LboQtOCPNC5eRKMcYWzuoU35nrTubIbFbw", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"3994a22e-eec4-43f8-98a8-b7f887db38fd", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"94", Content-Type:"application/json;charset=UTF-8"], payload={
+    "title" : "전여친 ...",
+    "price" : 2000,
+    "content" : "사이즈 L"
+}
+
+
+]
+2022-08-01 22:56:50.802  INFO 1876 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-08-01 22:56:50.802  INFO 1876 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 22:56:50.812  INFO 1876 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-01 22:56:50.822  INFO 1876 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-01 22:56:58.362  INFO 2908 --- [restartedMain] com.ssafy.GroupCallApplication           : Starting GroupCallApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 2908 (C:\Users\multicampus\Desktop\backend-java\out\production\classes started by multicampus in C:\Users\multicampus\Desktop\backend-java)
+2022-08-01 22:56:58.362  INFO 2908 --- [restartedMain] com.ssafy.GroupCallApplication           : No active profile set, falling back to default profiles: default
+2022-08-01 22:56:58.422  INFO 2908 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-01 22:56:58.422  INFO 2908 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-01 22:57:00.197  INFO 2908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-01 22:57:00.297  INFO 2908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87 ms. Found 2 JPA repository interfaces.
+2022-08-01 22:57:00.737  INFO 2908 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@59941c34' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 22:57:00.742  INFO 2908 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 22:57:01.122  INFO 2908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-01 22:57:01.134  INFO 2908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-01 22:57:01.134  INFO 2908 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-08-01 22:57:01.312  INFO 2908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-01 22:57:01.312  INFO 2908 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2890 ms
+2022-08-01 22:57:01.522 DEBUG 2908 --- [restartedMain] o.s.web.filter.CharacterEncodingFilter   : Filter 'characterEncodingFilter' configured for use
+2022-08-01 22:57:01.522 DEBUG 2908 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'commonsRequestLoggingFilter' configured for use
+2022-08-01 22:57:01.717  INFO 2908 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-01 22:57:01.932  INFO 2908 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-08-01 22:57:02.132  INFO 2908 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-01 22:57:02.252  INFO 2908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-01 22:57:02.422  INFO 2908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-01 22:57:02.432  INFO 2908 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-08-01 22:57:02.997  INFO 2908 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-01 22:57:03.002  INFO 2908 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 22:57:03.037  INFO 2908 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-01 22:57:03.377  WARN 2908 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-01 22:57:03.622 DEBUG 2908 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 16 mappings in 'requestMappingHandlerMapping'
+2022-08-01 22:57:03.717  INFO 2908 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-08-01 22:57:04.062  INFO 2908 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4cdd8e01, org.springframework.security.web.context.SecurityContextPersistenceFilter@67efc41, org.springframework.security.web.header.HeaderWriterFilter@4d4cd331, org.springframework.web.filter.CorsFilter@6a44977a, org.springframework.security.web.authentication.logout.LogoutFilter@3e6a190e, com.ssafy.common.auth.JwtAuthenticationFilter@6512d4f6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f43e6d6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4077423d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5278999b, org.springframework.security.web.session.SessionManagementFilter@1bc8e6d7, org.springframework.security.web.access.ExceptionTranslationFilter@1a840922, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3f289df3]
+2022-08-01 22:57:04.117  INFO 2908 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-08-01 22:57:04.122 DEBUG 2908 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-01 22:57:04.162 DEBUG 2908 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-08-01 22:57:04.172 DEBUG 2908 --- [restartedMain] o.s.w.s.c.annotation.WebMvcConfigurer    : Default resource handling disabled
+2022-08-01 22:57:04.312 DEBUG 2908 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/resources/**, /swagger-ui.html, /webjars/**, /css/**, /fonts/**, /icons/**, /img/**, /js/**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-08-01 22:57:04.317 DEBUG 2908 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-01 22:57:04.522  INFO 2908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-01 22:57:04.732  INFO 2908 --- [restartedMain] com.ssafy.GroupCallApplication           : Started GroupCallApplication in 6.761 seconds (JVM running for 7.749)
+2022-08-01 22:57:05.467  INFO 2908 --- [RMI TCP Connection(2)-192.168.219.131] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-01 22:57:05.467  INFO 2908 --- [RMI TCP Connection(2)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-01 22:57:05.472 DEBUG 2908 --- [RMI TCP Connection(2)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-08-01 22:57:05.472 DEBUG 2908 --- [RMI TCP Connection(2)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-08-01 22:57:05.472 DEBUG 2908 --- [RMI TCP Connection(2)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-08-01 22:57:05.472 DEBUG 2908 --- [RMI TCP Connection(2)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6aad7652
+2022-08-01 22:57:05.472 DEBUG 2908 --- [RMI TCP Connection(2)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@367c225d
+2022-08-01 22:57:05.472 DEBUG 2908 --- [RMI TCP Connection(2)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-08-01 22:57:05.472  INFO 2908 --- [RMI TCP Connection(2)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-08-01 22:58:21.102 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /api/v1/auth/login, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"6023028b-67f3-4b74-974e-b123c3a6f9a5", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"88", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 22:58:21.104 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2022-08-01 22:58:21.106 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.AuthController#login(UserLoginPostReq)
+2022-08-01 22:58:21.135 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.ssafy.api.request.UserLoginPostReq@274a199f]
+2022-08-01 22:58:21.364 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 22:58:21.365 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.ssafy.api.response.UserLoginPostRes@2e3ebe3c]
+2022-08-01 22:58:21.376 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 22:58:21.378 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : After request [POST /api/v1/auth/login, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"6023028b-67f3-4b74-974e-b123c3a6f9a5", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"88", Content-Type:"application/json;charset=UTF-8"], payload={
+    "id" : "user1",
+    "password" : "1q2w3e4r!",
+    "name" : "김광용"
+}
+
+
+]
+2022-08-01 22:59:21.116 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : Before request [PUT /api/v1/articles/update, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1ODMwMSwiaWF0IjoxNjU5MzYyMzAxfQ.bB2gpKyMmQ20cElI4TdY9x9YgXUl9864sx6JMSDHxVVadIWFK7HHosa7oAOmJFLKd5xjzwxWATGF8K8_uZSg-g", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"7ec964ac-5582-4c24-a50c-3d8d3189150e", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"96", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 22:59:21.116 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-2] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/articles/update", parameters={}
+2022-08-01 22:59:21.116 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.ArticleController#update(SaveArticleDto, Authentication)
+2022-08-01 22:59:21.120 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [SaveArticleDto(title=현여친 ..., price=4000, content=사이즈 M, user_idx=null)]
+2022-08-01 22:59:21.145 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Failed to complete request: org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!
+2022-08-01 22:59:21.145 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : After request [PUT /api/v1/articles/update, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1ODMwMSwiaWF0IjoxNjU5MzYyMzAxfQ.bB2gpKyMmQ20cElI4TdY9x9YgXUl9864sx6JMSDHxVVadIWFK7HHosa7oAOmJFLKd5xjzwxWATGF8K8_uZSg-g", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"7ec964ac-5582-4c24-a50c-3d8d3189150e", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"96", Content-Type:"application/json;charset=UTF-8"], payload={
+    "title" : "현여친 ...",
+    "price" : 4000,
+    "content" : "사이즈 M"
+}
+
+
+
+]
+2022-08-01 22:59:21.152 ERROR 2908 --- [http-nio-127.0.0.1-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!] with root cause
+
+java.lang.IllegalArgumentException: The given id must not be null!
+	at org.springframework.util.Assert.notNull(Assert.java:201) ~[spring-core-5.3.6.jar:5.3.6]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById(SimpleJpaRepository.java:269) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_192]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:524) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:531) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:156) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:131) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.6.jar:5.3.6]
+	at com.sun.proxy.$Proxy145.findById(Unknown Source) ~[na:na]
+	at com.ssafy.api.service.ArticleServiceImpl.findByArticleId(ArticleServiceImpl.java:25) ~[classes/:na]
+	at com.ssafy.api.service.ArticleServiceImpl$$FastClassBySpringCGLIB$$b277c6d3.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.3.6.jar:5.3.6]
+	at com.ssafy.api.service.ArticleServiceImpl$$EnhancerBySpringCGLIB$$b91deaf5.findByArticleId(<generated>) ~[classes/:na]
+	at com.ssafy.api.controller.ArticleController.update(ArticleController.java:70) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_192]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.45.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.45.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at com.ssafy.common.auth.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:67) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) ~[spring-boot-actuator-2.4.5.jar:2.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_192]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+
+2022-08-01 22:59:21.155 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for PUT "/error", parameters={}
+2022-08-01 22:59:21.157 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-08-01 22:59:21.161 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 22:59:21.161 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Mon Aug 01 22:59:21 KST 2022, status=500, error=Internal Server Error, trace=org.springfr (truncated)...]
+2022-08-01 22:59:21.164 DEBUG 2908 --- [http-nio-127.0.0.1-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2022-08-01 23:01:16.990  INFO 2908 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-08-01 23:01:16.990  INFO 2908 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 23:01:16.990  INFO 2908 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-01 23:01:17.000  INFO 2908 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-01 23:01:51.804  INFO 8780 --- [restartedMain] com.ssafy.GroupCallApplication           : Starting GroupCallApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 8780 (C:\Users\multicampus\Desktop\backend-java\out\production\classes started by multicampus in C:\Users\multicampus\Desktop\backend-java)
+2022-08-01 23:01:51.804  INFO 8780 --- [restartedMain] com.ssafy.GroupCallApplication           : No active profile set, falling back to default profiles: default
+2022-08-01 23:01:51.854  INFO 8780 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-01 23:01:51.859  INFO 8780 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-01 23:01:52.904  INFO 8780 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-01 23:01:52.959  INFO 8780 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 2 JPA repository interfaces.
+2022-08-01 23:01:53.219  INFO 8780 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@146cc3d3' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 23:01:53.224  INFO 8780 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-01 23:01:53.449  INFO 8780 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-01 23:01:53.449  INFO 8780 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-01 23:01:53.459  INFO 8780 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-08-01 23:01:53.559  INFO 8780 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-01 23:01:53.559  INFO 8780 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1700 ms
+2022-08-01 23:01:53.679 DEBUG 8780 --- [restartedMain] o.s.web.filter.CharacterEncodingFilter   : Filter 'characterEncodingFilter' configured for use
+2022-08-01 23:01:53.684 DEBUG 8780 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'commonsRequestLoggingFilter' configured for use
+2022-08-01 23:01:53.799  INFO 8780 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-01 23:01:53.899  INFO 8780 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2022-08-01 23:01:54.004  INFO 8780 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-01 23:01:54.080  INFO 8780 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-01 23:01:54.249  INFO 8780 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-01 23:01:54.259  INFO 8780 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-08-01 23:01:54.790  INFO 8780 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-01 23:01:54.804  INFO 8780 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 23:01:54.831  INFO 8780 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-01 23:01:55.194  WARN 8780 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-01 23:01:55.440 DEBUG 8780 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 16 mappings in 'requestMappingHandlerMapping'
+2022-08-01 23:01:55.533  INFO 8780 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-08-01 23:01:55.899  INFO 8780 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@66dcffeb, org.springframework.security.web.context.SecurityContextPersistenceFilter@51220656, org.springframework.security.web.header.HeaderWriterFilter@53141e59, org.springframework.web.filter.CorsFilter@3b2c2d5c, org.springframework.security.web.authentication.logout.LogoutFilter@2ecae83, com.ssafy.common.auth.JwtAuthenticationFilter@507c307a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1edf4751, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79f7baa2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@43046d77, org.springframework.security.web.session.SessionManagementFilter@4f291efd, org.springframework.security.web.access.ExceptionTranslationFilter@3188e16f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6a89e7b5]
+2022-08-01 23:01:55.959  INFO 8780 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-08-01 23:01:55.979 DEBUG 8780 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-01 23:01:56.009 DEBUG 8780 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2022-08-01 23:01:56.020 DEBUG 8780 --- [restartedMain] o.s.w.s.c.annotation.WebMvcConfigurer    : Default resource handling disabled
+2022-08-01 23:01:56.154 DEBUG 8780 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/resources/**, /swagger-ui.html, /webjars/**, /css/**, /fonts/**, /icons/**, /img/**, /js/**, /swagger-ui/**] in 'resourceHandlerMapping'
+2022-08-01 23:01:56.164 DEBUG 8780 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-01 23:01:56.374  INFO 8780 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-01 23:01:56.569  INFO 8780 --- [restartedMain] com.ssafy.GroupCallApplication           : Started GroupCallApplication in 5.157 seconds (JVM running for 6.12)
+2022-08-01 23:01:57.279  INFO 8780 --- [RMI TCP Connection(1)-192.168.219.131] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-01 23:01:57.279  INFO 8780 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-01 23:01:57.279 DEBUG 8780 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-08-01 23:01:57.279 DEBUG 8780 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-08-01 23:01:57.279 DEBUG 8780 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-08-01 23:01:57.279 DEBUG 8780 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2b8f70a0
+2022-08-01 23:01:57.279 DEBUG 8780 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@394f23a9
+2022-08-01 23:01:57.279 DEBUG 8780 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-08-01 23:01:57.279  INFO 8780 --- [RMI TCP Connection(1)-192.168.219.131] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-08-01 23:02:13.359 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [PUT /api/v1/auth/login, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1ODMwMSwiaWF0IjoxNjU5MzYyMzAxfQ.bB2gpKyMmQ20cElI4TdY9x9YgXUl9864sx6JMSDHxVVadIWFK7HHosa7oAOmJFLKd5xjzwxWATGF8K8_uZSg-g", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"f9fdd0e2-38d6-4861-8dc6-d440d21d2c34", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"96", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 23:02:13.361 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/auth/login", parameters={}
+2022-08-01 23:02:13.365  WARN 8780 --- [http-nio-127.0.0.1-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2022-08-01 23:02:13.366 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 405 METHOD_NOT_ALLOWED
+2022-08-01 23:02:13.367 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : After request [PUT /api/v1/auth/login, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1ODMwMSwiaWF0IjoxNjU5MzYyMzAxfQ.bB2gpKyMmQ20cElI4TdY9x9YgXUl9864sx6JMSDHxVVadIWFK7HHosa7oAOmJFLKd5xjzwxWATGF8K8_uZSg-g", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"f9fdd0e2-38d6-4861-8dc6-d440d21d2c34", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"96", Content-Type:"application/json;charset=UTF-8"]]
+2022-08-01 23:02:13.371 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for PUT "/error", parameters={}
+2022-08-01 23:02:13.373 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-08-01 23:02:13.394 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 23:02:13.394 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Mon Aug 01 23:02:13 KST 2022, status=405, error=Method Not Allowed, trace=org.springframe (truncated)...]
+2022-08-01 23:02:13.409 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 405
+2022-08-01 23:02:25.168 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : Before request [PUT /api/v1/auth/login, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"7779eb50-9d77-4aac-8ad7-d6fa66170eac", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"88", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 23:02:25.169 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-2] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/auth/login", parameters={}
+2022-08-01 23:02:25.170  WARN 8780 --- [http-nio-127.0.0.1-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2022-08-01 23:02:25.170 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 405 METHOD_NOT_ALLOWED
+2022-08-01 23:02:25.170 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : After request [PUT /api/v1/auth/login, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"7779eb50-9d77-4aac-8ad7-d6fa66170eac", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"88", Content-Type:"application/json;charset=UTF-8"]]
+2022-08-01 23:02:25.171 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for PUT "/error", parameters={}
+2022-08-01 23:02:25.171 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-08-01 23:02:25.172 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 23:02:25.172 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Mon Aug 01 23:02:25 KST 2022, status=405, error=Method Not Allowed, trace=org.springframe (truncated)...]
+2022-08-01 23:02:25.174 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 405
+2022-08-01 23:02:29.275 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /api/v1/auth/login, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"217818e1-8b57-41f5-bf2c-f5690ff37f01", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"88", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 23:02:29.275 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2022-08-01 23:02:29.276 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.AuthController#login(UserLoginPostReq)
+2022-08-01 23:02:29.295 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.ssafy.api.request.UserLoginPostReq@1e57ff54]
+2022-08-01 23:02:29.385 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 23:02:29.385 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.ssafy.api.response.UserLoginPostRes@566299ff]
+2022-08-01 23:02:29.387 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 23:02:29.387 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : After request [POST /api/v1/auth/login, client=127.0.0.1, headers=[user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"217818e1-8b57-41f5-bf2c-f5690ff37f01", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"88", Content-Type:"application/json;charset=UTF-8"], payload={
+    "id" : "user1",
+    "password" : "1q2w3e4r!",
+    "name" : "김광용"
+}
+
+
+]
+2022-08-01 23:02:53.401 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-4] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /api/v1/articles/register, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1ODU0OSwiaWF0IjoxNjU5MzYyNTQ5fQ.3wr51kQnQzovfhoq1RtbUKH_KmDkSXFWek5Cr760jbFutUaPr6T6VzwOhqfveh2MELKqEejTRTg1qEIPQf_9mQ", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"8119ea76-1622-4670-993e-8930d957bead", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"94", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 23:02:53.401 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/articles/register", parameters={}
+2022-08-01 23:02:53.401 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.ArticleController#createArticle(SaveArticleDto, Authentication)
+2022-08-01 23:02:53.406 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [SaveArticleDto(article_idx=null, title=전여친 ..., price=3000, content=사이즈 L, user_idx=null)]
+2022-08-01 23:02:53.453 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 23:02:53.453 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.ssafy.common.model.response.BaseResponseBody@388bb2f6]
+2022-08-01 23:02:53.454 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 23:02:53.454 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-4] o.s.w.f.CommonsRequestLoggingFilter      : After request [POST /api/v1/articles/register, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1ODU0OSwiaWF0IjoxNjU5MzYyNTQ5fQ.3wr51kQnQzovfhoq1RtbUKH_KmDkSXFWek5Cr760jbFutUaPr6T6VzwOhqfveh2MELKqEejTRTg1qEIPQf_9mQ", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"8119ea76-1622-4670-993e-8930d957bead", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"94", Content-Type:"application/json;charset=UTF-8"], payload={
+    "title" : "전여친 ...",
+    "price" : 3000,
+    "content" : "사이즈 L"
+}
+
+
+]
+2022-08-01 23:03:20.863 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-5] o.s.w.f.CommonsRequestLoggingFilter      : Before request [PUT /api/v1/articles/update, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1ODU0OSwiaWF0IjoxNjU5MzYyNTQ5fQ.3wr51kQnQzovfhoq1RtbUKH_KmDkSXFWek5Cr760jbFutUaPr6T6VzwOhqfveh2MELKqEejTRTg1qEIPQf_9mQ", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"2b064b55-09c1-49e6-9399-701ab20cab4a", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"94", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 23:03:20.863 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-5] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/articles/update", parameters={}
+2022-08-01 23:03:20.863 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.ArticleController#update(SaveArticleDto, Authentication)
+2022-08-01 23:03:20.864 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [SaveArticleDto(article_idx=null, title=현여친 ..., price=2000, content=사이즈 M, user_idx=null)]
+2022-08-01 23:03:20.873 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Failed to complete request: org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!
+2022-08-01 23:03:20.874 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-5] o.s.w.f.CommonsRequestLoggingFilter      : After request [PUT /api/v1/articles/update, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1ODU0OSwiaWF0IjoxNjU5MzYyNTQ5fQ.3wr51kQnQzovfhoq1RtbUKH_KmDkSXFWek5Cr760jbFutUaPr6T6VzwOhqfveh2MELKqEejTRTg1qEIPQf_9mQ", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"2b064b55-09c1-49e6-9399-701ab20cab4a", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"94", Content-Type:"application/json;charset=UTF-8"], payload={
+    "title" : "현여친 ...",
+    "price" : 2000,
+    "content" : "사이즈 M"
+}
+
+
+]
+2022-08-01 23:03:20.881 ERROR 8780 --- [http-nio-127.0.0.1-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!] with root cause
+
+java.lang.IllegalArgumentException: The given id must not be null!
+	at org.springframework.util.Assert.notNull(Assert.java:201) ~[spring-core-5.3.6.jar:5.3.6]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById(SimpleJpaRepository.java:269) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_192]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:524) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:531) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:156) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:131) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.6.jar:5.3.6]
+	at com.sun.proxy.$Proxy145.findById(Unknown Source) ~[na:na]
+	at com.ssafy.api.service.ArticleServiceImpl.findByArticleId(ArticleServiceImpl.java:25) ~[classes/:na]
+	at com.ssafy.api.service.ArticleServiceImpl$$FastClassBySpringCGLIB$$b277c6d3.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.3.6.jar:5.3.6]
+	at com.ssafy.api.service.ArticleServiceImpl$$EnhancerBySpringCGLIB$$aa9223d.findByArticleId(<generated>) ~[classes/:na]
+	at com.ssafy.api.controller.ArticleController.update(ArticleController.java:70) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_192]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.45.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.45.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at com.ssafy.common.auth.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:67) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) ~[spring-boot-actuator-2.4.5.jar:2.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_192]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+
+2022-08-01 23:03:20.882 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for PUT "/error", parameters={}
+2022-08-01 23:03:20.882 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-08-01 23:03:20.883 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 23:03:20.883 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Mon Aug 01 23:03:20 KST 2022, status=500, error=Internal Server Error, trace=org.springfr (truncated)...]
+2022-08-01 23:03:20.885 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2022-08-01 23:11:51.488 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /api/v1/articles/register, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1ODU0OSwiaWF0IjoxNjU5MzYyNTQ5fQ.3wr51kQnQzovfhoq1RtbUKH_KmDkSXFWek5Cr760jbFutUaPr6T6VzwOhqfveh2MELKqEejTRTg1qEIPQf_9mQ", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"bf5aa196-dcca-4f4d-8487-6ad435d0c31e", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"94", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 23:11:51.488 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/articles/register", parameters={}
+2022-08-01 23:11:51.489 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.ArticleController#createArticle(SaveArticleDto, Authentication)
+2022-08-01 23:11:51.490 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [SaveArticleDto(article_idx=null, title=현여친 ..., price=2000, content=사이즈 M, user_idx=null)]
+2022-08-01 23:11:51.498 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 23:11:51.499 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.ssafy.common.model.response.BaseResponseBody@fd7a656]
+2022-08-01 23:11:51.499 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 23:11:51.500 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : After request [POST /api/v1/articles/register, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1ODU0OSwiaWF0IjoxNjU5MzYyNTQ5fQ.3wr51kQnQzovfhoq1RtbUKH_KmDkSXFWek5Cr760jbFutUaPr6T6VzwOhqfveh2MELKqEejTRTg1qEIPQf_9mQ", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"bf5aa196-dcca-4f4d-8487-6ad435d0c31e", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"94", Content-Type:"application/json;charset=UTF-8"], payload={
+    "title" : "현여친 ...",
+    "price" : 2000,
+    "content" : "사이즈 M"
+}
+
+
+]
+2022-08-01 23:12:18.326 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-7] o.s.w.f.CommonsRequestLoggingFilter      : Before request [PUT /api/v1/articles/update?user_idx=1, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1ODU0OSwiaWF0IjoxNjU5MzYyNTQ5fQ.3wr51kQnQzovfhoq1RtbUKH_KmDkSXFWek5Cr760jbFutUaPr6T6VzwOhqfveh2MELKqEejTRTg1qEIPQf_9mQ", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"e136381f-b563-4dfa-b8bb-20a583e96057", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"94", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 23:12:18.326 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-7] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/articles/update?user_idx=1", parameters={masked}
+2022-08-01 23:12:18.326 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.ArticleController#update(SaveArticleDto, Authentication)
+2022-08-01 23:12:18.327 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [SaveArticleDto(article_idx=null, title=현여친 ..., price=2000, content=사이즈 M, user_idx=null)]
+2022-08-01 23:12:18.329 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Failed to complete request: org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!
+2022-08-01 23:12:18.330 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-7] o.s.w.f.CommonsRequestLoggingFilter      : After request [PUT /api/v1/articles/update?user_idx=1, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1ODU0OSwiaWF0IjoxNjU5MzYyNTQ5fQ.3wr51kQnQzovfhoq1RtbUKH_KmDkSXFWek5Cr760jbFutUaPr6T6VzwOhqfveh2MELKqEejTRTg1qEIPQf_9mQ", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"e136381f-b563-4dfa-b8bb-20a583e96057", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"94", Content-Type:"application/json;charset=UTF-8"], payload={
+    "title" : "현여친 ...",
+    "price" : 2000,
+    "content" : "사이즈 M"
+}
+
+
+]
+2022-08-01 23:12:18.332 ERROR 8780 --- [http-nio-127.0.0.1-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!] with root cause
+
+java.lang.IllegalArgumentException: The given id must not be null!
+	at org.springframework.util.Assert.notNull(Assert.java:201) ~[spring-core-5.3.6.jar:5.3.6]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById(SimpleJpaRepository.java:269) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_192]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:524) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:531) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:156) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:131) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.4.8.jar:2.4.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.6.jar:5.3.6]
+	at com.sun.proxy.$Proxy145.findById(Unknown Source) ~[na:na]
+	at com.ssafy.api.service.ArticleServiceImpl.findByArticleId(ArticleServiceImpl.java:25) ~[classes/:na]
+	at com.ssafy.api.service.ArticleServiceImpl$$FastClassBySpringCGLIB$$b277c6d3.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.6.jar:5.3.6]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.3.6.jar:5.3.6]
+	at com.ssafy.api.service.ArticleServiceImpl$$EnhancerBySpringCGLIB$$aa9223d.findByArticleId(<generated>) ~[classes/:na]
+	at com.ssafy.api.controller.ArticleController.update(ArticleController.java:70) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_192]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.45.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.6.jar:5.3.6]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.45.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at com.ssafy.common.auth.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:67) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.4.6.jar:5.4.6]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) ~[spring-boot-actuator-2.4.5.jar:2.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.6.jar:5.3.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_192]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_192]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+
+2022-08-01 23:12:18.333 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-7] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for PUT "/error?user_idx=1", parameters={masked}
+2022-08-01 23:12:18.333 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-08-01 23:12:18.334 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 23:12:18.334 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Mon Aug 01 23:12:18 KST 2022, status=500, error=Internal Server Error, trace=org.springfr (truncated)...]
+2022-08-01 23:12:18.335 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2022-08-01 23:12:57.374 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-8] o.s.w.f.CommonsRequestLoggingFilter      : Before request [PUT /api/v1/articles/update, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1ODU0OSwiaWF0IjoxNjU5MzYyNTQ5fQ.3wr51kQnQzovfhoq1RtbUKH_KmDkSXFWek5Cr760jbFutUaPr6T6VzwOhqfveh2MELKqEejTRTg1qEIPQf_9mQ", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"efe11c2c-12bd-4310-bbd2-985e12bb34a9", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"145", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 23:12:57.374 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-8] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/articles/update", parameters={}
+2022-08-01 23:12:57.375 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.ArticleController#update(SaveArticleDto, Authentication)
+2022-08-01 23:12:57.377 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-8] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<java.lang.String> com.ssafy.api.controller.ArticleController.update(com.ssafy.api.controller.SaveArticleDto,org.springframework.security.core.Authentication) throws java.lang.Exception: JSON parse error: Cannot deserialize value of type `java.lang.Long` from String "user1": not a valid Long value; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.lang.Long` from String "user1": not a valid Long value
+ at [Source: (PushbackInputStream); line: 6, column: 18] (through reference chain: com.ssafy.api.controller.SaveArticleDto["user_idx"])
+2022-08-01 23:12:57.377  WARN 8780 --- [http-nio-127.0.0.1-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.lang.Long` from String "user1": not a valid Long value; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.lang.Long` from String "user1": not a valid Long value
+ at [Source: (PushbackInputStream); line: 6, column: 18] (through reference chain: com.ssafy.api.controller.SaveArticleDto["user_idx"])]
+2022-08-01 23:12:57.377 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2022-08-01 23:12:57.377 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-8] o.s.w.f.CommonsRequestLoggingFilter      : After request [PUT /api/v1/articles/update, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1ODU0OSwiaWF0IjoxNjU5MzYyNTQ5fQ.3wr51kQnQzovfhoq1RtbUKH_KmDkSXFWek5Cr760jbFutUaPr6T6VzwOhqfveh2MELKqEejTRTg1qEIPQf_9mQ", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"efe11c2c-12bd-4310-bbd2-985e12bb34a9", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"145", Content-Type:"application/json;charset=UTF-8"], payload={
+    "article_idx" : 1,
+    "title" : "현여친 ...",
+    "price" : 2000,
+    "content" : "사이즈 M",
+    "user_idx" : "user1"
+}
+
+
+]
+2022-08-01 23:12:57.378 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-8] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for PUT "/error", parameters={}
+2022-08-01 23:12:57.378 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-08-01 23:12:57.379 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-08-01 23:12:57.379 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Mon Aug 01 23:12:57 KST 2022, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2022-08-01 23:12:57.380 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 400
+2022-08-01 23:13:13.361 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-9] o.s.w.f.CommonsRequestLoggingFilter      : Before request [PUT /api/v1/articles/update, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1ODU0OSwiaWF0IjoxNjU5MzYyNTQ5fQ.3wr51kQnQzovfhoq1RtbUKH_KmDkSXFWek5Cr760jbFutUaPr6T6VzwOhqfveh2MELKqEejTRTg1qEIPQf_9mQ", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"30738bc7-d7af-4d0f-a591-8e4325a396a7", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"118", Content-Type:"application/json;charset=ISO-8859-1"]]
+2022-08-01 23:13:13.362 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-9] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/articles/update", parameters={}
+2022-08-01 23:13:13.362 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ssafy.api.controller.ArticleController#update(SaveArticleDto, Authentication)
+2022-08-01 23:13:13.362 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [SaveArticleDto(article_idx=1, title=현여친 ..., price=2000, content=사이즈 M, user_idx=null)]
+2022-08-01 23:13:13.390 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2022-08-01 23:13:13.390 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["success
+Board [articleIdx=1, title=현여친 ..., content=사이즈 M, price2000, lendStatus=false, createdtime (truncated)...]
+2022-08-01 23:13:13.391 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-08-01 23:13:13.391 DEBUG 8780 --- [http-nio-127.0.0.1-8080-exec-9] o.s.w.f.CommonsRequestLoggingFilter      : After request [PUT /api/v1/articles/update, client=127.0.0.1, user=user1, headers=[authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MDY1ODU0OSwiaWF0IjoxNjU5MzYyNTQ5fQ.3wr51kQnQzovfhoq1RtbUKH_KmDkSXFWek5Cr760jbFutUaPr6T6VzwOhqfveh2MELKqEejTRTg1qEIPQf_9mQ", user-agent:"PostmanRuntime/7.29.2", accept:"*/*", postman-token:"30738bc7-d7af-4d0f-a591-8e4325a396a7", host:"localhost:8080", accept-encoding:"gzip, deflate, br", connection:"keep-alive", content-length:"118", Content-Type:"application/json;charset=UTF-8"], payload={
+    "article_idx" : 1,
+    "title" : "현여친 ...",
+    "price" : 2000,
+    "content" : "사이즈 M"
+}
+
+
+]
+2022-08-01 23:13:58.644  INFO 8780 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-08-01 23:13:58.653  INFO 8780 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-01 23:13:58.653  INFO 8780 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-01 23:13:58.658  INFO 8780 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

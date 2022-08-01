@@ -6,4 +6,8 @@ import com.ssafy.db.entity.Article;
 public interface ArticleService {
 
     public Article createArticle(SaveArticleDto saveBoardDto);
+
+    public Article findByArticleId(Long string);
+
+    public Article updateArticle(Article article, SaveArticleDto saveArticleDto);
 }

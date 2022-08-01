@@ -11,13 +11,13 @@ import io.swagger.annotations.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
+
+import java.util.NoSuchElementException;
 
 @Api(value = "게시물 API", tags = { "Article" })
 @RestController
@@ -52,6 +52,29 @@ public class ArticleController {
         }
         System.out.println("잘 됨?"+ article.toString());
         return ResponseEntity.status(200).body(BaseResponseBody.of(200, "Success"));
+    }
+
+    @ApiOperation(value = "게시글 정보 수정(token)", notes = "게시글 정보 수정")
+    @ApiResponses({ @ApiResponse(code = 200, message = "성공"),
+            @ApiResponse(code = 401, message = "인증 실패"),
+            @ApiResponse(code = 404, message = "사용자 없음"),
+            @ApiResponse(code = 500, message = "서버 오류") })
+    @PutMapping("/update")
+    public ResponseEntity<String> update(@RequestBody SaveArticleDto saveArticleDto, @ApiIgnore Authentication authentication) throws Exception {
+        Article article;
+        SsafyUserDetails userDetails = (SsafyUserDetails) authentication.getDetails();
+        Long user_idx = userDetails.getUserIdx();
+        try {
+            System.out.println(saveArticleDto.toString());
+            saveArticleDto.setUser_idx(user_idx);
+            article = articleService.findByArticleId(saveArticleDto.getArticle_idx());
+        }catch(NoSuchElementException E) {
+            System.out.println("게시글 수정 실패");
+            return  ResponseEntity.status(500).body("해당 게시글이 없어서 게시글 수정 실패");
+        }
+        Article updateArticle = articleService.updateArticle(article, saveArticleDto);
+        System.out.println("업데이트 됨");
+        return new ResponseEntity<String>(SUCCESS+"\n"+updateArticle.toString(), HttpStatus.OK);
     }
 
 }

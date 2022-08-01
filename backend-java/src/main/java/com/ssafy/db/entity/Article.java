@@ -1,6 +1,7 @@
 package com.ssafy.db.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.ssafy.api.controller.SaveArticleDto;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.OnDelete;
@@ -44,6 +45,12 @@ public class Article {
     @JoinColumn(name = "user_idx")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
+
+    public void updateArticle(SaveArticleDto saveArticleDto) {
+        this.title = saveArticleDto.getTitle();
+        this.content = saveArticleDto.getContent();
+        this.price = saveArticleDto.getPrice();
+    }
 
     @Override
     public String toString() {

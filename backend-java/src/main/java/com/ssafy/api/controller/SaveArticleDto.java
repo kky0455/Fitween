@@ -12,8 +12,8 @@ import lombok.*;
 @ToString
 public class SaveArticleDto {
 
-//    @ApiModelProperty(name = "게시글 id")
-//    private Long article_idx;
+    @ApiModelProperty(name = "게시글 id")
+    private Long article_idx;
 
     @ApiModelProperty(name = "게시글 제목")
     private String title;
@@ -24,8 +24,8 @@ public class SaveArticleDto {
     @ApiModelProperty(name = "내용")
     private String content;
 
-    @ApiModelProperty(name = "대여 가능 상태")
-    private boolean lend_status;
+//    @ApiModelProperty(name = "대여 가능 상태")
+//    private boolean lend_status;
 
     @ApiModelProperty(name = "유저 idx")
     private Long user_idx;
@@ -37,7 +37,7 @@ public class SaveArticleDto {
                 .title(title)
                 .content(content)
                 .price(price)
-                .lendStatus(lend_status)
+//                .lendStatus(lend_status)
                 .user(user)
                 .build();
     }
