@@ -8,6 +8,7 @@ import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,6 +37,9 @@ public class User {
 
     @Column(length = 10, nullable = false)
     String name;
+
+    @OneToMany(mappedBy = "user",  cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    List<Article> articles = new ArrayList<>();
 
 
     @Builder

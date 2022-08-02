@@ -7,6 +7,7 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.Generated;
 import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -18,6 +19,8 @@ public class QUser extends EntityPathBase<User> {
     private static final long serialVersionUID = 846542477L;
 
     public static final QUser user = new QUser("user");
+
+    public final ListPath<Article, QArticle> articles = this.<Article, QArticle>createList("articles", Article.class, QArticle.class, PathInits.DIRECT2);
 
     public final StringPath name = createString("name");
 

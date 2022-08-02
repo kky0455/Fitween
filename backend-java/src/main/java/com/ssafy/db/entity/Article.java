@@ -41,7 +41,7 @@ public class Article {
     @ColumnDefault("1")
     boolean lendStatus;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_idx")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;

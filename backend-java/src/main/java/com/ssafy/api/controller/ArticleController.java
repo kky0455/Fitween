@@ -23,7 +23,7 @@ import java.util.NoSuchElementException;
 
 @Api(value = "게시물 API", tags = { "Article" })
 @RestController
-@RequestMapping("/api/v1/articles")
+@RequestMapping("/article")
 public class ArticleController {
     public static final Logger logger = LoggerFactory.getLogger(ArticleController.class);
     private static final String SUCCESS = "success";
@@ -84,7 +84,7 @@ public class ArticleController {
             @ApiResponse(code = 401, message = "인증 실패"),
             @ApiResponse(code = 404, message = "사용자 없음"),
             @ApiResponse(code = 500, message = "해당 회원 없음")})
-    @DeleteMapping("/delete/{article_idx}")
+    @DeleteMapping("/{article_idx}")
     public ResponseEntity<String> articledelete(@PathVariable("article_idx") Long article_idx) throws Exception {
         Article article;
         try {
