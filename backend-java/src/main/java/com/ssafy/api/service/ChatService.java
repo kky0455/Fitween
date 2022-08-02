@@ -3,6 +3,7 @@ package com.ssafy.api.service;
 import com.ssafy.api.model.ChatRoom;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -32,13 +33,8 @@ public class ChatService {
 
     //채팅방 하나 불러오기
     public ChatRoom findById(String roomId) {
+
         return chatRooms.get(roomId);
     }
 
-    //채팅방 생성
-//    public ChatRoom createRoom(String name) {
-//        ChatRoom chatRoom = ChatRoom.create();
-//        chatRooms.put(chatRoom.getRoomId(), chatRoom);
-//        return chatRoom;
-//    }
 }

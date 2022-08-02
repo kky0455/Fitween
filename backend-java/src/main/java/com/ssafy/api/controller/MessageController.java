@@ -8,22 +8,50 @@ import com.ssafy.db.repository.ChatRepository;
 import com.ssafy.db.repository.ChatRoomRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
 public class MessageController {
 
     private final SimpMessageSendingOperations sendingOperations;
+    //진합 확인 후에 열기
+    @GetMapping("/chat/log")
+    public List<ChatMessage> enter(String roomId){
+        List<ChatMessage> cont = logMessage(roomId);
+        return cont;
+    }
+
+    @GetMapping("/chat/roomList")
+    public List<ChatRoom>  RoomList(String receiverId){
+        List<ChatRoom> rooms = roomList(receiverId);
+        return rooms;
+    }
+
+
 
     @MessageMapping("/chat/message")
-    public void enter(ChatMessage message) {
-        //System.out.println(message.getRoomId() + message.getSender() + message.getMessage());
+    public void chat(ChatMessage message) {
+
+        String roomnum = CheckRoom(message.getSenderId(),message.getReceiverId());
+
+        if (roomnum == null){
+            message.setRoomId(makeRoom(message.getSenderId(), message.getReceiverId()).getRoomId());
+        }
+        else{
+
+            message.setRoomId(roomnum);
+        }
+
 
         LocalDate date = LocalDate.now();
         LocalTime time = LocalTime.now();
@@ -35,15 +63,20 @@ public class MessageController {
         if(roomId == null){
            String newroomId = makeRoom(message.getSenderId(), message.getReceiverId()).getRoomId() ;
            message.setRoomId(newroomId);
-            sendingOperations.convertAndSend("/topic/chat/room/"+newroomId,message);
+
 
 
         }
+
         else{
             saveMessage(message.getRoomId(), message.getSenderId(), message.getReceiverId(), message.getMessage());
-            sendingOperations.convertAndSend("/topic/chat/room/"+roomId,message);
+
 
         }
+        sendingOperations.convertAndSend("/topic/chat/room/"+message.getRoomId(),message);
+        sendingOperations.convertAndSend("/topic/chat/wait/"+message.getReceiverId(),message);
+
+
 
         //saveMessage(message.getRoomId(), message.getSenderId(), message.getReceiverId(), message.getMessage());
        // sendingOperations.convertAndSend("/topic/chat/wait/"+message.getReceiverId(),message);
@@ -62,6 +95,7 @@ public class MessageController {
 
        // sendingOperations.convertAndSend("/topic/chat/room/"+message.getRoomId(),message);
     }
+
     //@MessageMapping("/chat/")
 
     //1.senderId 와  receiverId , 채팅메시지 를 받는다
@@ -75,20 +109,20 @@ public class MessageController {
     //senderId -> 보낸 사람 receiverId -> 받는 사람
     // chatRoom table에서 senderId와 receiverId가 같이 있는 튜플을 발견하면 그 튜플의 roomId를 리턴
     // 없으면 0리턴
-    public int CheckRoom(String senderId, String receiverId){
-
-        if(senderId.equals("true")){
-            return 1;
+    @Autowired
+    private ChatRoomRepository chatRoomRepository;
+    public String CheckRoom(String senderId, String receiverId){
+        String test = chatRoomRepository.findByUser1and2(senderId,receiverId);
+        if(test == null){
+            return null;
         }
         else{
-            return -1;
+            return test;
         }
 
     }
 
 
-    @Autowired
-    private ChatRoomRepository chatRepository;
     public ChatRoom makeRoom(String senderId, String receiverId){
         ChatRoom newroom = new ChatRoom();
         ChatRoomForm chatRoomForm = new ChatRoomForm();
@@ -99,9 +133,7 @@ public class MessageController {
         chatRoomForm.setSenderId(newroom.getSenderId());
 
         ChatRoom chatRoom = chatRoomForm.toEntity();
-        ChatRoom saved = chatRepository.save(chatRoom);
-
-        System.out.println("방 또 만듬");
+        ChatRoom saved = chatRoomRepository.save(chatRoom);
 
 
     return newroom;
@@ -120,13 +152,25 @@ public class MessageController {
 
         ChatMessage chatMessage = chatMessageForm.toEntity();
         ChatMessage saved = chatMessageRepository.save(chatMessage);
-        //ChatRoom chatRoom = chatRoomForm.toEntity();
-        //ChatRoom saved = chatMessageRepository.save(chatRoom);
-
-        System.out.println("메세지저장");
 
 
     }
+    public List<ChatMessage> logMessage(String roomId){
+        List<ChatMessage> logcon =  chatMessageRepository.findLogByUser(roomId);
+
+        return logcon;
+    }
+
+    public List<ChatRoom> roomList(String user1){
+        List<ChatRoom> rooms = chatRoomRepository.findRoomByUser(user1);
+
+        return rooms;
+
+    }
+
+
+
+
 }
 
 
