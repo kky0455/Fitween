@@ -1,14 +1,13 @@
 import React from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import styled from 'styled-components';
+
 import colors from '../../constants/colors';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import Button from '../../components/Common/Button/Button';
 import Input from '../../components/Common/Input/Input';
 import { useParams } from 'react-router-dom';
 import modify_img from '../../assets/modify_img.png';
-import check_box_blank from '../../assets/check_box_blank.svg';
 const ArticleRegist = () => {
 	return (
 		<>
@@ -24,6 +23,7 @@ const ArticleRegist = () => {
 				style={{
 					width: '100%',
 					height: '100%',
+					overflow: 'scroll',
 				}}
 			>
 				{/* 사진 등록 */}
@@ -41,7 +41,7 @@ const ArticleRegist = () => {
 					css={css`
 						display: flex;
 						flex-direction: column;
-						padding: 30px 25px;
+						padding: 30px 25px 0px 25px;
 					`}
 				>
 					{/* 제목 */}
@@ -49,14 +49,20 @@ const ArticleRegist = () => {
 						css={css`
 							margin-bottom: 12px;
 							border: 1px solid ${colors.black};
+							text-align: center;
 						`}
+						type="text"
+						placeholder="제목"
 					/>
 					{/* 대여 가격 */}
 					<Input
 						css={css`
 							margin-bottom: 12px;
 							border: 1px solid ${colors.black};
+							text-align: center;
 						`}
+						type="number"
+						placeholder="1일 대여 가격"
 					/>
 					{/* 내용 */}
 					<Input
@@ -64,7 +70,10 @@ const ArticleRegist = () => {
 							min-height: 170px;
 							margin-bottom: 12px;
 							border: 1px solid ${colors.black};
+							text-align: center;
 						`}
+						type="text"
+						placeholder="내용"
 					/>
 				</div>
 				<div

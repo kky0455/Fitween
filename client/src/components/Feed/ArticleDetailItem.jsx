@@ -15,7 +15,6 @@ const ArticleDetailItem = ({
 }) => {
 	return (
 		<div>
-			<div />
 			{/* 상세이미지 */}
 			<div
 				css={css`

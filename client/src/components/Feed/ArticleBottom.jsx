@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 
@@ -6,8 +6,16 @@ import Button from '../../components/Common/Button/Button';
 import common from '../../constants/commonStyle';
 import colors from '../../constants/colors';
 import { ReactComponent as Heart } from '../../assets/heart_active.svg';
+import { useGlobalContext } from '../../contexts/GlobalContext';
 
 const ArticleBottom = ({ isLiked, likeCnt, rentPrice }) => {
+	const { setHasBottom } = useGlobalContext();
+	useEffect(() => {
+		setHasBottom(true);
+		return () => {
+			setHasBottom(false);
+		};
+	}, []);
 	return (
 		<div
 			css={css`
@@ -16,6 +24,7 @@ const ArticleBottom = ({ isLiked, likeCnt, rentPrice }) => {
 				justify-content: space-between;
 				align-items: center;
 				width: 100%;
+				max-width: 1200px;
 				padding: 30px;
 				position: fixed;
 				bottom: 0;
