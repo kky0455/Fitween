@@ -13,7 +13,6 @@ const style = css`
 	height: ${common.topHeaderHeight};
 	background-color: ${colors.background};
 	padding: 20px;
-	box-shadow: 0 0.2px ${colors.text};
 	z-index: 100;
 	display: flex;
 	align-items: center;
