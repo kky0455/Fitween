@@ -1,14 +1,13 @@
 import React from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import styled from 'styled-components';
+
 import colors from '../../constants/colors';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import Button from '../../components/Common/Button/Button';
 import Input from '../../components/Common/Input/Input';
 import { useParams } from 'react-router-dom';
 import modify_img from '../../assets/modify_img.png';
-import check_box_blank from '../../assets/check_box_blank.svg';
 
 const ArticleModify = () => {
 	const { articleId } = useParams();
@@ -26,6 +25,7 @@ const ArticleModify = () => {
 				style={{
 					width: '100%',
 					height: '100%',
+					overflow: 'scroll',
 				}}
 			>
 				{/* 사진 등록 */}
@@ -63,7 +63,7 @@ const ArticleModify = () => {
 							border: 1px solid ${colors.black};
 							text-align: center;
 						`}
-						type="text"
+						type="number"
 						placeholder="1일 대여 가격"
 					/>
 					{/* 내용 */}
