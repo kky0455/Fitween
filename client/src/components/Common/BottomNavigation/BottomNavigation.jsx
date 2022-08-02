@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { NavLink } from 'react-router-dom';
+
 import { ReactComponent as ChatIcon } from '../../../assets/chat.svg';
 import { ReactComponent as HeartIcon } from '../../../assets/heart.svg';
 import { ReactComponent as HomeIcon } from '../../../assets/home.svg';
@@ -10,15 +12,18 @@ import common from '../../../constants/commonStyle';
 import colors from '../../../constants/colors';
 import { useGlobalContext } from '../../../contexts/GlobalContext';
 
+const Link = styled(NavLink)`
+	width: 25%;
+`;
 const IconWrapper = ({ onClick, active, icon, label }) => {
 	return (
 		<div
 			css={css`
 				display: flex;
+				height: 100%;
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				width: 25%;
 				gap: 5px;
 				color: ${active ? colors.green200 : colors.text};
 				fill: ${active ? colors.green200 : colors.text};
@@ -31,7 +36,6 @@ const IconWrapper = ({ onClick, active, icon, label }) => {
 	);
 };
 const BottomNavigation = () => {
-	const [path, setPath] = useState('/home');
 	const { setHasBottom } = useGlobalContext();
 	useEffect(() => {
 		setHasBottom(true);
@@ -56,30 +60,26 @@ const BottomNavigation = () => {
 				font-size: 12px;
 			`}
 		>
-			<IconWrapper
-				onClick={e => setPath('home')}
-				active={path.includes('home')}
-				icon={<HomeIcon width={30} height={30} />}
-				label="홈"
-			/>
-			<IconWrapper
-				onClick={e => setPath('like')}
-				active={path.includes('like')}
-				icon={<HeartIcon width={30} height={30} />}
-				label="찜"
-			/>
-			<IconWrapper
-				onClick={e => setPath('chat')}
-				active={path.includes('chat')}
-				icon={<ChatIcon width={30} height={30} />}
-				label="채팅"
-			/>
-			<IconWrapper
-				onClick={e => setPath('myprofile')}
-				active={path.includes('myprofile')}
-				icon={<PersonIcon width={30} height={30} />}
-				label="나"
-			/>
+			<Link to="/main">
+				{({ isActive }) => (
+					<IconWrapper active={isActive} icon={<HomeIcon width={30} height={30} />} label="홈" />
+				)}
+			</Link>
+			<Link to="/like">
+				{({ isActive }) => (
+					<IconWrapper active={isActive} icon={<HeartIcon width={30} height={30} />} label="찜" />
+				)}
+			</Link>
+			<Link to="/chat">
+				{({ isActive }) => (
+					<IconWrapper active={isActive} icon={<ChatIcon width={30} height={30} />} label="채팅" />
+				)}
+			</Link>
+			<Link to="/myprofile">
+				{({ isActive }) => (
+					<IconWrapper active={isActive} icon={<PersonIcon width={30} height={30} />} label="나" />
+				)}
+			</Link>
 		</div>
 	);
 };
