@@ -38,6 +38,7 @@ export const signup = rest.post('http://localhost:5000/auth/signup', async (req,
 		ctx.json({
 			refreshToken: 'dfsa;difjsifjslkfjeifsjofj',
 			accessToken: 'jkshfjkldASDJKHASFJKasd123asFJKAHSd',
+			userId: 'singco',
 		}),
 	),
 );
