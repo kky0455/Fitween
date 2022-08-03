@@ -48,6 +48,7 @@ const BottomNavigation = () => {
 		<div
 			css={css`
 				width: 100%;
+				max-width: 1200px;
 				background-color: ${colors.background};
 				display: flex;
 				justify-content: space-between;
