@@ -4,6 +4,7 @@ package com.ssafy.api.model;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Data
@@ -17,9 +18,8 @@ public class ChatMessageForm {
     //내용
     private String message;
 
-    private LocalDate senddate;
+    private LocalDateTime senddatetime;
 
-    private LocalTime sendtime;
 //     빌더 패턴으로 객체 생성! 생성자의 변형. 입력 순서가 일치하지 않아도 됨.
     public ChatMessage toEntity() {
         return ChatMessage.builder()

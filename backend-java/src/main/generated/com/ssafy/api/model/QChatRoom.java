@@ -21,11 +21,13 @@ public class QChatRoom extends EntityPathBase<ChatRoom> {
 
     public final StringPath lastChat = createString("lastChat");
 
-    public final StringPath receiverId = createString("receiverId");
+    public final DateTimePath<java.time.LocalDateTime> lastChatTime = createDateTime("lastChatTime", java.time.LocalDateTime.class);
 
     public final StringPath roomId = createString("roomId");
 
-    public final StringPath senderId = createString("senderId");
+    public final StringPath user1Id = createString("user1Id");
+
+    public final StringPath user2Id = createString("user2Id");
 
     public QChatRoom(String variable) {
         super(ChatRoom.class, forVariable(variable));

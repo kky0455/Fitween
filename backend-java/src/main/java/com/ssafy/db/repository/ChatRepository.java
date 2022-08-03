@@ -10,6 +10,8 @@ public interface ChatRepository extends CrudRepository<ChatMessage, Long>{
 
     @Query(value = "SELECT t FROM ChatMessage t where t.roomId = ?1 ")
     List<ChatMessage> findLogByUser(String roomId);
+
+
 }
 
 

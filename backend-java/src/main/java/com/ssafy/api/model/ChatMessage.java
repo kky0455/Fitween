@@ -6,6 +6,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
@@ -30,15 +31,12 @@ public class ChatMessage {
     @Column
     private String message;
     //메세지 시각
-    @Column(columnDefinition = "TIMESTAMP")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, timezone = "Asia/Seoul")
-    @UpdateTimestamp
-    private LocalTime sendtime;
+
     //메세지 날짜
     @Column(columnDefinition = "TIMESTAMP")
     @JsonFormat(shape = JsonFormat.Shape.STRING, timezone = "Asia/Seoul")
     @UpdateTimestamp
-    private LocalDate senddate;
+    private LocalDateTime senddatetime;
 
     @Builder // 빌더 패턴 적용! 추후 설명..!
     public ChatMessage(String roomId, String senderId, String receiverId, String message) {

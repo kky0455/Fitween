@@ -27,11 +27,9 @@ public class QChatMessage extends EntityPathBase<ChatMessage> {
 
     public final StringPath roomId = createString("roomId");
 
-    public final DatePath<java.time.LocalDate> senddate = createDate("senddate", java.time.LocalDate.class);
+    public final DateTimePath<java.time.LocalDateTime> senddatetime = createDateTime("senddatetime", java.time.LocalDateTime.class);
 
     public final StringPath senderId = createString("senderId");
-
-    public final TimePath<java.time.LocalTime> sendtime = createTime("sendtime", java.time.LocalTime.class);
 
     public QChatMessage(String variable) {
         super(ChatMessage.class, forVariable(variable));

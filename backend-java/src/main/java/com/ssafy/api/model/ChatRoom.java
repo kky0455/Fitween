@@ -1,11 +1,14 @@
 package com.ssafy.api.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 
@@ -19,27 +22,32 @@ public class ChatRoom {
 
     private String roomId;
     @Column
-    private String senderId;
+    private String user1Id;
     @Column
-    private String receiverId;
+    private String user2Id;
 
     @Column
     private String lastChat;
+    @Column(columnDefinition = "TIMESTAMP")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, timezone = "Asia/Seoul")
+    @UpdateTimestamp
+    private LocalDateTime lastChatTime;
 
 
-    public static ChatRoom create(String sender,String receiver) {
+    public static ChatRoom create(String user1Id,String user2Id) {
         ChatRoom room = new ChatRoom();
-        room.senderId = sender;
-        room.receiverId = receiver;
+        room.user1Id = user1Id;
+        room.user2Id = user2Id;
         room.roomId = UUID.randomUUID().toString();
 
         return room;
     }
 
     @Builder // 빌더 패턴 적용! 추후 설명..!
-    public ChatRoom(String roomId, String senderId, String receiverId) {
+    public ChatRoom(String roomId, String user1Id, String user2Id,String lastChat) {
         this.roomId = roomId;
-        this.senderId = senderId;
-        this.receiverId = receiverId;
+        this.user1Id = user1Id;
+        this.user2Id = user2Id;
+        this.lastChat = lastChat;
     }
 }

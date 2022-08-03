@@ -13,9 +13,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -24,17 +26,35 @@ import java.util.List;
 public class MessageController {
 
     private final SimpMessageSendingOperations sendingOperations;
+
+    @GetMapping("/chat/findRoom")
+    public String findRoom(String receiverId,String senderId){
+        String roomnum = findRoomfunc(receiverId,senderId);
+        if (roomnum==null){
+            return "-1";
+        }
+        else{
+            return roomnum;
+
+        }
+
+    }
     //진합 확인 후에 열기
     @GetMapping("/chat/log")
     public List<ChatMessage> enter(String roomId){
-        List<ChatMessage> cont = logMessage(roomId);
-        return cont;
+        return logMessage(roomId);
     }
 
+
+    //
+    //
+    //나중에 개인 확인하는 토큰 보내줘야함
     @GetMapping("/chat/roomList")
-    public List<ChatRoom>  RoomList(String receiverId){
-        List<ChatRoom> rooms = roomList(receiverId);
-        return rooms;
+    public List<ChatRoom>  RoomList(String userId){
+        //lastChat 업데이트해서 저장
+
+        return roomList(userId);
+
     }
 
 
@@ -53,28 +73,14 @@ public class MessageController {
         }
 
 
-        LocalDate date = LocalDate.now();
-        LocalTime time = LocalTime.now();
-        message.setSendtime(time);
-        message.setSenddate(date);
+        LocalDateTime datetime = LocalDateTime.now();
+        message.setSenddatetime(datetime);
 
 
-        String roomId = message.getRoomId();
-        if(roomId == null){
-           String newroomId = makeRoom(message.getSenderId(), message.getReceiverId()).getRoomId() ;
-           message.setRoomId(newroomId);
-
-
-
-        }
-
-        else{
-            saveMessage(message.getRoomId(), message.getSenderId(), message.getReceiverId(), message.getMessage());
-
-
-        }
-        sendingOperations.convertAndSend("/topic/chat/room/"+message.getRoomId(),message);
-        sendingOperations.convertAndSend("/topic/chat/wait/"+message.getReceiverId(),message);
+        updateLastChat(message.getRoomId(),message.getMessage(),message.getSenddatetime());
+        saveMessage(message.getRoomId(), message.getSenderId(), message.getReceiverId(), message.getMessage());
+        sendingOperations.convertAndSend("/topic/chat/room/"+message.getRoomId(),message); // 메세지 알림 보내기
+        sendingOperations.convertAndSend("/topic/chat/wait/"+message.getReceiverId(),message); // 메세지 보내기
 
 
 
@@ -111,13 +117,13 @@ public class MessageController {
     // 없으면 0리턴
     @Autowired
     private ChatRoomRepository chatRoomRepository;
-    public String CheckRoom(String senderId, String receiverId){
-        String test = chatRoomRepository.findByUser1and2(senderId,receiverId);
-        if(test == null){
+    public String CheckRoom(String user1Id, String user2Id){
+        String roomnum = chatRoomRepository.findByUser1and2(user1Id,user2Id);
+        if(roomnum == null){
             return null;
         }
         else{
-            return test;
+            return roomnum;
         }
 
     }
@@ -129,8 +135,8 @@ public class MessageController {
         newroom = newroom.create(senderId,receiverId);
 
         chatRoomForm.setRoomId(newroom.getRoomId());
-        chatRoomForm.setReceiverId(newroom.getReceiverId());
-        chatRoomForm.setSenderId(newroom.getSenderId());
+        chatRoomForm.setUser1Id(newroom.getUser1Id());
+        chatRoomForm.setUser2Id(newroom.getUser2Id());
 
         ChatRoom chatRoom = chatRoomForm.toEntity();
         ChatRoom saved = chatRoomRepository.save(chatRoom);
@@ -155,6 +161,8 @@ public class MessageController {
 
 
     }
+
+
     public List<ChatMessage> logMessage(String roomId){
         List<ChatMessage> logcon =  chatMessageRepository.findLogByUser(roomId);
 
@@ -165,6 +173,17 @@ public class MessageController {
         List<ChatRoom> rooms = chatRoomRepository.findRoomByUser(user1);
 
         return rooms;
+
+    }
+
+    public String findRoomfunc(String user1,String user2){
+        String roomNum = chatRoomRepository.findByUser1and2(user1,user2);
+        return roomNum;
+
+    }
+    public void updateLastChat(String roomId,String message,LocalDateTime dateTime){
+        chatRoomRepository.updateLastChat(roomId,message);
+        chatRoomRepository.updateLastChatTime(roomId,dateTime);
 
     }
 
