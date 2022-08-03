@@ -10,15 +10,25 @@ import Button from '../../components/Common/Button/Button';
 import Input from '../../components/Common/Input/Input';
 import BottomNavigation from '../../components/Common/BottomNavigation/BottomNavigation';
 import * as articleApi from '../../api/article';
+import Modal from '../../components/Common/Modal/Modal';
 const DummyPage = () => {
 	const [input, setInput] = useState('');
 	const [btnState, setBtnState] = useState(false);
+	const [modalVisible, setModalVisible] = useState(false);
+
+	const openModal = () => {
+		setModalVisible(true);
+	};
+	const closeModal = () => {
+		setModalVisible(false);
+	};
 	const check = () => {
 		if (input === '윤주혜') {
 			return true;
 		}
 		return false;
 	};
+
 	useEffect(() => {
 		setBtnState(check());
 	}, [input]);
@@ -65,7 +75,13 @@ const DummyPage = () => {
 				leftContent={<span>Fitween</span>}
 				rightMenu={
 					<>
-						<button>asd</button>
+						<button
+							onClick={() => {
+								openModal();
+							}}
+						>
+							asd
+						</button>
 						<button>asd</button>
 						<button>asd</button>
 					</>
@@ -77,8 +93,26 @@ const DummyPage = () => {
 					padding: '30px',
 					width: '100%',
 					height: '100%',
+					overflow: 'scroll',
 				}}
 			>
+				{modalVisible && (
+					<Modal visible={modalVisible} maskClosable onClose={closeModal}>
+						<div>asd</div>
+						<div>asd</div>
+						<div>asd</div>
+						<div>asd</div>
+						<div>asd</div>
+						<div>asd</div>
+						<div>asd</div>
+						<div>asd</div>
+						<div>asd</div>
+						<div>asd</div>
+						<div>asd</div>
+						<div>asd</div>
+						<div>asd</div>
+					</Modal>
+				)}
 				<Input
 					type="text"
 					value={input}
@@ -99,6 +133,14 @@ const DummyPage = () => {
 					<p style={{ fontFamily: 'Medium', fontSize: 30 }}>Test 테스트</p>
 					<p style={{ fontFamily: 'Bold', fontSize: 30 }}>Test 테스트</p>
 					<p style={{ fontFamily: 'Black', fontSize: 30 }}>Test 테스트</p>
+				</div>
+				<div style={{ height: '400px' }}>
+					<p style={{ fontFamily: 'MulishMedium', fontSize: 30 }}>123</p>
+					<p style={{ fontFamily: 'MulishBold', fontSize: 30 }}>123</p>
+				</div>
+				<div style={{ height: '400px' }}>
+					<p style={{ fontFamily: 'MulishMedium', fontSize: 30 }}>123</p>
+					<p style={{ fontFamily: 'MulishBold', fontSize: 30 }}>123</p>
 				</div>
 				<div style={{ height: '400px' }}>
 					<p style={{ fontFamily: 'MulishMedium', fontSize: 30 }}>123</p>
