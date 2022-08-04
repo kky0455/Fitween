@@ -3,6 +3,7 @@ package com.ssafy.db.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import com.ssafy.api.request.UserUpdateDto;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
@@ -14,12 +15,12 @@ import java.util.List;
  * 유저 모델 정의.
  */
 @Entity
-@Getter
-@Setter
+@Getter@Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-//@AttributeOverride(name = "id", column = @Column(name = "user_idx"))
+@Builder
+@AttributeOverride(name = "id", column = @Column(name = "user_idx"))
 public class User {
 
     @Id
@@ -37,32 +38,35 @@ public class User {
     @Column(length = 10, nullable = false)
     String name;
 
-    @Column
+    @Column(name = "프로필이미지")
     String profileImg;
 
-    @Column
+    @Column(name = "이메일")
     String email;
 
-    @Column
+    @Column(name = "나이")
     int age;
 
-    @Column
+    @Column(name = "성별")
     int gender;
 
-    @Column
+    @Column(name = "닉네임")
     String nickname;
 
-    @Column
+    @Column(name = "키")
     double height;
 
-    @Column
+    @Column(name = "몸무게")
     double weight;
 
-    @Column
+    @Column(name = "발사이즈")
     int footSize;
 
-    @Column
+    @Column(name = "사는 지역")
     String region;
+
+    @Column(name = "member_enable")
+    private boolean enable;
 
     @Column(name = "refresh_token")
     private String refreshToken;
@@ -75,11 +79,19 @@ public class User {
         this.refreshToken = refreshToken;
     }
 
-
     @Builder
-    public void updateUser(String user_name, String user_password) {
-        this.name = user_name;
-        this.password = user_password;
+    public void updateUser(UserUpdateDto userUpdateDto) {
+        this.userId = userUpdateDto.getUserId();
+        this.name = userUpdateDto.getName();
+        this.profileImg = userUpdateDto.getProfileImg();
+        this.email = userUpdateDto.getEmail();
+        this.age = userUpdateDto.getAge();
+        this.gender = userUpdateDto.getGender();
+        this.nickname = userUpdateDto.getNickname();
+        this.height = userUpdateDto.getHeight();
+        this.weight = userUpdateDto.getWeight();
+        this.footSize = userUpdateDto.getFootSize();
+        this.region = userUpdateDto.getRegion();
     }
 
 
