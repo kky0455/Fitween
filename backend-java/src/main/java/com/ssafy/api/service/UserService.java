@@ -2,7 +2,6 @@ package com.ssafy.api.service;
 
 import com.ssafy.api.request.UserLoginPostReq;
 
-import com.ssafy.api.request.UserRegisterPostReq;
 import com.ssafy.api.request.UserUpdateDto;
 import com.ssafy.common.auth.JwtTokenProvider;
 import com.ssafy.db.dto.UserDto;
@@ -69,9 +68,24 @@ public class UserService {
 
 	@Transactional
 	public void updateUser(UserUpdateDto userUpdateDto) {
-		User user = userRepositorySupport.findUserByUserId(userUpdateDto.getId()).get();
-		String password = passwordEncoder.encode(userUpdateDto.getPassword());
-		user.updateUser(userUpdateDto.getName(), password);
+		User user = userRepositorySupport.findUserByUserId(userUpdateDto.getUserId()).get();
+//		String password = passwordEncoder.encode(userUpdateDto.getPassword());
+		user.updateUser(userUpdateDto);
+	}
+
+	@Transactional
+	public String join(User user){
+		checkEmailDuplicate(user.getEmail()); // 중복 회원 검증
+		user.setEnable(false);
+		userRepository.save(user);
+		return user.getUserId();
+	}
+
+	@Transactional
+	public void checkEmailDuplicate(String email) {
+		boolean userEmailDuplicate = userRepository.existsByEmail(email);
+		if(userEmailDuplicate) throw new IllegalStateException("이미 존재하는 회원입니다.");
+
 	}
 
 	@Transactional
