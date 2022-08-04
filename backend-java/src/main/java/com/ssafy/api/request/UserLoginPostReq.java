@@ -12,12 +12,30 @@ import lombok.Setter;
 @Setter
 @ApiModel("UserLoginPostRequest")
 public class UserLoginPostReq {
-	@ApiModelProperty(name="유저 ID", example="ssafy_web")
-	String id;
-	@ApiModelProperty(name="유저 Password", example="your_password")
-	String password;
-	@ApiModelProperty(name="로그인 타입", example = "login_type")
-	String loginType;
-	@ApiModelProperty(name = "token", example = "idToken")
-	String token;
+
+	@ApiModelProperty(example="발급받은 access token")
+	String accessToken;
+	@ApiModelProperty(example="발급받은 refresh token")
+	String refreshToken;
+	@ApiModelProperty(example="user_idx 번호")
+	Long id;
+	@ApiModelProperty(example="han123")
+	String userId;
+	@ApiModelProperty(example="han123@gmail.com")
+	String email;
+	@ApiModelProperty(example="유저 닉네임")
+	String nickname;
+	@ApiModelProperty(example="20")
+	int age = 0;
+	@ApiModelProperty(example="1=Male, 2=Female, 3=Unknown")
+	int gender;
+	@ApiModelProperty(example="182.1")
+	double height = 0;
+	@ApiModelProperty(example="80.5")
+	double weight = 0;
+	@ApiModelProperty(example="250")
+	int footSize = 0;
+	@ApiModelProperty(example="광주 광산구 장덕동")
+	String region;
+
 }
