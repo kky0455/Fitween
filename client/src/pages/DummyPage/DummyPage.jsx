@@ -11,11 +11,14 @@ import Input from '../../components/Common/Input/Input';
 import BottomNavigation from '../../components/Common/BottomNavigation/BottomNavigation';
 import * as articleApi from '../../api/article';
 import Modal from '../../components/Common/Modal/Modal';
+import TextArea from '../../components/Common/TextArea/TextArea';
+import { Checkbox, FeedCheckbox } from '../../components/Common/CheckBox/Checkbox';
 const DummyPage = () => {
 	const [input, setInput] = useState('');
 	const [btnState, setBtnState] = useState(false);
 	const [modalVisible, setModalVisible] = useState(false);
-
+	const [textareaValue, setTextareaValue] = useState('');
+	const [inputChecked, setInputChecked] = useState(false);
 	const openModal = () => {
 		setModalVisible(true);
 	};
@@ -29,6 +32,9 @@ const DummyPage = () => {
 		return false;
 	};
 
+	useEffect(() => {
+		console.log(textareaValue);
+	}, [textareaValue]);
 	useEffect(() => {
 		setBtnState(check());
 	}, [input]);
@@ -127,6 +133,24 @@ const DummyPage = () => {
 					onChange={e => setInput(e.target.value)}
 					placeholder="별명"
 					unit="cm"
+				/>
+				<TextArea
+					value={textareaValue}
+					onChange={e => setTextareaValue(e.target.value)}
+					placeholder="내용"
+					maxByte={500}
+				/>
+				<Checkbox
+					checked={inputChecked}
+					onChange={e => setInputChecked(!inputChecked)}
+					label={inputChecked ? '대여 가능' : '대여 불가'}
+					id="input1"
+				/>
+				<FeedCheckbox
+					checked={inputChecked}
+					onChange={e => setInputChecked(!inputChecked)}
+					label={inputChecked ? '대여 가능' : '대여 불가'}
+					id="input1"
 				/>
 				<div style={{ height: '400px' }}>
 					<p style={{ fontFamily: 'Regular', fontSize: 30 }}>Test 테스트</p>
