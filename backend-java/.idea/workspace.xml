@@ -4,81 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="check">
+    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="feat: oauth2service 생성">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../client/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/public/mockServiceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/public/mockServiceWorker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../client/public/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/GlobalStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/GlobalStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/api/article.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/api/article.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/api/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/api/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/api/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/api/chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/api/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/assets/arrow_back.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/assets/arrow_back.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/assets/chat.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/assets/chat.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/assets/heart.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/assets/heart.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/assets/home.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/assets/home.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/assets/person.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/assets/person.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/assets/send.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/assets/send.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/Chat/Date.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/Chat/Date.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/Chat/Message.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/Chat/Message.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/Chat/RoomItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/Chat/RoomItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/Common/BottomNavigation/BottomNavigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/Common/BottomNavigation/BottomNavigation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/Common/Button/Button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/Common/Button/Button.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/Common/Button/Button.test.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/Common/Button/Button.test.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/Common/Input/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/Common/Input/Input.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/Common/Loading/Loading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/Common/Loading/Loading.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/Common/Main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/Common/Main/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/Common/TopNavigation/TopNavigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/Common/TopNavigation/TopNavigation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/constants/colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/constants/colors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/constants/commonStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/constants/commonStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/context/User/UserContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/context/User/UserContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/context/User/UserTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/context/User/UserTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/contexts/GlobalContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/contexts/GlobalContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/mocks/browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/mocks/browser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/mocks/handlers/article.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/mocks/handlers/article.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/mocks/handlers/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/mocks/handlers/chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/mocks/handlers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/mocks/handlers/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/mocks/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/mocks/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/mocks/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/mocks/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Article/ArticleDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Article/ArticleDetail.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Article/ArticleModify.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Article/ArticleModify.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Article/ArticleRegist.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Article/ArticleRegist.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Chat/ChatList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Chat/ChatList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Chat/ChatRoom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Chat/ChatRoom.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/DummyPage/DummyPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/DummyPage/DummyPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/DummyPage/DummyPage.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/DummyPage/DummyPage.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Index/Index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Index/Index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Index/Redirect.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Index/Redirect.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Join/Join.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Join/Join.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Join/JoinIndex.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Join/JoinIndex.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Join/JoinInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Join/JoinInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Join/JoinTown.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Join/JoinTown.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Like/Like.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Like/Like.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Main/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Profile/ProfileInfoModify.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Profile/ProfileInfoModify.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Profile/ProfileTownModify.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Profile/ProfileTownModify.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Profile/ProfileUser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Profile/ProfileUser.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/setupTests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/storage/Cookie.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/storage/Cookie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/styles/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/styles/_typography.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/styles/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/styles/colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/styles/colors.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/styles/font.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/styles/font.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/utils/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/utils/test.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,7 +270,21 @@
       <option name="project" value="LOCAL" />
       <updated>1659322547006</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="docs: check">
+      <created>1659588357926</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1659588357927</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: oauth2service 생성">
+      <created>1659588499516</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1659588499517</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,7 +306,9 @@
     <MESSAGE value="전체 커밋" />
     <MESSAGE value="fix: gitignore typo" />
     <MESSAGE value="check" />
-    <option name="LAST_COMMIT_MESSAGE" value="check" />
+    <MESSAGE value="docs: check" />
+    <MESSAGE value="feat: oauth2service 생성" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: oauth2service 생성" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
