@@ -1,17 +1,48 @@
 package com.ssafy.db.repository;
 
 import com.ssafy.db.entity.User;
-import org.springframework.data.jpa.repository.JpaRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import java.util.Collections;
+import java.util.List;
 
-/**
- * 유저 모델 관련 디비 쿼리 생성을 위한 JPA Query Method 인터페이스 정의.
- */
+
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
-    // 아래와 같이, Query Method 인터페이스(반환값, 메소드명, 인자) 정의를 하면 자동으로 Query Method 구현됨.
-    Optional<User> findByUserId(String userId);
-    boolean findByUserIdEquals(String userId);
+@RequiredArgsConstructor
+public class UserRepository {
+
+    @PersistenceContext
+    private final EntityManager em;
+
+    public void save(User user){
+        user.setRoles(Collections.singletonList("ROLE_USER")); // 최초 가입 시 USER로 설정
+        em.persist(user);
+    }
+
+    public boolean existsByEmail(String email){
+        List<User> memberList = em.createQuery("select m from User m where m.email = :email", User.class)
+                .setParameter("email", email)
+                .getResultList();
+        if(memberList.size() == 0) return false;
+        return true;
+    }
+
+    public User findByEmail(String email) throws IllegalStateException {
+        List<User> memberList = em.createQuery("select m from User m where m.email = :email", User.class)
+                .setParameter("email", email)
+                .getResultList();
+        if(memberList.size() == 0) throw new IllegalStateException("해당 이메일을 가진 사용자가 없습니다.");
+        return memberList.get(0);
+    }
+
+
+    public void socialLogin(String email, String refresh){
+        User user = findByEmail(email);
+        user.changeRefreshToken(refresh);
+    }
+
+
 }
