@@ -7,6 +7,8 @@ import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 유저 모델 정의.
@@ -61,6 +63,18 @@ public class User {
 
     @Column
     String region;
+
+    @Column(name = "refresh_token")
+    private String refreshToken;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Builder.Default
+    private List<String> roles = new ArrayList<>();
+
+    public void changeRefreshToken(String refreshToken){
+        this.refreshToken = refreshToken;
+    }
+
 
     @Builder
     public void updateUser(String user_name, String user_password) {
