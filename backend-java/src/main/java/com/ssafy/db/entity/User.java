@@ -27,7 +27,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Column(name = "user_id", length=10, nullable = false)
+    @Column(name = "user_id", length=50, nullable = false)
     String userId;
 
     @JsonIgnore
@@ -53,10 +53,10 @@ public class User {
     String nickname;
 
     @Column
-    int height;
+    double height;
 
     @Column
-    int weight;
+    double weight;
 
     @Column
     int footSize;
