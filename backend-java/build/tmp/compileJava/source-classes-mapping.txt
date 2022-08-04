@@ -4,54 +4,83 @@ com/ssafy/config/SwaggerConfig.java
  com.ssafy.config.SwaggerConfig
 com/ssafy/api/service/UserService.java
  com.ssafy.api.service.UserService
-com/ssafy/api/service/UserServiceImpl.java
- com.ssafy.api.service.UserServiceImpl
 com/ssafy/api/controller/AuthController.java
  com.ssafy.api.controller.AuthController
-com/ssafy/common/auth/SsafyUserDetails.java
- com.ssafy.common.auth.SsafyUserDetails
+com/ssafy/common/auth/JwtTokenProvider.java
+ com.ssafy.common.auth.JwtTokenProvider
 com/ssafy/db/entity/BaseEntity.java
  com.ssafy.db.entity.BaseEntity
+com/ssafy/api/controller/UserRequestMapper.java
+ com.ssafy.api.controller.UserRequestMapper
 com/ssafy/db/entity/Likes.java
  com.ssafy.db.entity.Likes
 com/ssafy/api/request/UserRegisterPostReq.java
  com.ssafy.api.request.UserRegisterPostReq
 com/ssafy/api/request/UserLoginPostReq.java
  com.ssafy.api.request.UserLoginPostReq
+ com.ssafy.api.request.UserLoginPostReq$UserLoginPostReqBuilder
 com/ssafy/db/repository/UserRepository.java
  com.ssafy.db.repository.UserRepository
 com/ssafy/db/entity/Follow.java
  com.ssafy.db.entity.Follow
 com/ssafy/db/entity/User.java
  com.ssafy.db.entity.User
+ com.ssafy.db.entity.User$UserBuilder
  com.ssafy.db.entity.User$VoidBuilder
+com/ssafy/db/dto/UserDto.java
+ com.ssafy.db.dto.UserDto
+ com.ssafy.db.dto.UserDto$UserDtoBuilder
 com/ssafy/api/request/UserUpdateDto.java
  com.ssafy.api.request.UserUpdateDto
+com/ssafy/api/service/OAuth2Attribute.java
+ com.ssafy.api.service.OAuth2Attribute
+ com.ssafy.api.service.OAuth2Attribute$OAuth2AttributeBuilder
 com/ssafy/GroupCallApplication.java
  com.ssafy.GroupCallApplication
-com/ssafy/common/auth/SsafyUserDetailService.java
- com.ssafy.common.auth.SsafyUserDetailService
 com/ssafy/common/exception/handler/NotFoundHandler.java
  com.ssafy.common.exception.handler.NotFoundHandler
 com/ssafy/common/model/response/BaseResponseBody.java
  com.ssafy.common.model.response.BaseResponseBody
+com/ssafy/api/service/CustomOauth2UserService.java
+ com.ssafy.api.service.CustomOauth2UserService
+com/ssafy/api/service/JwtServiceImpl.java
+ com.ssafy.api.service.JwtServiceImpl
 com/ssafy/common/util/JwtTokenUtil.java
  com.ssafy.common.util.JwtTokenUtil
+com/ssafy/db/dto/Message.java
+ com.ssafy.db.dto.Message
+com/ssafy/common/auth/FWUserDetails.java
+ com.ssafy.common.auth.FWUserDetails
 com/ssafy/db/entity/ArticleInfo.java
  com.ssafy.db.entity.ArticleInfo
+com/ssafy/db/dto/UserSaveRequestDto.java
+ com.ssafy.db.dto.UserSaveRequestDto
+ com.ssafy.db.dto.UserSaveRequestDto$UserSaveRequestDtoBuilder
 com/ssafy/api/response/UserLoginPostRes.java
  com.ssafy.api.response.UserLoginPostRes
 com/ssafy/api/response/UserRes.java
  com.ssafy.api.response.UserRes
 com/ssafy/common/util/ResponseBodyWriteUtil.java
  com.ssafy.common.util.ResponseBodyWriteUtil
+com/ssafy/db/dto/StatusEnum.java
+ com.ssafy.db.dto.StatusEnum
 com/ssafy/common/auth/JwtAuthenticationFilter.java
  com.ssafy.common.auth.JwtAuthenticationFilter
 com/ssafy/config/WebMvcConfig.java
  com.ssafy.config.WebMvcConfig
+com/ssafy/api/controller/TokenController.java
+ com.ssafy.api.controller.TokenController
+com/ssafy/config/OAuth2SuccessHandler.java
+ com.ssafy.config.OAuth2SuccessHandler
+com/ssafy/db/repository/UserRepository2.java
+ com.ssafy.db.repository.UserRepository2
 com/ssafy/api/controller/UserController.java
  com.ssafy.api.controller.UserController
 com/ssafy/db/repository/UserRepositorySupport.java
  com.ssafy.db.repository.UserRepositorySupport
+com/ssafy/api/service/JwtService.java
+ com.ssafy.api.service.JwtService
+com/ssafy/common/auth/FWUserDetailService.java
+ com.ssafy.common.auth.FWUserDetailService
 com/ssafy/config/JpaConfig.java
  com.ssafy.config.JpaConfig
