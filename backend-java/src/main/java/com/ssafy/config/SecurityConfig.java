@@ -1,11 +1,15 @@
 package com.ssafy.config;
 
+import com.ssafy.api.service.CustomOauth2UserService;
 import com.ssafy.api.service.UserService;
 import com.ssafy.common.auth.FWUserDetailService;
 import com.ssafy.common.auth.JwtAuthenticationFilter;
+import com.ssafy.common.auth.JwtTokenProvider;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -14,54 +18,79 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
  * 인증(authentication) 와 인가(authorization) 처리를 위한 스프링 시큐리티 설정 정의.
  */
-@Configuration
+
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+@RequiredArgsConstructor
+@Configuration
+@EnableGlobalMethodSecurity(prePostEnabled = true) // 특정 주소로 접근하면 권한 및 인증을 미리 체크
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    @Autowired
-    private FWUserDetailService FWUserDetailService;
-    
-    @Autowired
-    private UserService userService;
-    
-    // Password 인코딩 방식에 BCrypt 암호화 방식 사용
+
+    private final JwtTokenProvider jwtTokenProvider;
+    private final CustomOauth2UserService oAuth2UserService;
+    private final OAuth2SuccessHandler successHandler;
+
+//    private static final String[] AUTH_WHITELIST = {
+//            "/authenticate",
+//            "/swagger-resources/**",
+//            "/swagger-ui/**",
+//            "/v3/api-docs",
+//            "/webjars/**"
+//    };
+
+    // 암호화에 필요한 PasswordEncoder를 Bean으로 등록
     @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+    public PasswordEncoder passwordEncoder(){
+        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
-    // DAO 기반으로 Authentication Provider를 생성
-    // BCrypt Password Encoder와 UserDetailService 구현체를 설정
+    // authenticationManager를 Bean으로 등록
     @Bean
-    DaoAuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
-        daoAuthenticationProvider.setUserDetailsService(this.FWUserDetailService);
-        return daoAuthenticationProvider;
-    }
-
-    // DAO 기반의 Authentication Provider가 적용되도록 설정
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) {
-        auth.authenticationProvider(authenticationProvider());
+    public AuthenticationManager authenticationManager() throws Exception {
+        return super.authenticationManagerBean();
+    }
+
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .httpBasic().disable()
-                .csrf().disable()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) // 토큰 기반 인증이므로 세션 사용 하지않음
+                .httpBasic().disable()   // rest api만을 고려해 기본 설정은 해제
+                .csrf().disable()  // csrf 보안 토큰 disable 처리
+                .headers()
+                .frameOptions()
+                .deny()
                 .and()
-                    .addFilter(new JwtAuthenticationFilter(authenticationManager(), userService)) //HTTP 요청에 JWT 토큰 인증 필터를 거치도록 필터를 추가
-                .authorizeRequests()
-                .antMatchers("/api/v1/users/me").authenticated()       //인증이 필요한 URL과 필요하지 않은 URL에 대하여 설정
-    	        	    .anyRequest().permitAll()
-                .and().cors();
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)  // 토큰 기반 인증이므로 세션 역시 사용하지 않음
+                .and()
+                .authorizeRequests()  // 요청에 대한 사용 권한 체크
+                //.antMatchers(AUTH_WHITELIST).permitAll()
+                .antMatchers("/api/**").authenticated()
+                .antMatchers("/user/**").hasRole("USER")
+                .anyRequest().permitAll()  // 그 외 나머지 요청은 누구나 접근 가능
+                .and()
+                .cors()
+                .and() /* OAuth */
+                .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider),
+                        UsernamePasswordAuthenticationFilter.class)
+                .oauth2Login()
+                .successHandler(successHandler)
+                .userInfoEndpoint() // OAuth2 로그인 성공 후에 가져올 설정들
+                .userService(oAuth2UserService); // 서버에서 사용자 정보를 가져온 상태에서 추가로 진행하고자 하는 기능 명시
+
+        http.addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider),
+                UsernamePasswordAuthenticationFilter.class);
+
     }
 }
