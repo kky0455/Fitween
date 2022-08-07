@@ -15,9 +15,9 @@ public interface FollowService {
 
     public void unFollow(Long fromUserId, Long toUserId);
 
-    public List<FollowDto> getFollower(String profileId, String userId);
-
-    public List<FollowDto> getFollowing(String profileId, String userId);
+//    public List<FollowDto> getFollower(String profileId, String userId);
+//
+//    public List<FollowDto> getFollowing(String profileId, String userId);
 
 
 

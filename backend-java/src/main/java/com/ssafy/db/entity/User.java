@@ -43,10 +43,8 @@ public class User {
     @JsonIgnoreProperties({"user"})
     List<Article> articles = new ArrayList<>();
 
-//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-//    @OneToMany(mappedBy = "from", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-//    @JoinColumn(name = "to_user_idx")
-//    private List<Follow> follows = new ArrayList<>();
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+//    List<Likes> likes = new ArrayList<>();
 
 
     @Builder
@@ -62,5 +60,13 @@ public class User {
         this.password = user_password;
     }
 
-
+//    public void addLike(Likes likes) {
+//        this.likes.add(likes);
+//        likes.setUser(this);
+//    }
+//
+//    public void removeLike(Likes likes) {
+//        this.likes.remove(likes);
+//        likes.setUser(null);
+//    }
 }

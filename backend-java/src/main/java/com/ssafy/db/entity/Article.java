@@ -45,7 +45,7 @@ public class Article {
     @ColumnDefault("1")
     boolean lendStatus;
 
-    @JsonIgnoreProperties("article")
+    @JsonIgnoreProperties("articles")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_idx")
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -55,21 +55,17 @@ public class Article {
     @JsonIgnoreProperties({"article"})
     private List<Likes> likes = new ArrayList<>();
 
+    @Transient
+    private Long likesCount;
+
+    @Transient
+    private boolean likesState;
+
     public void updateArticle(SaveArticleDto saveArticleDto) {
         this.title = saveArticleDto.getTitle();
         this.content = saveArticleDto.getContent();
         this.price = saveArticleDto.getPrice();
     }
-
-//    @Builder
-//    public Article(String title, String content, int price, boolean lendStatus, User user, long likeCount){
-//        this.title = title;
-//        this.content = content;
-//        this.price = price;
-//        this.lendStatus = lendStatus;
-//        this.user = user;
-//        this.likeCount = likeCount;
-//    }
 
     @Override
     public String toString() {

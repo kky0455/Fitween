@@ -18,7 +18,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByUserId(String userId);
     boolean findByUserIdEquals(String userId);
 
-    @Modifying
-    @Query("delete from Follow f where f.from = :del_user or f.to = :del_user")
-    public void deleteAssociatedFollow(@Param("del_user") User delUser);
+    Optional<User> findByUserIdx(Long userIdx);
+
 }

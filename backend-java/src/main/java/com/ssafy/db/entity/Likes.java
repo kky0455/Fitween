@@ -1,5 +1,6 @@
 package com.ssafy.db.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,6 @@ import java.util.Optional;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 public class Likes {
 
     @Id
@@ -21,6 +21,7 @@ public class Likes {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_idx")
+    @JsonIgnoreProperties({"articles"})
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -28,8 +29,10 @@ public class Likes {
     private Article article;
 
     @Builder
-    public Likes(User user, Article article) {
-        this.user = user;
+    public Likes(Article article, User user){
         this.article = article;
+        this.user = user;
     }
+
+
 }
