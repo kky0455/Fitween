@@ -1,23 +1,35 @@
 package com.ssafy.db.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.Optional;
 
 @Entity
 @Getter
+@Setter
 @NoArgsConstructor
-public class Likes extends BaseEntity{
+public class Likes {
 
-    @JoinColumn(name = "article_idx")
-    @ManyToOne
-    ArticleInfo articleInfo;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "likes_id")
+    private Long id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_idx")
-    @ManyToOne
-    User user;
+    private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "article_idx")
+    private Article article;
+
+    @Builder
+    public Likes(User user, Article article) {
+        this.user = user;
+        this.article = article;
+    }
 }

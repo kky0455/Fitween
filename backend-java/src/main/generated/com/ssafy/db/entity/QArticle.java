@@ -30,6 +30,8 @@ public class QArticle extends EntityPathBase<Article> {
 
     public final BooleanPath lendStatus = createBoolean("lendStatus");
 
+    public final ListPath<Likes, QLikes> likes = this.<Likes, QLikes>createList("likes", Likes.class, QLikes.class, PathInits.DIRECT2);
+
     public final NumberPath<Integer> price = createNumber("price", Integer.class);
 
     public final StringPath title = createString("title");

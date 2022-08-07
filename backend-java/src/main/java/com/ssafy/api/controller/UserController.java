@@ -1,25 +1,26 @@
 package com.ssafy.api.controller;
 
+import com.ssafy.api.request.SimpleUserInfoDto;
 import com.ssafy.api.request.UserUpdateDto;
+import com.ssafy.api.service.FollowService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import com.ssafy.api.request.UserLoginPostReq;
 import com.ssafy.api.request.UserRegisterPostReq;
-import com.ssafy.api.response.UserLoginPostRes;
 import com.ssafy.api.response.UserRes;
 import com.ssafy.api.service.UserService;
-import com.ssafy.common.auth.SsafyUserDetails;
+import com.ssafy.common.auth.FWUserDetails;
 import com.ssafy.common.model.response.BaseResponseBody;
-import com.ssafy.common.util.JwtTokenUtil;
 import com.ssafy.db.entity.User;
-import com.ssafy.db.repository.UserRepositorySupport;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -28,6 +29,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import springfox.documentation.annotations.ApiIgnore;
 
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 /**
@@ -40,6 +42,9 @@ public class UserController {
 
 	private static final String SUCCESS = "success";
 	public static final Logger logger = LoggerFactory.getLogger(UserController.class);
+
+	@Autowired
+	FollowService followService;
 
 	@Autowired
 	UserService userService;
@@ -77,7 +82,7 @@ public class UserController {
 		 * 요청 헤더 액세스 토큰이 포함된 경우에만 실행되는 인증 처리이후, 리턴되는 인증 정보 객체(authentication) 통해서 요청한 유저 식별.
 		 * 액세스 토큰이 없이 요청하는 경우, 403 에러({"error": "Forbidden", "message": "Access Denied"}) 발생.
 		 */
-		SsafyUserDetails userDetails = (SsafyUserDetails) authentication.getDetails();
+		FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
 		String userId = userDetails.getUsername();
 		User user = userService.getUserByUserId(userId);
 
@@ -152,7 +157,7 @@ public class UserController {
 		 * 식별. 액세스 토큰이 없이 요청하는 경우, 403 에러({"error": "Forbidden", "message": "Access
 		 * Denied"}) 발생.
 		 */
-		SsafyUserDetails userDetails = (SsafyUserDetails) authentication.getDetails();
+		FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
 		String userId = userDetails.getUsername();
 		User user = userService.getUserByUserId(userId);
 
@@ -162,4 +167,37 @@ public class UserController {
 		}
 		return ResponseEntity.status(401).body("Invalid Password");
 	}
+
+//	@ApiOperation(value = "회원 팔로잉 목록 가져오기")
+//	@GetMapping("/{userId}/followings")
+//	public ResponseEntity<SimpleUserInfoDto> getFollowings(@PathVariable("userId") String userId, Authentication authentication){
+//		final String currentUserId = ((UserDetails)authentication.getPrincipal()).getUsername();
+//		SimpleUserInfoDto result = followService.findFollowingList(currentUserId, userId, pageable.of());
+//
+//		return ResponseEntity.ok().body(result);
+//	}
+//
+//	@ApiOperation(value = "회원 팔로워 목록 가져오기")
+//	@GetMapping("/{userId}/followers")
+//	public ResponseEntity<Page<SimpleUserInfoDto>> getFollowers(@PathVariable("userId") String userId, PageRequest pageable, Authentication authentication){
+//		final String currentUserId = ((UserDetails)authentication.getPrincipal()).getUsername();
+//		Page<SimpleUserInfoDto> result = followService.findFollowerList(currentUserId, userId, pageable.of());
+//		return ResponseEntity.ok().body(result);
+//	}
+//
+//	@ApiOperation(value = "회원 팔로잉")
+//	@PostMapping("/{userId}/follow")
+//	public ResponseEntity<?> follow(@PathVariable("userId") String userId, @RequestBody Map<String, String> map) {
+//		followService.follow(userId, map.get("targetUserId"));
+//		return ResponseEntity.ok().build();
+//	}
+//
+//	@ApiOperation(value = "회원 언팔로잉")
+//	@DeleteMapping("/{userId}/followings/{targetUserId}")
+//	public ResponseEntity<?> unfollow(@PathVariable("userId") String userId, @PathVariable("targetUserId") String targetUserId){
+//		followService.unfollow(userId, targetUserId);
+//		return ResponseEntity.ok().build();
+//	}
+
+
 }

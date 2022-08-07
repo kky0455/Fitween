@@ -1,6 +1,7 @@
 package com.ssafy.api.service;
 
 import com.ssafy.api.request.UserUpdateDto;
+import com.ssafy.db.repository.FollowRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,14 +16,14 @@ import javax.transaction.Transactional;
 /**
  *	유저 관련 비즈니스 로직 처리를 위한 서비스 구현 정의.
  */
-@Service("userService")
+@Service
 public class UserServiceImpl implements UserService {
 	@Autowired
 	UserRepository userRepository;
 	
 	@Autowired
 	UserRepositorySupport userRepositorySupport;
-	
+
 	@Autowired
 	PasswordEncoder passwordEncoder;
 	

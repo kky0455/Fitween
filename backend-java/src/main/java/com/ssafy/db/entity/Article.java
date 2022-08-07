@@ -1,6 +1,8 @@
 package com.ssafy.db.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.ssafy.api.request.SaveArticleDto;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
@@ -10,6 +12,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -41,10 +45,15 @@ public class Article {
     @ColumnDefault("1")
     boolean lendStatus;
 
+    @JsonIgnoreProperties("article")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_idx")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
+
+    @OneToMany(mappedBy = "article", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnoreProperties({"article"})
+    private List<Likes> likes = new ArrayList<>();
 
     public void updateArticle(SaveArticleDto saveArticleDto) {
         this.title = saveArticleDto.getTitle();
@@ -52,12 +61,20 @@ public class Article {
         this.price = saveArticleDto.getPrice();
     }
 
+//    @Builder
+//    public Article(String title, String content, int price, boolean lendStatus, User user, long likeCount){
+//        this.title = title;
+//        this.content = content;
+//        this.price = price;
+//        this.lendStatus = lendStatus;
+//        this.user = user;
+//        this.likeCount = likeCount;
+//    }
+
     @Override
     public String toString() {
         return "Board [articleIdx=" + articleIdx + ", title=" + title + ", content=" + content
                 + ", price" + price + ", lendStatus=" + lendStatus
                 + ", createdtime=" + createdtime + ", user=" + user + "]";
     }
-
-
 }

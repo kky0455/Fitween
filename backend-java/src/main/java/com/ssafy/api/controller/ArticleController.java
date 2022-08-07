@@ -2,7 +2,7 @@ package com.ssafy.api.controller;
 
 import com.ssafy.api.request.SaveArticleDto;
 import com.ssafy.api.service.ArticleService;
-import com.ssafy.common.auth.SsafyUserDetails;
+import com.ssafy.common.auth.FWUserDetails;
 import com.ssafy.common.model.response.BaseResponseBody;
 import com.ssafy.db.entity.Article;
 import io.swagger.annotations.Api;
@@ -40,7 +40,7 @@ public class ArticleController {
             @ApiResponse(code = 500, message = "서버 오류")})
     public ResponseEntity createArticle(@RequestBody SaveArticleDto saveArticleDto, @ApiIgnore Authentication authentication)
     {
-        SsafyUserDetails userDetails = (SsafyUserDetails) authentication.getDetails();
+        FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
         Long user_idx = userDetails.getUserIdx();
 
         Article article;
@@ -64,7 +64,7 @@ public class ArticleController {
     @PutMapping("/update")
     public ResponseEntity<String> update(@RequestBody SaveArticleDto saveArticleDto, @ApiIgnore Authentication authentication) throws Exception {
         Article article;
-        SsafyUserDetails userDetails = (SsafyUserDetails) authentication.getDetails();
+        FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
         Long user_idx = userDetails.getUserIdx();
         try {
             System.out.println(saveArticleDto.toString());
@@ -121,5 +121,6 @@ public class ArticleController {
         Article article = articleService.findByArticleId(article_idx);
         return new ResponseEntity<Article>(article, HttpStatus.OK);
     }
+
 
 }

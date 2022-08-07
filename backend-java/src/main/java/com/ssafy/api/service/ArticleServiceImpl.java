@@ -2,7 +2,11 @@ package com.ssafy.api.service;
 
 import com.ssafy.api.request.SaveArticleDto;
 import com.ssafy.db.entity.Article;
+import com.ssafy.db.entity.Likes;
+import com.ssafy.db.entity.User;
 import com.ssafy.db.repository.ArticleRepository;
+import com.ssafy.db.repository.LikesRepository;
+import com.ssafy.db.repository.UserRepositorySupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,6 +18,12 @@ public class ArticleServiceImpl implements ArticleService{
 
     @Autowired
     private ArticleRepository articleRepository;
+
+    @Autowired
+    private UserRepositorySupport userRepositorySupport;
+
+//    @Autowired
+//    LikesRepository likesRepository;
 
     @Override
     public Article createArticle(SaveArticleDto saveArticleDto) {
@@ -47,4 +57,5 @@ public class ArticleServiceImpl implements ArticleService{
         List<Article> articles = articleRepository.findAll();
         return articles;
     }
+
 }

@@ -1,24 +1,28 @@
 package com.ssafy.db.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
-@Entity
-@Getter
-@Setter
+@Entity @Getter @Setter
 @NoArgsConstructor
-public class Follow extends BaseEntity{
+public class Follow {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "follow_idx")
+    private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "from_user_id")
-    User fromUser;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="from_user_id")
+    private User from;
 
-    @ManyToOne
-    @JoinColumn(name = "to_user_id")
-    User toUser;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="to_user_id")
+    private User to;
+
+    @Builder
+    public Follow(User from, User to) {
+        this.from = from;
+        this.to = to;
+    }
 }
