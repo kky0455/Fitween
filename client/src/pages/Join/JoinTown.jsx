@@ -22,6 +22,7 @@ const JoinTown = ({ info }) => {
 				location: location,
 			};
 			const res = await authApi.signup(body);
+
 			setRefreshToken(res.refreshToken);
 			const { accessToken, userId } = res;
 			dispatch({ type: 'LOGIN', userId: userId, accessToken: accessToken });

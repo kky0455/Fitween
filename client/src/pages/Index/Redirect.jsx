@@ -25,24 +25,25 @@ const Redirect = () => {
 			if (kakaoToken) {
 				body = {
 					loginType: 'Kakao',
-					token: kakaoToken,
+					authCode: kakaoToken,
 				};
 			} else if (googleToken) {
 				body = {
 					loginType: 'Google',
-					token: googleToken,
+					authCode: googleToken,
 				};
 			}
 
 			try {
 				const res = await authApi.login(body);
-				if (res.result === 'success') {
+
+				if (res.responseType === 'signIn') {
 					setRefreshToken(res.refreshToken);
 					const { accessToken, userId } = res;
 					dispatch({ type: 'LOGIN', userId: userId, accessToken: accessToken });
 					API.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
 					navigate('/main');
-				} else if (res.result === 'needToJoin') {
+				} else if (res.responseType === 'signUp') {
 					navigate('/join/index');
 				}
 			} catch (err) {
