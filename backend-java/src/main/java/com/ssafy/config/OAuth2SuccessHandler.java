@@ -39,7 +39,7 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
         OAuth2User oAuth2User = (OAuth2User) authentication.getPrincipal();
         UserDto user = userRequestMapper.toDto(oAuth2User);
 
-        if(!userRepository.existsByEmail(user.getEmail())){
+        if(!userRepository.existsByUserId(user.getUserId())){
             userService.joinSocial(user);
         }
 
