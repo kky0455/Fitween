@@ -36,14 +36,15 @@ const Redirect = () => {
 
 			try {
 				const res = await authApi.login(body);
-
 				if (res.responseType === 'signIn') {
 					setRefreshToken(res.refreshToken);
 					const { accessToken, userId } = res;
-					dispatch({ type: 'LOGIN', userId: userId, accessToken: accessToken });
+					dispatch({ type: 'LOGIN', loginedUserId: userId, accessToken: accessToken });
 					API.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
 					navigate('/main');
 				} else if (res.responseType === 'signUp') {
+					const { userId } = res;
+					dispatch({ type: 'SIGNUP', loginedUserId: userId });
 					navigate('/join/index');
 				}
 			} catch (err) {
