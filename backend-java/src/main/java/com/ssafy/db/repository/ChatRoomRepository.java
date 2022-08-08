@@ -1,7 +1,6 @@
 package com.ssafy.db.repository;
 
 import com.ssafy.api.model.ChatRoom;
-import org.kurento.client.internal.server.Param;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
