@@ -137,7 +137,7 @@ const DummyPage = () => {
 				}}
 			>
 				{modalVisible && (
-					<Modal visible={modalVisible} maskClosable onClose={closeModal}>
+					<Modal visible={modalVisible} maskClosable onClose={closeModal} type="center">
 						<div>asd</div>
 						<div>asd</div>
 						<div>asd</div>
