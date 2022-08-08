@@ -20,7 +20,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@AttributeOverride(name = "id", column = @Column(name = "user_idx"))
+//@AttributeOverride(name = "id", column = @Column(name = "user_idx"))
 public class User {
 
     @Id
@@ -35,37 +35,37 @@ public class User {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     String password;
 
-    @Column(length = 10, nullable = false)
+    @Column(length = 10)
     String name;
 
-    @Column(name = "프로필이미지")
+    @Column
     String profileImg;
 
-    @Column(name = "이메일")
+    @Column
     String email;
 
-    @Column(name = "나이")
+    @Column
     int age;
 
-    @Column(name = "성별")
+    @Column
     int gender;
 
-    @Column(name = "닉네임")
+    @Column
     String nickname;
 
-    @Column(name = "키")
+    @Column
     double height;
 
-    @Column(name = "몸무게")
+    @Column
     double weight;
 
-    @Column(name = "발사이즈")
+    @Column
     int footSize;
 
-    @Column(name = "사는 지역")
+    @Column
     String region;
 
-    @Column(name = "member_enable")
+    @Column
     private boolean enable;
 
     @Column(name = "refresh_token")
