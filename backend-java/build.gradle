@@ -198,3 +198,8 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+bootJar{
+    archiveBaseName = 'chat'
+    archiveFileName = 'chat.jar'
+    archiveVersion = '0.0.0'
+}

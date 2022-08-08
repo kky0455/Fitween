@@ -28,9 +28,7 @@ public class ChatRoom {
 
     @Column
     private String lastChat;
-    @Column(columnDefinition = "TIMESTAMP")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, timezone = "Asia/Seoul")
-    @UpdateTimestamp
+    @Column
     private LocalDateTime lastChatTime;
 
 
