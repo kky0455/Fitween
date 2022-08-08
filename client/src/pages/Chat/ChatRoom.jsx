@@ -100,20 +100,32 @@ const ChatRoom = () => {
 			if (stompClient.connected) stompClient.disconnect();
 		};
 	}, []);
+	let lastChatDate;
 	return (
 		<>
 			<TopNavigation backClick onBackClick={() => navigate(-1)} centerContent={receiverId} />
 			<Main>
-				{/* todo : 날짜 달라질떄 Date 컴포넌트 렌더링 필요 */}
-				{chats.map(chat => (
-					<Message
-						key={uuid()}
-						message={chat.message}
-						isMine={chat.senderId === userId}
-						sendTime={chat.sendTime}
-						isRead={chat.isRead}
-					/>
-				))}
+				{chats.map(chat => {
+					const messageEl = (
+						<Message
+							key={uuid()}
+							message={chat.message}
+							isMine={chat.senderId === userId}
+							sendTime={chat.sendTime}
+							isRead={chat.isRead}
+						/>
+					);
+					if (chat.sendTime !== lastChatDate) {
+						lastChatDate = chat.sendTime;
+						return (
+							<>
+								<Date date={chat.sendTime} key={uuid()} />
+								{messageEl}
+							</>
+						);
+					}
+					return messageEl;
+				})}
 			</Main>
 			<div
 				className="input-wrapper"
