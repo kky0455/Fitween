@@ -4,7 +4,164 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="feat: oauth2service 생성" />
+    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="feat: oauth2service 생성">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/GroupCallApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/GroupCallApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/api/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/api/controller/AuthController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/api/request/UserLoginPostReq.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/api/request/UserLoginPostReq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/api/request/UserRegisterPostReq.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/api/request/UserRegisterPostReq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/api/request/UserUpdateDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/api/request/UserUpdateDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/api/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/api/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/common/auth/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/common/auth/JwtAuthenticationFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/common/exception/handler/NotFoundHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/common/exception/handler/NotFoundHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/common/util/JwtTokenUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/common/util/JwtTokenUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/common/util/ResponseBodyWriteUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/common/util/ResponseBodyWriteUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/ArticleInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/BaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/BaseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/Follow.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/Follow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/Likes.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/Likes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/QArticleInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/QBaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/QBaseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/QFollow.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/QFollow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/QLikes.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/QLikes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/QUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/QUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/repository/UserRepositorySupport.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssafy/db/repository/UserRepositorySupport.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/ssafy/db/entity/QArticleInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/ssafy/db/entity/QBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/ssafy/db/entity/QBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/ssafy/db/entity/QFollow.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/ssafy/db/entity/QFollow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/ssafy/db/entity/QLikes.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/ssafy/db/entity/QLikes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/ssafy/db/entity/QUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/ssafy/db/entity/QUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QArticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QArticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QFollow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QFollow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QLikes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QLikes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssafy-web.log" beforeDir="false" afterPath="$PROJECT_DIR$/ssafy-web.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.eslintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/public/mockServiceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/GlobalStyles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/api/article.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/api/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/api/chat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/api/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/api/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/assets/FitweenLogoBg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/assets/arrow_back.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/assets/chat.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/assets/heart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/assets/home.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/assets/logo2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/assets/person.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/assets/send.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/Chat/Date.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/Chat/Message.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/Chat/RoomItem.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/Common/BottomNavigation/BottomNavigation.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/Common/Button/Button.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/Common/Button/Button.test.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/Common/Input/Input.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/Common/Loading/Loading.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/Common/Main/Main.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/Common/TopNavigation/TopNavigation.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/constants/colors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/constants/commonStyle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/context/User/UserContext.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/context/User/UserReducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/context/User/UserState.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/context/User/UserTypes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/contexts/GlobalContext.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/mocks/browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/mocks/handlers/article.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/mocks/handlers/chat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/mocks/handlers/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/mocks/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/mocks/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Article/ArticleDetail.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Article/ArticleModify.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Article/ArticleRegist.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Chat/ChatList.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Chat/ChatRoom.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/DummyPage/DummyPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/DummyPage/DummyPage.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Index/Index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Index/Redirect.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Join/Join.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Join/JoinIndex.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Join/JoinInfo.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Join/JoinTown.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Like/Like.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Main/Main.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Profile/ProfileInfoModify.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Profile/ProfileTownModify.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Profile/ProfileUser.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Routes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/storage/Cookie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/_typography.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/colors.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/font.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Mulish-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Mulish-Bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Mulish-Bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Mulish-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Mulish-Medium.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Mulish-Medium.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/NotoSansKR-Black.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/NotoSansKR-Black.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/NotoSansKR-Black.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/NotoSansKR-Bold.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/NotoSansKR-Bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/NotoSansKR-Bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/NotoSansKR-Medium.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/NotoSansKR-Medium.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/NotoSansKR-Medium.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/NotoSansKR-Regular.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/NotoSansKR-Regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/NotoSansKR-Regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Urbanist-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Urbanist-Black.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Urbanist-Black.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Urbanist-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Urbanist-Bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Urbanist-Bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Urbanist-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Urbanist-Medium.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Urbanist-Medium.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Urbanist-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Urbanist-Regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/styles/fonts/Urbanist-Regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/utils/test.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,29 +251,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/multicampus/Desktop/testFolder/backend-java/src/main/java/com/ssafy/api/controller",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "프로젝트",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
-    "spring.configuration.checksum": "1c625e95bb42363b964eadb5c496c14e"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/multicampus/Desktop/testFolder/backend-java/src/main/java/com/ssafy/api/controller&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;1c625e95bb42363b964eadb5c496c14e&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\multicampus\Desktop\testFolder\backend-java\src\main\java\com\ssafy\api\controller" />
@@ -133,7 +290,20 @@
       <command value="gradle lombok" />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.GroupCallApplication">
+  <component name="RunManager" selected="애플리케이션.GroupCallApplication">
+    <configuration name="GroupCallApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ssafy.GroupCallApplication" />
+      <module name="ssafy-web-project.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ssafy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="backend-java [lombok]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -208,6 +378,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.GroupCallApplication" />
         <item itemvalue="JUnit.TokenProviderTest.토큰_생성하기" />
         <item itemvalue="JUnit.TokenProviderTest" />
         <item itemvalue="Gradle.backend-java [lombok]" />
