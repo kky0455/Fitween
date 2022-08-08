@@ -1,21 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { useNavigate } from 'react-router-dom';
 
 import colors from '../../constants/colors';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import Button from '../../components/Common/Button/Button';
 import Input from '../../components/Common/Input/Input';
-import { useParams } from 'react-router-dom';
 import modify_img from '../../assets/modify_img.png';
+import { registArticle } from '../../api/article';
+import TextArea from '../../components/Common/TextArea/TextArea';
+
 const ArticleRegist = () => {
+	const [title, setTitle] = useState('');
+	const [price, setPrice] = useState('');
+	const [content, setContent] = useState('');
+	const navigate = useNavigate();
+	const onSubmitHandler = async () => {
+		const body = {
+			title: title,
+			price: price,
+			content: content,
+		};
+		const ret = await registArticle(body);
+		if (ret.result === 'success') navigate(`/article/${ret.articleId}`);
+	};
 	return (
 		<>
 			<TopNavigation
 				backClick
-				onBackClick={() => {
-					alert('클릭');
-				}}
+				onBackClick={() => navigate(-1)}
 				leftContent={<span>FITWEEN</span>}
 			/>
 			<div
@@ -41,7 +55,7 @@ const ArticleRegist = () => {
 					css={css`
 						display: flex;
 						flex-direction: column;
-						padding: 30px 25px 0px 25px;
+						padding: 30px 25px 12px 25px;
 					`}
 				>
 					{/* 제목 */}
@@ -50,8 +64,11 @@ const ArticleRegist = () => {
 							margin-bottom: 12px;
 							border: 1px solid ${colors.black};
 							text-align: center;
+							box-shadow: none;
 						`}
 						type="text"
+						value={title}
+						onChange={e => setTitle(e.target.value)}
 						placeholder="제목"
 					/>
 					{/* 대여 가격 */}
@@ -60,19 +77,24 @@ const ArticleRegist = () => {
 							margin-bottom: 12px;
 							border: 1px solid ${colors.black};
 							text-align: center;
+							box-shadow: none;
 						`}
 						type="number"
+						value={price}
+						onChange={e => setPrice(e.target.value)}
 						placeholder="1일 대여 가격"
 					/>
 					{/* 내용 */}
-					<Input
+					<TextArea
 						css={css`
-							min-height: 170px;
-							margin-bottom: 12px;
-							border: 1px solid ${colors.black};
 							text-align: center;
+							border: 1px solid ${colors.black};
+							box-shadow: none;
 						`}
 						type="text"
+						value={content}
+						onChange={e => setContent(e.target.value)}
+						maxByte={500}
 						placeholder="내용"
 					/>
 				</div>
@@ -82,7 +104,12 @@ const ArticleRegist = () => {
 						padding: 0px 25px 25px 25px;
 					`}
 				>
-					<Button type="active" label="등록" style={{ padding: 10 }} />
+					<Button
+						onClick={onSubmitHandler}
+						type="active"
+						label="등록하기"
+						style={{ padding: 10 }}
+					/>
 				</div>
 			</div>
 		</>

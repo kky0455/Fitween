@@ -1,10 +1,12 @@
 import React from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-
-import checkbox from '../../assets/checkbox2.svg';
+import { useNavigate } from 'react-router-dom';
+import checkbox from '../../assets/checkbox.svg';
+import checkbox2 from '../../assets/checkbox2.svg';
 
 const FeedProfile = ({ imgSrc, userId, isRent }) => {
+	const navigate = useNavigate();
 	return (
 		<div
 			css={css`
@@ -25,6 +27,7 @@ const FeedProfile = ({ imgSrc, userId, isRent }) => {
 					display: flex;
 					align-items: center;
 				`}
+				onClick={() => navigate(`/profile/${userId}`)}
 			>
 				<img src={imgSrc} />
 				<span className="fw-700 fs-18" style={{ paddingLeft: '15px', lineHeight: '21.6px' }}>
@@ -38,7 +41,7 @@ const FeedProfile = ({ imgSrc, userId, isRent }) => {
 					align-items: center;
 				`}
 			>
-				{isRent ? <img src={checkbox} /> : <img src={checkbox} />}
+				{isRent ? <img src={checkbox} /> : <img src={checkbox2} />}
 				<span className="fw-700 fs-14" style={{ paddingLeft: '7px', lineHeight: '20.27px' }}>
 					{isRent ? '대여불가' : '대여가능'}
 				</span>

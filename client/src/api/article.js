@@ -7,7 +7,7 @@ export const getArticleList = async () => {
 
 // article 상세
 export const getArticleDetail = async articleId => {
-	const res = await API.get(`/article/${articleId}`);
+	const res = await API.get(`/article/detail/${articleId}`);
 	return res.data;
 };
 

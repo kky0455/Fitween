@@ -30,31 +30,21 @@ export const getArticleList = rest.get(
 
 // article 상세
 export const getArticle = rest.get(
-	'http://localhost:5000/article/:articleId',
+	'http://localhost:5000/article/detail/:articleId',
 	async (req, res, ctx) =>
 		res(
-			ctx.json([
-				{
-					articleId: 'id1',
-					articleTitle: '제목입니다',
-					articleImgList: ['/img/asdasf', '/img/asdasf'],
-					articleContent: '네고 사절',
-					articlePrice: 3000,
-					articleLend: 1,
-					articleLastUpdateTime: '2022-07-21 14:23:07',
-					articleLikeCount: 144,
-				},
-				{
-					articleId: 'id2',
-					articleTitle: '2번쨰 제목입니다',
-					articleImgList: ['/img/asdasf', '/img/asdasf'],
-					articleContent: '네고 환영',
-					articlePrice: 4000,
-					articleLend: 1,
-					articleLastUpdateTime: '2022-07-21 14:23:07',
-					articleLikeCount: 144,
-				},
-			]),
+			ctx.json({
+				user: { userID: 'USERID1' },
+				articleId: 'id1',
+				articleTitle: '제목입니다',
+				articleImgList: ['/img/asdasf', '/img/asdasf'],
+				articleContent: '네고 사절',
+				articlePrice: 3000,
+				articleLend: 1,
+				articleLastUpdateTime: '2022-07-21 14:23:07',
+				articleLikeCount: 144,
+				articleIsRent: true,
+			}),
 		),
 );
 
