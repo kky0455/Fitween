@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Modal = ({ className, onClose, maskClosable, visible, children }) => {
+const Modal = ({ className, onClose, maskClosable, visible, children, type }) => {
 	const onMaskClick = e => {
 		if (e.target === e.currentTarget) {
 			onClose(e);
@@ -16,7 +16,7 @@ const Modal = ({ className, onClose, maskClosable, visible, children }) => {
 				tabIndex="-1"
 				visible={visible}
 			>
-				<ModalInner tabIndex={0} className="modal-inner">
+				<ModalInner tabIndex={0} className="modal-inner" type={type}>
 					{children}
 				</ModalInner>
 			</ModalWrapper>
@@ -62,12 +62,12 @@ const ModalInner = styled.div`
 	position: fixed;
 	box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
 	background-color: #fff;
-	border-radius: 10px 10px 0 0;
-	width: 100%;
+	border-radius: ${({ type }) => (type === 'center' ? '10px' : '10px 10px 0 0')};
+	width: ${({ type }) => (type === 'center' ? '300px' : '100%')};
 	max-width: 480px;
-	bottom: 0;
+	bottom: ${({ type }) => (type === 'center' ? '50%' : '0')};
 	left: 50%;
-	transform: translateX(-50%);
+	transform: translateX(-50%) ${({ type }) => (type === 'center' ? 'translateY(50%)' : null)};
 	margin: 0 auto;
 	padding: 40px 20px;
 	animation: fadeInUp 0.3s;
@@ -78,7 +78,8 @@ const ModalInner = styled.div`
 		}
 		to {
 			opacity: 1;
-			transform: translateX(-50%) translateY(0);
+			transform: translateX(-50%)
+				${({ type }) => (type === 'center' ? 'translateY(50%)' : 'translateY(0)')};
 		}
 	}
 `;
