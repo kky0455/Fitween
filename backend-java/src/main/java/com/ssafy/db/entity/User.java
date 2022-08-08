@@ -1,6 +1,7 @@
 package com.ssafy.db.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import com.ssafy.api.request.UserUpdateDto;
@@ -14,19 +15,16 @@ import java.util.List;
 /**
  * 유저 모델 정의.
  */
-@Entity
-@Getter@Setter
-@ToString
+@Entity @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-//@AttributeOverride(name = "id", column = @Column(name = "user_idx"))
-public class User {
+public class User extends BaseEntity {
 
     @Id
     @Column(name = "user_idx")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    Long userIdx;
 
     @Column(name = "user_id", length=50, nullable = false)
     String userId;
@@ -74,6 +72,10 @@ public class User {
     @ElementCollection(fetch = FetchType.EAGER)
     @Builder.Default
     private List<String> roles = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"user"})
+    List<Article> articles = new ArrayList<>();
 
     public void changeRefreshToken(String refreshToken){
         this.refreshToken = refreshToken;
