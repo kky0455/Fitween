@@ -1,15 +1,16 @@
 package com.ssafy.api.request;
 
-import com.ssafy.db.entity.Article;
-import com.ssafy.db.entity.User;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
 @Data
-//@AllArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor
-public class SaveArticleDto {
+public class UpdateArticleDto {
 
     @ApiModelProperty(name = "게시글 제목")
     private String title;
@@ -20,4 +21,6 @@ public class SaveArticleDto {
     @ApiModelProperty(name = "내용")
     private String content;
 
+    @ApiModelProperty(name = "대여가능여부")
+    private boolean lendstatus;
 }

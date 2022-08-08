@@ -1,6 +1,8 @@
 package com.ssafy.api.service;
 
 import com.ssafy.api.request.SaveArticleDto;
+import com.ssafy.api.request.UpdateArticleDto;
+import com.ssafy.common.auth.FWUserDetails;
 import com.ssafy.db.entity.Article;
 import com.ssafy.db.entity.Likes;
 import com.ssafy.db.entity.User;
@@ -8,6 +10,7 @@ import com.ssafy.db.repository.ArticleRepository;
 import com.ssafy.db.repository.LikesRepository;
 import com.ssafy.db.repository.UserRepositorySupport;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,16 +23,20 @@ public class ArticleServiceImpl implements ArticleService{
     private ArticleRepository articleRepository;
 
     @Autowired
-    private UserRepositorySupport userRepositorySupport;
-
-//    @Autowired
-//    LikesRepository likesRepository;
+    LikesRepository likesRepository;
 
     @Override
-    public Article createArticle(SaveArticleDto saveArticleDto) {
-        System.out.println("들어옴?");
-        Article article = articleRepository.save(saveArticleDto.toEntity());
-        return article;
+    public void createArticle(SaveArticleDto saveArticleDto, Authentication authentication) {
+        FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
+        User user = userDetails.getUser();
+        articleRepository.save(Article.builder()
+                .title(saveArticleDto.getTitle())
+                .content(saveArticleDto.getContent())
+                .price(saveArticleDto.getPrice())
+                .user(user)
+                .likesCount(0L)
+                .build());
+
     }
 
     @Override
@@ -40,9 +47,8 @@ public class ArticleServiceImpl implements ArticleService{
 
     @Transactional  // 이 어노테이션을 해줘야 업데이트 반영 됨.
     @Override
-    public Article updateArticle(Article article, SaveArticleDto saveArticleDto) {
-        System.out.println("찍히나?"+saveArticleDto.toString());
-        article.updateArticle(saveArticleDto);
+    public Article updateArticle(Article article, UpdateArticleDto updateArticleDto) {
+        article.updateArticle(updateArticleDto.getTitle(), updateArticleDto.getContent(), updateArticleDto.getPrice(), updateArticleDto.isLendstatus());
         return article;
     }
 

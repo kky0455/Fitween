@@ -4,6 +4,7 @@ import com.ssafy.api.request.SimpleUserInfoDto;
 import com.ssafy.api.request.UserProfileDto;
 import com.ssafy.api.request.UserUpdateDto;
 import com.ssafy.api.service.FollowService;
+import com.ssafy.db.entity.Follow;
 import com.ssafy.db.repository.FollowRepository;
 import com.ssafy.db.repository.UserRepositorySupport;
 import org.slf4j.Logger;
@@ -36,6 +37,7 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 /**
  * 유저 관련 API 요청 처리를 위한 컨트롤러 정의.
@@ -113,11 +115,23 @@ public class UserController {
 	@ApiOperation(value = "사용자의 상세 정보를 반환한다.", response = User.class)
 	@GetMapping("/{user_id}")
 	public ResponseEntity<?> findUser(@PathVariable String user_id, @ApiIgnore Authentication authentication){
-		User user = userService.getUserByUserId(user_id);
+		FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
+		String userId = userDetails.getUsername();
+		User profileUser = userService.getUserByUserId(user_id);
+		User user = userService.getUserByUserId(userId);
+		user.getArticles().forEach(article -> {
+			article.updateLikesCount(article.getLikes().size());
+		});
 		int articleCount = user.getArticles().size();
 		int followerCount = followRepository.findFollowerCountById(user.getUserIdx());
 		int followingCount = followRepository.findFollowingCountById(user.getUserIdx());
-		UserProfileDto userProfileDto = new UserProfileDto(user, articleCount, followerCount, followingCount);
+		int val = followRepository.findFollowByToAndFrom(profileUser.getUserIdx(), user.getUserIdx());
+//		boolean isFollowed = follow.isPresent();
+		boolean isFollowed = false;
+		if (val > 0) {
+			isFollowed = true;
+		}
+		UserProfileDto userProfileDto = new UserProfileDto(user, articleCount, followerCount, followingCount, isFollowed);
 		return new ResponseEntity<>(userProfileDto, HttpStatus.OK);
 	}
 
@@ -143,7 +157,6 @@ public class UserController {
 	@ApiOperation(value = "회원 정보 수정")
 	@PutMapping("/update")
 	public ResponseEntity<String> update(@RequestBody UserUpdateDto updateUserDto) throws Exception {
-		User user;
 		try {
 			userService.getUserByUserId(updateUserDto.getId());
 		} catch (NoSuchElementException E) {

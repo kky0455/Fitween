@@ -18,10 +18,8 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-//@AttributeOverride(name = "id", column = @Column(name = "user_idx"))
 public class User {
 
     @Id
@@ -42,10 +40,6 @@ public class User {
     @OneToMany(mappedBy = "user",  cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JsonIgnoreProperties({"user"})
     List<Article> articles = new ArrayList<>();
-
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-//    List<Likes> likes = new ArrayList<>();
-
 
     @Builder
     public User(String userId, String password, String name) {

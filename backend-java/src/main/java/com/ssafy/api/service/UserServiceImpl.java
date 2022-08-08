@@ -98,10 +98,11 @@ public class UserServiceImpl implements UserService {
 		boolean isFollow = follow!=null;
 		int followerCount = followRepository.findFollowerCountById(user.getUserIdx());
 		int followingCount = followRepository.findFollowingCountById(user.getUserIdx());
+
 //		user.getArticles().forEach(article -> {
 //			article.up
 //		});
-		return new UserProfileDto(user, articleCount, followerCount, followingCount);
+		return new UserProfileDto(user, articleCount, followerCount, followingCount, true);
 
 	}
 }

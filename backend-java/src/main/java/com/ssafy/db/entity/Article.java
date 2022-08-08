@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.ssafy.api.request.SaveArticleDto;
+import com.ssafy.api.request.UpdateArticleDto;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.OnDelete;
@@ -61,10 +62,11 @@ public class Article {
     @Transient
     private boolean likesState;
 
-    public void updateArticle(SaveArticleDto saveArticleDto) {
-        this.title = saveArticleDto.getTitle();
-        this.content = saveArticleDto.getContent();
-        this.price = saveArticleDto.getPrice();
+    public void updateArticle(String title, String content, int price, boolean lendStatus) {
+        this.title = title;
+        this.content = content;
+        this.price = price;
+        this.lendStatus = lendStatus;
     }
 
     @Override
@@ -72,5 +74,22 @@ public class Article {
         return "Board [articleIdx=" + articleIdx + ", title=" + title + ", content=" + content
                 + ", price" + price + ", lendStatus=" + lendStatus
                 + ", createdtime=" + createdtime + ", user=" + user + "]";
+    }
+
+    public void updateLikesCount(long likesCount) {
+        this.likesCount = likesCount;
+    }
+
+    public void updateLikesState(boolean likesState) {
+        this.likesState = likesState;
+    }
+
+    @Builder
+    public Article(String title, String content, int price, User user, Long likesCount) {
+        this.title = title;
+        this.content = content;
+        this.price = price;
+        this.user = user;
+        this.likesCount = likesCount;
     }
 }

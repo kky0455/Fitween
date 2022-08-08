@@ -13,4 +13,14 @@ import java.util.Optional;
 @Repository
 public interface LikesRepository extends JpaRepository<Likes, Long> {
 
+    void deleteLikesByArticle(Article article);
+
+    @Modifying
+    @Query(value = "INSERT INTO likes(article_idx, user_idx) VALUES(:articleIdx, :userIdx)", nativeQuery = true)
+    void likes(Long articleIdx, Long userIdx);
+
+    @Modifying
+    @Query(value = "DELETE FROM likes WHERE article_idx = :articleId AND user_idx = :userIdx", nativeQuery = true)
+    void unLikes(Long articleIdx, Long userIdx);
+
 }

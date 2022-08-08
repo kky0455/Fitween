@@ -18,6 +18,7 @@ public class FollowDto {
     private int followState;
     private int loginUser;
 
+
     public FollowDto(BigInteger id, String name, int followState, int loginUser) {
         this.id = id.longValue();
         this.name = name;
