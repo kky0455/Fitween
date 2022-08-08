@@ -13,12 +13,46 @@ import * as articleApi from '../../api/article';
 import Modal from '../../components/Common/Modal/Modal';
 import TextArea from '../../components/Common/TextArea/TextArea';
 import { Checkbox, FeedCheckbox } from '../../components/Common/CheckBox/Checkbox';
+
+import { useIntersect } from '../../hook/useIntersect';
+import Loading from '../../components/Common/Loading/Loading';
+
+const fakeFetch = (delay = 1000) => new Promise(res => setTimeout(res, delay));
+const ListItem = ({ number }) => (
+	<div className="ListItem" style={{ height: '100px' }}>
+		<span>{number}</span>
+	</div>
+);
+
 const DummyPage = () => {
 	const [input, setInput] = useState('');
 	const [btnState, setBtnState] = useState(false);
 	const [modalVisible, setModalVisible] = useState(false);
 	const [textareaValue, setTextareaValue] = useState('');
 	const [inputChecked, setInputChecked] = useState(false);
+
+	const [state, setState] = useState({ itemCount: 0, isLoading: false });
+	const onIntersect = async (entry, observer) => {
+		if (entry.isIntersecting) {
+			observer.unobserve(entry.target);
+			//비동기 로직
+			await fetchItems();
+			observer.observe(entry.target);
+		}
+	};
+	const [target, setTarget] = useIntersect(onIntersect, { threshold: 0.5 });
+	const fetchItems = async () => {
+		setState(prev => ({ ...prev, isLoading: true }));
+		await fakeFetch();
+		setState(prev => ({
+			itemCount: prev.itemCount + 10,
+			isLoading: false,
+		}));
+	};
+
+	useEffect(() => {
+		fetchItems();
+	}, []);
 	const openModal = () => {
 		setModalVisible(true);
 	};
@@ -182,6 +216,10 @@ const DummyPage = () => {
 						alert('클릭');
 					}}
 				/>
+				{[...Array(state.itemCount)].map((_, i) => {
+					return <ListItem key={i} number={i} />;
+				})}
+				<div ref={setTarget}>{state.isLoading && <Loading />}</div>
 			</div>
 			<BottomNavigation />
 		</>
