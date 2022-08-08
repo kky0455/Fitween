@@ -1,9 +1,10 @@
 import { rest } from 'msw';
 // 로그인
-export const login = rest.post('http://localhost:5000/auth/login', async (req, res, ctx) => {
+export const login = rest.get('http://localhost:5000/auth/login', async (req, res, ctx) => {
 	// 카카오에서 받은 인가코드 넘겨줌
-	const { accessToken } = await req.json();
-	if (typeof accessToken === 'string') {
+	const { id_token } = req.params;
+	console.log(id_token);
+	if (typeof id_token === 'string') {
 		return res(
 			ctx.json({
 				result: 'success',
