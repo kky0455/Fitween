@@ -8,7 +8,7 @@ const ArticleDetailItem = ({
 	articleImg,
 	userId,
 	title,
-	createTime,
+	updateTime,
 	content,
 	profileImg,
 	isRent,
@@ -41,7 +41,7 @@ const ArticleDetailItem = ({
 					{title}
 				</h1>
 				<div className="fw-500 fs-14" style={{ lineHeight: '17.57px', color: '#8A8A8A' }}>
-					{createTime}
+					{updateTime}
 				</div>
 				<div className="fw-400 fs-16" style={{ lineHeight: '20.08px' }}>
 					{content}

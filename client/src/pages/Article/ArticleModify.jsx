@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { useNavigate } from 'react-router-dom';
 
 import colors from '../../constants/colors';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
@@ -8,16 +9,45 @@ import Button from '../../components/Common/Button/Button';
 import Input from '../../components/Common/Input/Input';
 import { useParams } from 'react-router-dom';
 import modify_img from '../../assets/modify_img.png';
+import { getArticleDetail } from '../../api/article';
+import { modifyArticle } from '../../api/article';
+import TextArea from '../../components/Common/TextArea/TextArea';
+import { Checkbox } from '../../components/Common/CheckBox/Checkbox';
 
 const ArticleModify = () => {
-	const { articleId } = useParams();
+	const [title, setTitle] = useState();
+	const [price, setPrice] = useState('');
+	const [content, setContent] = useState('');
+	const [isRent, setIsRent] = useState(false);
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		const fetch = async () => {
+			const data = await getArticleDetail();
+			setTitle(data.articleTitle);
+			setPrice(data.articlePrice);
+			setContent(data.articleContent);
+			setIsRent(data.articleIsRent);
+			console.log(data);
+		};
+		fetch();
+	}, []);
+	const onSubmitHandler = async () => {
+		const body = {
+			title: title,
+			price: price,
+			content: content,
+			isRent: isRent,
+		};
+		const ret = await modifyArticle(body);
+		if (ret.result === 'success') navigate(`/article/${ret.articleId}`);
+		console.log(ret);
+	};
 	return (
 		<>
 			<TopNavigation
 				backClick
-				onBackClick={() => {
-					alert('클릭');
-				}}
+				onBackClick={() => navigate(-1)}
 				leftContent={<span>FITWEEN</span>}
 			/>
 			<div
@@ -52,8 +82,11 @@ const ArticleModify = () => {
 							margin-bottom: 12px;
 							border: 1px solid ${colors.black};
 							text-align: center;
+							box-shadow: none;
 						`}
 						type="text"
+						value={title}
+						onChange={e => setTitle(e.target.value)}
 						placeholder="제목"
 					/>
 					{/* 대여 가격 */}
@@ -62,19 +95,24 @@ const ArticleModify = () => {
 							margin-bottom: 12px;
 							border: 1px solid ${colors.black};
 							text-align: center;
+							box-shadow: none;
 						`}
 						type="number"
+						value={price}
+						onChange={e => setPrice(e.target.value)}
 						placeholder="1일 대여 가격"
 					/>
 					{/* 내용 */}
-					<Input
+					<TextArea
 						css={css`
-							min-height: 170px;
-							margin-bottom: 12px;
 							text-align: center;
 							border: 1px solid ${colors.black};
+							box-shadow: none;
 						`}
 						type="text"
+						value={content}
+						onChange={e => setContent(e.target.value)}
+						maxByte={500}
 						placeholder="내용"
 					/>
 					<div
@@ -82,13 +120,14 @@ const ArticleModify = () => {
 							display: flex;
 							align-items: center;
 							justify-content: center;
-							padding-top: 12px;
 						`}
 					>
-						<input type="checkbox" />
-						<label className="fw-400 fs-16" style={{ paddingLeft: '5px', lineHeight: '20.08px' }}>
-							대여 불가
-						</label>
+						<Checkbox
+							checked={isRent}
+							onChange={e => setIsRent(e.target.checked)}
+							label={isRent ? '대여 가능' : '대여 불가'}
+							id="checkrent"
+						/>
 					</div>
 				</div>
 				<div
@@ -97,7 +136,12 @@ const ArticleModify = () => {
 						padding: 0px 25px 25px 25px;
 					`}
 				>
-					<Button type="active" label="등록" style={{ padding: 10 }} />
+					<Button
+						onClick={onSubmitHandler}
+						type="active"
+						label="수정하기"
+						style={{ padding: 10 }}
+					/>
 				</div>
 			</div>
 		</>

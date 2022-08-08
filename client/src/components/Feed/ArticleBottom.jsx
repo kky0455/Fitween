@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-
+import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Common/Button/Button';
 import common from '../../constants/commonStyle';
 import colors from '../../constants/colors';
 import { ReactComponent as Heart } from '../../assets/heart_active.svg';
+import { modifyArticleLike } from '../../api/article';
 import { useGlobalContext } from '../../contexts/GlobalContext';
+import { useUserState } from '../../context/User/UserContext';
 
-const ArticleBottom = ({ isLiked, likeCnt, rentPrice }) => {
+const ArticleBottom = ({ articleId, isLiked, likeCnt, rentPrice, userId }) => {
 	const { setHasBottom } = useGlobalContext();
 	useEffect(() => {
 		setHasBottom(true);
@@ -16,6 +18,19 @@ const ArticleBottom = ({ isLiked, likeCnt, rentPrice }) => {
 			setHasBottom(false);
 		};
 	}, []);
+	const [liked, setLiked] = useState(isLiked);
+	const [count, setCount] = useState(likeCnt);
+	const heartClickHandler = async e => {
+		e.stopPropagation();
+		const data = await modifyArticleLike();
+		console.log(data);
+		if (data.result === 'success') {
+			setLiked(!liked);
+			liked ? setCount(count - 1) : setCount(count + 1);
+		}
+	};
+	const navigate = useNavigate();
+	const { user_id } = useUserState();
 	return (
 		<div
 			css={css`
@@ -41,10 +56,10 @@ const ArticleBottom = ({ isLiked, likeCnt, rentPrice }) => {
 				`}
 			>
 				{/* 찜 */}
-				<div>
-					<Heart fill={isLiked ? 'red' : 'white'} stroke={isLiked ? 'red' : 'black'} />
+				<div onClick={heartClickHandler}>
+					<Heart fill={liked ? 'red' : 'white'} stroke={liked ? 'red' : 'black'} />
 					<div className="fw-500 fs-16" style={{ lineHeight: '22.59px' }}>
-						{likeCnt}
+						{count}
 					</div>
 				</div>
 				{/* 대여 가격 */}
@@ -65,7 +80,25 @@ const ArticleBottom = ({ isLiked, likeCnt, rentPrice }) => {
 			</div>
 			{/* 채팅하기 버튼 */}
 			<div style={{ width: 133 }}>
-				<Button type="active" label="채팅하기" style={{ padding: 10 }} />
+				{user_id === userId ? (
+					<Button
+						type="active"
+						label="수정하기"
+						style={{ padding: 10 }}
+						onClick={() => navigate(`/article/modify/${articleId}`)}
+					/>
+				) : (
+					<Button
+						type="active"
+						label="채팅하기"
+						style={{ padding: 10 }}
+						onClick={() =>
+							navigate('/chat/room', {
+								state: { roomId: null, receiverId: userId },
+							})
+						}
+					/>
+				)}
 			</div>
 		</div>
 	);

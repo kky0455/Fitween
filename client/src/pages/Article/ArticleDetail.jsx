@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { useParams } from 'react-router';
@@ -10,18 +10,27 @@ import common from '../../constants/commonStyle';
 import colors from '../../constants/colors';
 import article_img from '../../assets/article_img.jpg';
 import null_profile from '../../assets/null_profile_img.png';
-import heart_active from '../../assets/heart_active.svg';
 import ArticleBottom from '../../components/Feed/ArticleBottom';
+import { getArticleDetail } from '../../api/article';
+import { useNavigate } from 'react-router-dom';
 
 const ArticleDetail = () => {
 	const { articleId } = useParams();
+	const navigate = useNavigate();
+	const [articleDetail, setArticleDetail] = useState(null);
+	useEffect(() => {
+		const fetch = async () => {
+			const data = await getArticleDetail();
+			setArticleDetail(data);
+			console.log(data);
+		};
+		fetch();
+	}, []);
 	return (
 		<>
 			<TopNavigation
 				backClick
-				onBackClick={() => {
-					alert('클릭');
-				}}
+				onBackClick={() => navigate(-1)}
 				leftContent={<span>FITWEEN</span>}
 			/>
 			<div
@@ -33,18 +42,27 @@ const ArticleDetail = () => {
 				}}
 			>
 				{/* 게시글 상세 정보 */}
-				<ArticleDetailItem
-					articleImg={article_img}
-					userId="userID"
-					title="제목입니다.확인해보세요"
-					createTime="1시간 전"
-					content="옷 대여를 원하시는 분들은 채팅 주세요.옷 대여를 원하시는 분들은 채팅 주세요.옷 대여를 원하시는 분들은 채팅 주세요.옷 대여를 원하시는 분들은 채팅 주세요.옷 대여를 원하시는 분들은 채팅 주세요.옷 대여를 원하시는 분들은 채팅 주세요.옷 대여를 원하시는 분들은 채팅 주세요.옷 대여를 원하시는 분들은 채팅 주세요.옷 대여를 원하시는 분들은 채팅 주세요.옷 대여를 원하시는 분들은 채팅 주세요.옷 대여를 원하시는 분들은 채팅 주세요.옷 대여를 원하시는 분들은 채팅 주세요.옷 대여를 원하시는 분들은 채팅 주세요.옷 대여를 원하시는 분들은 채팅 주세요.옷 대여를 원하시는 분들은 채팅 주세요.옷 대여를 원하시는 분들은 채팅 주세요.옷 대여를 원하시는 분들은 채팅 주세요.옷 대여를 원하시는 분들은 채팅 주세요."
-					profileImg={null_profile}
-					isRent
-				/>
+				{articleDetail && (
+					<ArticleDetailItem
+						key={articleDetail.articleId}
+						articleImg={article_img}
+						userId={articleDetail.user.userID}
+						title={articleDetail.articleTitle}
+						updateTime={articleDetail.articleLastUpdateTime}
+						content={articleDetail.articleContent}
+						profileImg={null_profile}
+						isRent={articleDetail.articleIsRent}
+					/>
+				)}
 			</div>
 			{/* 하단부 */}
-			<ArticleBottom likeCnt="126" rentPrice="4000" />
+			{articleDetail && (
+				<ArticleBottom
+					likeCnt={articleDetail.articleLikeCount}
+					rentPrice={articleDetail.articlePrice}
+					userId={articleDetail.user.userID}
+				/>
+			)}
 		</>
 	);
 };
