@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.nio.file.AccessDeniedException;
+import java.util.Optional;
 
 
 /**
@@ -50,12 +51,15 @@ public class UserService {
 //		return UserRepository2.save(user);
 //	}
 
+	@Transactional
 	public User getUserByUserId(String userId) {
 		// 디비에 유저 정보 조회 (userId 를 통한 조회).
 		User user = userRepositorySupport.findUserByUserId(userId).get();
-		return user;
-	}
 
+		return user;
+
+	}
+	@Transactional
 	public boolean checkUserId(String userId) {
 		boolean result = userRepositorySupport.findByUserIdEquals(userId);
 		return result;
@@ -75,32 +79,34 @@ public class UserService {
 
 	@Transactional
 	public String join(User user){
-		checkEmailDuplicate(user.getEmail()); // 중복 회원 검증
+		checkIdDuplicate(user.getUserId()); // 중복 회원 검증
 		user.setEnable(false);
 		userRepository.save(user);
 		return user.getUserId();
 	}
 
 	@Transactional
-	public void checkEmailDuplicate(String email) {
-		boolean userEmailDuplicate = userRepository.existsByEmail(email);
-		if(userEmailDuplicate) throw new IllegalStateException("이미 존재하는 회원입니다.");
+	public void checkIdDuplicate(String userId) {
+		boolean userIdDuplicate = userRepository.existsByUserId(userId);
+		if(userIdDuplicate) throw new IllegalStateException("이미 존재하는 회원입니다.");
 
 	}
 
 	@Transactional
-	public UserLoginPostReq userLogin(String email, String password) throws Exception {
-		User user = userRepository.findByEmail(email);
+	public UserLoginPostReq userLogin(String userId) throws Exception {
+		User user = getUserByUserId(userId);
 
 		// 리프레쉬 토큰 발급
-		user.changeRefreshToken(jwtTokenProvider.createRefreshToken(email, user.getRoles()));
+		user.changeRefreshToken(jwtTokenProvider.createRefreshToken(userId, user.getRoles()));
 		UserLoginPostReq userLoginPostReq = UserLoginPostReq.builder()
-				.email(email)
-				.accessToken(jwtTokenProvider.createToken(email, user.getRoles()))
+//				.userId(userId)
+				.accessToken(jwtTokenProvider.createToken(userId, user.getRoles()))
 				.refreshToken(user.getRefreshToken())
-				.userId(user.getUserId()).nickname(user.getNickname())
-				.gender(user.getGender()).age(user.getAge())
-				.height(user.getHeight()).weight(user.getWeight())
+//				.nickname(user.getNickname())
+//				.gender(user.getGender()).age(user.getAge())
+//				.height(user.getHeight()).weight(user.getWeight())
+//				.region(user.getRegion()).email(user.getEmail())
+//				.footSize(user.getFootSize())
 				.build();
 
 		return userLoginPostReq;
