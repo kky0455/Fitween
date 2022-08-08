@@ -21,22 +21,22 @@ public class UserLoginPostReq {
 	String refreshToken;
 	@ApiModelProperty(example="user_idx 번호")
 	Long id;
-	@ApiModelProperty(example="han123")
+	@ApiModelProperty(example="156461325451")
 	String userId;
 	@ApiModelProperty(example="han123@gmail.com")
 	String email;
 	@ApiModelProperty(example="유저 닉네임")
 	String nickname;
 	@ApiModelProperty(example="20")
-	int age = 0;
+	int age ;
 	@ApiModelProperty(example="1=Male, 2=Female, 3=Unknown")
 	int gender;
 	@ApiModelProperty(example="182.1")
-	double height = 0;
+	double height ;
 	@ApiModelProperty(example="80.5")
-	double weight = 0;
+	double weight ;
 	@ApiModelProperty(example="250")
-	int footSize = 0;
+	int footSize ;
 	@ApiModelProperty(example="광주 광산구 장덕동")
 	String region;
 
