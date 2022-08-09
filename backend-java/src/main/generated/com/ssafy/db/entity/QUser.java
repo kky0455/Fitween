@@ -22,6 +22,8 @@ public class QUser extends EntityPathBase<User> {
 
     public final ListPath<Article, QArticle> articles = this.<Article, QArticle>createList("articles", Article.class, QArticle.class, PathInits.DIRECT2);
 
+    public final ListPath<Likes, QLikes> likes = this.<Likes, QLikes>createList("likes", Likes.class, QLikes.class, PathInits.DIRECT2);
+
     public final StringPath name = createString("name");
 
     public final StringPath password = createString("password");

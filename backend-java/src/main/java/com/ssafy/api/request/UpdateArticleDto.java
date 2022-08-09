@@ -15,11 +15,14 @@ public class UpdateArticleDto {
     @ApiModelProperty(name = "게시글 제목")
     private String title;
 
-    @ApiModelProperty(name = "가격")
-    private int price;
+    @ApiModelProperty(name = "게시글 제목")
+    private String feedImg;
 
     @ApiModelProperty(name = "내용")
     private String content;
+
+    @ApiModelProperty(name = "가격")
+    private int price;
 
     @ApiModelProperty(name = "대여가능여부")
     private boolean lendstatus;

@@ -1,40 +1,29 @@
 package com.ssafy.api.service;
 
-import com.ssafy.api.request.UserProfileDto;
+import com.ssafy.api.request.UserRegisterPostReq;
 import com.ssafy.api.request.UserUpdateDto;
-import com.ssafy.common.exception.handler.CustomApiException;
-import com.ssafy.db.entity.Follow;
-import com.ssafy.db.repository.FollowRepository;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.ssafy.api.request.UserRegisterPostReq;
 import com.ssafy.db.entity.User;
 import com.ssafy.db.repository.UserRepository;
-import com.ssafy.db.repository.UserRepositorySupport;
 
 import javax.transaction.Transactional;
-import java.util.Optional;
 
 /**
  *	유저 관련 비즈니스 로직 처리를 위한 서비스 구현 정의.
  */
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class UserServiceImpl implements UserService {
-
-	private final UserRepository userRepository;
-
-	private final UserRepositorySupport userRepositorySupport;
-
-	private final FollowRepository followRepository;
-
 	@Autowired
 	PasswordEncoder passwordEncoder;
-	
-	@Override
+
+
 	public User createUser(UserRegisterPostReq userRegisterInfo) {
 
 		User user = new User();
@@ -54,55 +43,23 @@ public class UserServiceImpl implements UserService {
 		return userRepository.save(user);
 	}
 
+	private final UserRepository userRepository;
 	@Override
 	public User getUserByUserId(String userId) {
 		// 디비에 유저 정보 조회 (userId 를 통한 조회).
-		User user = userRepositorySupport.findUserByUserId(userId).get();
+		User user = userRepository.findUserByUserId(userId).orElseGet(null);
 		return user;
 	}
 
 	@Override
 	public User getUserByUserIdx(Long userIdx) {
 		// 디비에 유저 정보 조회 (userId 를 통한 조회).
-		User user = userRepository.findByUserIdx(userIdx).get();
+		User user = userRepository.findByUserIdx(userIdx).orElseGet(null);
 		return user;
 	}
-
 	@Override
-	public boolean checkUserId(String userId) {
-		boolean result = userRepositorySupport.findByUserIdEquals(userId);
-		return result;
-	}
-
-	@Override
-	public boolean deleteByUserId(User user) {
-		userRepository.delete(user);
-		return true;
-	}
-
-	@Transactional
-	@Override
-	public void updateUser(UserUpdateDto userUpdateDto) {
-		User user = userRepositorySupport.findUserByUserId(userUpdateDto.getId()).get();
-		String password = passwordEncoder.encode(userUpdateDto.getPassword());
-		user.updateUser(userUpdateDto.getName(), password);
-	}
-	@Transactional
-	@Override
-	public UserProfileDto getUserProfileDto(Long profileId, Long userId) {
-		User user = userRepository.findByUserIdx(profileId).get();
-		int articleCount = user.getArticles().size();
-		User loginUser = userRepository.findByUserIdx(userId).get();
-		Follow follow = followRepository.findByUserIdAndTargetUserId(profileId, userId).orElse(null);
-		boolean LoginUser = user.getUserIdx().equals(loginUser.getUserIdx());
-		boolean isFollow = follow!=null;
-		int followerCount = followRepository.findFollowerCountById(user.getUserIdx());
-		int followingCount = followRepository.findFollowingCountById(user.getUserIdx());
-
-//		user.getArticles().forEach(article -> {
-//			article.up
-//		});
-		return new UserProfileDto(user, articleCount, followerCount, followingCount, true);
-
+	public void updateUser(Long userIdx, UserUpdateDto userUpdateDto) {
+		User user = userRepository.findByUserIdx(userIdx).orElse(null);
+		user.updateUser(userUpdateDto);
 	}
 }

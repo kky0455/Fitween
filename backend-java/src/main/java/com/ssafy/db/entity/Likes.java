@@ -30,7 +30,7 @@ public class Likes {
     private Article article;
 
     @Builder
-    public Likes(Article article, User user){
+    public Likes(User user, Article article){
         this.article = article;
         this.user = user;
     }
