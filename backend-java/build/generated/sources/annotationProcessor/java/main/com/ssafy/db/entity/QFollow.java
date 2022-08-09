@@ -22,20 +22,11 @@ public class QFollow extends EntityPathBase<Follow> {
 
     public static final QFollow follow = new QFollow("follow");
 
-    public final QBaseEntity _super = new QBaseEntity(this);
+    public final NumberPath<Long> followIdx = createNumber("followIdx", Long.class);
 
-    //inherited
-    public final DateTimePath<java.time.LocalDateTime> createdDate = _super.createdDate;
+    public final QUser from;
 
-    public final QUser fromUser;
-
-    //inherited
-    public final NumberPath<Long> id = _super.id;
-
-    //inherited
-    public final DateTimePath<java.time.LocalDateTime> modifiedDate = _super.modifiedDate;
-
-    public final QUser toUser;
+    public final QUser to;
 
     public QFollow(String variable) {
         this(Follow.class, forVariable(variable), INITS);
@@ -55,8 +46,8 @@ public class QFollow extends EntityPathBase<Follow> {
 
     public QFollow(Class<? extends Follow> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.fromUser = inits.isInitialized("fromUser") ? new QUser(forProperty("fromUser")) : null;
-        this.toUser = inits.isInitialized("toUser") ? new QUser(forProperty("toUser")) : null;
+        this.from = inits.isInitialized("from") ? new QUser(forProperty("from")) : null;
+        this.to = inits.isInitialized("to") ? new QUser(forProperty("to")) : null;
     }
 
 }

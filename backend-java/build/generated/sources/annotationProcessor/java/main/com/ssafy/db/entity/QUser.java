@@ -20,7 +20,14 @@ public class QUser extends EntityPathBase<User> {
 
     public static final QUser user = new QUser("user");
 
+    public final QBaseEntity _super = new QBaseEntity(this);
+
     public final NumberPath<Integer> age = createNumber("age", Integer.class);
+
+    public final ListPath<Article, QArticle> articles = this.<Article, QArticle>createList("articles", Article.class, QArticle.class, PathInits.DIRECT2);
+
+    //inherited
+    public final DateTimePath<java.time.LocalDateTime> createdDate = _super.createdDate;
 
     public final StringPath email = createString("email");
 
@@ -32,7 +39,8 @@ public class QUser extends EntityPathBase<User> {
 
     public final NumberPath<Double> height = createNumber("height", Double.class);
 
-    public final NumberPath<Long> id = createNumber("id", Long.class);
+    //inherited
+    public final DateTimePath<java.time.LocalDateTime> modifiedDate = _super.modifiedDate;
 
     public final StringPath name = createString("name");
 
@@ -49,6 +57,8 @@ public class QUser extends EntityPathBase<User> {
     public final ListPath<String, StringPath> roles = this.<String, StringPath>createList("roles", String.class, StringPath.class, PathInits.DIRECT2);
 
     public final StringPath userId = createString("userId");
+
+    public final NumberPath<Long> userIdx = createNumber("userIdx", Long.class);
 
     public final NumberPath<Double> weight = createNumber("weight", Double.class);
 

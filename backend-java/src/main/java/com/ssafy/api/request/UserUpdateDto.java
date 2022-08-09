@@ -12,6 +12,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserUpdateDto {
+
+    @ApiModelProperty(name = "유저 id")
+    String id;
+
     @ApiModelProperty(name = "유저 id")
     @ApiParam(value = "유저 id", type = "String")
     String userId;

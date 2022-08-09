@@ -22,18 +22,9 @@ public class QLikes extends EntityPathBase<Likes> {
 
     public static final QLikes likes = new QLikes("likes");
 
-    public final QBaseEntity _super = new QBaseEntity(this);
+    public final QArticle article;
 
-    public final QArticleInfo articleInfo;
-
-    //inherited
-    public final DateTimePath<java.time.LocalDateTime> createdDate = _super.createdDate;
-
-    //inherited
-    public final NumberPath<Long> id = _super.id;
-
-    //inherited
-    public final DateTimePath<java.time.LocalDateTime> modifiedDate = _super.modifiedDate;
+    public final NumberPath<Long> likesIdx = createNumber("likesIdx", Long.class);
 
     public final QUser user;
 
@@ -55,7 +46,7 @@ public class QLikes extends EntityPathBase<Likes> {
 
     public QLikes(Class<? extends Likes> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.articleInfo = inits.isInitialized("articleInfo") ? new QArticleInfo(forProperty("articleInfo")) : null;
+        this.article = inits.isInitialized("article") ? new QArticle(forProperty("article"), inits.get("article")) : null;
         this.user = inits.isInitialized("user") ? new QUser(forProperty("user")) : null;
     }
 
