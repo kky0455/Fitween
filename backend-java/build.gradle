@@ -32,7 +32,6 @@ plugins {
 
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'eclipse'
-apply plugin: 'com.github.node-gradle.node'
 //이클립스인 경우를 위한 QueryDSL 플러그인. IntelliJ는 불필요.
 //apply plugin: 'com.ewerk.gradle.plugins.querydsl'
 
@@ -50,12 +49,6 @@ group 'com.ssafy'
 version '1.0-SNAPSHOT'
 sourceCompatibility = '1.8'
 
-node {
-    download = true
-    version = '14.17.0'
-    // Set the work directory where node_modules should be located
-    nodeModulesDir = file("${project.projectDir}/../frontend")
-}
 
 configurations {
     providedRuntime
@@ -65,12 +58,8 @@ configurations {
     args = ['install']
 }*/
 
-task webpack(type: NpmTask, dependsOn: 'npmInstall') {
-    args = ['run','build']
-}
 
 // processResources is a Java task. Run the webpack bundling before this task using the 'build' task in the package.json
-processResources.dependsOn 'webpack'
 
 //set build time and inject value to application.properties
 def buildTime() {
@@ -98,30 +87,7 @@ processResources {
     }
 }
 
-//이클립스인 경우를 위한 QueryDSL 설정. IntelliJ는 불필요. [시작]
-//def querydslDir = 'src/main/generated'
-//querydsl {
-//    library = "com.querydsl:querydsl-apt"
-//    jpa = true
-//    querydslSourcesDir = querydslDir
-//}
-//
-//sourceSets {
-//    main {
-//        java {
-//            srcDirs = ['src/main/java', querydslDir]
-//        }
-//    }
-//}
-//
-//compileQuerydsl {
-//    options.annotationProcessorPath = configurations.querydsl
-//}
-//
-//configurations {
-//    querydsl.extendsFrom compileClasspath
-//}
-//[끝]
+
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
@@ -135,10 +101,13 @@ dependencies {
     runtimeOnly("mysql:mysql-connector-java")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
-
+    // yong qlrm추가
+    implementation group: 'org.qlrm', name: 'qlrm', version: '3.0.1'
     implementation('commons-io:commons-io:2.6')
     implementation("org.apache.commons:commons-collections4:4.4")
     implementation("org.apache.commons:commons-lang3:3.9")
+    // yong javax추가
+    implementation 'javax.interceptor:javax.interceptor-api:1.2.2'
 
     implementation("com.querydsl:querydsl-jpa:${querydslVer}")
     implementation("com.querydsl:querydsl-apt:${querydslVer}")
@@ -210,6 +179,14 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-mustache'
     implementation 'org.springframework.session:spring-session-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'mysql:mysql-connector-java'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 }
 
 test {
