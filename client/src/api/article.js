@@ -13,7 +13,9 @@ export const getArticleDetail = async articleId => {
 
 // article등록
 export const registArticle = async body => {
-	const res = await API.post('/article/regist', body);
+	const res = await API.post('/article/regist', body, {
+		headers: { 'Content-Type': 'multipart/form-data' },
+	});
 	return res.data;
 };
 
