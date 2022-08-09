@@ -59,7 +59,7 @@ const StyledSlider = styled(Slider)`
 		z-index: 1;
 	}
 `;
-const Carousel = ({ imgSrcList, style, contentHeight }) => {
+const Carousel = ({ imgSrcList, style, contentHeight, ...rest }) => {
 	const settings = {
 		arrows: false,
 		dots: true,
@@ -70,9 +70,9 @@ const Carousel = ({ imgSrcList, style, contentHeight }) => {
 		// prevArrow: <PrevArrow />,
 	};
 	return (
-		<div style={{ ...style }}>
+		<div style={{ ...style }} {...rest}>
 			<StyledSlider {...settings}>
-				{imgSrcList &&
+				{imgSrcList.length ? (
 					imgSrcList.map(src => (
 						<div key={uuid()}>
 							<div style={{ height: contentHeight }}>
@@ -86,7 +86,21 @@ const Carousel = ({ imgSrcList, style, contentHeight }) => {
 								/>
 							</div>
 						</div>
-					))}
+					))
+				) : (
+					<div>
+						<div style={{ height: contentHeight }}>
+							<img
+								src={modify_img}
+								alt=""
+								style={{
+									width: '100%',
+									height: '100%',
+								}}
+							/>
+						</div>
+					</div>
+				)}
 			</StyledSlider>
 		</div>
 	);
