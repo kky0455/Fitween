@@ -25,8 +25,8 @@ export const modifyFollow = async () => {
 };
 
 // 회원 정보 가져오기
-export const getUserInfo = async userId => {
-	const res = await API.get(`/user/${userId}`);
+export const getUserInfo = async loginedUserId => {
+	const res = await API.get(`/user/${loginedUserId}`);
 	return res.data;
 };
 
