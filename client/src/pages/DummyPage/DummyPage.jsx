@@ -16,6 +16,8 @@ import { Checkbox, FeedCheckbox } from '../../components/Common/CheckBox/Checkbo
 
 import { useIntersect } from '../../hook/useIntersect';
 import Loading from '../../components/Common/Loading/Loading';
+import Carousel from '../../components/Common/Carousel/Carousel';
+import modify_img from '../../assets/modify_img.png';
 
 const fakeFetch = (delay = 1000) => new Promise(res => setTimeout(res, delay));
 const ListItem = ({ number }) => (
@@ -153,6 +155,12 @@ const DummyPage = () => {
 						<div>asd</div>
 					</Modal>
 				)}
+
+				<Carousel
+					style={{ marginBottom: '30px' }}
+					contentHeight="300px"
+					imgSrcList={[modify_img, modify_img]}
+				/>
 				<Input
 					type="text"
 					value={input}
