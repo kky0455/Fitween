@@ -4,7 +4,7 @@ import Logo from '../../assets/FitweenLogoBg.png';
 import { login } from '../../api/auth';
 
 const callKakaoLoginHandler = () => {
-	window.location.href = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${process.env.REACT_APP_KAKAO_REST_API_KEY}&redirect_uri=${process.env.REACT_APP_KAKAO_REDIRECT_URI}`;
+	window.location.href = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${process.env.REACT_APP_KAKAO_REST_API_KEY}&redirect_uri=${process.env.REACT_APP_CLIENT_URI}/kakao`;
 };
 
 const onGoogleSuccess = async googleUser => {
@@ -57,7 +57,10 @@ const Index = () => {
 							const gauth = gapi.auth2.getAuthInstance();
 							gauth.attachClickHandler(
 								googleButtonRef.current,
-								{ ux_mode: 'redirect', redirect_uri: 'http://localhost:3000/oauth/redirect' },
+								{
+									ux_mode: 'redirect',
+									redirect_uri: `${process.env.REACT_APP_CLIENT_URI}/oauth/redirect`,
+								},
 
 								onGoogleSuccess,
 								onGoogleFailure,
