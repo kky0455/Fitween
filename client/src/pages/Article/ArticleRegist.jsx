@@ -73,9 +73,11 @@ const ArticleRegist = () => {
 						style={{ display: 'none' }}
 						onChange={e => {
 							if (e.target.files.length <= 5) {
-								setImageSrcs([]);
-								Array.from(e.target.files).forEach(file => encodeFileToBase64(file));
-								setImageFiles(e.target.files);
+								if (e.target.files.length > 0) {
+									setImageSrcs([]);
+									Array.from(e.target.files).forEach(file => encodeFileToBase64(file));
+									setImageFiles(e.target.files);
+								}
 							} else {
 								alert('최대 5개만 업로드할 수 있습니다.');
 							}
