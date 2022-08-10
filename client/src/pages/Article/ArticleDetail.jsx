@@ -22,7 +22,6 @@ const ArticleDetail = () => {
 		const fetch = async () => {
 			const data = await getArticleDetail();
 			setArticleDetail(data);
-			console.log(data);
 		};
 		fetch();
 	}, []);

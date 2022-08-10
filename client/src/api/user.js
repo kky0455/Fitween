@@ -2,25 +2,31 @@ import API from './index';
 
 // 로그인
 export const login = async body => {
-	const res = await API.post('/user/login', body);
+	const res = await API.post('/users/login', body);
 	return res.data;
 };
 
 // 정보 수정
 export const modifyInfo = async body => {
-	const res = await API.put('/user/modify/info', body);
+	const res = await API.put('/users/modify/info', body);
 	return res.data;
 };
 
 // 동네 수정
 export const modifyRegion = async body => {
-	const res = await API.put('/user/modify/region', body);
+	const res = await API.put('/users/modify/region', body);
 	return res.data;
 };
 
-// 팔로우/취소
-export const modifyFollow = async () => {
-	const res = await API.post('/user/follow');
+// 팔로우
+export const doFollow = async userId => {
+	const res = await API.post(`/follow/${userId}`);
+	return res.data;
+};
+
+// 팔로우 취소
+export const cancelFollow = async userId => {
+	const res = await API.delete(`/follow/${userId}`);
 	return res.data;
 };
 
@@ -32,6 +38,6 @@ export const getUserInfo = async loginedUserId => {
 
 // 회원 피드 목록 가져오기
 export const getUserArticleList = async () => {
-	const res = await API.get('/user/articleList');
+	const res = await API.get('/users/articleList');
 	return res.data;
 };

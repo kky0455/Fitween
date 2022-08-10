@@ -1,9 +1,150 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
 
-const ProfileUser = () => {
+import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
+import BottomNavigation from '../../components/Common/BottomNavigation/BottomNavigation';
+import { useNavigate, useParams } from 'react-router-dom';
+import null_profile from '../../assets/null_profile_img.png';
+import gallery_img from '../../assets/gallery_img.png';
+import ProfileTop from '../../components/Profile/ProfileTop';
+import ProfileButton from '../../components/Profile/ProfileButton';
+import { useUserState } from '../../context/User/UserContext';
+import { getUserInfo } from '../../api/user';
+import profile_menu from '../../assets/profile_menu.svg';
+import Modal from '../../components/Common/Modal/Modal';
+import colors from '../../constants/colors';
+import styled from 'styled-components';
+
+const Hr = styled.hr`
+	border: none;
+	border-bottom: 1px solid ${colors.grey50};
+`;
+
+const ProfileUser = ({ articleId }) => {
 	const { userId } = useParams();
-	return <div>프로필 : {userId}</div>;
+	const { loginedUserId } = useUserState();
+	const navigate = useNavigate();
+	const [profileInfo, setProfileInfo] = useState(null);
+	const [modalVisible, setModalVisible] = useState(false);
+	useEffect(() => {
+		const fetch = async () => {
+			const data = await getUserInfo(userId);
+			if (data.result === 'fail') {
+				navigate('/main');
+			}
+			setProfileInfo(data);
+		};
+		fetch();
+	}, []);
+	const openModal = () => {
+		setModalVisible(true);
+	};
+	const closeModal = () => {
+		setModalVisible(false);
+	};
+
+	return (
+		<>
+			{profileInfo && (
+				<TopNavigation
+					backClick
+					onBackClick={() => navigate(-1)}
+					leftContent={<div>{profileInfo.user.userId}</div>}
+					rightMenu={
+						loginedUserId === profileInfo.user.userId && (
+							<img
+								onClick={() => {
+									openModal();
+								}}
+								src={profile_menu}
+								alt=""
+							/>
+						)
+					}
+				/>
+			)}
+
+			<div
+				className="wrapper"
+				style={{
+					width: '100%',
+					height: '100%',
+					overflowY: 'scroll',
+				}}
+			>
+				{modalVisible && (
+					<Modal visible={modalVisible} maskClosable onClose={closeModal}>
+						<div
+							css={css`
+								text-align: center;
+								font-family: 'Regular';
+								font-size: 20px;
+								line-height: 20px;
+							`}
+						>
+							<div style={{ padding: '5px' }}>내 정보 수정</div>
+							<Hr />
+							<div style={{ padding: '5px' }}>내 동네 수정</div>
+							<Hr />
+							<div style={{ padding: '5px' }}>로그아웃</div>
+							<Hr />
+							<div style={{ padding: '5px' }}>탈퇴하기</div>
+							<Hr />
+						</div>
+					</Modal>
+				)}
+				{/* 프로필 상단 - 바이오, 버튼 */}
+				<div>
+					{/* 프로필 바이오 */}
+					{profileInfo && (
+						<ProfileTop
+							key={profileInfo.user.userId}
+							imgSrc={null_profile}
+							followerCount={profileInfo.userFollowerCount}
+							followingCount={profileInfo.userFollowingCount}
+							clothesCount={profileInfo.articleCount}
+						/>
+					)}
+					{/* 버튼 */}
+					{profileInfo && loginedUserId !== profileInfo.user.userId && (
+						<ProfileButton isFollowed={profileInfo.isFollowed} setProfileInfo={setProfileInfo} />
+					)}
+				</div>
+				{/* 옷장 사진 */}
+				<div
+					css={css`
+						display: flex;
+						flex-direction: column;
+					`}
+				>
+					{/* 사진 */}
+					<div
+						css={css`
+							display: grid;
+							grid-template-columns: 1fr 1fr;
+							grid-template-rows: auto;
+							place-items: center;
+							gap: 10px;
+							padding: 10px;
+						`}
+					>
+						<img
+							css={css`
+								display: flex;
+								width: 100%;
+								height: 100%;
+							`}
+							src={gallery_img}
+							alt=""
+							onClick={() => navigate(`/article/${articleId}`)}
+						/>
+					</div>
+				</div>
+			</div>
+			<BottomNavigation />
+		</>
+	);
 };
 
 export default ProfileUser;
