@@ -30,6 +30,7 @@ public class ArticleServiceImpl implements ArticleService{
                 .content(saveArticleDto.getContent())
                 .price(saveArticleDto.getPrice())
                 .user(user)
+                        .likesCount(0)
                 .build());
     }
     @Override

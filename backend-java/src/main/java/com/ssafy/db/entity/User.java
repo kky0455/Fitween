@@ -77,7 +77,7 @@ public class User{
     List<Article> articles = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonIgnoreProperties({"user"})
+    @JsonIgnoreProperties({"user", "article", "like", "likes", "articles"})
     private List<Likes> likes = new ArrayList<>();
 
 //    public void changeRefreshToken(String refreshToken){

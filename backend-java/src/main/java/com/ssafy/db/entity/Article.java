@@ -35,13 +35,25 @@ public class Article{
     @ColumnDefault("0")
     boolean lendStatus;
 
+    @Transient
+    private long likesCount;
+
+    @Transient
+    private boolean likesState;
+
+    public void updateLikesCount(long likesCount) {
+        this.likesCount = likesCount;
+    }
+
+    public void updateLikesState(boolean likesState) { this.likesState = likesState; }
+
     @JsonIgnoreProperties({"articles"})
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_idx")
     private User user;
 
     @OneToMany(mappedBy = "article", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonIgnoreProperties({"article"})
+    @JsonIgnoreProperties({"articles", "user", "likes", "article", "like"})
     private List<Likes> likes = new ArrayList<>();
 
     public void updateArticle(UpdateArticleDto updateArticleDto) {
@@ -52,11 +64,12 @@ public class Article{
         this.lendStatus = updateArticleDto.isLendstatus();
     }
     @Builder
-    public Article(String title, String feedImg, String content, int price, User user) {
+    public Article(String title, String feedImg, String content, int price, User user, int likesCount) {
         this.title = title;
         this.feedImg = feedImg;
         this.content = content;
         this.price = price;
         this.user = user;
+        this.likesCount = likesCount;
     }
 }

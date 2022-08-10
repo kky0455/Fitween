@@ -75,9 +75,15 @@ public class ArticleController {
     }
     @ApiOperation(value="게시글 전체 조회", notes="<strong>게시글을 전체 조회를</strong>시켜줍니다.")
     @GetMapping("/list")
-    public ResponseEntity<?> findAllArticle(@ApiIgnore Authentication authentication){
+    public Authentication findAllArticle(@ApiIgnore Authentication authentication){
+        FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
         List<Article> articles = articleService.findAllArticle();
-        return ResponseEntity.status(200).body(articles);
+        articles.forEach(article -> {
+            article.setLikesCount(article.getLikes().size());
+            article.setLendStatus(likeService.isLike(userDetails.getUser(), article));
+        });
+        System.out.println(authentication);
+        return authentication;
     }
     @GetMapping("/detail/{article_idx}")
     @ApiOperation(value ="게시글 상세  조회", notes ="해당 article_idx 게시판 정보 출력")

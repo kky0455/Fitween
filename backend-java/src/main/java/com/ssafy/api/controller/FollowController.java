@@ -4,7 +4,6 @@ import com.ssafy.api.service.FollowService;
 import com.ssafy.api.service.UserService;
 import com.ssafy.common.auth.FWUserDetails;
 import com.ssafy.db.entity.User;
-import com.ssafy.db.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
