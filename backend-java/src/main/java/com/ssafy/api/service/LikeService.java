@@ -1,7 +1,12 @@
 package com.ssafy.api.service;
 
-public interface LikeService {
-    public void likes(Long articleIdx, Long userIdx);
+import com.ssafy.db.entity.Article;
+import com.ssafy.db.entity.User;
 
-    public void unLikes(Long articleIdx, Long userIdx);
+public interface LikeService {
+    public void likes(User user, Article article);
+
+    public void unLikes(User user, Article article);
+
+    public boolean isLike(User user, Article article);
 }

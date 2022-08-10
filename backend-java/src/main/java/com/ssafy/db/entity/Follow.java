@@ -25,8 +25,8 @@ public class Follow{
     User to;
 
     @Builder
-    public Follow(User fromUser, User toUser){
-        this.from = fromUser;
-        this.to = toUser;
+    public Follow(User from, User to){
+        this.from = from;
+        this.to = to;
     }
 }

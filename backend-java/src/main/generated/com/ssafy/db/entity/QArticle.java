@@ -22,23 +22,13 @@ public class QArticle extends EntityPathBase<Article> {
 
     public static final QArticle article = new QArticle("article");
 
-    public final QBaseEntity _super = new QBaseEntity(this);
-
     public final NumberPath<Long> articleIdx = createNumber("articleIdx", Long.class);
 
     public final StringPath content = createString("content");
 
-    //inherited
-    public final DateTimePath<java.time.LocalDateTime> createdDate = _super.createdDate;
-
-    public final StringPath feedImg = createString("feedImg");
-
     public final BooleanPath lendStatus = createBoolean("lendStatus");
 
     public final ListPath<Likes, QLikes> likes = this.<Likes, QLikes>createList("likes", Likes.class, QLikes.class, PathInits.DIRECT2);
-
-    //inherited
-    public final DateTimePath<java.time.LocalDateTime> modifiedDate = _super.modifiedDate;
 
     public final NumberPath<Integer> price = createNumber("price", Integer.class);
 

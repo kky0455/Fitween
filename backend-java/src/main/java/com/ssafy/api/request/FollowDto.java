@@ -14,7 +14,7 @@ import java.math.BigInteger;
 public class FollowDto {
     private long id;
     private String name;
-//    private String profileImgUrl;
+    //    private String profileImgUrl;
     private int followState;
     private int loginUser;
 

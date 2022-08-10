@@ -8,7 +8,6 @@ import com.ssafy.db.dto.UserDto;
 import com.ssafy.db.entity.User;
 import com.ssafy.db.repository.UserRepository;
 import com.ssafy.db.repository.UserRepository2;
-import com.ssafy.db.repository.UserRepositorySupport;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,8 +15,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.nio.file.AccessDeniedException;
-import java.util.Optional;
-
 
 /**
  *	유저 관련 비즈니스 로직 처리를 위한 서비스 인터페이스 정의.
@@ -27,53 +24,27 @@ import java.util.Optional;
 public class UserService {
 	private final UserRepository userRepository;
 	private final UserRepository2 userRepository2;
-	private final UserRepositorySupport userRepositorySupport;
 	private final JwtTokenProvider jwtTokenProvider;
 
 	PasswordEncoder passwordEncoder;
 
-//	public User createUser(UserRegisterPostReq userRegisterInfo) {
-//
-//		User user = new User();
-//		user.setUserId(userRegisterInfo.getId());
-//		user.setName(userRegisterInfo.getName());
-//		user.setProfileImg(userRegisterInfo.getProfileImg());
-//		user.setEmail(userRegisterInfo.getEmail());
-//		user.setAge(userRegisterInfo.getAge());
-//		user.setGender(userRegisterInfo.getGender());
-//		user.setNickname(userRegisterInfo.getNickname());
-//		user.setHeight(userRegisterInfo.getHeight());
-//		user.setWeight(userRegisterInfo.getWeight());
-//		user.setFootSize(userRegisterInfo.getFootSize());
-//		user.setRegion(userRegisterInfo.getRegion());
-//		//보안을 위해서 유저 패스워드 암호화 하여 디비에 저장.
-//		user.setPassword(passwordEncoder.encode(userRegisterInfo.getPassword()));
-//		return UserRepository2.save(user);
-//	}
 
-	@Transactional
+
 	public User getUserByUserId(String userId) {
 		// 디비에 유저 정보 조회 (userId 를 통한 조회).
-		User user = userRepositorySupport.findUserByUserId(userId).get();
-
+		User user = userRepository2.findUserByUserId(userId).orElseGet(null);
 		return user;
-
-	}
-	@Transactional
-	public boolean checkUserId(String userId) {
-		boolean result = userRepositorySupport.findByUserIdEquals(userId);
-		return result;
 	}
 
-//	public boolean deleteByUserId(User user) {
-//		UserRepository2.delete(user);
-//		return true;
-//	}
 
-	@Transactional
-	public void updateUser(UserUpdateDto userUpdateDto) {
-		User user = userRepositorySupport.findUserByUserId(userUpdateDto.getUserId()).get();
-//		String password = passwordEncoder.encode(userUpdateDto.getPassword());
+	public User getUserByUserIdx(Long userIdx) {
+		// 디비에 유저 정보 조회 (userId 를 통한 조회).
+		User user = userRepository2.findByUserIdx(userIdx).orElseGet(null);
+		return user;
+	}
+
+	public void updateUser(Long userIdx, UserUpdateDto userUpdateDto) {
+		User user = userRepository2.findByUserIdx(userIdx).orElse(null);
 		user.updateUser(userUpdateDto);
 	}
 

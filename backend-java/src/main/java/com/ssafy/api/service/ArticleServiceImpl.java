@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class ArticleServiceImpl implements ArticleService{
 
     @Autowired
@@ -24,33 +25,30 @@ public class ArticleServiceImpl implements ArticleService{
     LikesRepository likesRepository;
 
     @Override
-    public void createArticle(SaveArticleDto saveArticleDto, Authentication authentication) {
-        FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
-        User user = userDetails.getUser();
+    public void createArticle(SaveArticleDto saveArticleDto, User user) {
         articleRepository.save(Article.builder()
                 .title(saveArticleDto.getTitle())
+//                .feedImg(saveArticleDto.getFeedImg())
                 .content(saveArticleDto.getContent())
                 .price(saveArticleDto.getPrice())
                 .user(user)
-                .likesCount(0L)
+                        .likesCount(0)
                 .build());
-
     }
-
     @Override
-    public Article findByArticleId(Long article_idx) {
-        Article article = articleRepository.findById(article_idx).get();
+    public Article findArticle(Long article_idx) {
+        Article article = articleRepository.findById(article_idx).orElse(null);
         return article;
     }
 
-    @Transactional  // 이 어노테이션을 해줘야 업데이트 반영 됨.
+    // 이 어노테이션을 해줘야 업데이트 반영 됨.
     @Override
     public Article updateArticle(Article article, UpdateArticleDto updateArticleDto) {
-        article.updateArticle(updateArticleDto.getTitle(), updateArticleDto.getContent(), updateArticleDto.getPrice(), updateArticleDto.isLendstatus());
+        article.updateArticle(updateArticleDto);
         return article;
     }
 
-    @Transactional
+
     @Override
     public void deleteArticle(Article article) {
         articleRepository.delete(article);

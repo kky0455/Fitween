@@ -5,19 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="feat: oauth2service 생성">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/db/repository/ChatRoomRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/db/repository/ChatRoomRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/com/ssafy/api/model/QChatMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/com/ssafy/api/model/QChatMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/com/ssafy/api/model/QChatRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/com/ssafy/api/model/QChatRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QArticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QArticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QFollow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QFollow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QLikes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QLikes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/com/ssafy/db/entity/QUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/FollowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/FollowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/request/ArticleInfoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/request/ArticleInfoDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/request/FollowDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/request/FollowDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/request/SaveArticleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/request/SaveArticleDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/request/UpdateArticleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/request/UpdateArticleDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/request/UserProfileDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/request/UserProfileDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/request/UserUpdateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/request/UserUpdateDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/ArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/ArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/FollowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/FollowService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/FollowServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/FollowServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/LikeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/LikeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/LikeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/LikeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/UserService2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/common/auth/FWUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/common/auth/FWUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/db/entity/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/db/entity/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/db/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/db/entity/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/db/entity/Follow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/db/entity/Follow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/db/entity/Likes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/db/entity/Likes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/db/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/db/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/db/repository/FollowRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/db/repository/FollowRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/db/repository/LikesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/db/repository/LikesRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/db/repository/UserRepository2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/db/repository/UserRepository2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/db/repository/UserRepositorySupport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-oauth.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-oauth.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ssafy-web.log" beforeDir="false" afterPath="$PROJECT_DIR$/ssafy-web.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssafy-web.log.2022-07-23.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssafy-web.log.2022-07-24.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssafy-web.log.2022-07-26.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssafy-web.log.2022-07-27.0.gz" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +180,7 @@
       <command value="gradle lombok" />
     </option>
   </component>
-  <component name="RunManager" selected="애플리케이션.GroupCallApplication">
+  <component name="RunManager" selected="Application.GroupCallApplication">
     <configuration name="GroupCallApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ssafy.GroupCallApplication" />
       <module name="ssafy-web-project.main" />
@@ -235,7 +268,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="애플리케이션.GroupCallApplication" />
+        <item itemvalue="Application.GroupCallApplication" />
         <item itemvalue="JUnit.TokenProviderTest.토큰_생성하기" />
         <item itemvalue="JUnit.TokenProviderTest" />
         <item itemvalue="Gradle.backend-java [lombok]" />
@@ -261,6 +294,13 @@
       <workItem from="1659957296034" duration="4394000" />
       <workItem from="1659961762045" duration="675000" />
       <workItem from="1659962612860" duration="1976000" />
+      <workItem from="1660007753786" duration="470000" />
+      <workItem from="1660032926545" duration="1504000" />
+      <workItem from="1660048029135" duration="578000" />
+      <workItem from="1660050417147" duration="26000" />
+      <workItem from="1660050674587" duration="1000" />
+      <workItem from="1660050821621" duration="2149000" />
+      <workItem from="1660089809564" duration="10961000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: 유저 info 수정">
       <created>1658995773074</created>

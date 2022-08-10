@@ -8,14 +8,17 @@ import lombok.Getter;
 @Getter
 public class UserProfileDto {
 
-    private User user;
+    private String userId;
+    private String name;
     private int articleCount;
+    //    private String feedImg;
     private int userFollowerCount;
     private int userFollowingCount;
     private boolean isFollowed;
 
-    public UserProfileDto(User user, int articleCount, int userFollowerCount, int userFollowingCount, boolean isFollowed) {
-        this.user = user;
+    public UserProfileDto(String userId, String name, int articleCount, int userFollowerCount, int userFollowingCount, boolean isFollowed) {
+        this.userId = userId;
+        this.name = name;
         this.articleCount = articleCount;
         this.userFollowerCount = userFollowerCount;
         this.userFollowingCount = userFollowingCount;
