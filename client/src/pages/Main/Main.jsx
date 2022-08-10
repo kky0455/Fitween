@@ -34,7 +34,6 @@ const Main = () => {
 		const fetch = async () => {
 			const data = await getArticleList();
 			setArticleList(data);
-			console.log(data);
 		};
 		fetch();
 	}, []);

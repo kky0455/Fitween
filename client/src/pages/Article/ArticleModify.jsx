@@ -28,7 +28,6 @@ const ArticleModify = () => {
 			setPrice(data.articlePrice);
 			setContent(data.articleContent);
 			setIsRent(data.articleIsRent);
-			console.log(data);
 		};
 		fetch();
 	}, []);
@@ -41,7 +40,6 @@ const ArticleModify = () => {
 		};
 		const ret = await modifyArticle(body);
 		if (ret.result === 'success') navigate(`/article/${ret.articleId}`);
-		console.log(ret);
 	};
 	return (
 		<>

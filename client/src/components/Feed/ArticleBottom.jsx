@@ -23,14 +23,13 @@ const ArticleBottom = ({ articleId, isLiked, likeCnt, rentPrice, userId }) => {
 	const heartClickHandler = async e => {
 		e.stopPropagation();
 		const data = await modifyArticleLike();
-		console.log(data);
 		if (data.result === 'success') {
 			setLiked(!liked);
 			liked ? setCount(count - 1) : setCount(count + 1);
 		}
 	};
 	const navigate = useNavigate();
-	const { user_id } = useUserState();
+	const { loginedUserId } = useUserState();
 	return (
 		<div
 			css={css`
@@ -80,7 +79,7 @@ const ArticleBottom = ({ articleId, isLiked, likeCnt, rentPrice, userId }) => {
 			</div>
 			{/* 채팅하기 버튼 */}
 			<div style={{ width: 133 }}>
-				{user_id === userId ? (
+				{loginedUserId === userId ? (
 					<Button
 						type="active"
 						label="수정하기"

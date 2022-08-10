@@ -11,6 +11,7 @@ import styled from 'styled-components';
 import common from '../../../constants/commonStyle';
 import colors from '../../../constants/colors';
 import { useGlobalContext } from '../../../contexts/GlobalContext';
+import { useUserState } from '../../../context/User/UserContext';
 
 const Link = styled(NavLink)`
 	width: 25%;
@@ -37,6 +38,7 @@ const IconWrapper = ({ onClick, active, icon, label }) => {
 };
 const BottomNavigation = () => {
 	const { setHasBottom } = useGlobalContext();
+	const { loginUserId } = useUserState();
 	useEffect(() => {
 		setHasBottom(true);
 		return () => {
@@ -76,7 +78,7 @@ const BottomNavigation = () => {
 					<IconWrapper active={isActive} icon={<ChatIcon width={30} height={30} />} label="채팅" />
 				)}
 			</Link>
-			<Link to="/myprofile">
+			<Link to={`/profile/${loginUserId}`}>
 				{({ isActive }) => (
 					<IconWrapper active={isActive} icon={<PersonIcon width={30} height={30} />} label="나" />
 				)}

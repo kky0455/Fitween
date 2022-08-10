@@ -85,6 +85,7 @@ export const getUserInfo = rest.get('http://localhost:5000/user/:userId', async 
 				userFollowedCnt: 123,
 				userFollowingCnt: 123,
 				userArticleCnt: 10,
+				userIsFollow: true,
 			},
 		}),
 	),

@@ -24,7 +24,6 @@ const FeedItem = ({
 	const heartClickHandler = async e => {
 		e.stopPropagation();
 		const data = await modifyArticleLike();
-		console.log(data);
 		if (data.result === 'success') {
 			setLiked(!liked);
 			liked ? setCount(count - 1) : setCount(count + 1);
