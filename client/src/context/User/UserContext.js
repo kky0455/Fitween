@@ -2,7 +2,6 @@ import { createContext, useContext, useReducer } from 'react';
 
 const initialState = {
 	loginedUserId: null,
-	accessToken: null,
 };
 
 const reducer = (state, action) => {
@@ -10,12 +9,10 @@ const reducer = (state, action) => {
 		case 'LOGIN':
 			return {
 				loginedUserId: action.loginedUserId,
-				accessToken: action.accessToken,
 			};
 		case 'LOGOUT':
 			return {
 				loginedUserId: null,
-				accessToken: null,
 			};
 		case 'SIGNUP':
 			return {

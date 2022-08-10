@@ -39,7 +39,7 @@ const Redirect = () => {
 				if (res.responseType === 'signIn') {
 					setRefreshToken(res.refreshToken);
 					const { accessToken, userId } = res;
-					dispatch({ type: 'LOGIN', loginedUserId: userId, accessToken: accessToken });
+					dispatch({ type: 'LOGIN', loginedUserId: userId });
 					API.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
 					navigate('/main');
 				} else if (res.responseType === 'signUp') {
