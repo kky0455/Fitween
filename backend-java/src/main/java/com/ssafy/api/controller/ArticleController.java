@@ -81,12 +81,16 @@ public class ArticleController {
     @ApiOperation(value="게시글 전체 조회", notes="<strong>게시글을 전체 조회를</strong>시켜줍니다.")
     @GetMapping("/list")
     public ResponseEntity<?> findAllArticle(@ApiIgnore Authentication authentication){
+        System.out.println(authentication);
+        System.out.println("여기도 테스트");
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
+        System.out.println(userDetails);
         List<Article> articles = articleService.findAllArticle();
         articles.forEach(article -> {
             article.setLikesCount(article.getLikes().size());
             article.setLendStatus(likeService.isLike(userDetails.getUser(), article));
         });
+        System.out.println(authentication);
         return ResponseEntity.status(200).body(articles);
     }
     @GetMapping("/detail/{article_idx}")
@@ -109,7 +113,7 @@ public class ArticleController {
         return ResponseEntity.status(200).body("좋아요 성공");
     }
     @DeleteMapping("detail/{article_idx}/like")
-    @ApiOperation(value ="게시글 좋아요", notes ="해당 article_idx에 좋아요")
+    @ApiOperation(value ="게시글 좋아요 취소", notes ="해당 article_idx에 좋아요 취소")
     public ResponseEntity<?> articleunlike(@PathVariable Long article_idx, @ApiIgnore Authentication authentication) {
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
         User user = userService.getUserByUserIdx(article_idx);

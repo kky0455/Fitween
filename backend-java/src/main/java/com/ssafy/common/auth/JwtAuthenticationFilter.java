@@ -8,7 +8,10 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
+import com.ssafy.api.service.UserService;
+import com.ssafy.common.util.ResponseBodyWriteUtil;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.GenericFilterBean;
@@ -26,16 +29,29 @@ public class JwtAuthenticationFilter extends GenericFilterBean {
 
         // 헤더에서 JWT 를 받아옴
         String token = jwtTokenProvider.resolveToken((HttpServletRequest) request);
+        System.out.println("토큰 테스트");
+        System.out.println(token);
 
         // 유효한 토큰인지 확인
-        if(token != null && jwtTokenProvider.validateToken(token)){
-            // 토큰이 유효하면 토큰으로 부터 유저의 정보를 반환
+//        if(token != null && jwtTokenProvider.validateToken(token)){
+//            // 토큰이 유효하면 토큰으로 부터 유저의 정보를 반환
+//            System.out.println("저장에 성공했습니다.");
+//            Authentication authentication = jwtTokenProvider.getAuthentication(token);
+//            // SecurityContext에 Authentication 객체를 저장
+//            SecurityContextHolder.getContext().setAuthentication(authentication);
+//        }
+        try {
+            // If header is present, try grab user principal from database and perform authorization
+            System.out.println("0");
             Authentication authentication = jwtTokenProvider.getAuthentication(token);
-            // SecurityContext에 Authentication 객체를 저장
+            System.out.println("1번");
+            // jwt 토큰으로 부터 획득한 인증 정보(authentication) 설정.
             SecurityContextHolder.getContext().setAuthentication(authentication);
-        }
+            System.out.println("2");
+        } catch (Exception ex) {
+            System.out.println("실패");
 
+            }
         chain.doFilter(request, response);
-
     }
 }
