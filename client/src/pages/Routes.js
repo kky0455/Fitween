@@ -1,4 +1,6 @@
 import { Route, Routes as ReactRouterRoutes, Navigate } from 'react-router-dom';
+
+import PrivateRoute from '../components/Route/PrivateRoute';
 import ArticleDetail from './Article/ArticleDetail';
 import ArticleModify from './Article/ArticleModify';
 import ArticleRegist from './Article/ArticleRegist';
@@ -8,7 +10,6 @@ import DummyPage from './DummyPage/DummyPage';
 import Index from './Index/Index';
 import Redirect from './Index/Redirect';
 import Join from './Join/Join';
-
 import Like from './Like/Like';
 import Main from './Main/Main';
 import ProfileInfoModify from './Profile/ProfileInfoModify';
@@ -19,11 +20,17 @@ const Article = () => {
 	return (
 		<ReactRouterRoutes>
 			{/* 글 상세 */}
-			<Route path=":articleId" element={<ArticleDetail />} />
+			<Route exact path="/" element={<PrivateRoute />}>
+				<Route path=":articleId" element={<ArticleDetail />} />
+			</Route>
 			{/* 글 등록 */}
-			<Route path="regist" element={<ArticleRegist />} />
+			<Route exact path="/" element={<PrivateRoute />}>
+				<Route path="regist" element={<ArticleRegist />} />
+			</Route>
 			{/* 글 수정 */}
-			<Route path="modify/:articleId" element={<ArticleModify />} />
+			<Route exact path="/" element={<PrivateRoute />}>
+				<Route path="modify/:articleId" element={<ArticleModify />} />
+			</Route>
 			<Route path="*" element={<Navigate replace to="/" />} />
 		</ReactRouterRoutes>
 	);
@@ -33,9 +40,13 @@ const Chat = () => {
 	return (
 		<ReactRouterRoutes>
 			{/* 채팅리스트 */}
-			<Route path="list" element={<ChatList />} />
+			<Route exact path="/" element={<PrivateRoute />}>
+				<Route path="list" element={<ChatList />} />
+			</Route>
 			{/* 채팅상세 */}
-			<Route path="room" element={<ChatRoom />} />
+			<Route exact path="/" element={<PrivateRoute />}>
+				<Route path="room" element={<ChatRoom />} />
+			</Route>
 			<Route path="*" element={<Navigate replace to="list" />} />
 		</ReactRouterRoutes>
 	);
@@ -45,11 +56,17 @@ const Profile = () => {
 	return (
 		<ReactRouterRoutes>
 			{/* 프로필 */}
-			<Route path=":userId" element={<ProfileUser />} />
+			<Route exact path="/" element={<PrivateRoute />}>
+				<Route path=":userId" element={<ProfileUser />} />
+			</Route>
 			{/* 내정보수정 */}
-			<Route path="modify/info/:userId" element={<ProfileInfoModify />} />
+			<Route exact path="/" element={<PrivateRoute />}>
+				<Route path="modify/info/:userId" element={<ProfileInfoModify />} />
+			</Route>
 			{/* 내동네수정 */}
-			<Route path="modify/town/:userId" element={<ProfileTownModify />} />
+			<Route exact path="/" element={<PrivateRoute />}>
+				<Route path="modify/town/:userId" element={<ProfileTownModify />} />
+			</Route>
 			<Route path="*" element={<Navigate replace to="/" />} />
 		</ReactRouterRoutes>
 	);
@@ -59,30 +76,35 @@ export const Routes = () => {
 	return (
 		<ReactRouterRoutes>
 			{/* 테스트용 더미 페이지 */}
-			<Route path="dummy" element={<DummyPage />} />
+			<Route exact path="dummy" element={<DummyPage />} />
 
 			{/* 초기화면  */}
-			<Route path="/" element={<Index />} />
+			<Route exact path="/" element={<Index />} />
 			{/* 소셜 로그인 리다이렉트  */}
-			<Route path="/oauth/redirect" element={<Redirect />} />
+			<Route exact path="/oauth/redirect" element={<Redirect />} />
 
 			{/* 회원가입 페이지 */}
-			<Route path="join/*" element={<Join />} />
-
+			<Route exact path="join/*" element={<Join />} />
 			{/* 메인페이지 */}
-			<Route path="main" element={<Main />} />
+			<Route exact path="/" element={<PrivateRoute />}>
+				<Route path="main" element={<Main />} />
+			</Route>
 			{/* 찜피드 */}
-			<Route path="like" element={<Like />} />
-
+			<Route exact path="/" element={<PrivateRoute />}>
+				<Route path="like" element={<Like />} />
+			</Route>
 			{/* 글  */}
-			<Route path="article/*" element={<Article />} />
-
+			<Route exact path="/" element={<PrivateRoute />}>
+				<Route path="article/*" element={<Article />} />
+			</Route>
 			{/* 채팅 */}
-			<Route path="chat/*" element={<Chat />} />
-
+			<Route exact path="/" element={<PrivateRoute />}>
+				<Route path="chat/*" element={<Chat />} />
+			</Route>
 			{/* 프로필 */}
-			<Route path="profile/*" element={<Profile />} />
-
+			<Route exact path="/" element={<PrivateRoute />}>
+				<Route path="profile/*" element={<Profile />} />
+			</Route>
 			<Route path="*" element={<Navigate replace to="dummy" />} />
 		</ReactRouterRoutes>
 	);
