@@ -8,7 +8,6 @@ import com.ssafy.db.dto.UserDto;
 import com.ssafy.db.entity.User;
 import com.ssafy.db.repository.UserRepository;
 import com.ssafy.db.repository.UserRepository2;
-import com.ssafy.db.repository.UserRepositorySupport;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,8 +15,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.nio.file.AccessDeniedException;
-import java.util.Optional;
-
 
 /**
  *	유저 관련 비즈니스 로직 처리를 위한 서비스 인터페이스 정의.
@@ -27,34 +24,28 @@ import java.util.Optional;
 public class UserService {
 	private final UserRepository userRepository;
 	private final UserRepository2 userRepository2;
-	private final UserRepositorySupport userRepositorySupport;
 	private final JwtTokenProvider jwtTokenProvider;
 
 	PasswordEncoder passwordEncoder;
 
-	@Transactional
+
+
 	public User getUserByUserId(String userId) {
 		// 디비에 유저 정보 조회 (userId 를 통한 조회).
-		User user = userRepositorySupport.findUserByUserId(userId).get();
-
+		System.out.println("유저ID 체크" + userId);
+		User user = userRepository2.findUserByUserId(userId).orElseGet(null);
 		return user;
-
-	}
-	@Transactional
-	public boolean checkUserId(String userId) {
-		boolean result = userRepositorySupport.findByUserIdEquals(userId);
-		return result;
 	}
 
-//	public boolean deleteByUserId(User user) {
-//		UserRepository2.delete(user);
-//		return true;
-//	}
 
-	@Transactional
-	public void updateUser(UserUpdateDto userUpdateDto) {
-		User user = userRepositorySupport.findUserByUserId(userUpdateDto.getUserId()).get();
-//		String password = passwordEncoder.encode(userUpdateDto.getPassword());
+	public User getUserByUserIdx(Long userIdx) {
+		// 디비에 유저 정보 조회 (userId 를 통한 조회).
+		User user = userRepository2.findByUserIdx(userIdx).orElseGet(null);
+		return user;
+	}
+
+	public void updateUser(Long userIdx, UserUpdateDto userUpdateDto) {
+		User user = userRepository2.findByUserIdx(userIdx).orElse(null);
 		user.updateUser(userUpdateDto);
 	}
 

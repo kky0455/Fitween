@@ -30,6 +30,7 @@ public class FWUserDetails implements UserDetails {
     public User getUser() {
     		return this.user;
     }
+	public Long getUserIdx() { return this.user.getUserIdx(); }
 	@Override
 	public String getPassword() {
 		return this.user.getPassword();

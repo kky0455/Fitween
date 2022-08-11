@@ -8,16 +8,10 @@ import com.ssafy.api.request.UserLoginPostReq;
 import com.ssafy.api.request.UserRegisterPostReq;
 import com.ssafy.api.response.UserLoginPostRes;
 import com.ssafy.api.service.UserService;
-import com.ssafy.common.auth.JwtTokenProvider;
-import com.ssafy.common.util.JwtTokenUtil;
-import com.ssafy.db.dto.GoogleLoginDto;
 import com.ssafy.db.dto.Message;
 import com.ssafy.db.dto.StatusEnum;
-import com.ssafy.db.dto.UserSaveRequestDto;
-import com.ssafy.db.entity.User;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
-import lombok.Value;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.PropertySource;
@@ -33,8 +27,6 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.security.GeneralSecurityException;
 import java.util.Collections;
-import java.util.NoSuchElementException;
-import java.util.Optional;
 
 import static org.springframework.security.oauth2.core.endpoint.OAuth2ParameterNames.CLIENT_ID;
 
@@ -100,14 +92,15 @@ public class AuthController {
             String givenName = (String) payload.get("given_name");
 
 
+
             try{
                 //User user = userService.getUserByUserId(userId);
                 UserLoginPostReq userLogin =userService.userLogin(userId);
                 message.setStatus(StatusEnum.OK);
                 message.setResponseType("signIn");
                 message.setUserId(userId);
-//                message.setAccessToken(userLogin.getAccessToken());
-//                message.setRefreshToken(userLogin.getRefreshToken());
+                message.setAccessToken(userLogin.getAccessToken());
+                message.setRefreshToken(userLogin.getRefreshToken());
                 headers.add("accessToken",userLogin.getAccessToken());
                 headers.add("refreshToken",userLogin.getRefreshToken());
                 return new ResponseEntity<>(message, headers, HttpStatus.OK);
@@ -139,8 +132,6 @@ public class AuthController {
         try {
             String id = userService.join(requestDto.toEntity());
             UserLoginPostReq userLogin =userService.userLogin(requestDto.getUserId());
-            System.out.println(userLogin.getAccessToken());
-            System.out.println(userLogin.getRefreshToken());
             message.setAccessToken(userLogin.getAccessToken());
             message.setRefreshToken(userLogin.getRefreshToken());
             message.setStatus(StatusEnum.OK);

@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="check">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/ArticleController.java" afterDir="false" />
+    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="feat: oauth2service 생성">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/common/auth/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/common/auth/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/common/auth/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/common/auth/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssafy-web.log" beforeDir="false" afterPath="$PROJECT_DIR$/ssafy-web.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,19 +124,11 @@
   }
 }</component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.ssafy.api.service" />
-      <recent name="com.ssafy.api.request" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\multicampus\Desktop\testFolder\backend-java\src\main\java\com\ssafy\api\controller" />
       <recent name="C:\Users\multicampus\Desktop\testFolder\backend-java\src\main\java\com\ssafy\api\request" />
       <recent name="C:\Users\multicampus\Desktop\testFolder\backend-java\src\main\java\com\ssafy\api\service" />
       <recent name="C:\Users\multicampus\Desktop\testFolder\backend-java\src\main\java\com\ssafy\db\repository" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.ssafy.common.exception" />
-      <recent name="com.ssafy.config" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.ssafy.common.exception.handler" />
@@ -143,7 +139,7 @@
       <command value="gradle lombok" />
     </option>
   </component>
-  <component name="RunManager" selected="애플리케이션.GroupCallApplication">
+  <component name="RunManager" selected="Application.GroupCallApplication">
     <configuration name="GroupCallApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ssafy.GroupCallApplication" />
       <module name="ssafy-web-project.main" />
@@ -231,7 +227,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="애플리케이션.GroupCallApplication" />
+        <item itemvalue="Application.GroupCallApplication" />
         <item itemvalue="JUnit.TokenProviderTest.토큰_생성하기" />
         <item itemvalue="JUnit.TokenProviderTest" />
         <item itemvalue="Gradle.backend-java [lombok]" />
@@ -239,9 +235,6 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SpringBootOptions">
-    <option name="showAdditionalConfigNotification" value="false" />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="" />
@@ -260,12 +253,17 @@
       <workItem from="1659957296034" duration="4394000" />
       <workItem from="1659961762045" duration="675000" />
       <workItem from="1659962612860" duration="1976000" />
-      <workItem from="1660054714671" duration="1204000" />
-      <workItem from="1660091641293" duration="8243000" />
-      <workItem from="1660107647143" duration="5379000" />
-      <workItem from="1660137830979" duration="357000" />
-      <workItem from="1660190459627" duration="11416000" />
-      <workItem from="1660207009000" duration="2001000" />
+      <workItem from="1660007753786" duration="470000" />
+      <workItem from="1660032926545" duration="1504000" />
+      <workItem from="1660048029135" duration="578000" />
+      <workItem from="1660050417147" duration="26000" />
+      <workItem from="1660050674587" duration="1000" />
+      <workItem from="1660050821621" duration="2149000" />
+      <workItem from="1660089809564" duration="10961000" />
+      <workItem from="1660105481622" duration="1486000" />
+      <workItem from="1660107152763" duration="34000" />
+      <workItem from="1660107278626" duration="6624000" />
+      <workItem from="1660196427253" duration="9291000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: 유저 info 수정">
       <created>1658995773074</created>
@@ -330,56 +328,7 @@
       <option name="project" value="LOCAL" />
       <updated>1659588499517</updated>
     </task>
-    <task id="LOCAL-00010" summary="check by sehwan">
-      <created>1660017390407</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1660017390407</updated>
-    </task>
-    <task id="LOCAL-00011" summary="check by sehwan">
-      <created>1660017584418</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1660017584418</updated>
-    </task>
-    <task id="LOCAL-00012" summary="feat: /article/regist api 요청 컨트롤러 생성">
-      <created>1660198236526</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1660198236526</updated>
-    </task>
-    <task id="LOCAL-00013" summary="feat: 사진 업로드 주소 설정 properties">
-      <created>1660207407456</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1660207407456</updated>
-    </task>
-    <task id="LOCAL-00014" summary="feat: 파일exception 설정">
-      <created>1660207447925</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1660207447925</updated>
-    </task>
-    <task id="LOCAL-00015" summary="feat: response 스테이트 설정">
-      <created>1660207492660</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1660207492660</updated>
-    </task>
-    <task id="LOCAL-00016" summary="feat: 사진저장 서비스 기능 구현 (사진들 저장, 사진 불러오기 기능)">
-      <created>1660207542920</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1660207542920</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,13 +352,18 @@
     <MESSAGE value="check" />
     <MESSAGE value="docs: check" />
     <MESSAGE value="feat: oauth2service 생성" />
-    <MESSAGE value="check by sehwan" />
-    <MESSAGE value="feat: /article/regist api 요청 컨트롤러 생성" />
-    <MESSAGE value="feat: 사진 업로드 주소 설정 properties" />
-    <MESSAGE value="feat: 파일exception 설정" />
-    <MESSAGE value="feat: response 스테이트 설정" />
-    <MESSAGE value="feat: 사진저장 서비스 기능 구현 (사진들 저장, 사진 불러오기 기능)" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 사진저장 서비스 기능 구현 (사진들 저장, 사진 불러오기 기능)" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: oauth2service 생성" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ssafy/common/auth/JwtAuthenticationFilter.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

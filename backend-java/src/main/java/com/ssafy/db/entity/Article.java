@@ -2,6 +2,7 @@ package com.ssafy.db.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.ssafy.api.request.UpdateArticleDto;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
@@ -15,7 +16,7 @@ import java.util.List;
 @Entity @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Article extends BaseEntity{
+public class Article{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,8 +26,8 @@ public class Article extends BaseEntity{
     @Column
     String title;
 
-    @Column
-    String feedImg;
+//    @Column
+//    String feedImg;
 
     @Column
     String content;
@@ -36,37 +37,42 @@ public class Article extends BaseEntity{
 
     @Column()
     @ColumnDefault("0")
-    Boolean lendStatus;
+    boolean lendStatus;
 
     @Transient
-    Long likesCount;
+    private long likesCount;
 
     @Transient
-    boolean likesState;
+    private boolean likesState;
+
+
+    public void updateLikesCount(long likesCount) {
+        this.likesCount = likesCount;
+    }
+
+    public void updateLikesState(boolean likesState) { this.likesState = likesState; }
+
 
     @JsonIgnoreProperties({"articles"})
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_idx")
     private User user;
 
     @OneToMany(mappedBy = "article", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonIgnoreProperties({"article"})
+    @JsonIgnoreProperties({"articles", "user", "likes", "article", "like"})
     private List<Likes> likes = new ArrayList<>();
 
-    public void updateArticle(String title, String content, int price, boolean lendStatus){
-        this.title = title;
-        this.content = content;
-        this.price = price;
-        this.lendStatus = lendStatus;
+    public void updateArticle(UpdateArticleDto updateArticleDto){
+        this.title = updateArticleDto.getTitle();
+//        this.feedImg = updateArticleDto.getFeedImg();
+        this.content = updateArticleDto.getContent();
+        this.price = updateArticleDto.getPrice();
+        this.lendStatus = updateArticleDto.isLendstatus();
     }
-
-    public void updateLikesCount(Long likesCount) { this.likesCount = likesCount; }
-    public void updateLikesState(boolean likesState) { this.likesState = likesState; }
-
     @Builder
-    public Article(String title, String feedImg ,String content, int price, User user, Long likesCount) {
+    public Article(String title, String feedImg ,String content, int price, User user, int likesCount) {
         this.title = title;
-        this.feedImg = feedImg;
+//        this.feedImg = feedImg;
         this.content = content;
         this.price = price;
         this.user = user;

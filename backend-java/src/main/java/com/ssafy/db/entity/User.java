@@ -19,7 +19,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User extends BaseEntity {
+public class User{
 
     @Id
     @Column(name = "user_idx")
@@ -76,6 +76,10 @@ public class User extends BaseEntity {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"user"})
     List<Article> articles = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnoreProperties({"user"})
+    private List<Likes> likes = new ArrayList<>();
 
     public void changeRefreshToken(String refreshToken){
         this.refreshToken = refreshToken;

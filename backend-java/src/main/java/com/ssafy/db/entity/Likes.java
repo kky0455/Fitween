@@ -27,7 +27,7 @@ public class Likes{
     User user;
 
     @Builder
-    public Likes(Article article, User user) {
+    public Likes(User user, Article article) {
         this.article = article;
         this.user = user;
     }
