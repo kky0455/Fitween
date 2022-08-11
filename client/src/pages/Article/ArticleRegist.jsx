@@ -35,10 +35,11 @@ const ArticleRegist = () => {
 		formData.append('title', title);
 		formData.append('price', price);
 		formData.append('content', content);
-		imageFiles.forEach(file => {
-			formData.append('photo', file);
-		});
-		// formData.append('photo', imageFiles);
+		if (imageFiles) {
+			imageFiles.forEach(file => {
+				formData.append('photo', file);
+			});
+		}
 		const ret = await registArticle(formData);
 		if (ret.result === 'success') navigate(`/article/${ret.articleId}`);
 	};
