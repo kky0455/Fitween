@@ -32,25 +32,6 @@ public class UserService {
 
 	PasswordEncoder passwordEncoder;
 
-//	public User createUser(UserRegisterPostReq userRegisterInfo) {
-//
-//		User user = new User();
-//		user.setUserId(userRegisterInfo.getId());
-//		user.setName(userRegisterInfo.getName());
-//		user.setProfileImg(userRegisterInfo.getProfileImg());
-//		user.setEmail(userRegisterInfo.getEmail());
-//		user.setAge(userRegisterInfo.getAge());
-//		user.setGender(userRegisterInfo.getGender());
-//		user.setNickname(userRegisterInfo.getNickname());
-//		user.setHeight(userRegisterInfo.getHeight());
-//		user.setWeight(userRegisterInfo.getWeight());
-//		user.setFootSize(userRegisterInfo.getFootSize());
-//		user.setRegion(userRegisterInfo.getRegion());
-//		//보안을 위해서 유저 패스워드 암호화 하여 디비에 저장.
-//		user.setPassword(passwordEncoder.encode(userRegisterInfo.getPassword()));
-//		return UserRepository2.save(user);
-//	}
-
 	@Transactional
 	public User getUserByUserId(String userId) {
 		// 디비에 유저 정보 조회 (userId 를 통한 조회).
