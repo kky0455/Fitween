@@ -28,9 +28,11 @@ public class JwtAuthenticationFilter extends GenericFilterBean {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
         // 헤더에서 JWT 를 받아옴
-        String token = jwtTokenProvider.resolveToken((HttpServletRequest) request);
-        System.out.println("토큰 테스트");
-        System.out.println(token);
+//        String token = jwtTokenProvider.resolveToken((HttpServletRequest) request);
+//        System.out.println("토큰 테스트");
+//        System.out.println("asdasd"+token);
+        String token = ((HttpServletRequest) request).getHeader("authorization");
+        System.out.println("dofilter토큰" + token);
 
         // 유효한 토큰인지 확인
 //        if(token != null && jwtTokenProvider.validateToken(token)){
@@ -43,6 +45,8 @@ public class JwtAuthenticationFilter extends GenericFilterBean {
         try {
             // If header is present, try grab user principal from database and perform authorization
             System.out.println("0");
+
+//            Authentication authentication = jwtTokenProvider.getAuthentication("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMiIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MTQ5NzkyNiwiaWF0IjoxNjYwMjAxOTI2fQ.9uRA6WKEXXHnRRlq_QR_tn0ti1vtgFnZk9LjoW68kZ_G_RySmKB7Bfi22Gq4wvpT0xtKwkVuleB0ULfyGNfpDA");
             Authentication authentication = jwtTokenProvider.getAuthentication(token);
             System.out.println("1번");
             // jwt 토큰으로 부터 획득한 인증 정보(authentication) 설정.

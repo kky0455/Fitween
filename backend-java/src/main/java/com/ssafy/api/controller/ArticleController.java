@@ -45,6 +45,8 @@ public class ArticleController {
     @ApiOperation(value="게시글 등록 (token)", notes="<strong>게시글을 등록</strong>시켜줍니다. user_id는 빈 괄호(\"\")를 입력하여 주세요.")
     public ResponseEntity createArticle(@RequestBody SaveArticleDto saveArticleDto, @ApiIgnore Authentication authentication)
     {
+
+        System.out.println(authentication);
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
         try {
             articleService.createArticle(saveArticleDto, userDetails.getUser());
@@ -80,17 +82,17 @@ public class ArticleController {
     }
     @ApiOperation(value="게시글 전체 조회", notes="<strong>게시글을 전체 조회를</strong>시켜줍니다.")
     @GetMapping("/list")
-    public ResponseEntity<?> findAllArticle(@ApiIgnore Authentication authentication){
-        System.out.println(authentication);
-        System.out.println("여기도 테스트");
-        FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
-        System.out.println(userDetails);
+    public ResponseEntity<?> findAllArticle(){
+//        System.out.println(authentication);
+//        System.out.println("여기도 테스트");
+//        FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
+//        System.out.println(userDetails);
         List<Article> articles = articleService.findAllArticle();
-        articles.forEach(article -> {
-            article.setLikesCount(article.getLikes().size());
-            article.setLendStatus(likeService.isLike(userDetails.getUser(), article));
-        });
-        System.out.println(authentication);
+//        articles.forEach(article -> {
+//            article.setLikesCount(article.getLikes().size());
+//            article.setLendStatus(likeService.isLike(userDetails.getUser(), article));
+//        });
+//        System.out.println(authentication);
         return ResponseEntity.status(200).body(articles);
     }
     @GetMapping("/detail/{article_idx}")
