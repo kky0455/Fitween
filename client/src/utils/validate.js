@@ -1,4 +1,3 @@
-// toDo : 별명 중복검사, 특수문자, 이모지, 숫자 확인 검사, 글자길이 검사
 export const validateNickName = nickName => {
 	function checkSpecial(str) {
 		const regExp = /[!?@#$%^&*():;+-=~{}<>\_\[\]\|\\\"\'\,\.\/\`\₩]/g;
