@@ -100,14 +100,16 @@ public class AuthController {
             String givenName = (String) payload.get("given_name");
 
 
-
             try{
                 //User user = userService.getUserByUserId(userId);
                 UserLoginPostReq userLogin =userService.userLogin(userId);
                 message.setStatus(StatusEnum.OK);
                 message.setResponseType("signIn");
                 message.setUserId(userId);
-                message.setAccessToken(userLogin);
+//                message.setAccessToken(userLogin.getAccessToken());
+//                message.setRefreshToken(userLogin.getRefreshToken());
+                headers.add("accessToken",userLogin.getAccessToken());
+                headers.add("refreshToken",userLogin.getRefreshToken());
                 return new ResponseEntity<>(message, headers, HttpStatus.OK);
             }catch (Exception e){
                 //e.printStackTrace();
@@ -137,6 +139,8 @@ public class AuthController {
         try {
             String id = userService.join(requestDto.toEntity());
             UserLoginPostReq userLogin =userService.userLogin(requestDto.getUserId());
+            System.out.println(userLogin.getAccessToken());
+            System.out.println(userLogin.getRefreshToken());
             message.setAccessToken(userLogin.getAccessToken());
             message.setRefreshToken(userLogin.getRefreshToken());
             message.setStatus(StatusEnum.OK);
