@@ -7,8 +7,10 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import com.ssafy.api.service.UserService;
 import com.ssafy.common.util.JwtTokenUtil;
 import com.ssafy.db.entity.User;
+import com.ssafy.db.repository.UserRepository2;
 import io.jsonwebtoken.*;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -46,8 +48,7 @@ public class JwtTokenProvider {
     private final UserDetailsService userDetailsService;
 
     public static final String ISSUER = "fitween.com";
-
-    public UserService userService;
+    public final UserRepository2 userRepository2;
 
 //    @PostConstruct
 //    protected void init(){
@@ -147,25 +148,25 @@ public class JwtTokenProvider {
 
     //jwt 인증 정보 조회
     public Authentication getAuthentication(String token){
-        System.out.println("여기 오냐!");
+//        System.out.println("여기 오냐!");
         System.out.println(token);
-        System.out.println("리플레이스 테스트" + token.replace("Bearer ", ""));
+//        System.out.println("리플레이스 테스트" + token.replace("Bearer ", ""));
         if (token != null) {
             // parse the token and validate it (decode)
-            System.out.println("1");
+//            System.out.println("1");
             JWTVerifier verifier = getVerifier();
-            System.out.println("2");
+//            System.out.println("2");
             handleError(token);
-            System.out.println("3");
+//            System.out.println("3");
             DecodedJWT decodedJWT = verifier.verify(token.replace("Bearer ", ""));
-            System.out.println("4");
+//            System.out.println("4");
             String userId = decodedJWT.getSubject();
-            System.out.println("여기 오냐?");
-            System.out.println("유저 아이디 확인" + userId);
+//            System.out.println("여기 오냐?");
+//            System.out.println("유저 아이디 확인" + userId);
             if (userId != null) {
                 // jwt 토큰에 포함된 계정 정보(userId) 통해 실제 디비에 해당 정보의 계정이 있는지 조회.
-                System.out.println("들어오니?");
-                User user = userService.getUserByUserId(userId);
+                System.out.println("들어오니?" + userId);
+                User user = userRepository2.findUserByUserId(userId).orElse(null);
                 System.out.println("유저확인" + user);
                 if (user != null) {
                     // 식별된 정상 유저인 경우, 요청 context 내에서 참조 가능한 인증 정보(jwtAuthentication) 생성.
@@ -173,15 +174,15 @@ public class JwtTokenProvider {
                     UsernamePasswordAuthenticationToken jwtAuthentication = new UsernamePasswordAuthenticationToken(userId,
                             null, userDetails.getAuthorities());
                     jwtAuthentication.setDetails(userDetails);
-                    Authentication authentication = jwtAuthentication;
+                    return jwtAuthentication;
                 }
             }
         }
-
-        UserDetails userDetails =userDetailsService.loadUserByUsername(this.getUserPk(token));
-
-
-        return new UsernamePasswordAuthenticationToken(userDetails,"",userDetails.getAuthorities());
+        return null;
+//        UserDetails userDetails =userDetailsService.loadUserByUsername(this.getUserPk(token));
+////
+////
+//        return new UsernamePasswordAuthenticationToken(userDetails,"",userDetails.getAuthorities());
     }
 
     public String getUserPk(String token){
