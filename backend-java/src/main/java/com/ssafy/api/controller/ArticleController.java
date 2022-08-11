@@ -165,7 +165,7 @@ public class ArticleController {
         return new ResponseEntity<>(articleInfoDto, HttpStatus.OK);
     }
 
-    @PostMapping("/regist")
+    @PostMapping("/registtest")
     public ResponseEntity<?> upload(@RequestParam (value="photo",required = false) MultipartFile[] photo, @RequestParam String title ) throws Exception {
         Response res = new Response();
         List<String> results = new ArrayList<>();
