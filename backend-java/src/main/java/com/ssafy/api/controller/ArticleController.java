@@ -4,8 +4,10 @@ import com.ssafy.api.request.ArticleInfoDto;
 import com.ssafy.api.request.SaveArticleDto;
 import com.ssafy.api.request.UpdateArticleDto;
 import com.ssafy.api.service.ArticleService;
+import com.ssafy.api.service.StorageService;
 import com.ssafy.common.auth.FWUserDetails;
 import com.ssafy.common.model.response.BaseResponseBody;
+import com.ssafy.db.dto.Response;
 import com.ssafy.db.entity.Article;
 import com.ssafy.db.repository.ArticleRepository;
 import io.swagger.annotations.Api;
@@ -15,14 +17,19 @@ import io.swagger.annotations.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import springfox.documentation.annotations.ApiIgnore;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -39,6 +46,16 @@ public class ArticleController {
     ArticleService articleService;
 
     ArticleRepository articleRepository;
+
+    //image upload
+    private final StorageService storageService;
+
+    @Autowired
+    public ArticleController(StorageService storageService){
+        this.storageService = storageService;
+    }
+    //==========
+
 
     @PostMapping("/register")
     @ApiOperation(value="게시글 등록 (token)", notes="<strong>게시글을 등록</strong>시켜줍니다. user_id는 빈 괄호(\"\")를 입력하여 주세요.")
@@ -149,17 +166,52 @@ public class ArticleController {
     }
 
     @PostMapping("/regist")
-    public void upload(@RequestParam (value="photo",required = false) MultipartFile[] photo, @RequestParam String title ) throws Exception {
-        List<String> list = new ArrayList<>();
-        System.out.println(title);
+    public ResponseEntity<?> upload(@RequestParam (value="photo",required = false) MultipartFile[] photo, @RequestParam String title ) throws Exception {
+        Response res = new Response();
+        List<String> results = new ArrayList<>();
+        List<String> imageLocations = new ArrayList<>();
         System.out.println(photo);
-        for (MultipartFile file : photo) {
-            String originalfileName = file.getOriginalFilename();
-            File dest = new File("C:/Image/" + originalfileName);
-            file.transferTo(dest);
-            // TODO
+        System.out.println(title);
 
+        try{
+            results = storageService.saveFiles(photo, title);
+            for(String result : results){
+                imageLocations.add("/"+title+"/"+result);
+            }
+            res.setImageLocations(imageLocations);
+            res.setMessage("done");
+            res.setSuccess(true);
+            return new ResponseEntity<Response>(res, HttpStatus.OK);
+        }catch (Exception e){
+            res.setMessage("failed");
+            res.setSuccess(false);
+            return new ResponseEntity<Response>(res, HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        //return list;
+    }
+
+    @GetMapping("/display/{userId}/{articleTitle:.+}")
+    public ResponseEntity<Resource> displayImage(@PathVariable String articleTitle,
+                                                 @PathVariable String userId,
+                                                 HttpServletRequest request) {
+        // Load file as Resource
+        Resource resource = storageService.loadFileAsResource(userId, articleTitle);
+
+        // Try to determine file's content type
+        String contentType = null;
+        try {
+            contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
+        } catch (IOException ex) {
+            logger.info("Could not determine file type.");
+        }
+
+        // Fallback to the default content type if type could not be determined
+        if(contentType == null) {
+            contentType = "application/octet-stream";
+        }
+
+        return ResponseEntity.ok()
+                .contentType(MediaType.parseMediaType(contentType))
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
+                .body(resource);
     }
 }
