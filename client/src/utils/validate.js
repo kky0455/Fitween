@@ -1,33 +1,33 @@
+export const checkSpecial = str => {
+	const regExp = /[!?@#$%^&*():;+-=~{}<>\_\[\]\|\\\"\'\,\.\/\`\₩]/g;
+	if (regExp.test(str)) return true;
+	return false;
+};
+
+export const checkNum = str => {
+	const regExp = /[0-9]/g;
+	if (regExp.test(str)) return true;
+	return false;
+};
+
+export const checkEmoji = str => {
+	const regExp =
+		/([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g;
+	if (regExp.test(str)) return true;
+	return false;
+};
+
+export const checkSpace = str => {
+	if (str.search(/\s/) !== -1) return true;
+	return false;
+};
+
+export const checkLength = str => {
+	if (str.length < 2 || str.length > 8) return true;
+	return false;
+};
+
 export const validateNickName = nickName => {
-	function checkSpecial(str) {
-		const regExp = /[!?@#$%^&*():;+-=~{}<>\_\[\]\|\\\"\'\,\.\/\`\₩]/g;
-		if (regExp.test(str)) return true;
-		return false;
-	}
-
-	function checkNum(str) {
-		const regExp = /[0-9]/g;
-		if (regExp.test(str)) return true;
-		return false;
-	}
-
-	function checkEmoji(str) {
-		const regExp =
-			/([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g;
-		if (regExp.test(str)) return true;
-		return false;
-	}
-
-	function checkSpace(str) {
-		if (str.search(/\s/) !== -1) return true;
-		return false;
-	}
-
-	function checkLength(str) {
-		if (str.length < 2 || str.length > 8) return true;
-		return false;
-	}
-
 	if (checkSpecial(nickName) || checkSpace(nickName) || checkNum(nickName) || checkEmoji(nickName))
 		return { state: false, type: 'notLengthErr' };
 	if (checkLength(nickName)) return { state: false, type: 'lengthErr' };
