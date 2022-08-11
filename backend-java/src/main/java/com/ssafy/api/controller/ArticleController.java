@@ -19,8 +19,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import springfox.documentation.annotations.ApiIgnore;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -145,5 +148,18 @@ public class ArticleController {
         return new ResponseEntity<>(articleInfoDto, HttpStatus.OK);
     }
 
+    @PostMapping("/regist")
+    public void upload(@RequestParam (value="photo",required = false) MultipartFile[] photo, @RequestParam String title ) throws Exception {
+        List<String> list = new ArrayList<>();
+        System.out.println(title);
+        System.out.println(photo);
+        for (MultipartFile file : photo) {
+            String originalfileName = file.getOriginalFilename();
+            File dest = new File("C:/Image/" + originalfileName);
+            file.transferTo(dest);
+            // TODO
 
+        }
+        //return list;
+    }
 }
