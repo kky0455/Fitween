@@ -35,7 +35,10 @@ const ArticleRegist = () => {
 		formData.append('title', title);
 		formData.append('price', price);
 		formData.append('content', content);
-		formData.append('photo', imageFiles);
+		imageFiles.forEach(file => {
+			formData.append('photo', file);
+		});
+		// formData.append('photo', imageFiles);
 		const ret = await registArticle(formData);
 		if (ret.result === 'success') navigate(`/article/${ret.articleId}`);
 	};
@@ -76,7 +79,9 @@ const ArticleRegist = () => {
 								if (e.target.files.length > 0) {
 									setImageSrcs([]);
 									Array.from(e.target.files).forEach(file => encodeFileToBase64(file));
-									setImageFiles(e.target.files);
+									const uploadFiles = Array.prototype.slice.call(e.target.files);
+									// setImageFiles(e.target.files);
+									setImageFiles(uploadFiles);
 								}
 							} else {
 								alert('최대 5개만 업로드할 수 있습니다.');
