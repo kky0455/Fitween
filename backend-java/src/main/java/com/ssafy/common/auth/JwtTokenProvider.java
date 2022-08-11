@@ -27,11 +27,11 @@ public class JwtTokenProvider {
 
     private static String secretKey = "fitweenSecretadiosfhaiodhfaiodhfiadflkadfklnad,mf";
 
-    //토큰 유효시간 == 10분
-    private static final long expireTime = 10*60*1000L;
+    //토큰 유효시간 == 1일
+    private static final long expireTime = 24*60*60*1000L;
 
-    //리프레시 토큰 유효시간 == 1시간
-    private final long refreshExpireTime = 24*60*60*1000L;
+    //리프레시 토큰 유효시간 == 7일
+    private final long refreshExpireTime = 7*24*60*60*1000L;
 
     private final UserDetailsService userDetailsService;
 
