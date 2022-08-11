@@ -71,9 +71,11 @@ const DummyPage = () => {
 	useEffect(() => {
 		console.log(textareaValue);
 	}, [textareaValue]);
+
 	useEffect(() => {
 		setBtnState(check());
 	}, [input]);
+
 	useEffect(() => {
 		const fetch = async () => {
 			const res = await articleApi.modifyArticle('12314', { title: 'titiel' });
@@ -81,9 +83,11 @@ const DummyPage = () => {
 		};
 		fetch();
 	}, []);
+
 	useEffect(() => {
 		setBtnState(check(input));
 	}, [input]);
+
 	useEffect(() => {
 		const fetch = async () => {
 			try {
@@ -96,6 +100,7 @@ const DummyPage = () => {
 		};
 		fetch();
 	}, []);
+
 	useEffect(() => {
 		const fetch = async () => {
 			try {
@@ -107,6 +112,7 @@ const DummyPage = () => {
 		};
 		fetch();
 	}, []);
+
 	return (
 		<>
 			<TopNavigation
