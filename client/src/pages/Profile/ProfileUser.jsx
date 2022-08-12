@@ -16,6 +16,7 @@ import { getUserInfo } from '../../api/user';
 import profile_menu from '../../assets/profile_menu.svg';
 import Modal from '../../components/Common/Modal/Modal';
 import colors from '../../constants/colors';
+import { setLogout } from '../../context/User/UserTypes';
 
 const Hr = styled.hr`
 	border: none;
@@ -31,13 +32,14 @@ const ProfileUser = ({ articleId }) => {
 	const [modalVisible, setModalVisible] = useState(false);
 
 	const logoutClickHandler = () => {
-		userDispatch({ type: 'LOGOUT' });
+		userDispatch(setLogout());
 		API.defaults.headers.common['Authorization'] = '';
 	};
 
 	useEffect(() => {
 		const fetch = async () => {
 			const data = await getUserInfo(userId);
+
 			if (data.result === 'fail') {
 				navigate('/main');
 			}
@@ -45,9 +47,11 @@ const ProfileUser = ({ articleId }) => {
 		};
 		fetch();
 	}, []);
+
 	const openModal = () => {
 		setModalVisible(true);
 	};
+
 	const closeModal = () => {
 		setModalVisible(false);
 	};

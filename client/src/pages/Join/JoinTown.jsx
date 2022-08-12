@@ -8,6 +8,7 @@ import API from '../../api';
 import { setRefreshToken } from '../../storage/Cookie';
 import * as authApi from '../../api/auth';
 import { useUserDispatch, useUserState } from '../../context/User/UserContext';
+import { setLogin } from '../../context/User/UserTypes';
 
 const JoinTown = ({ info }) => {
 	const [location, setLocation] = useState(null);
@@ -25,10 +26,10 @@ const JoinTown = ({ info }) => {
 			};
 
 			const res = await authApi.signup(body);
+			const { userId, accessToken } = res.accessToken;
 
 			setRefreshToken(res.refreshToken);
-			const { userId, accessToken } = res.accessToken;
-			dispatch({ type: 'LOGIN', loginedUserId: userId });
+			dispatch(setLogin(userId));
 			API.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
 			navigate('/main');
 		} catch (err) {
