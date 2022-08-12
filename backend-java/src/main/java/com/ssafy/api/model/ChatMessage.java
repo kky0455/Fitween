@@ -29,6 +29,8 @@ public class ChatMessage {
     @Column
     private String message;
     //메세지 시각
+    @Column
+    private Integer isRead;
 
     //메세지 날짜
     @Column(columnDefinition = "TIMESTAMP")
@@ -37,12 +39,13 @@ public class ChatMessage {
     private LocalDateTime senddatetime;
 
     @Builder // 빌더 패턴 적용! 추후 설명..!
-    public ChatMessage(String roomId, String senderId, String receiverId, String message) {
+    public ChatMessage(String roomId, String senderId, String receiverId, String message,Integer isRead) {
         //this.id
         this.roomId = roomId;
         this.senderId = senderId;
         this.receiverId = receiverId;
         this.message = message;
+        this.isRead = isRead;
 
 
     }

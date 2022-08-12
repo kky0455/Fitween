@@ -30,6 +30,12 @@ public class ChatRoom {
     @Column
     private LocalDateTime lastChatTime;
 
+    @Column
+    private String lastSenderId;
+
+    @Column
+    private Integer notReadCount;
+
 
     public static ChatRoom create(String user1Id,String user2Id) {
         ChatRoom room = new ChatRoom();
@@ -41,10 +47,12 @@ public class ChatRoom {
     }
 
     @Builder // 빌더 패턴 적용! 추후 설명..!
-    public ChatRoom(String roomId, String user1Id, String user2Id,String lastChat) {
+    public ChatRoom(String roomId, String user1Id, String user2Id,String lastChat,Integer notReadCount,String lastSenderId) {
         this.roomId = roomId;
         this.user1Id = user1Id;
         this.user2Id = user2Id;
         this.lastChat = lastChat;
+        this.lastSenderId = lastSenderId;
+        this.notReadCount= notReadCount;
     }
 }

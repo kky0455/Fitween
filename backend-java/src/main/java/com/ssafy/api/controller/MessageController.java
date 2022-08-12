@@ -24,9 +24,10 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 public class MessageController {
-
+    //메세지를 읽었을때 메세지들을 전부 0으로 만들어야함
+    // receiver가 접근했을때 senderId-receiverId 가 매칭된 채팅로그의 1을 0으로 바꾼다다
     private final SimpMessageSendingOperations sendingOperations;
-
+    
     @GetMapping("/chat/findRoom")
     public String findRoom(String receiverId,String senderId){
         String roomnum = findRoomfunc(receiverId,senderId);
@@ -74,9 +75,9 @@ public class MessageController {
 
         LocalDateTime datetime = LocalDateTime.now();
         message.setSenddatetime(datetime);
-
-
-        updateLastChat(message.getRoomId(),message.getMessage(),message.getSenddatetime());
+        message.setIsRead(1);
+        notRead(message.getSenderId(), message.getReceiverId(),message.getRoomId());
+        updateLastChat(message.getRoomId(),message.getMessage(),message.getSenddatetime(), message.getSenderId());
         saveMessage(message.getRoomId(), message.getSenderId(), message.getReceiverId(), message.getMessage());
         sendingOperations.convertAndSend("/topic/chat/room/"+message.getRoomId(),message); // 메세지 알림 보내기
         sendingOperations.convertAndSend("/topic/chat/wait/"+message.getReceiverId(),message); // 메세지 보내기
@@ -180,12 +181,17 @@ public class MessageController {
         return roomNum;
 
     }
-    public void updateLastChat(String roomId,String message,LocalDateTime dateTime){
+    public void updateLastChat(String roomId,String message,LocalDateTime dateTime,String senderId){
         chatRoomRepository.updateLastChat(roomId,message);
         chatRoomRepository.updateLastChatTime(roomId,dateTime);
+        chatRoomRepository.updateLastSenderId(roomId,senderId);
 
     }
 
+    public void notRead(String senderId,String receiverId,String roomId){
+        chatRoomRepository.notReadMessage(senderId,receiverId,roomId);
+
+    }
 
 
 
