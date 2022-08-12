@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { Buffer } from 'buffer';
+
 import API from '../../api';
 import styled from 'styled-components';
 import colors from '../../constants/colors';
@@ -18,6 +20,7 @@ import { useIntersect } from '../../hook/useIntersect';
 import Loading from '../../components/Common/Loading/Loading';
 import Carousel from '../../components/Common/Carousel/Carousel';
 import modify_img from '../../assets/modify_img.png';
+import { useUserState } from '../../context/User/UserContext';
 
 const fakeFetch = (delay = 1000) => new Promise(res => setTimeout(res, delay));
 const ListItem = ({ number }) => (
@@ -27,11 +30,14 @@ const ListItem = ({ number }) => (
 );
 
 const DummyPage = () => {
+	const { user_id } = useUserState();
+	console.log(user_id);
 	const [input, setInput] = useState('');
 	const [btnState, setBtnState] = useState(false);
 	const [modalVisible, setModalVisible] = useState(false);
 	const [textareaValue, setTextareaValue] = useState('');
 	const [inputChecked, setInputChecked] = useState(false);
+	const [testImage, setTestImage] = useState(null);
 
 	const [state, setState] = useState({ itemCount: 0, isLoading: false });
 	const onIntersect = async (entry, observer) => {
@@ -51,10 +57,17 @@ const DummyPage = () => {
 			isLoading: false,
 		}));
 	};
-
 	useEffect(() => {
-		fetchItems();
+		const fetchImages = async () => {
+			const data = await articleApi.getImage('123', 'ysjudgqbzclogo512.png');
+			console.log(data);
+			setTestImage(Buffer.from(data).toString('base64'));
+		};
+		fetchImages();
 	}, []);
+	// useEffect(() => {
+	// 	fetchItems();
+	// }, []);
 	const openModal = () => {
 		setModalVisible(true);
 	};
@@ -71,42 +84,42 @@ const DummyPage = () => {
 	useEffect(() => {
 		console.log(textareaValue);
 	}, [textareaValue]);
-	useEffect(() => {
-		setBtnState(check());
-	}, [input]);
-	useEffect(() => {
-		const fetch = async () => {
-			const res = await articleApi.modifyArticle('12314', { title: 'titiel' });
-			console.log(res);
-		};
-		fetch();
-	}, []);
-	useEffect(() => {
-		setBtnState(check(input));
-	}, [input]);
-	useEffect(() => {
-		const fetch = async () => {
-			try {
-				const res = await API.post('/user/login', { accessToken: 'true' });
-				console.log(res);
-			} catch (err) {
-				console.log(err);
-				console.log(err.response.data);
-			}
-		};
-		fetch();
-	}, []);
-	useEffect(() => {
-		const fetch = async () => {
-			try {
-				const res = await API.post('/user/login', { accessToken: 'nottrue' });
-			} catch (err) {
-				console.log(err);
-				console.log(err.response.data);
-			}
-		};
-		fetch();
-	}, []);
+	// useEffect(() => {
+	// 	setBtnState(check());
+	// }, [input]);
+	// useEffect(() => {
+	// 	const fetch = async () => {
+	// 		const res = await articleApi.modifyArticle('12314', { title: 'titiel' });
+	// 		console.log(res);
+	// 	};
+	// 	fetch();
+	// }, []);
+	// useEffect(() => {
+	// 	setBtnState(check(input));
+	// }, [input]);
+	// useEffect(() => {
+	// 	const fetch = async () => {
+	// 		try {
+	// 			const res = await API.post('/user/login', { accessToken: 'true' });
+	// 			console.log(res);
+	// 		} catch (err) {
+	// 			console.log(err);
+	// 			console.log(err.response.data);
+	// 		}
+	// 	};
+	// 	fetch();
+	// }, []);
+	// useEffect(() => {
+	// 	const fetch = async () => {
+	// 		try {
+	// 			const res = await API.post('/user/login', { accessToken: 'nottrue' });
+	// 		} catch (err) {
+	// 			console.log(err);
+	// 			console.log(err.response.data);
+	// 		}
+	// 	};
+	// 	fetch();
+	// }, []);
 	return (
 		<>
 			<TopNavigation
@@ -138,6 +151,13 @@ const DummyPage = () => {
 					overflow: 'scroll',
 				}}
 			>
+				{testImage && (
+					<img
+						src={`data:image;base64,${testImage}`}
+						alt=""
+						style={{ width: '100%', height: '100%' }}
+					/>
+				)}
 				{modalVisible && (
 					<Modal visible={modalVisible} maskClosable onClose={closeModal} type="center">
 						<div>asd</div>

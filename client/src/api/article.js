@@ -13,10 +13,15 @@ export const getArticleDetail = async articleId => {
 
 // article등록
 export const registArticle = async body => {
-	const res = await API.post('/article/regist', body, {
+	const res = await API.post('/article/registtest', body, {
 		headers: { 'Content-Type': 'multipart/form-data' },
 	});
 	return res.data;
+	// export const registArticle = async body => {
+	// 	const res = await API.post('/article/regist', body, {
+	// 		headers: { 'Content-Type': 'multipart/form-data' },
+	// 	});
+	// 	return res.data;
 };
 
 // article수정
@@ -46,5 +51,12 @@ export const modifyArticleLike = async articleId => {
 // article 대여 가능/불가능 수정
 export const modifyArticleAvailable = async articleId => {
 	const res = await API.post(`/article/available/${articleId}`);
+	return res.data;
+};
+
+export const getImage = async (userId, articleTitle) => {
+	const res = await API.get(`/article/display/${userId}/${articleTitle}`, {
+		responseType: 'arraybuffer',
+	});
 	return res.data;
 };
