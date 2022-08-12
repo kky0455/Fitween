@@ -135,7 +135,7 @@
       <command value="gradle lombok" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.GroupCallApplication">
+  <component name="RunManager" selected="Gradle.backend-java [lombok]">
     <configuration name="GroupCallApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ssafy.GroupCallApplication" />
       <module name="ssafy-web-project.main" />
@@ -223,7 +223,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GroupCallApplication" />
         <item itemvalue="JUnit.TokenProviderTest.토큰_생성하기" />
         <item itemvalue="JUnit.TokenProviderTest" />
         <item itemvalue="Gradle.backend-java [lombok]" />
