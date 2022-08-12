@@ -24,8 +24,14 @@ const ArticleRegist = () => {
 			price: price,
 			content: content,
 		};
-		const ret = await registArticle(body);
-		if (ret.result === 'success') navigate(`/article/${ret.articleIdx}`);
+		try {
+			const ret = await registArticle(body);
+			if (ret.result === '게시물 등록 성공') {
+				navigate(`/article/${ret.article_idx}`);
+			}
+		} catch (error) {
+			alert('다시 시도하세요.');
+		}
 	};
 	const onContentChangeHandler = e => {
 		e.preventDefault();
