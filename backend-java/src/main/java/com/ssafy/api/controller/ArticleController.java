@@ -33,9 +33,7 @@ import springfox.documentation.annotations.ApiIgnore;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 @Api(value = "게시물 API", tags = { "Article" })
 @RestController
@@ -70,11 +68,14 @@ public class ArticleController {
     @ApiOperation(value="게시글 등록 (token)", notes="<strong>게시글을 등록</strong>시켜줍니다. user_id는 빈 괄호(\"\")를 입력하여 주세요.")
     public ResponseEntity createArticle(@RequestBody SaveArticleDto saveArticleDto, @ApiIgnore Authentication authentication)
     {
-
         System.out.println(authentication);
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
+        Map<String, Object> result = new HashMap<>();
         try {
-            return ResponseEntity.status(200).body(articleService.createArticle(saveArticleDto, userDetails.getUser()));
+//            articleService.createArticle(saveArticleDto, userDetails.getUser());
+            result.put("article_idx", articleService.createArticle(saveArticleDto, userDetails.getUser()));
+            result.put("result", "게시물 등록 성공");
+            return ResponseEntity.ok().body(result);
         } catch (Exception E) {
             return ResponseEntity.status(500).body("게시물 등록 실패");
         }
