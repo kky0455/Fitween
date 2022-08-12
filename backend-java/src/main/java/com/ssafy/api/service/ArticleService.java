@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface ArticleService {
 
-    public void createArticle(SaveArticleDto saveBoardDto, User user);
+    public long createArticle(SaveArticleDto saveBoardDto, User user);
 
     public Article findArticle(Long article_idx);
 

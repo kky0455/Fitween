@@ -25,15 +25,25 @@ public class ArticleServiceImpl implements ArticleService{
     LikesRepository likesRepository;
 
     @Override
-    public void createArticle(SaveArticleDto saveArticleDto, User user) {
-        articleRepository.save(Article.builder()
-                .title(saveArticleDto.getTitle())
+    public long createArticle(SaveArticleDto saveArticleDto, User user) {
+        Article article = new Article();
+        article = Article.builder().title(saveArticleDto.getTitle())
 //                .feedImg(saveArticleDto.getFeedImg())
                 .content(saveArticleDto.getContent())
                 .price(saveArticleDto.getPrice())
                 .user(user)
-                        .likesCount(0)
-                .build());
+                .likesCount(0)
+                .build();
+        articleRepository.save(article);
+        return article.getArticleIdx();
+//        articleRepository.save(Article.builder()
+//                .title(saveArticleDto.getTitle())
+////                .feedImg(saveArticleDto.getFeedImg())
+//                .content(saveArticleDto.getContent())
+//                .price(saveArticleDto.getPrice())
+//                .user(user)
+//                        .likesCount(0)
+//                .build());
     }
     @Override
     public Article findArticle(Long article_idx) {

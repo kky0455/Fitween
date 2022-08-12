@@ -74,11 +74,12 @@ public class ArticleController {
         System.out.println(authentication);
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
         try {
-            articleService.createArticle(saveArticleDto, userDetails.getUser());
+            return ResponseEntity.status(200).body(articleService.createArticle(saveArticleDto, userDetails.getUser()));
         } catch (Exception E) {
             return ResponseEntity.status(500).body("게시물 등록 실패");
         }
-        return ResponseEntity.status(200).body("게시물 등록 성공");
+
+//        return ResponseEntity.status(200).body("게시물 등록 성공");
     }
     @ApiOperation(value = "게시글 정보 수정(token)", notes = "게시글 정보 수정")
     @PutMapping("/{article_idx}")
@@ -107,16 +108,16 @@ public class ArticleController {
     }
     @ApiOperation(value="게시글 전체 조회", notes="<strong>게시글을 전체 조회를</strong>시켜줍니다.")
     @GetMapping("/list")
-    public ResponseEntity<?> findAllArticle(){
+    public ResponseEntity<?> findAllArticle(@ApiIgnore Authentication authentication){
 //        System.out.println(authentication);
 //        System.out.println("여기도 테스트");
-//        FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
+        FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
 //        System.out.println(userDetails);
         List<Article> articles = articleService.findAllArticle();
-//        articles.forEach(article -> {
-//            article.setLikesCount(article.getLikes().size());
-//            article.setLendStatus(likeService.isLike(userDetails.getUser(), article));
-//        });
+        articles.forEach(article -> {
+            article.setLikesCount(article.getLikes().size());
+            article.setLendStatus(likeService.isLike(userDetails.getUser(), article));
+        });
 //        System.out.println(authentication);
         return ResponseEntity.status(200).body(articles);
     }
@@ -125,25 +126,25 @@ public class ArticleController {
     public ResponseEntity<?> findOneArticle(@PathVariable Long article_idx, @ApiIgnore Authentication authentication) {
         Article article = articleService.findArticle(article_idx);
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
-        User user = userService.getUserByUserIdx(article_idx);
+        User user = userDetails.getUser();
         boolean isLiked = likeService.isLike(user, article);
         ArticleInfoDto articleInfoDto = new ArticleInfoDto(article, isLiked);
         return ResponseEntity.status(200).body(articleInfoDto);
     }
-    @PostMapping("detail/{article_idx}/like")
+    @PostMapping("like/{article_idx}")
     @ApiOperation(value ="게시글 좋아요", notes ="해당 article_idx에 좋아요")
     public ResponseEntity<?> articlelike(@PathVariable Long article_idx, @ApiIgnore Authentication authentication) {
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
-        User user = userService.getUserByUserIdx(article_idx);
+        User user = userDetails.getUser();
         Article article = articleService.findArticle(article_idx);
         likeService.likes(user, article);
         return ResponseEntity.status(200).body("좋아요 성공");
     }
-    @DeleteMapping("detail/{article_idx}/like")
+    @DeleteMapping("like/{article_idx}")
     @ApiOperation(value ="게시글 좋아요 취소", notes ="해당 article_idx에 좋아요 취소")
     public ResponseEntity<?> articleunlike(@PathVariable Long article_idx, @ApiIgnore Authentication authentication) {
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
-        User user = userService.getUserByUserIdx(article_idx);
+        User user = userDetails.getUser();
         Article article = articleService.findArticle(article_idx);
         likeService.unLikes(user, article);
         return ResponseEntity.status(200).body("좋아요 취소");
