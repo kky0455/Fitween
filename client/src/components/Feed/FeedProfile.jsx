@@ -2,6 +2,7 @@ import React from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { useNavigate } from 'react-router-dom';
+
 import checkbox from '../../assets/checkbox.svg';
 import checkbox2 from '../../assets/checkbox2.svg';
 
@@ -29,6 +30,7 @@ const FeedProfile = ({ imgSrc, userId, isRent }) => {
 				`}
 				onClick={() => navigate(`/profile/${userId}`)}
 			>
+				{/* todo: 프로필 img api 받아와야 함 */}
 				<img src={imgSrc} />
 				<span className="fw-700 fs-18" style={{ paddingLeft: '15px', lineHeight: '21.6px' }}>
 					{userId}

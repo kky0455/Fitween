@@ -10,6 +10,8 @@ import Input from '../../components/Common/Input/Input';
 import modify_img from '../../assets/modify_img.png';
 import { registArticle } from '../../api/article';
 import TextArea from '../../components/Common/TextArea/TextArea';
+import getByte from '../../utils/getByte';
+import { MAX_BYTE } from '../../constants/config';
 
 const ArticleRegist = () => {
 	const [title, setTitle] = useState('');
@@ -23,7 +25,11 @@ const ArticleRegist = () => {
 			content: content,
 		};
 		const ret = await registArticle(body);
-		if (ret.result === 'success') navigate(`/article/${ret.articleId}`);
+		if (ret.result === 'success') navigate(`/article/${ret.articleIdx}`);
+	};
+	const onContentChangeHandler = e => {
+		e.preventDefault();
+		if (getByte(e.target.value) <= MAX_BYTE) setContent(e.target.value);
 	};
 	return (
 		<>
@@ -93,7 +99,7 @@ const ArticleRegist = () => {
 						`}
 						type="text"
 						value={content}
-						onChange={e => setContent(e.target.value)}
+						onChange={onContentChangeHandler}
 						maxByte={500}
 						placeholder="내용"
 					/>
