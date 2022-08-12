@@ -1,5 +1,5 @@
 import API from './index';
-// article 리스트
+
 export const getArticleList = async () => {
 	const res = await API.get('/article/list');
 	return res.data;
@@ -11,7 +11,6 @@ export const getArticleDetail = async articleIdx => {
 	return res.data;
 };
 
-// article등록
 export const registArticle = async body => {
 	const res = await API.post('/article/regist', body);
 	return res.data;
@@ -29,7 +28,6 @@ export const deleteArticle = async articleIdx => {
 	return res.data;
 };
 
-// 찜한 피드
 export const getArticleLikeList = async () => {
 	const res = await API.get('/article/likelist');
 	return res.data;

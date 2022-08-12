@@ -1,36 +1,13 @@
 import { createContext, useContext, useReducer } from 'react';
 
-const initialState = {
-	loginedUserId: null,
-	accessToken: null,
-};
-
-const reducer = (state, action) => {
-	switch (action.type) {
-		case 'LOGIN':
-			return {
-				loginedUserId: action.loginedUserId,
-				accessToken: action.accessToken,
-			};
-		case 'LOGOUT':
-			return {
-				loginedUserId: null,
-				accessToken: null,
-			};
-		case 'SIGNUP':
-			return {
-				loginedUserId: action.loginedUserId,
-			};
-		default:
-			return state;
-	}
-};
+import userReducer from './UserReducer';
+import userState from './UserState';
 
 const UserStateContext = createContext(null);
 const UserDispatchContext = createContext(null);
 
 export const UserProvider = ({ children }) => {
-	const [state, dispatch] = useReducer(reducer, initialState);
+	const [state, dispatch] = useReducer(userReducer, userState);
 
 	return (
 		<UserStateContext.Provider value={state}>

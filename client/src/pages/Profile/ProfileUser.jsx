@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import styled from 'styled-components';
 
+import API from '../../api';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import BottomNavigation from '../../components/Common/BottomNavigation/BottomNavigation';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -9,12 +11,12 @@ import null_profile from '../../assets/null_profile_img.png';
 import gallery_img from '../../assets/gallery_img.png';
 import ProfileTop from '../../components/Profile/ProfileTop';
 import ProfileButton from '../../components/Profile/ProfileButton';
-import { useUserState } from '../../context/User/UserContext';
+import { useUserDispatch, useUserState } from '../../context/User/UserContext';
 import { getUserInfo } from '../../api/user';
 import profile_menu from '../../assets/profile_menu.svg';
 import Modal from '../../components/Common/Modal/Modal';
 import colors from '../../constants/colors';
-import styled from 'styled-components';
+import { setLogout } from '../../context/User/UserTypes';
 
 const Hr = styled.hr`
 	border: none;
@@ -25,11 +27,19 @@ const ProfileUser = ({ articleId }) => {
 	const { userId } = useParams();
 	const { loginedUserId } = useUserState();
 	const navigate = useNavigate();
+	const userDispatch = useUserDispatch();
 	const [profileInfo, setProfileInfo] = useState(null);
 	const [modalVisible, setModalVisible] = useState(false);
+
+	const logoutClickHandler = () => {
+		userDispatch(setLogout());
+		API.defaults.headers.common['Authorization'] = '';
+	};
+
 	useEffect(() => {
 		const fetch = async () => {
 			const data = await getUserInfo(userId);
+
 			if (data.result === 'fail') {
 				navigate('/main');
 			}
@@ -37,9 +47,11 @@ const ProfileUser = ({ articleId }) => {
 		};
 		fetch();
 	}, []);
+
 	const openModal = () => {
 		setModalVisible(true);
 	};
+
 	const closeModal = () => {
 		setModalVisible(false);
 	};
@@ -87,7 +99,9 @@ const ProfileUser = ({ articleId }) => {
 							<Hr />
 							<div style={{ padding: '5px' }}>내 동네 수정</div>
 							<Hr />
-							<div style={{ padding: '5px' }}>로그아웃</div>
+							<div style={{ padding: '5px' }} onClick={() => logoutClickHandler}>
+								로그아웃
+							</div>
 							<Hr />
 							<div style={{ padding: '5px' }}>탈퇴하기</div>
 							<Hr />

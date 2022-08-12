@@ -1,6 +1,5 @@
 import API from './index';
 
-// 로그인
 export const login = async body => {
 	try {
 		const res = await API.get('/auth/login', { params: body });

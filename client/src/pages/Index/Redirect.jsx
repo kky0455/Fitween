@@ -6,6 +6,7 @@ import * as authApi from '../../api/auth';
 import { setRefreshToken } from '../../storage/Cookie';
 import API from '../../api';
 import { useUserDispatch } from '../../context/User/UserContext';
+import { setLogin, setSignUp } from '../../context/User/UserTypes';
 
 const Redirect = () => {
 	const [searchParams] = useSearchParams();
@@ -37,14 +38,16 @@ const Redirect = () => {
 			try {
 				const res = await authApi.login(body);
 				if (res.responseType === 'signIn') {
-					setRefreshToken(res.refreshToken);
 					const { accessToken, userId } = res;
-					dispatch({ type: 'LOGIN', loginedUserId: userId, accessToken: accessToken });
+
+					setRefreshToken(res.refreshToken);
+					dispatch(setLogin(userId));
 					API.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
 					navigate('/main');
 				} else if (res.responseType === 'signUp') {
 					const { userId } = res;
-					dispatch({ type: 'SIGNUP', loginedUserId: userId });
+
+					dispatch(setSignUp(userId));
 					navigate('/join/index');
 				}
 			} catch (err) {
