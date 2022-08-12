@@ -5,8 +5,9 @@ export const getArticleList = async () => {
 	return res.data;
 };
 
-export const getArticleDetail = async articleId => {
-	const res = await API.get(`/article/detail/${articleId}`);
+// article 상세
+export const getArticleDetail = async articleIdx => {
+	const res = await API.get(`/article/detail/${articleIdx}`);
 	return res.data;
 };
 
@@ -15,13 +16,15 @@ export const registArticle = async body => {
 	return res.data;
 };
 
-export const modifyArticle = async (articleId, body) => {
-	const res = await API.put(`/article/${articleId}`, body);
+// article수정
+export const modifyArticle = async (articleIdx, body) => {
+	const res = await API.put(`/article/${articleIdx}`, body);
 	return res.data;
 };
 
-export const deleteArticle = async articleId => {
-	const res = await API.delete(`/article/${articleId}`);
+// article삭제
+export const deleteArticle = async articleIdx => {
+	const res = await API.delete(`/article/${articleIdx}`);
 	return res.data;
 };
 
@@ -30,12 +33,14 @@ export const getArticleLikeList = async () => {
 	return res.data;
 };
 
-export const modifyArticleLike = async articleId => {
-	const res = await API.post(`/article/like/${articleId}`);
+// article 좋아요/취소
+export const modifyArticleLike = async articleIdx => {
+	const res = await API.post(`/article/like/${articleIdx}`);
 	return res.data;
 };
 
-export const modifyArticleAvailable = async articleId => {
-	const res = await API.post(`/article/available/${articleId}`);
+// article 대여 가능/불가능 수정
+export const modifyArticleAvailable = async articleIdx => {
+	const res = await API.post(`/article/available/${articleIdx}`);
 	return res.data;
 };

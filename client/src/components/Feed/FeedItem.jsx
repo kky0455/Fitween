@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { useNavigate } from 'react-router-dom';
 
 import FeedProfile from '../../components/Feed/FeedProfile';
 import null_profile from '../../assets/null_profile_img.png';
 import { ReactComponent as Heart } from '../../assets/heart_active.svg';
 import { modifyArticleLike } from '../../api/article';
-import { useNavigate } from 'react-router-dom';
 
 const FeedItem = ({
 	userId,
