@@ -5,7 +5,6 @@ import { useUserState } from '../../context/User/UserContext';
 
 const JoinIndex = () => {
 	const naviagte = useNavigate();
-	const { loginedUserId } = useUserState();
 
 	return (
 		<div
