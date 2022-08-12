@@ -37,6 +37,13 @@ public class UserService {
 		return user;
 	}
 
+	public User getUserByNickname(String nickname) {
+		// 디비에 유저 정보 조회 (userId 를 통한 조회).
+		System.out.println("유저ID 체크" + nickname);
+		User user = userRepository2.findUserByNickname(nickname).orElseGet(null);
+		return user;
+	}
+
 
 	public User getUserByUserIdx(Long userIdx) {
 		// 디비에 유저 정보 조회 (userId 를 통한 조회).

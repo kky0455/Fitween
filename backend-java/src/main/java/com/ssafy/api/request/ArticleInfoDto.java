@@ -12,7 +12,7 @@ public class ArticleInfoDto {
     private String content;
     private int price;
     private boolean lendStatus;
-    private String name;
+    private String nickname;
     private boolean islike;
     private int likesCount;
 
@@ -23,7 +23,7 @@ public class ArticleInfoDto {
         this.content = article.getContent();
         this.price = article.getPrice();
         this.lendStatus = article.isLendStatus();
-        this.name = article.getUser().getName();
+        this.nickname = article.getUser().getNickname();
         this.islike = islike;
         this.likesCount = article.getLikes().size();
     }
