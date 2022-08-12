@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from 'react';
+import { createContext, useContext, useEffect, useReducer } from 'react';
 
 import userReducer from './UserReducer';
 import userState from './UserState';
@@ -7,7 +7,15 @@ const UserStateContext = createContext(null);
 const UserDispatchContext = createContext(null);
 
 export const UserProvider = ({ children }) => {
-	const [state, dispatch] = useReducer(userReducer, userState);
+	const [state, dispatch] = useReducer(userReducer, userState, () => {
+		const localStorageUserState = JSON.parse(localStorage.getItem('userState'));
+		return localStorageUserState ? localStorageUserState : { loginedUserId: null };
+	});
+	alert(state.loginedUserId);
+
+	useEffect(() => {
+		localStorage.setItem('userState', JSON.stringify(state));
+	}, [state]);
 
 	return (
 		<UserStateContext.Provider value={state}>
