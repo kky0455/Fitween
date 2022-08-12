@@ -20,6 +20,8 @@ public class ChatMessageForm {
 
     private LocalDateTime senddatetime;
 
+    private Integer isRead;
+
 //     빌더 패턴으로 객체 생성! 생성자의 변형. 입력 순서가 일치하지 않아도 됨.
     public ChatMessage toEntity() {
         return ChatMessage.builder()
@@ -27,6 +29,7 @@ public class ChatMessageForm {
                 .senderId(senderId)
                 .receiverId(receiverId)
                 .message(message)
+                .isRead(isRead)
                 .build();
     }
 

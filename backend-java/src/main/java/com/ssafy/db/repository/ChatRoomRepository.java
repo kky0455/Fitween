@@ -32,4 +32,14 @@ public interface ChatRoomRepository extends CrudRepository<ChatRoom, Long> {
     @Query(value = "UPDATE ChatRoom t set lastChatTime = ?2 where roomId = ?1")
     public void updateLastChatTime(String roomId,LocalDateTime dateTime);
 
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE ChatRoom r set notReadCount = (SELECT count(*) FROM ChatMessage t where t.senderId= ?1 and t.receiverId = ?2 and t.isRead = 1) where roomId = ?3")
+    public void notReadMessage(String senderId,String receiverId,String roomId);
+
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE ChatRoom t set lastSenderId = ?2 where roomId = ?1")
+    public void updateLastSenderId(String roomId,String senderId);
+
 }
