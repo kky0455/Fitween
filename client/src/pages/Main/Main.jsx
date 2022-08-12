@@ -7,7 +7,6 @@ import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import FeedItem from '../../components/Feed/FeedItem';
 import BottomNavigation from '../../components/Common/BottomNavigation/BottomNavigation';
 import feed_article_img from '../../assets/feed_article_img.png';
-import heart_active from '../../assets/heart_active.svg';
 import logo_h from '../../assets/logo_h.png';
 import add_box from '../../assets/add_box.svg';
 import { getArticleList } from '../../api/article';
@@ -68,18 +67,17 @@ const Main = () => {
 				{articleList &&
 					articleList.map(article => (
 						<FeedItem
-							key={article.articleId}
-							// todo : userId, aritlceImg, isRent API에서 받아와야 함
-							userId="userID"
-							articleId={article.articleId}
+							key={article.articleIdx}
+							// todo : userId, aritlceImg API에서 받아와야 함
+							userId={userId}
+							articleId={article.articleIdx}
 							// articleImg={article.articleImgList}
 							articleImg={feed_article_img}
-							title={article.articleTitle}
-							rentPrice={article.articlePrice}
-							heartIcon={heart_active}
-							likeCnt={article.articleLikeCount}
-							createTime={article.articleLastUpdateTime}
-							isRent={true}
+							title={article.title}
+							rentPrice={article.price}
+							isLiked={article.likesState}
+							likeCnt={article.likesCount}
+							isRent={article.lendStatus}
 						/>
 					))}
 			</div>

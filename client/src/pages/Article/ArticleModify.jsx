@@ -7,46 +7,83 @@ import colors from '../../constants/colors';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import Button from '../../components/Common/Button/Button';
 import Input from '../../components/Common/Input/Input';
-import { useParams } from 'react-router-dom';
 import modify_img from '../../assets/modify_img.png';
-import { getArticleDetail } from '../../api/article';
-import { modifyArticle } from '../../api/article';
+import { modifyArticle, deleteArticle, getArticleDetail } from '../../api/article';
 import TextArea from '../../components/Common/TextArea/TextArea';
 import { Checkbox } from '../../components/Common/CheckBox/Checkbox';
+import getByte from '../../utils/getByte';
+import delete_icon from '../../assets/delete.svg';
+import Modal from '../../components/Common/Modal/Modal';
+import trash_modal_icon from '../../assets/trash_modal_Icon.svg';
+import { MAX_BYTE } from '../../constants/config';
 
 const ArticleModify = () => {
 	const [title, setTitle] = useState();
 	const [price, setPrice] = useState('');
 	const [content, setContent] = useState('');
 	const [isRent, setIsRent] = useState(false);
+	const [modalVisible, setModalVisible] = useState(false);
 	const navigate = useNavigate();
-
 	useEffect(() => {
 		const fetch = async () => {
 			const data = await getArticleDetail();
-			setTitle(data.articleTitle);
-			setPrice(data.articlePrice);
-			setContent(data.articleContent);
-			setIsRent(data.articleIsRent);
+			setTitle(data.title);
+			setPrice(data.price);
+			setContent(data.content);
+			setIsRent(data.lendstatus);
 		};
 		fetch();
 	}, []);
-	const onSubmitHandler = async () => {
+
+	const openModal = () => {
+		setModalVisible(true);
+	};
+	const closeModal = () => {
+		setModalVisible(false);
+	};
+	const onContentChangeHandler = e => {
+		e.preventDefault();
+		if (getByte(e.target.value) <= MAX_BYTE) setContent(e.target.value);
+	};
+	const onModifyClickHandler = async () => {
 		const body = {
 			title: title,
 			price: price,
 			content: content,
-			isRent: isRent,
+			lendstatus: isRent,
 		};
-		const ret = await modifyArticle(body);
-		if (ret.result === 'success') navigate(`/article/${ret.articleId}`);
+
+		try {
+			const ret = await modifyArticle(body);
+			navigate(`/article/${ret.article_idx}`);
+		} catch (error) {
+			alert('다시 시도하세요.');
+		}
 	};
+	const onDeleteClickHandler = async () => {
+		try {
+			const ret = await deleteArticle();
+			navigate('/article/list');
+		} catch (error) {
+			alert('다시 시도하세요.');
+		}
+	};
+
 	return (
 		<>
 			<TopNavigation
 				backClick
 				onBackClick={() => navigate(-1)}
 				leftContent={<span>FITWEEN</span>}
+				rightMenu={
+					<img
+						src={delete_icon}
+						alt=""
+						onClick={() => {
+							openModal();
+						}}
+					/>
+				}
 			/>
 			<div
 				className="wrapper"
@@ -56,6 +93,62 @@ const ArticleModify = () => {
 					overflow: 'scroll',
 				}}
 			>
+				{modalVisible && (
+					<Modal visible={modalVisible} maskClosable onClose={openModal} type="center">
+						<div
+							css={css`
+								display: flex;
+								flex-direction: column;
+								align-items: center;
+								gap: 25px;
+							`}
+						>
+							<img src={trash_modal_icon} alt="" />
+							<div style={{ fontFamily: 'Medium', fontSize: 18 }}>
+								해당 게시글을 삭제하시겠습니까?
+							</div>
+							<div
+								css={css`
+									display: flex;
+									flex-direction: row;
+									align-items: flex-start;
+									padding: 0px;
+									gap: 16px;
+								`}
+							>
+								<button
+									onClick={closeModal}
+									css={css`
+										width: 100px;
+										height: 45px;
+										background: #f1f1f1;
+										border-radius: 50px;
+										font-family: 'Medium';
+										font-size: 16px;
+										border: none;
+									`}
+								>
+									취소
+								</button>
+								<button
+									onClick={onDeleteClickHandler}
+									css={css`
+										width: 100px;
+										height: 45px;
+										background: #6cc4a1;
+										border-radius: 50px;
+										border: none;
+										color: white;
+										font-family: 'Medium';
+										font-size: 16px;
+									`}
+								>
+									삭제
+								</button>
+							</div>
+						</div>
+					</Modal>
+				)}
 				{/* 사진 등록 */}
 				<img
 					src={modify_img}
@@ -109,8 +202,8 @@ const ArticleModify = () => {
 						`}
 						type="text"
 						value={content}
-						onChange={e => setContent(e.target.value)}
-						maxByte={500}
+						onChange={onContentChangeHandler}
+						maxByte={MAX_BYTE}
 						placeholder="내용"
 					/>
 					<div
@@ -135,7 +228,7 @@ const ArticleModify = () => {
 					`}
 				>
 					<Button
-						onClick={onSubmitHandler}
+						onClick={onModifyClickHandler}
 						type="active"
 						label="수정하기"
 						style={{ padding: 10 }}
