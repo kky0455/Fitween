@@ -1,11 +1,5 @@
 import API from './index';
 
-// 로그인
-export const login = async body => {
-	const res = await API.post('/users/login', body);
-	return res.data;
-};
-
 // 정보 수정
 export const modifyInfo = async body => {
 	const res = await API.put('/users/modify/info', body);
