@@ -4,6 +4,7 @@ import com.ssafy.db.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import javax.swing.text.html.Option;
 import java.util.Optional;
 
 /**
@@ -14,4 +15,5 @@ public interface UserRepository2 extends JpaRepository<User, Long> {
 
     Optional<User> findByUserIdx(Long userIdx);
     Optional<User> findUserByUserId(String userId);
+    Optional<User> findUserByNickname(String nickname);
 }

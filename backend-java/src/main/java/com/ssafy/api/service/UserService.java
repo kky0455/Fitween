@@ -65,6 +65,12 @@ public class UserService {
 	}
 
 	@Transactional
+	public User checkNicknameDuplicate(String nickname){
+		User nicknameDuplicate = userRepository2.findUserByNickname(nickname).orElse(null);
+		return nicknameDuplicate;
+	}
+
+	@Transactional
 	public UserLoginPostReq userLogin(String userId) throws Exception {
 		User user = getUserByUserId(userId);
 

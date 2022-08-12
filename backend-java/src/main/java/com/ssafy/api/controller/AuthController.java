@@ -10,6 +10,7 @@ import com.ssafy.api.response.UserLoginPostRes;
 import com.ssafy.api.service.UserService;
 import com.ssafy.db.dto.Message;
 import com.ssafy.db.dto.StatusEnum;
+import com.ssafy.db.entity.User;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,17 @@ public class AuthController {
     ApplicationContext context;
 
     private final UserService userService;
+
+    @ApiOperation(value = "로그인", notes = "서비스에서 보내준 idToken을 활용하여 로그인 요청")
+    @GetMapping("/{nickname}/duplicationcheck")
+    public ResponseEntity<?> duplicationcheck(@PathVariable String nickname) {
+        User checkUser = userService.checkNicknameDuplicate(nickname);
+        if (checkUser == null) {
+            return ResponseEntity.status(200).body("사용가능한 닉네임입니다.");
+        } else {
+            return ResponseEntity.status(409).body("중복된 닉네임이 존재합니다.");
+        }
+    }
 
     @ApiOperation(value = "로그인", notes = "서비스에서 보내준 idToken을 활용하여 로그인 요청")
     @GetMapping("/login")
