@@ -45,17 +45,17 @@ public class UserController {
     @Autowired
     UserRepository2 userRepository2;
     @ApiOperation(value = "사용자의 상세 정보를 반환한다.", response = User.class)
-    @GetMapping("/{nickname}")
-    public ResponseEntity<?> findUser(@PathVariable String nickname, @ApiIgnore Authentication authentication){
+    @GetMapping("/{userId}")
+    public ResponseEntity<?> findUser(@PathVariable String userId, @ApiIgnore Authentication authentication){
 
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
 
-        User user = userService.getUserByNickname(nickname);
+        User user = userService.getUserByUserId(userId);
         int articleCount = user.getArticles().size();
         int followingCount = followRepository.countByFrom(user);
         int followerCount = followRepository.countByTo(user);
         boolean isFollowed = followService.isFollow(user, userDetails.getUser());
-        UserProfileDto userProfileDto = new UserProfileDto(user.getUserId(), user.getName(), articleCount, followerCount, followingCount, isFollowed);
+        UserProfileDto userProfileDto = new UserProfileDto(user.getUserId(), user.getNickname(), articleCount, followerCount, followingCount, isFollowed);
         return ResponseEntity.status(200).body(userProfileDto);
     }
     @ApiOperation(value = "회원 정보 수정")

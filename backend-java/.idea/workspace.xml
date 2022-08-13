@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="b63db50f-bb40-4cf4-af09-4f9cdd88f94d" name="Changes" comment="xml변경 commit" />
+=======
+    <list default="true" id="b63db50f-bb40-4cf4-af09-4f9cdd88f94d" name="Changes" comment="feat: oauth2service 생성" />
+>>>>>>> refactor/be/Issue-132
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
