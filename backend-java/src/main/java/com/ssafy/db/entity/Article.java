@@ -16,7 +16,7 @@ import java.util.List;
 @Entity @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Article{
+public class Article extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
