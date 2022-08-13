@@ -261,6 +261,7 @@
       <workItem from="1660196427253" duration="9508000" />
       <workItem from="1660207015002" duration="1500000" />
       <workItem from="1660211346813" duration="297000" />
+      <workItem from="1660367004989" duration="3493000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: 유저 info 수정">
       <created>1658995773074</created>
@@ -325,7 +326,21 @@
       <option name="project" value="LOCAL" />
       <updated>1659588499517</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="check">
+      <created>1660269444991</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1660269444991</updated>
+    </task>
+    <task id="LOCAL-00011" summary="check">
+      <created>1660269451115</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1660269451115</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,21 +361,10 @@
     <MESSAGE value="refactor: 유저 info 수정" />
     <MESSAGE value="전체 커밋" />
     <MESSAGE value="fix: gitignore typo" />
-    <MESSAGE value="check" />
     <MESSAGE value="docs: check" />
     <MESSAGE value="feat: oauth2service 생성" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: oauth2service 생성" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/ssafy/common/auth/JwtAuthenticationFilter.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="check" />
+    <option name="LAST_COMMIT_MESSAGE" value="check" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
