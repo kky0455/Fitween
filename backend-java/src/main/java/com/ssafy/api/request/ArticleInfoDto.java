@@ -13,12 +13,9 @@ public class ArticleInfoDto {
     private int price;
     private boolean lendStatus;
     private String nickname;
-<<<<<<< HEAD
-    private boolean islike;
-=======
     private boolean likeStatus;
->>>>>>> feat/be/Issue-127
     private int likesCount;
+    private String writerId;
 
 
     public ArticleInfoDto(Article article, boolean likeStatus) {
@@ -28,12 +25,9 @@ public class ArticleInfoDto {
         this.price = article.getPrice();
         this.lendStatus = article.isLendStatus();
         this.nickname = article.getUser().getNickname();
-<<<<<<< HEAD
-        this.islike = islike;
-=======
         this.likeStatus = likeStatus;
->>>>>>> feat/be/Issue-127
         this.likesCount = article.getLikes().size();
+        this.writerId = article.getUser().getUserId();
     }
 
 }
