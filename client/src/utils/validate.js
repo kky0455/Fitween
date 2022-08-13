@@ -27,6 +27,11 @@ export const checkLength = (str, start = 1, end = 10000) => {
 	return false;
 };
 
+export const validateDateOfBirth = dateOfBirth => {
+	if (checkLength(dateOfBirth)) return true;
+	return false;
+};
+
 export const validateNickName = nickName => {
 	if (checkSpecial(nickName) || checkSpace(nickName) || checkNum(nickName) || checkEmoji(nickName))
 		return { state: false, type: 'notLengthErr' };
@@ -50,7 +55,8 @@ export const validateFootSize = footSize => {
 };
 
 export const validateAllInput = info => {
-	return validateNickName(info.nickname) &&
+	return validateDateOfBirth(info.dateOfBirth) &&
+		validateNickName(info.nickname) &&
 		validateHeight(info.height) &&
 		validateWeight(info.weight) &&
 		validateFootSize(info.footSize)

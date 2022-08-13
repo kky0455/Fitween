@@ -10,7 +10,9 @@ import {
 	validateNickName,
 	validateWeight,
 	validateAllInput,
+	validateDateOfBirth,
 } from '../../utils/validate';
+import nicknameImg from '../../assets/nickname.svg';
 
 const JoinInfo = ({ info, onChangeHandler }) => {
 	const [readyState, setReadyState] = useState(false);
@@ -54,9 +56,19 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 					추가 정보 입력
 				</h2>
 				<Input
+					placeholder="생년월일"
+					error={!validateDateOfBirth(info.dateOfBirth)}
+					errMsg="생년월일을 입력해주세요."
+					type="date"
+					onChange={onChangeHandler}
+					value={info.dateOfBirth}
+					name="dateOfBirth"
+				/>
+				<Input
 					placeholder="별명"
-					error={info.nickname.length === 0 || validateNickName(info.nickname).state ? false : true}
+					error={!(info.nickname.length === 0 || validateNickName(info.nickname).state)}
 					errMsg={nickNameErrMsg}
+					image={nicknameImg}
 					type="text"
 					onChange={onChangeHandler}
 					value={info.nickname}
@@ -64,7 +76,7 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 				/>
 				<Input
 					placeholder="키"
-					error={info.height.length === 0 || validateHeight(info.height) ? false : true}
+					error={!(info.height.length === 0 || validateHeight(info.height))}
 					errMsg="키는 90cm 이상 250cm 이하로 입력해주세요."
 					unit="cm"
 					type="number"
@@ -74,7 +86,7 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 				/>
 				<Input
 					placeholder="몸무게"
-					error={info.weight.length === 0 || validateWeight(info.weight) ? false : true}
+					error={!(info.weight.length === 0 || validateWeight(info.weight))}
 					errMsg="몸무게는 30kg 이상 200kg 이하로 입력해주세요."
 					unit="kg"
 					type="number"
@@ -84,7 +96,7 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 				/>
 				<Input
 					placeholder="발사이즈"
-					error={info.footSize.length === 0 || validateFootSize(info.footSize) ? false : true}
+					error={!(info.footSize.length === 0 || validateFootSize(info.footSize))}
 					errMsg="발사이즈는 0mm 이상 350mm 이하로 입력해주세요."
 					unit="mm"
 					type="number"
