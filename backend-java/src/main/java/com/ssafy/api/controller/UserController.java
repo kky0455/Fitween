@@ -45,12 +45,12 @@ public class UserController {
     @Autowired
     UserRepository2 userRepository2;
     @ApiOperation(value = "사용자의 상세 정보를 반환한다.", response = User.class)
-    @GetMapping("/{nickname}")
-    public ResponseEntity<?> findUser(@PathVariable String nickname, @ApiIgnore Authentication authentication){
+    @GetMapping("/{userId}")
+    public ResponseEntity<?> findUser(@PathVariable String userId, @ApiIgnore Authentication authentication){
 
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
 
-        User user = userService.getUserByNickname(nickname);
+        User user = userService.getUserByUserId(userId);
         int articleCount = user.getArticles().size();
         int followingCount = followRepository.countByFrom(user);
         int followerCount = followRepository.countByTo(user);
