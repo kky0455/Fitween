@@ -30,7 +30,7 @@ public class FollowController {
         return ResponseEntity.status(200).body("팔로우 성공");
     }
 
-    @ApiResponses({ @ApiResponse(code = 200, message = "팔로우 성공"),
+    @ApiResponses({ @ApiResponse(code = 200, message = "팔로우 취소 성공"),
     })
     @DeleteMapping("/{toUserId}")
     public ResponseEntity<?> unFollowUser(@PathVariable String toUserId, @ApiIgnore Authentication authentication) {
