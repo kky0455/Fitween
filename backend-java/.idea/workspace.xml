@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b63db50f-bb40-4cf4-af09-4f9cdd88f94d" name="Changes" comment="xml변경 commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -305,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659588499517</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="xml변경 commit">
+      <created>1660397158023</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1660397158023</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,7 +334,8 @@
     <MESSAGE value="check" />
     <MESSAGE value="docs: check" />
     <MESSAGE value="feat: oauth2service 생성" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: oauth2service 생성" />
+    <MESSAGE value="xml변경 commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="xml변경 commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
