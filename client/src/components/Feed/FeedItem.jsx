@@ -6,27 +6,28 @@ import { useNavigate } from 'react-router-dom';
 import FeedProfile from '../../components/Feed/FeedProfile';
 import null_profile from '../../assets/null_profile_img.png';
 import { ReactComponent as Heart } from '../../assets/heart_active.svg';
-import { modifyArticleLike } from '../../api/article';
+import { doArticleLike, cancelArticleLike } from '../../api/article';
 
-const FeedItem = ({
-	userId,
-	articleId,
-	articleImg,
-	title,
-	rentPrice,
-	isLiked,
-	likeCnt,
-	isRent,
-}) => {
+const FeedItem = ({ name, articleId, articleImg, title, rentPrice, isLiked, likeCnt, isRent }) => {
 	const [liked, setLiked] = useState(isLiked);
 	const [count, setCount] = useState(likeCnt);
 	const navigate = useNavigate();
-	const heartClickHandler = async e => {
+
+	const doHeartClickHandler = async e => {
 		e.stopPropagation();
-		const data = await modifyArticleLike();
-		if (data.result === 'success') {
+		const data = await doArticleLike(articleId);
+		if (data === '좋아요 성공') {
 			setLiked(!liked);
-			liked ? setCount(count - 1) : setCount(count + 1);
+			setCount(count + 1);
+		}
+	};
+
+	const cancelHeartClickHandler = async e => {
+		e.stopPropagation();
+		const data = await cancelArticleLike(articleId);
+		if (data === '좋아요 취소') {
+			setLiked(!liked);
+			setCount(count - 1);
 		}
 	};
 
@@ -41,7 +42,7 @@ const FeedItem = ({
 			`}
 		>
 			{/* 상단부 - 작성자 정보, 대여가능 여부 */}
-			<FeedProfile imgSrc={null_profile} userId={userId} isRent={isRent} />
+			<FeedProfile imgSrc={null_profile} name={name} isRent={isRent} />
 			{/* 게시글 이미지 */}
 			<div
 				css={css`
@@ -115,7 +116,7 @@ const FeedItem = ({
 							width: 30%;
 							max-width: 90px;
 						`}
-						onClick={heartClickHandler}
+						onClick={liked ? cancelHeartClickHandler : doHeartClickHandler}
 					>
 						{/* 찜 */}
 						<Heart fill={liked ? 'red' : 'white'} stroke={liked ? 'red' : 'black'} />

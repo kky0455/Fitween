@@ -33,6 +33,7 @@ const Main = () => {
 		const fetch = async () => {
 			const data = await getArticleList();
 			setArticleList(data);
+			console.log(data);
 		};
 		fetch();
 	}, []);
@@ -69,13 +70,13 @@ const Main = () => {
 						<FeedItem
 							key={article.articleIdx}
 							// todo : userId, aritlceImg API에서 받아와야 함
-							userId={userId}
+							name={article.user.nickname}
 							articleId={article.articleIdx}
 							// articleImg={article.articleImgList}
 							articleImg={feed_article_img}
 							title={article.title}
 							rentPrice={article.price}
-							isLiked={article.likesState}
+							isLiked={article.likeStatus}
 							likeCnt={article.likesCount}
 							isRent={article.lendStatus}
 						/>

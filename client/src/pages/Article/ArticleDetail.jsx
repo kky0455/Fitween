@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import ArticleDetailItem from '../../components/Feed/ArticleDetailItem';
@@ -11,11 +11,12 @@ import ArticleBottom from '../../components/Feed/ArticleBottom';
 import { getArticleDetail } from '../../api/article';
 
 const ArticleDetail = () => {
+	const { articleId } = useParams();
 	const navigate = useNavigate();
 	const [articleDetail, setArticleDetail] = useState(null);
 	useEffect(() => {
 		const fetch = async () => {
-			const data = await getArticleDetail();
+			const data = await getArticleDetail(articleId);
 			setArticleDetail(data);
 		};
 		fetch();
@@ -36,12 +37,13 @@ const ArticleDetail = () => {
 				}}
 			>
 				{/* 게시글 상세 정보 */}
-				{/* todo : article img 받아와야 함 */}
+				{/* todo : updatetime, article img 받아와야 함 */}
 				{articleDetail && (
 					<ArticleDetailItem
-						key={articleDetail.articleId}
+						key={articleDetail.Id}
+						// articleId={articleDetail.aritcle_idx}
 						articleImg={article_img}
-						userId={articleDetail.user.userID}
+						nickname={articleDetail.nickname}
 						title={articleDetail.title}
 						updateTime={articleDetail.lastUpdateTime}
 						content={articleDetail.content}
@@ -53,9 +55,10 @@ const ArticleDetail = () => {
 			{/* 하단부 */}
 			{articleDetail && (
 				<ArticleBottom
+					isLiked={articleDetail.likeStatus}
 					likeCnt={articleDetail.likesCount}
 					rentPrice={articleDetail.price}
-					userId={articleDetail.user.userID}
+					writerId={articleDetail.writerId}
 				/>
 			)}
 		</>

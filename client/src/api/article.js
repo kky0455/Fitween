@@ -33,9 +33,15 @@ export const getArticleLikeList = async () => {
 	return res.data;
 };
 
-// article 좋아요/취소
-export const modifyArticleLike = async articleIdx => {
+// article 좋아요
+export const doArticleLike = async articleIdx => {
 	const res = await API.post(`/article/like/${articleIdx}`);
+	return res.data;
+};
+
+// article 좋아요 취소
+export const cancelArticleLike = async articleIdx => {
+	const res = await API.delete(`/article/like/${articleIdx}`);
 	return res.data;
 };
 
