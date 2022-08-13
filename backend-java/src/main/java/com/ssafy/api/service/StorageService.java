@@ -20,6 +20,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 
 @Service
 public class StorageService {
@@ -32,26 +33,26 @@ public class StorageService {
         this.uploadPath = fileStorageProperties.getUploadDir();
     }
 
-    private String getRandomStr(){
-        int leftLimit = 97; // letter 'a'
-        int rightLimit = 122; // letter 'z'
-        int targetStringLength = 10;
-        Random random = new Random();
-        String generatedString = random.ints(leftLimit, rightLimit + 1)
-                .limit(targetStringLength)
-                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
-                .toString();
-        System.out.println("random : " + generatedString);
-        return generatedString;
-    }
+//    private String getRandomStr(){
+//        int leftLimit = 97; // letter 'a'
+//        int rightLimit = 122; // letter 'z'
+//        int targetStringLength = 10;
+//        Random random = new Random();
+//        String generatedString = random.ints(leftLimit, rightLimit + 1)
+//                .limit(targetStringLength)
+//                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+//                .toString();
+//        System.out.println("random : " + generatedString);
+//        return generatedString;
+//    }
 
-    public List<String> saveFiles(MultipartFile[] files, String articleTitle) throws IOException {
-        String randomStr = getRandomStr();
+    public List<String> saveFiles(MultipartFile[] files, UUID uid) throws IOException {
+        //String randomStr = getRandomStr();
         List<String> fileNames = new ArrayList<>();
         for(MultipartFile file : files) {
-            fileNames.add(randomStr + StringUtils.cleanPath(file.getOriginalFilename()));
+            fileNames.add(StringUtils.cleanPath(file.getOriginalFilename()));
         }
-        Path uploadPath = Paths.get(this.uploadPath+"/"+articleTitle);
+        Path uploadPath = Paths.get(this.uploadPath+"/"+uid);
         if(!Files.exists(uploadPath)) {
             Files.createDirectories(uploadPath);
             System.out.println("make dir : " + uploadPath.toString());
