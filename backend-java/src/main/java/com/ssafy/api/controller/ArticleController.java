@@ -219,4 +219,32 @@ public class ArticleController {
 //                .header(HttpHeaders.CONTENT_DISPOSITION, headerMsg)
                 .body(imageList);
     }
+
+    @GetMapping("/displaytest/{userId}/{articleTitle:.+}")
+    public ResponseEntity<Resource> displayImage(@PathVariable String articleTitle,
+                                                 @PathVariable String userId,
+                                                 HttpServletRequest request) {
+        // Load file as Resource
+        Resource resource = storageService.loadFileAsResource(userId, articleTitle);
+
+        // Try to determine file's content type
+        String contentType = null;
+        try {
+            contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
+        } catch (IOException ex) {
+            logger.info("Could not determine file type.");
+        }
+
+        // Fallback to the default content type if type could not be determined
+        if(contentType == null) {
+            contentType = "application/octet-stream";
+        }
+
+        return ResponseEntity.ok()
+                .contentType(MediaType.parseMediaType(contentType))
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
+                .body(resource);
+    }
+
+
 }
