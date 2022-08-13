@@ -43,14 +43,14 @@ public class Article{
     private long likesCount;
 
     @Transient
-    private boolean likesState;
+    private boolean likeStatus;
 
 
     public void updateLikesCount(long likesCount) {
         this.likesCount = likesCount;
     }
 
-    public void updateLikesState(boolean likesState) { this.likesState = likesState; }
+    public void updateLikeStatus(boolean likeStatus) { this.likeStatus = likeStatus; }
 
 
     @JsonIgnoreProperties({"articles"})

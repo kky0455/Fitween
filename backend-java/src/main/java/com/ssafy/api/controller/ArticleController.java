@@ -40,10 +40,6 @@ import java.util.NoSuchElementException;
 @Api(value = "게시물 API 정보를 제공하는 Controller")
 @RestController
 @RequestMapping("/article")
-@ApiResponses({ @ApiResponse(code = 200, message = "성공"),
-        @ApiResponse(code = 401, message = "인증 실패"),
-        @ApiResponse(code = 404, message = "사용자 없음"),
-        @ApiResponse(code = 500, message = "서버 오류")})
 public class ArticleController {
     public static final Logger logger = LoggerFactory.getLogger(ArticleController.class);
 
@@ -67,7 +63,11 @@ public class ArticleController {
 
 
     @PostMapping("/regist")
-    @ApiOperation(value="게시글 등록 (token)", notes="<strong>게시글을 등록</strong>시켜줍니다. user_id는 빈 괄호(\"\")를 입력하여 주세요.")
+    @ApiResponses({ @ApiResponse(code = 200, message = "게시물 등록 성공"),
+//            @ApiResponse(code = 401, message = "인증 실패"),
+//            @ApiResponse(code = 404, message = "사용자 없음"),
+            @ApiResponse(code = 500, message = "게시물 등록 실패")
+    })
     public ResponseEntity createArticle(@RequestBody SaveArticleDto saveArticleDto, @ApiIgnore Authentication authentication)
     {
 
@@ -82,17 +82,27 @@ public class ArticleController {
     }
     @ApiOperation(value = "게시글 정보 수정(token)", notes = "게시글 정보 수정")
     @PutMapping("/{article_idx}")
+    @ApiResponses({ @ApiResponse(code = 200, message = "게시물 업데이트 성공"),
+//            @ApiResponse(code = 401, message = "인증 실패"),
+//            @ApiResponse(code = 404, message = "사용자 없음"),
+            @ApiResponse(code = 500, message = "해당 게시글이 없습니다.")
+    })
     public ResponseEntity<?> update(@PathVariable Long article_idx, @RequestBody UpdateArticleDto updateArticleDto, @ApiIgnore Authentication authentication) throws Exception {
         Article article = articleService.findArticle(article_idx);
         try {
             articleService.updateArticle(article, updateArticleDto);
         }catch(NoSuchElementException E) {
-            return  ResponseEntity.status(500).body("해당 게시글이 없어서 게시글 수정 실패");
+            return  ResponseEntity.status(500).body("해당 게시글이 없습니다.");
         }
         return ResponseEntity.status(200).body("게시물 업데이트 성공");
     }
     @ApiOperation(value = "해당 게시글 삭제", notes = "해당 게시글 삭제")
     @DeleteMapping("/{article_idx}")
+    @ApiResponses({ @ApiResponse(code = 200, message = "{article_idx}번 해당 게시글 삭제"),
+//            @ApiResponse(code = 401, message = "인증 실패"),
+//            @ApiResponse(code = 404, message = "사용자 없음"),
+            @ApiResponse(code = 500, message = "해당 게시글이 없습니다.")
+    })
     public ResponseEntity<String> articledelete(@PathVariable("article_idx") Long article_idx) throws Exception {
         Article article;
         try {
@@ -101,7 +111,7 @@ public class ArticleController {
         }catch(Exception e ) {
             e.printStackTrace();
             System.out.println("게시글 삭제 실패");
-            return  ResponseEntity.status(500).body("해당 게시글 없어서 삭제 ");
+            return  ResponseEntity.status(500).body("해당 게시글 없습니다.");
         }
         return ResponseEntity.status(200).body(article.getArticleIdx()+"번 해당 게시글 삭제");
     }
@@ -115,7 +125,8 @@ public class ArticleController {
         List<Article> articles = articleService.findAllArticle();
         articles.forEach(article -> {
             article.setLikesCount(article.getLikes().size());
-            article.setLendStatus(likeService.isLike(userDetails.getUser(), article));
+            article.updateLikeStatus(likeService.isLike(userDetails.getUser(), article));
+//            article.isLike(likeService.isLike(userDetails.getUser(), article));
         });
         System.out.println(articles);
 //        System.out.println(authentication);
@@ -126,25 +137,35 @@ public class ArticleController {
     public ResponseEntity<?> findOneArticle(@PathVariable Long article_idx, @ApiIgnore Authentication authentication) {
         Article article = articleService.findArticle(article_idx);
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
-        User user = userService.getUserByUserIdx(article_idx);
-        boolean isLiked = likeService.isLike(user, article);
-        ArticleInfoDto articleInfoDto = new ArticleInfoDto(article, isLiked);
+        User user = userDetails.getUser();
+        boolean likeStatus = likeService.isLike(user, article);
+        ArticleInfoDto articleInfoDto = new ArticleInfoDto(article, likeStatus);
         return ResponseEntity.status(200).body(articleInfoDto);
     }
-    @PostMapping("detail/{article_idx}/like")
+    @PostMapping("/like/{article_idx}")
     @ApiOperation(value ="게시글 좋아요", notes ="해당 article_idx에 좋아요")
+    @ApiResponses({ @ApiResponse(code = 200, message = "좋아요 성공"),
+//            @ApiResponse(code = 401, message = "인증 실패"),
+//            @ApiResponse(code = 404, message = "사용자 없음"),
+//            @ApiResponse(code = 500, message = "해당 게시글이 없습니다.")
+    })
     public ResponseEntity<?> articlelike(@PathVariable Long article_idx, @ApiIgnore Authentication authentication) {
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
-        User user = userService.getUserByUserIdx(article_idx);
+        User user = userDetails.getUser();
         Article article = articleService.findArticle(article_idx);
         likeService.likes(user, article);
         return ResponseEntity.status(200).body("좋아요 성공");
     }
-    @DeleteMapping("detail/{article_idx}/like")
+    @DeleteMapping("/like/{article_idx}")
     @ApiOperation(value ="게시글 좋아요 취소", notes ="해당 article_idx에 좋아요 취소")
+    @ApiResponses({ @ApiResponse(code = 200, message = "좋아요 취소"),
+//            @ApiResponse(code = 401, message = "인증 실패"),
+//            @ApiResponse(code = 404, message = "사용자 없음"),
+//            @ApiResponse(code = 500, message = "해당 게시글이 없습니다.")
+    })
     public ResponseEntity<?> articleunlike(@PathVariable Long article_idx, @ApiIgnore Authentication authentication) {
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
-        User user = userService.getUserByUserIdx(article_idx);
+        User user = userDetails.getUser();
         Article article = articleService.findArticle(article_idx);
         likeService.unLikes(user, article);
         return ResponseEntity.status(200).body("좋아요 취소");

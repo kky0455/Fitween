@@ -13,6 +13,8 @@ import com.ssafy.db.repository.UserRepository;
 import com.ssafy.db.repository.UserRepository2;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -58,6 +60,11 @@ public class UserController {
     }
     @ApiOperation(value = "회원 정보 수정")
     @PutMapping("/update")
+    @ApiResponses({ @ApiResponse(code = 200, message = "회원정보 수정 완료"),
+//            @ApiResponse(code = 401, message = "인증 실패"),
+//            @ApiResponse(code = 404, message = "사용자 없음"),
+//            @ApiResponse(code = 500, message = "해당 게시글이 없습니다.")
+    })
     public ResponseEntity<?> update(@RequestBody UserUpdateDto updateUserDto, @ApiIgnore Authentication authentication) throws Exception {
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
         userService.updateUser(userDetails.getUserIdx(), updateUserDto);
@@ -65,6 +72,11 @@ public class UserController {
     }
     @ApiOperation(value = "회원 탈퇴")
     @DeleteMapping("/remove")
+    @ApiResponses({ @ApiResponse(code = 200, message = "회원 탈퇴 성공"),
+//            @ApiResponse(code = 401, message = "인증 실패"),
+//            @ApiResponse(code = 404, message = "사용자 없음"),
+//            @ApiResponse(code = 500, message = "해당 게시글이 없습니다.")
+    })
     public ResponseEntity<String> userdelete(@ApiIgnore Authentication authentication) throws Exception {
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
         User user = userDetails.getUser();
