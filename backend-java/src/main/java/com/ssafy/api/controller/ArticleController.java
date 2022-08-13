@@ -37,7 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-@Api(value = "게시물 API", tags = { "Article" })
+@Api(value = "게시물 API 정보를 제공하는 Controller")
 @RestController
 @RequestMapping("/article")
 @ApiResponses({ @ApiResponse(code = 200, message = "성공"),
