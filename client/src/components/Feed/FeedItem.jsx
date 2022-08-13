@@ -8,7 +8,16 @@ import null_profile from '../../assets/null_profile_img.png';
 import { ReactComponent as Heart } from '../../assets/heart_active.svg';
 import { doArticleLike, cancelArticleLike } from '../../api/article';
 
-const FeedItem = ({ name, articleId, articleImg, title, rentPrice, isLiked, likeCnt, isRent }) => {
+const FeedItem = ({
+	nickname,
+	articleId,
+	articleImg,
+	title,
+	rentPrice,
+	isLiked,
+	likeCnt,
+	isRent,
+}) => {
 	const [liked, setLiked] = useState(isLiked);
 	const [count, setCount] = useState(likeCnt);
 	const navigate = useNavigate();
@@ -42,7 +51,7 @@ const FeedItem = ({ name, articleId, articleImg, title, rentPrice, isLiked, like
 			`}
 		>
 			{/* 상단부 - 작성자 정보, 대여가능 여부 */}
-			<FeedProfile imgSrc={null_profile} name={name} isRent={isRent} />
+			<FeedProfile imgSrc={null_profile} nickname={nickname} isRent={isRent} />
 			{/* 게시글 이미지 */}
 			<div
 				css={css`
