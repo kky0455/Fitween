@@ -54,7 +54,7 @@ public class UserController {
         int articleCount = user.getArticles().size();
         int followingCount = followRepository.countByFrom(user);
         int followerCount = followRepository.countByTo(user);
-        boolean isFollowed = followService.isFollow(user, userDetails.getUser());
+        boolean isFollowed = followService.isFollow(userDetails.getUser(), user);
         UserProfileDto userProfileDto = new UserProfileDto(user.getUserId(), user.getNickname(), articleCount, followerCount, followingCount, isFollowed);
         return ResponseEntity.status(200).body(userProfileDto);
     }
