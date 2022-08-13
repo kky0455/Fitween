@@ -55,7 +55,7 @@ public class UserController {
         int followingCount = followRepository.countByFrom(user);
         int followerCount = followRepository.countByTo(user);
         boolean isFollowed = followService.isFollow(user, userDetails.getUser());
-        UserProfileDto userProfileDto = new UserProfileDto(user.getUserId(), user.getName(), articleCount, followerCount, followingCount, isFollowed);
+        UserProfileDto userProfileDto = new UserProfileDto(user.getUserId(), user.getNickname(), articleCount, followerCount, followingCount, isFollowed);
         return ResponseEntity.status(200).body(userProfileDto);
     }
     @ApiOperation(value = "회원 정보 수정")
