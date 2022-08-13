@@ -4,6 +4,8 @@ import com.ssafy.db.entity.Article;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 public class ArticleInfoDto {
@@ -18,6 +20,8 @@ public class ArticleInfoDto {
     private int likesCount;
     private String writerId;
 
+    private LocalDateTime lastUpdateTime;
+
 
     public ArticleInfoDto(Article article, boolean likeStatus) {
         this.title = article.getTitle();
@@ -29,6 +33,7 @@ public class ArticleInfoDto {
         this.likeStatus = likeStatus;
         this.likesCount = article.getLikes().size();
         this.writerId = article.getUser().getUserId();
+        this.lastUpdateTime = article.getLastUpdateTime();
     }
 
 }
