@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import Button from '../../components/Common/Button/Button';
 import common from '../../constants/commonStyle';
 import colors from '../../constants/colors';
 import { ReactComponent as Heart } from '../../assets/heart_active.svg';
-import { modifyArticleLike } from '../../api/article';
+import { doArticleLike, cancelArticleLike } from '../../api/article';
 import { useGlobalContext } from '../../contexts/GlobalContext';
 import { useUserState } from '../../context/User/UserContext';
 
-const ArticleBottom = ({ articleId, isLiked, likeCnt, rentPrice, userId }) => {
+const ArticleBottom = ({ isLiked, likeCnt, rentPrice, writerId }) => {
+	const { articleId } = useParams();
 	const { setHasBottom } = useGlobalContext();
 	useEffect(() => {
 		setHasBottom(true);
@@ -21,14 +22,23 @@ const ArticleBottom = ({ articleId, isLiked, likeCnt, rentPrice, userId }) => {
 	}, []);
 	const [liked, setLiked] = useState(isLiked);
 	const [count, setCount] = useState(likeCnt);
-	const heartClickHandler = async e => {
-		e.stopPropagation();
-		const data = await modifyArticleLike();
-		if (data.result === 'success') {
+
+	const doHeartClickHandler = async () => {
+		const data = await doArticleLike(articleId);
+		if (data === '좋아요 성공') {
 			setLiked(!liked);
-			liked ? setCount(count - 1) : setCount(count + 1);
+			setCount(count + 1);
 		}
 	};
+
+	const cancelHeartClickHandler = async () => {
+		const data = await cancelArticleLike(articleId);
+		if (data === '좋아요 취소') {
+			setLiked(!liked);
+			setCount(count - 1);
+		}
+	};
+
 	const navigate = useNavigate();
 	const { loginedUserId } = useUserState();
 	return (
@@ -56,7 +66,7 @@ const ArticleBottom = ({ articleId, isLiked, likeCnt, rentPrice, userId }) => {
 				`}
 			>
 				{/* 찜 */}
-				<div onClick={heartClickHandler}>
+				<div onClick={liked ? cancelHeartClickHandler : doHeartClickHandler}>
 					<Heart fill={liked ? 'red' : 'white'} stroke={liked ? 'red' : 'black'} />
 					<div className="fw-500 fs-16" style={{ lineHeight: '22.59px' }}>
 						{count}
@@ -80,7 +90,7 @@ const ArticleBottom = ({ articleId, isLiked, likeCnt, rentPrice, userId }) => {
 			</div>
 			{/* 채팅하기 버튼 */}
 			<div style={{ width: 133 }}>
-				{loginedUserId === userId ? (
+				{loginedUserId === writerId ? (
 					<Button
 						type="active"
 						label="수정하기"
@@ -94,7 +104,7 @@ const ArticleBottom = ({ articleId, isLiked, likeCnt, rentPrice, userId }) => {
 						style={{ padding: 10 }}
 						onClick={() =>
 							navigate('/chat/room', {
-								state: { roomId: null, receiverId: userId },
+								state: { roomId: null, receiverId: writerId },
 							})
 						}
 					/>

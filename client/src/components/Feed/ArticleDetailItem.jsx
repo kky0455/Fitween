@@ -29,7 +29,7 @@ function timeForToday(value) {
 
 const ArticleDetailItem = ({
 	articleImg,
-	userId,
+	nickname,
 	title,
 	updateTime,
 	content,
@@ -50,7 +50,7 @@ const ArticleDetailItem = ({
 				<img src={articleImg} alt="" />
 			</div>
 			{/* 작성자 정보, 대여 가능 여부 */}
-			<FeedProfile imgSrc={profileImg} userId={userId} isRent={isRent} />
+			<FeedProfile imgSrc={profileImg} nickname={nickname} isRent={isRent} />
 			{/* 게시글 제목, 내용 */}
 			<div
 				css={css`
