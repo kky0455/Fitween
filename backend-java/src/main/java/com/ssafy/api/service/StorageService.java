@@ -67,18 +67,18 @@ public class StorageService {
         return fileNames;
     }
 
-    public Resource loadFileAsResource(String userId, String articleTitle) {
-        Path uploadPath = Paths.get(this.uploadPath+"/"+userId);
+    public Resource loadFileAsResource(String folderName, String fileName) {
+        Path uploadPath = Paths.get(this.uploadPath+"/"+folderName);
         try {
-            Path filePath = uploadPath.resolve(articleTitle).normalize();
+            Path filePath = uploadPath.resolve(fileName).normalize();
             Resource resource = new UrlResource(filePath.toUri());
             if(resource.exists()) {
                 return resource;
             } else {
-                throw new MyFileNotFoundException("File not found " + articleTitle);
+                throw new MyFileNotFoundException("File not found " + fileName);
             }
         } catch (MalformedURLException ex) {
-            throw new MyFileNotFoundException("File not found " + articleTitle, ex);
+            throw new MyFileNotFoundException("File not found " + fileName, ex);
         }
     }
 }
