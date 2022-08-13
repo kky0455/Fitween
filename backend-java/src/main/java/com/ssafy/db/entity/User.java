@@ -74,11 +74,11 @@ public class User{
     private List<String> roles = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonIgnoreProperties({"user"})
+    @JsonIgnoreProperties({"user", "likes", "articles", "article"})
     List<Article> articles = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonIgnoreProperties({"user"})
+    @JsonIgnoreProperties({"user", "likes", "articles", "article"})
     private List<Likes> likes = new ArrayList<>();
 
     public void changeRefreshToken(String refreshToken){
