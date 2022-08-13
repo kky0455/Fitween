@@ -23,7 +23,6 @@ public class Likes{
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_idx")
-    @JsonIgnoreProperties({"articles"})
     User user;
 
     @Builder

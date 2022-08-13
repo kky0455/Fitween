@@ -57,6 +57,10 @@ public class ArticleServiceImpl implements ArticleService{
     @Override
     public List<Article> findAllArticle() {
         List<Article> articles = articleRepository.findAll();
+        for (Article article:articles
+             ) {
+            System.out.println(article.toString());
+        }
         return articles;
     }
 

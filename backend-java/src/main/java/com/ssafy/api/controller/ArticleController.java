@@ -107,16 +107,17 @@ public class ArticleController {
     }
     @ApiOperation(value="게시글 전체 조회", notes="<strong>게시글을 전체 조회를</strong>시켜줍니다.")
     @GetMapping("/list")
-    public ResponseEntity<?> findAllArticle(){
+    public ResponseEntity<?> findAllArticle(@ApiIgnore Authentication authentication){
 //        System.out.println(authentication);
 //        System.out.println("여기도 테스트");
-//        FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
+        FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
 //        System.out.println(userDetails);
         List<Article> articles = articleService.findAllArticle();
-//        articles.forEach(article -> {
-//            article.setLikesCount(article.getLikes().size());
-//            article.setLendStatus(likeService.isLike(userDetails.getUser(), article));
-//        });
+        articles.forEach(article -> {
+            article.setLikesCount(article.getLikes().size());
+            article.setLendStatus(likeService.isLike(userDetails.getUser(), article));
+        });
+        System.out.println(articles);
 //        System.out.println(authentication);
         return ResponseEntity.status(200).body(articles);
     }

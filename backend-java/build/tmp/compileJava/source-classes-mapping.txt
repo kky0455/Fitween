@@ -1,5 +1,7 @@
 com/ssafy/common/exception/handler/UserNotFoundException.java
  com.ssafy.common.exception.handler.UserNotFoundException
+com/ssafy/api/service/StorageService.java
+ com.ssafy.api.service.StorageService
 com/ssafy/config/SecurityConfig.java
  com.ssafy.config.SecurityConfig
 com/ssafy/api/service/ArticleServiceImpl.java
@@ -10,10 +12,10 @@ com/ssafy/api/request/UpdateArticleDto.java
  com.ssafy.api.request.UpdateArticleDto
 com/ssafy/api/request/ArticleInfoDto.java
  com.ssafy.api.request.ArticleInfoDto
-com/ssafy/api/controller/AuthController.java
- com.ssafy.api.controller.AuthController
 com/ssafy/common/auth/JwtTokenProvider.java
  com.ssafy.common.auth.JwtTokenProvider
+com/ssafy/api/controller/AuthController.java
+ com.ssafy.api.controller.AuthController
 com/ssafy/db/entity/BaseEntity.java
  com.ssafy.db.entity.BaseEntity
 com/ssafy/api/request/SaveArticleDto.java
@@ -54,8 +56,6 @@ com/ssafy/api/model/ChatMessage.java
  com.ssafy.api.model.ChatMessage$ChatMessageBuilder
 com/ssafy/api/request/SimpleUserInfoDto.java
  com.ssafy.api.request.SimpleUserInfoDto
-com/ssafy/api/service/UserService2.java
- com.ssafy.api.service.UserService2
 com/ssafy/common/auth/FWUserDetails.java
  com.ssafy.common.auth.FWUserDetails
 com/ssafy/api/response/UserLoginPostRes.java
@@ -71,10 +71,10 @@ com/ssafy/api/controller/MessageController.java
 com/ssafy/api/request/FollowDto.java
  com.ssafy.api.request.FollowDto
  com.ssafy.api.request.FollowDto$FollowDtoBuilder
-com/ssafy/db/repository/UserRepositorySupport.java
- com.ssafy.db.repository.UserRepositorySupport
 com/ssafy/api/model/ChatRoomForm.java
  com.ssafy.api.model.ChatRoomForm
+com/ssafy/common/exception/MyFileNotFoundException.java
+ com.ssafy.common.exception.MyFileNotFoundException
 com/ssafy/config/JpaConfig.java
  com.ssafy.config.JpaConfig
 com/ssafy/api/service/LikeService.java
@@ -90,8 +90,10 @@ com/ssafy/config/ChatConfig.java
  com.ssafy.config.ChatConfig
 com/ssafy/api/service/UserService.java
  com.ssafy.api.service.UserService
-com/ssafy/api/service/UserServiceImpl.java
- com.ssafy.api.service.UserServiceImpl
+com/ssafy/db/dto/Response.java
+ com.ssafy.db.dto.Response
+com/ssafy/config/FileStorageProperties.java
+ com.ssafy.config.FileStorageProperties
 com/ssafy/api/controller/FollowController.java
  com.ssafy.api.controller.FollowController
 com/ssafy/api/request/UserProfileDto.java
