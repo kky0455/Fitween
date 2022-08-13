@@ -22,15 +22,15 @@ export const checkSpace = str => {
 	return false;
 };
 
-export const checkLength = str => {
-	if (str.length < 2 || str.length > 8) return true;
+export const checkLength = (str, start = 1, end = 10000) => {
+	if (str.length >= start && str.length <= end) return true;
 	return false;
 };
 
 export const validateNickName = nickName => {
 	if (checkSpecial(nickName) || checkSpace(nickName) || checkNum(nickName) || checkEmoji(nickName))
 		return { state: false, type: 'notLengthErr' };
-	if (checkLength(nickName)) return { state: false, type: 'lengthErr' };
+	if (!checkLength(nickName, 2, 8)) return { state: false, type: 'lengthErr' };
 	return { state: true };
 };
 
