@@ -8,7 +8,6 @@ import com.ssafy.api.service.LikeService;
 import com.ssafy.api.service.UserService;
 import com.ssafy.api.service.StorageService;
 import com.ssafy.common.auth.FWUserDetails;
-import com.ssafy.common.model.response.BaseResponseBody;
 import com.ssafy.db.dto.Response;
 import com.ssafy.db.entity.Article;
 import com.ssafy.db.entity.User;
@@ -20,19 +19,20 @@ import io.swagger.annotations.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -55,6 +55,9 @@ public class ArticleController {
     LikeService likeService;
 
     ArticleRepository articleRepository;
+
+    @Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
 
     //image upload
     private final StorageService storageService;
@@ -108,16 +111,7 @@ public class ArticleController {
     @ApiOperation(value="게시글 전체 조회", notes="<strong>게시글을 전체 조회를</strong>시켜줍니다.")
     @GetMapping("/list")
     public ResponseEntity<?> findAllArticle(){
-//        System.out.println(authentication);
-//        System.out.println("여기도 테스트");
-//        FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
-//        System.out.println(userDetails);
         List<Article> articles = articleService.findAllArticle();
-//        articles.forEach(article -> {
-//            article.setLikesCount(article.getLikes().size());
-//            article.setLendStatus(likeService.isLike(userDetails.getUser(), article));
-//        });
-//        System.out.println(authentication);
         return ResponseEntity.status(200).body(articles);
     }
     @GetMapping("/detail/{article_idx}")
@@ -173,29 +167,54 @@ public class ArticleController {
         }
     }
 
-    @GetMapping("/display/{userId}/{articleTitle:.+}")
-    public ResponseEntity<Resource> displayImage(@PathVariable String articleTitle,
-                                                 @PathVariable String userId,
+    @GetMapping("/display/{folderName}/{fileName:.+}")
+    public ResponseEntity<?> displayImage(@PathVariable String folderName,
+                                                 @PathVariable String fileName,
                                                  HttpServletRequest request) {
+
         // Load file as Resource
-        Resource resource = storageService.loadFileAsResource(userId, articleTitle);
+        //Resource resource = storageService.loadFileAsResource(folderName, fileName);
+
+        File dir= new File(uploadPath+"/"+folderName);
+        String images[] = dir.list();
+
 
         // Try to determine file's content type
         String contentType = null;
-        try {
-            contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
-        } catch (IOException ex) {
-            logger.info("Could not determine file type.");
-        }
+        String headerMsg="";
+        List<String> imageList= new ArrayList<>();
 
+        for (int i = 0; i < images.length; i++) {
+
+            Resource resource=storageService.loadFileAsResource(folderName, images[i]);
+            String img;
+
+            try (Reader reader = new InputStreamReader(resource.getInputStream(), "UTF-8")) {
+               img = FileCopyUtils.copyToString(reader);
+            } catch (IOException e) {
+                throw new UncheckedIOException(e);
+            }
+
+            imageList.add(img);
+
+            try {
+                contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
+            } catch (IOException ex) {
+                logger.info("Could not determine file type.");
+            }
+            headerMsg +="attachment; filename=\"" + resource.getFilename() + "\"";
+
+            System.out.println("inside for state");
+
+        }
         // Fallback to the default content type if type could not be determined
         if(contentType == null) {
             contentType = "application/octet-stream";
         }
 
         return ResponseEntity.ok()
-                .contentType(MediaType.parseMediaType(contentType))
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
-                .body(resource);
+//                .contentType(MediaType.parseMediaType(contentType))
+//                .header(HttpHeaders.CONTENT_DISPOSITION, headerMsg)
+                .body(imageList);
     }
 }
