@@ -127,16 +127,8 @@ public class ArticleController {
         List<Article> articles = articleService.findAllArticle();
         articles.forEach(article -> {
             article.setLikesCount(article.getLikes().size());
-<<<<<<< HEAD
-            article.setLendStatus(likeService.isLike(userDetails.getUser(), article));
-        });
-=======
             article.updateLikeStatus(likeService.isLike(userDetails.getUser(), article));
-//            article.isLike(likeService.isLike(userDetails.getUser(), article));
         });
-        System.out.println(articles);
->>>>>>> feat/be/Issue-127
-//        System.out.println(authentication);
         return ResponseEntity.status(200).body(articles);
     }
     @GetMapping("/detail/{article_idx}")
@@ -145,19 +137,11 @@ public class ArticleController {
         Article article = articleService.findArticle(article_idx);
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
         User user = userDetails.getUser();
-<<<<<<< HEAD
-        boolean isLiked = likeService.isLike(user, article);
-        ArticleInfoDto articleInfoDto = new ArticleInfoDto(article, isLiked);
-        return ResponseEntity.status(200).body(articleInfoDto);
-    }
-    @PostMapping("like/{article_idx}")
-=======
         boolean likeStatus = likeService.isLike(user, article);
         ArticleInfoDto articleInfoDto = new ArticleInfoDto(article, likeStatus);
         return ResponseEntity.status(200).body(articleInfoDto);
     }
     @PostMapping("/like/{article_idx}")
->>>>>>> feat/be/Issue-127
     @ApiOperation(value ="게시글 좋아요", notes ="해당 article_idx에 좋아요")
     @ApiResponses({ @ApiResponse(code = 200, message = "좋아요 성공"),
 //            @ApiResponse(code = 401, message = "인증 실패"),
@@ -171,11 +155,8 @@ public class ArticleController {
         likeService.likes(user, article);
         return ResponseEntity.status(200).body("좋아요 성공");
     }
-<<<<<<< HEAD
-    @DeleteMapping("like/{article_idx}")
-=======
+
     @DeleteMapping("/like/{article_idx}")
->>>>>>> feat/be/Issue-127
     @ApiOperation(value ="게시글 좋아요 취소", notes ="해당 article_idx에 좋아요 취소")
     @ApiResponses({ @ApiResponse(code = 200, message = "좋아요 취소"),
 //            @ApiResponse(code = 401, message = "인증 실패"),
