@@ -48,12 +48,9 @@ public class JwtAuthenticationFilter extends GenericFilterBean {
 
 //            Authentication authentication = jwtTokenProvider.getAuthentication("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMiIsImlzcyI6InNzYWZ5LmNvbSIsImV4cCI6MTY2MTQ5NzkyNiwiaWF0IjoxNjYwMjAxOTI2fQ.9uRA6WKEXXHnRRlq_QR_tn0ti1vtgFnZk9LjoW68kZ_G_RySmKB7Bfi22Gq4wvpT0xtKwkVuleB0ULfyGNfpDA");
             Authentication authentication = jwtTokenProvider.getAuthentication(token);
-            System.out.println("1번");
             // jwt 토큰으로 부터 획득한 인증 정보(authentication) 설정.
             SecurityContextHolder.getContext().setAuthentication(authentication);
-            System.out.println("2");
         } catch (Exception ex) {
-            System.out.println("실패");
 
             }
         chain.doFilter(request, response);
