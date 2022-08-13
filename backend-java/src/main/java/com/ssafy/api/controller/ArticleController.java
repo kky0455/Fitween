@@ -36,6 +36,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.UUID;
 
 @Api(value = "게시물 API", tags = { "Article" })
 @RestController
@@ -59,7 +60,7 @@ public class ArticleController {
     @Value("${spring.servlet.multipart.location}")
     private String uploadPath;
 
-    //image upload
+    //=====image upload
     private final StorageService storageService;
 
     @Autowired
@@ -144,17 +145,18 @@ public class ArticleController {
     }
 
     @PostMapping("/registtest")
-    public ResponseEntity<?> upload(@RequestParam (value="photo",required = false) MultipartFile[] photo, @RequestParam String title ) throws Exception {
+    @ApiOperation(notes = "사진 업로드", value = "해당 uuid에 따른 폴더 생성 ")
+    public ResponseEntity<?> upload(@RequestParam (value="photo",required = false) MultipartFile[] photo) throws Exception {
         Response res = new Response();
         List<String> results = new ArrayList<>();
         List<String> imageLocations = new ArrayList<>();
-        System.out.println(photo);
-        System.out.println(title);
+
+        UUID uid = UUID.randomUUID();
 
         try{
-            results = storageService.saveFiles(photo, title);
+            results = storageService.saveFiles(photo, uid);
             for(String result : results){
-                imageLocations.add("/"+title+"/"+result);
+                imageLocations.add("/"+uid+"/"+result);
             }
             res.setImageLocations(imageLocations);
             res.setMessage("done");
@@ -167,10 +169,9 @@ public class ArticleController {
         }
     }
 
-    @GetMapping("/display/{folderName}/{fileName:.+}")
-    public ResponseEntity<?> displayImage(@PathVariable String folderName,
-                                                 @PathVariable String fileName,
-                                                 HttpServletRequest request) {
+    @GetMapping("/display/{folderName}/{fileName:.+}")  // =========이후 수정 요망=========
+    @ApiOperation(value = "업로드 된 사진 불러오기", notes = "저장된 폴더 내에 사진 불러오기")
+    public ResponseEntity<?> displayImage(@PathVariable String folderName, HttpServletRequest request) {
 
         // Load file as Resource
         //Resource resource = storageService.loadFileAsResource(folderName, fileName);
@@ -181,15 +182,16 @@ public class ArticleController {
 
         // Try to determine file's content type
         String contentType = null;
-        String headerMsg="";
+//        String headerMsg="";
         List<String> imageList= new ArrayList<>();
 
         for (int i = 0; i < images.length; i++) {
 
-            Resource resource=storageService.loadFileAsResource(folderName, images[i]);
+            //fileName = images[i];
+            Resource resource = storageService.loadFileAsResource(folderName, images[i]);
             String img;
 
-            try (Reader reader = new InputStreamReader(resource.getInputStream(), "UTF-8")) {
+            try (Reader reader = new InputStreamReader(resource.getInputStream())) {
                img = FileCopyUtils.copyToString(reader);
             } catch (IOException e) {
                 throw new UncheckedIOException(e);
@@ -202,7 +204,7 @@ public class ArticleController {
             } catch (IOException ex) {
                 logger.info("Could not determine file type.");
             }
-            headerMsg +="attachment; filename=\"" + resource.getFilename() + "\"";
+//            headerMsg +="attachment; filename=\"" + resource.getFilename() + "\"";
 
             System.out.println("inside for state");
 
