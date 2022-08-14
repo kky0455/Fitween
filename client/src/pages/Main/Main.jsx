@@ -27,12 +27,12 @@ const LeftContent = ({}) => {
 };
 
 const Main = () => {
-	const [userId, setUserId] = useState('userid');
 	const [articleList, setArticleList] = useState(null);
 	useEffect(() => {
 		const fetch = async () => {
 			const data = await getArticleList();
 			setArticleList(data);
+			console.log(data);
 		};
 		fetch();
 	}, []);
@@ -69,6 +69,7 @@ const Main = () => {
 						<FeedItem
 							key={article.articleIdx}
 							// todo : userId, aritlceImg API에서 받아와야 함
+							userId={article.user.userId}
 							nickname={article.user.nickname}
 							articleId={article.articleIdx}
 							// articleImg={article.articleImgList}

@@ -13,20 +13,20 @@ export const modifyRegion = async body => {
 };
 
 // 팔로우
-export const doFollow = async userId => {
-	const res = await API.post(`/follow/${userId}`);
+export const doFollow = async toUserId => {
+	const res = await API.post(`/follow/${toUserId}`);
 	return res.data;
 };
 
 // 팔로우 취소
-export const cancelFollow = async userId => {
-	const res = await API.delete(`/follow/${userId}`);
+export const cancelFollow = async toUserId => {
+	const res = await API.delete(`/follow/${toUserId}`);
 	return res.data;
 };
 
 // 회원 정보 가져오기
-export const getUserInfo = async loginedUserId => {
-	const res = await API.get(`/user/${loginedUserId}`);
+export const getUserInfo = async userId => {
+	const res = await API.get(`/users/${userId}`);
 	return res.data;
 };
 

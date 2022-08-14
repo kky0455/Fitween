@@ -1,40 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 
 import colors from '../../constants/colors';
 import Button from '../../components/Common/Button/Button';
 import { useNavigate } from 'react-router-dom';
-import { getUserInfo, doFollow, cancelFollow } from '../../api/user';
+import { doFollow, cancelFollow } from '../../api/user';
 
 const ProfileButton = ({ userId, isFollowed, setProfileInfo }) => {
 	const navigate = useNavigate();
-	const [userid, setUserid] = useState('');
 	const [followed, setFollowed] = useState(isFollowed);
-	useEffect(() => {
-		const fetch = async () => {
-			const data = await getUserInfo();
-			setUserid(data.userInfo.userId);
-		};
-		fetch();
-	}, []);
 
 	const doFollowClickHandler = async () => {
-		const ret = await doFollow();
-		if (ret.result === 'success') {
+		const ret = await doFollow(userId);
+		if (ret === '팔로우 성공') {
 			setFollowed(!followed);
 			setProfileInfo(profileInfo => {
-				return { ...profileInfo, userFollowedCnt: profileInfo.userFollowedCnt + 1 };
+				return { ...profileInfo, userFollowerCount: profileInfo.userFollowerCount + 1 };
 			});
 		}
 	};
 
 	const cancelFollowClickHandler = async () => {
-		const ret = await cancelFollow();
-		if (ret.result === 'success') {
+		const ret = await cancelFollow(userId);
+		if (ret === '팔로우 취소 성공') {
 			setFollowed(!followed);
 			setProfileInfo(profileInfo => {
-				return { ...profileInfo, userFollowedCnt: profileInfo.userFollowedCnt - 1 };
+				return { ...profileInfo, userFollowerCount: profileInfo.userFollowerCount - 1 };
 			});
 		}
 	};
@@ -61,9 +53,9 @@ const ProfileButton = ({ userId, isFollowed, setProfileInfo }) => {
 						border-radius: 14px;
 						box-shadow: none;
 					`}
-					type="active"
-					label="FOLLOW"
-					onClick={doFollowClickHandler}
+					type="outlined"
+					label="UNFOLLOW"
+					onClick={cancelFollowClickHandler}
 				/>
 			) : (
 				<Button
@@ -77,9 +69,9 @@ const ProfileButton = ({ userId, isFollowed, setProfileInfo }) => {
 						border-radius: 14px;
 						box-shadow: none;
 					`}
-					type="outlined"
-					label="UNFOLLOW"
-					onClick={cancelFollowClickHandler}
+					type="active"
+					label="FOLLOW"
+					onClick={doFollowClickHandler}
 				/>
 			)}
 
