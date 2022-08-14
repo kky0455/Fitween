@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import React from 'react';
-import styled from 'styled-components';
 import colors from '../../../constants/colors';
 
 function Input({ value, onChange, error, errMsg, unit, ...rest }) {

@@ -22,35 +22,41 @@ export const checkSpace = str => {
 	return false;
 };
 
-export const checkLength = str => {
-	if (str.length < 2 || str.length > 8) return true;
+export const checkLength = (str, start = 1, end = 10000) => {
+	if (str.length >= start && str.length <= end) return true;
+	return false;
+};
+
+export const validateDateOfBirth = dateOfBirth => {
+	if (checkLength(dateOfBirth)) return true;
 	return false;
 };
 
 export const validateNickName = nickName => {
 	if (checkSpecial(nickName) || checkSpace(nickName) || checkNum(nickName) || checkEmoji(nickName))
 		return { state: false, type: 'notLengthErr' };
-	if (checkLength(nickName)) return { state: false, type: 'lengthErr' };
+	if (!checkLength(nickName, 2, 8)) return { state: false, type: 'lengthErr' };
 	return { state: true };
 };
 
 export const validateHeight = height => {
-	if (height >= 90 && height <= 250) return true;
+	if (checkLength(height) && height >= 90 && height <= 250) return true;
 	return false;
 };
 
 export const validateWeight = weight => {
-	if (weight >= 30 && weight <= 200) return true;
+	if (checkLength(weight) && weight >= 30 && weight <= 200) return true;
 	return false;
 };
 
 export const validateFootSize = footSize => {
-	if (footSize >= 0 && footSize <= 350) return true;
+	if (checkLength(footSize) && footSize >= 0 && footSize <= 350) return true;
 	return false;
 };
 
 export const validateAllInput = info => {
-	return validateNickName(info.nickname) &&
+	return validateDateOfBirth(info.dateOfBirth) &&
+		validateNickName(info.nickname) &&
 		validateHeight(info.height) &&
 		validateWeight(info.weight) &&
 		validateFootSize(info.footSize)

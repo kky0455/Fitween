@@ -6,6 +6,8 @@ import JoinTown from './JoinTown';
 // todo : 회원가입 쪽 설계 다시 고민
 const Join = () => {
 	const [info, setInfo] = useState({
+		gender: '여성',
+		dateOfBirth: '',
 		nickname: '',
 		weight: '',
 		height: '',
