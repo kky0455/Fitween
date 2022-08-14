@@ -1,5 +1,6 @@
 package com.ssafy.api.service;
 
+import com.google.api.client.repackaged.org.apache.commons.codec.binary.Base64;
 import com.ssafy.common.exception.MyFileNotFoundException;
 import com.ssafy.config.FileStorageProperties;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,6 +20,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 
 @Service
 public class StorageService {
@@ -45,13 +46,13 @@ public class StorageService {
         return generatedString;
     }
 
-    public List<String> saveFiles(MultipartFile[] files, String articleTitle) throws IOException {
+    public List<String> saveFiles(MultipartFile[] files, UUID uid) throws IOException {
         String randomStr = getRandomStr();
         List<String> fileNames = new ArrayList<>();
         for(MultipartFile file : files) {
             fileNames.add(randomStr + StringUtils.cleanPath(file.getOriginalFilename()));
         }
-        Path uploadPath = Paths.get(this.uploadPath+"/"+articleTitle);
+        Path uploadPath = Paths.get(this.uploadPath+"/"+uid);
         if(!Files.exists(uploadPath)) {
             Files.createDirectories(uploadPath);
             System.out.println("make dir : " + uploadPath.toString());
@@ -81,4 +82,22 @@ public class StorageService {
             throw new MyFileNotFoundException("File not found " + articleTitle, ex);
         }
     }
+    private static String encodeFileToBase64Binary(File file){
+        String encodedfile = null;
+        try {
+            FileInputStream fileInputStreamReader = new FileInputStream(file);
+            byte[] bytes = new byte[(int)file.length()];
+            fileInputStreamReader.read(bytes);
+            encodedfile = new String(Base64.encodeBase64(bytes), "UTF-8");
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return encodedfile;
+    }
+
 }

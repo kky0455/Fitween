@@ -68,7 +68,8 @@ public class ArticleController {
     })
     public ResponseEntity createArticle(@RequestBody SaveArticleDto saveArticleDto, @ApiIgnore Authentication authentication)
     {
-        System.out.println(authentication);
+        UUID uid = UUID.randomUUID();
+
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
         Map<String, Object> result = new HashMap<>();
         try {
@@ -174,17 +175,17 @@ public class ArticleController {
     }
 
     @PostMapping("/registtest")
-    public ResponseEntity<?> upload(@RequestParam (value="photo",required = false) MultipartFile[] photo, @RequestParam String title ) throws Exception {
+    public ResponseEntity<?> upload(@RequestParam (value="photo",required = false) MultipartFile[] photo) throws Exception {
+
         Response res = new Response();
         List<String> results = new ArrayList<>();
         List<String> imageLocations = new ArrayList<>();
-        System.out.println(photo);
-        System.out.println(title);
+
 
         try{
-            results = storageService.saveFiles(photo, title);
+            results = storageService.saveFiles(photo, uid);
             for(String result : results){
-                imageLocations.add("/"+title+"/"+result);
+                imageLocations.add("/"+uid+"/"+result);
             }
             res.setImageLocations(imageLocations);
             res.setMessage("done");

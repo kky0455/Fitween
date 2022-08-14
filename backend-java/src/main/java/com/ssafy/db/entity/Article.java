@@ -27,7 +27,7 @@ public class Article extends BaseEntity{
     String title;
 
 //    @Column
-//    String feedImg;
+//    private List<String> feedImg = new ArrayList<>();
 
     @Column
     String content;
