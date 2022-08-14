@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Buffer } from 'buffer';
+import { v4 as uuid } from 'uuid';
 
 import API from '../../api';
 import styled from 'styled-components';
@@ -57,11 +58,18 @@ const DummyPage = () => {
 			isLoading: false,
 		}));
 	};
+	const str2ab = str => {
+		let buf = new ArrayBuffer(str.length * 2); // 2 bytes for each char
+		let bufView = new Uint8Array(buf);
+		for (let i = 0, strLen = str.length; i < strLen; i++) {
+			bufView[i] = str.charCodeAt(i);
+		}
+		return buf;
+	};
 	useEffect(() => {
 		const fetchImages = async () => {
 			const data = await articleApi.getImage('123', 'ysjudgqbzclogo512.png');
-			console.log(data);
-			setTestImage(Buffer.from(data).toString('base64'));
+			setTestImage(data);
 		};
 		fetchImages();
 	}, []);
@@ -151,13 +159,16 @@ const DummyPage = () => {
 					overflow: 'scroll',
 				}}
 			>
-				{testImage && (
-					<img
-						src={`data:image;base64,${testImage}`}
-						alt=""
-						style={{ width: '100%', height: '100%' }}
-					/>
-				)}
+				{testImage &&
+					testImage.map(image => (
+						<img
+							key={uuid()}
+							src={`data:image/png;base64,${image}`}
+							// src={image}
+							alt=""
+							style={{ width: '100%', height: '100%' }}
+						/>
+					))}
 				{modalVisible && (
 					<Modal visible={modalVisible} maskClosable onClose={closeModal} type="center">
 						<div>asd</div>

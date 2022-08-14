@@ -56,6 +56,12 @@ export const modifyArticleAvailable = async articleId => {
 
 export const getImage = async (userId, articleTitle) => {
 	const res = await API.get(`/article/display/${userId}/${articleTitle}`, {
+		// responseType: 'arraybuffer',
+	});
+	return res.data;
+};
+export const getImageTest = async (userId, articleTitle) => {
+	const res = await API.get(`/article/displaytest/${userId}/${articleTitle}`, {
 		responseType: 'arraybuffer',
 	});
 	return res.data;
