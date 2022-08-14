@@ -61,12 +61,11 @@ public class AuthController {
 
     @ApiOperation(value = "로그인", notes = "서비스에서 보내준 idToken을 활용하여 로그인 요청")
     @GetMapping("/login")
-    public ResponseEntity<?> signUp(@RequestParam String authCode,@RequestBody UserRegisterPostReq registerPostReq) throws GeneralSecurityException, IOException {
+    public ResponseEntity<?> signUp(@RequestParam String authCode) throws GeneralSecurityException, IOException {
 
         Message message = new Message();
         HttpHeaders headers= new HttpHeaders();
         headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
-
 
         // oauth properties client id 받아오기
         Environment env = context.getEnvironment();
@@ -86,7 +85,6 @@ public class AuthController {
         // (Receive idTokenString by HTTPS POST)
 
         GoogleIdToken idToken = verifier.verify(authCode);
-        System.out.println(authCode);
 
         if (idToken != null) {
             GoogleIdToken.Payload payload = idToken.getPayload();
@@ -104,13 +102,12 @@ public class AuthController {
             String familyName = (String) payload.get("family_name");
             String givenName = (String) payload.get("given_name");
 
-            registerPostReq.setProfileImg(pictureUrl);
-            registerPostReq.setEmail(email);
-
 
             try{
                 //User user = userService.getUserByUserId(userId);
                 UserLoginPostReq userLogin =userService.userLogin(userId);
+                userLogin.setEmail(email);
+                userLogin.setProfileImg(pictureUrl);
                 message.setStatus(StatusEnum.OK);
                 message.setResponseType("signIn");
 //                message.setUserId(userId);
@@ -151,9 +148,6 @@ public class AuthController {
         String str_birthYear[] = (requestDto.getDateOfBirth()).split("-");
         int year = Integer.parseInt(str_birthYear[0]);
         int age = (currentYear-year)+1;
-
-        System.out.println(year);
-        System.out.println(age);
 
         try {
             String id = userService.join(requestDto.toEntity());
