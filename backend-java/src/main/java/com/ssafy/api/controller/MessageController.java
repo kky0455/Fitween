@@ -144,6 +144,8 @@ public class MessageController {
 
         ChatRoom chatRoom = chatRoomForm.toEntity();
         ChatRoom saved = chatRoomRepository.save(chatRoom);
+        chatRoomRepository.setUser1Nickname(newroom.getUser1Nickname(),newroom.getRoomId());
+        chatRoomRepository.setUser2Nickname(newroom.getUser2Nickname(),newroom.getRoomId());
 
 
     return newroom;
@@ -175,7 +177,6 @@ public class MessageController {
 
     public List<ChatRoom> roomList(String user1){
         List<ChatRoom> rooms = chatRoomRepository.findRoomByUser(user1);
-
         return rooms;
 
     }

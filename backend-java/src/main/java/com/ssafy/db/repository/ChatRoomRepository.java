@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import com.ssafy.db.entity.User;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -42,6 +43,16 @@ public interface ChatRoomRepository extends CrudRepository<ChatRoom, Long> {
     @Transactional
     @Query(value = "UPDATE ChatRoom t set lastSenderId = ?2 where roomId = ?1")
     public void updateLastSenderId(String roomId,String senderId);
+
+
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE ChatRoom t set  t.user1Nickname = (SELECT nickname from User k where k.userId = ?1) where roomId = ?2")
+    public void setUser1Nickname(String user1Id,String roomId);
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE ChatRoom t set  t.user2Nickname = (SELECT nickname FROM User k where k.userId = ?1) where roomId = ?2")
+    public void setUser2Nickname(String user2Id,String roomId);
 
 
 
