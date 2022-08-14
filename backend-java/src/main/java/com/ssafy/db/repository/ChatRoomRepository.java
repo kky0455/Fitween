@@ -1,5 +1,6 @@
 package com.ssafy.db.repository;
 
+import com.ssafy.api.model.ChatMessage;
 import com.ssafy.api.model.ChatRoom;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -41,5 +42,7 @@ public interface ChatRoomRepository extends CrudRepository<ChatRoom, Long> {
     @Transactional
     @Query(value = "UPDATE ChatRoom t set lastSenderId = ?2 where roomId = ?1")
     public void updateLastSenderId(String roomId,String senderId);
+
+
 
 }
