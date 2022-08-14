@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="check">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/ArticleController.java" afterDir="false" />
+    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="chore: 서버 포트 원상복귀">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +262,7 @@
       <workItem from="1660207015002" duration="1500000" />
       <workItem from="1660211346813" duration="297000" />
       <workItem from="1660367004989" duration="15847000" />
-      <workItem from="1660450327364" duration="14617000" />
+      <workItem from="1660450327364" duration="15537000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: 유저 info 수정">
       <created>1658995773074</created>
@@ -481,7 +481,28 @@
       <option name="project" value="LOCAL" />
       <updated>1660466253756</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="fix: 코드 누락">
+      <created>1660466497783</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1660466497783</updated>
+    </task>
+    <task id="LOCAL-00033" summary="check">
+      <created>1660466507624</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1660466507624</updated>
+    </task>
+    <task id="LOCAL-00034" summary="chore: 서버 포트 원상복귀">
+      <created>1660466945184</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1660466945184</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,8 +539,10 @@
     <MESSAGE value="refactor: 메시지 토큰 삭제 처리" />
     <MESSAGE value="refactor: gender String으로 변환" />
     <MESSAGE value="refactor: gender String으로 변환&#10;유저 생년월일 처리 변수 생성" />
+    <MESSAGE value="fix: 코드 누락" />
     <MESSAGE value="check" />
-    <option name="LAST_COMMIT_MESSAGE" value="check" />
+    <MESSAGE value="chore: 서버 포트 원상복귀" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: 서버 포트 원상복귀" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
