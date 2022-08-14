@@ -14,10 +14,13 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -26,7 +29,7 @@ public class MessageController {
 
     private final SimpMessageSendingOperations sendingOperations;
     
-    @GetMapping("/chat/findRoom")
+    @GetMapping("/chat/findRoom") //
     public String findRoom(String receiverId,String senderId){
         String roomnum = findRoomfunc(receiverId,senderId);
         if (roomnum==null){
@@ -44,6 +47,17 @@ public class MessageController {
         return logMessage(roomId);
     }
 
+    @GetMapping("/chat/makeRoom")
+    public String roomnum(String receiverId,String senderId){
+        String room = findRoomfunc(receiverId,senderId);
+        if( room==null){
+            return makeRoom(receiverId,senderId).getRoomId();
+        }
+        else{
+            return room;
+        }
+    }
+
 
     //
     //
@@ -58,9 +72,10 @@ public class MessageController {
     //메세지를 읽었을때 메세지들을 전부 0으로 만들어야함
     // receiver가 접근했을때 senderId-receiverId 가 매칭된 채팅로그의 1을 0으로 바꾼다다
     // 채팅로그에 roomidx와 입장한 유저의 아이디가 receiverId인 모든 로그의 isRead를 0으로 바꾼다.
-    @GetMapping("API")
-    public void read(String roomId,String receiverId){
-        isReadUpdate(roomId,receiverId);
+    @PutMapping("/chat/doRead")
+    public void read(@RequestBody Map<String,String> body){
+        isReadUpdate(body.get("roomId"),body.get("userId"));
+        notRead(body.get("senderId"), body.get("userId"),body.get("roomId"));
     }
 
 
@@ -80,12 +95,12 @@ public class MessageController {
         LocalDateTime datetime = LocalDateTime.now();
         message.setSenddatetime(datetime);
         message.setIsRead(1);
-        notRead(message.getSenderId(), message.getReceiverId(),message.getRoomId());
-        updateLastChat(message.getRoomId(),message.getMessage(),message.getSenddatetime(), message.getSenderId());
-        saveMessage(message.getRoomId(), message.getSenderId(), message.getReceiverId(), message.getMessage());
+        saveMessage(message.getRoomId(), message.getSenderId(), message.getReceiverId(), message.getMessage(),message.getIsRead());
+
+        updateLastChat(message.getRoomId(),message.getMessage(),message.getSenddatetime(), message.getSenderId(), message.getReceiverId());
+        //notRead(message.getSenderId(), message.getReceiverId(), message.getRoomId());
         sendingOperations.convertAndSend("/topic/chat/room/"+message.getRoomId(),message); // 메세지 알림 보내기
         sendingOperations.convertAndSend("/topic/chat/wait/"+message.getReceiverId(),message); // 메세지 보내기
-
 
 
         //saveMessage(message.getRoomId(), message.getSenderId(), message.getReceiverId(), message.getMessage());
@@ -138,14 +153,16 @@ public class MessageController {
         ChatRoomForm chatRoomForm = new ChatRoomForm();
         newroom = newroom.create(senderId,receiverId);
 
-        chatRoomForm.setRoomId(newroom.getRoomId());
+
         chatRoomForm.setUser1Id(newroom.getUser1Id());
         chatRoomForm.setUser2Id(newroom.getUser2Id());
+        chatRoomForm.setRoomId(newroom.getRoomId());
+        chatRoomForm.setUser1Nickname(chatRoomRepository.setUserNickname(newroom.getUser1Id()));
+        chatRoomForm.setUser2Nickname(chatRoomRepository.setUserNickname(newroom.getUser2Id()));
 
         ChatRoom chatRoom = chatRoomForm.toEntity();
-        chatRoomRepository.setUser1Nickname(newroom.getUser1Id(),newroom.getRoomId());
-        chatRoomRepository.setUser2Nickname(newroom.getUser2Id(),newroom.getRoomId());
-        ChatRoom saved = chatRoomRepository.save(chatRoom);
+        //ChatRoom saved = chatRoomRepository.save(chatRoom);
+        chatRoomRepository.save(chatRoom);
 
 
     return newroom;
@@ -153,17 +170,16 @@ public class MessageController {
     }
     @Autowired
     private ChatRepository chatMessageRepository;
-    public void saveMessage(String roomId,String senderId,String receiverId,String message){
+    public void saveMessage(String roomId,String senderId,String receiverId,String message,Integer isRead){
 
         ChatMessageForm chatMessageForm = new ChatMessageForm();
         chatMessageForm.setMessage(message);
         chatMessageForm.setRoomId(roomId);
         chatMessageForm.setSenderId(senderId);
         chatMessageForm.setReceiverId(receiverId);
-
-
+        chatMessageForm.setIsRead(isRead);
         ChatMessage chatMessage = chatMessageForm.toEntity();
-        ChatMessage saved = chatMessageRepository.save(chatMessage);
+        chatMessageRepository.save(chatMessage);
 
 
     }
@@ -186,10 +202,11 @@ public class MessageController {
         return roomNum;
 
     }
-    public void updateLastChat(String roomId,String message,LocalDateTime dateTime,String senderId){
+    public void updateLastChat(String roomId,String message,LocalDateTime dateTime,String senderId,String receiverId){
         chatRoomRepository.updateLastChat(roomId,message);
         chatRoomRepository.updateLastChatTime(roomId,dateTime);
         chatRoomRepository.updateLastSenderId(roomId,senderId);
+        chatRoomRepository.notReadMessage(senderId,receiverId,roomId);
 
     }
 
