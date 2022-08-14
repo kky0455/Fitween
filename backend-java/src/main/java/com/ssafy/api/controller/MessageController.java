@@ -26,7 +26,7 @@ public class MessageController {
 
     private final SimpMessageSendingOperations sendingOperations;
     
-    @GetMapping("/chat/findRoom")
+    @GetMapping("/chat/findRoom") //
     public String findRoom(String receiverId,String senderId){
         String roomnum = findRoomfunc(receiverId,senderId);
         if (roomnum==null){
@@ -42,6 +42,17 @@ public class MessageController {
     @GetMapping("/chat/log")
     public List<ChatMessage> enter(String roomId){
         return logMessage(roomId);
+    }
+
+    @GetMapping("/chat/makeRoom")
+    public String roomnum(String receiverId,String senderId){
+        String room = findRoomfunc(receiverId,senderId);
+        if( room==null){
+            return makeRoom(receiverId,senderId).getRoomId();
+        }
+        else{
+            return room;
+        }
     }
 
 
