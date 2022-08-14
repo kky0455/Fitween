@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { useNavigate } from 'react-router-dom';
@@ -12,17 +12,22 @@ import { registArticle } from '../../api/article';
 import TextArea from '../../components/Common/TextArea/TextArea';
 import getByte from '../../utils/getByte';
 import { MAX_BYTE } from '../../constants/config';
+import Carousel from '../../components/Common/Carousel/Carousel';
 
 const ArticleRegist = () => {
 	const [title, setTitle] = useState('');
 	const [price, setPrice] = useState('');
 	const [content, setContent] = useState('');
+	const [imageSrcs, setImageSrcs] = useState([]);
+	const fileRef = useRef(null);
+
 	const navigate = useNavigate();
 	const onSubmitHandler = async () => {
 		const body = {
 			title: title,
 			price: price,
 			content: content,
+			photo: imageSrcs,
 		};
 		try {
 			const ret = await registArticle(body);
@@ -31,6 +36,26 @@ const ArticleRegist = () => {
 			}
 		} catch (error) {
 			alert('다시 시도하세요.');
+		}
+	};
+	const encodeFileToBase64 = fileBlob => {
+		const reader = new FileReader();
+		reader.readAsDataURL(fileBlob);
+		return new Promise(resolve => {
+			reader.onload = () => {
+				setImageSrcs(prev => [...prev, reader.result]);
+				resolve();
+			};
+		});
+	};
+	const fileInputChangeHandler = e => {
+		if (e.target.files.length <= 5) {
+			if (e.target.files.length > 0) {
+				setImageSrcs([]);
+				Array.from(e.target.files).forEach(file => encodeFileToBase64(file));
+			}
+		} else {
+			alert('최대 5개만 업로드할 수 있습니다.');
 		}
 	};
 	const onContentChangeHandler = e => {
@@ -53,16 +78,25 @@ const ArticleRegist = () => {
 				}}
 			>
 				{/* 사진 등록 */}
-				<img
-					src={modify_img}
-					alt=""
-					css={css`
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						width: 100%;
-					`}
-				/>
+				<form name="imageForm">
+					<Carousel
+						style={{ marginBottom: '30px' }}
+						contentHeight="300px"
+						imgSrcList={imageSrcs.length > 0 ? imageSrcs : [modify_img]}
+						onClick={e => {
+							fileRef.current.click();
+						}}
+					/>
+					<input
+						ref={fileRef}
+						name="file"
+						type="file"
+						multiple
+						accept="image/*"
+						style={{ display: 'none' }}
+						onChange={fileInputChangeHandler}
+					/>
+				</form>
 				<div
 					css={css`
 						display: flex;

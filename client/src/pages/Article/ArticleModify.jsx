@@ -16,14 +16,18 @@ import delete_icon from '../../assets/delete.svg';
 import Modal from '../../components/Common/Modal/Modal';
 import trash_modal_icon from '../../assets/trash_modal_Icon.svg';
 import { MAX_BYTE } from '../../constants/config';
+import { useRef } from 'react';
+import Carousel from '../../components/Common/Carousel/Carousel';
 
 const ArticleModify = () => {
 	const { articleId } = useParams();
-	const [title, setTitle] = useState();
+	const [title, setTitle] = useState('');
 	const [price, setPrice] = useState('');
 	const [content, setContent] = useState('');
 	const [isRent, setIsRent] = useState(false);
 	const [modalVisible, setModalVisible] = useState(false);
+	const [imageSrcs, setImageSrcs] = useState([]);
+	const fileRef = useRef(null);
 	const navigate = useNavigate();
 	useEffect(() => {
 		const fetch = async () => {
@@ -36,6 +40,26 @@ const ArticleModify = () => {
 		fetch();
 	}, []);
 
+	const encodeFileToBase64 = fileBlob => {
+		const reader = new FileReader();
+		reader.readAsDataURL(fileBlob);
+		return new Promise(resolve => {
+			reader.onload = () => {
+				setImageSrcs(prev => [...prev, reader.result]);
+				resolve();
+			};
+		});
+	};
+	const fileInputChangeHandler = e => {
+		if (e.target.files.length <= 5) {
+			if (e.target.files.length > 0) {
+				setImageSrcs([]);
+				Array.from(e.target.files).forEach(file => encodeFileToBase64(file));
+			}
+		} else {
+			alert('최대 5개만 업로드할 수 있습니다.');
+		}
+	};
 	const openModal = () => {
 		setModalVisible(true);
 	};
@@ -52,6 +76,7 @@ const ArticleModify = () => {
 			price: price,
 			content: content,
 			lendstatus: isRent,
+			photo: imageSrcs,
 		};
 
 		try {
@@ -151,16 +176,25 @@ const ArticleModify = () => {
 					</Modal>
 				)}
 				{/* 사진 등록 */}
-				<img
-					src={modify_img}
-					alt=""
-					css={css`
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						width: 100%;
-					`}
-				/>
+				<form name="imageForm">
+					<Carousel
+						style={{ marginBottom: '30px' }}
+						contentHeight="300px"
+						imgSrcList={imageSrcs.length > 0 ? imageSrcs : [modify_img]}
+						onClick={e => {
+							fileRef.current.click();
+						}}
+					/>
+					<input
+						ref={fileRef}
+						name="file"
+						type="file"
+						multiple
+						accept="image/*"
+						style={{ display: 'none' }}
+						onChange={fileInputChangeHandler}
+					/>
+				</form>
 				<div
 					css={css`
 						display: flex;
@@ -217,6 +251,7 @@ const ArticleModify = () => {
 						<Checkbox
 							checked={isRent}
 							onChange={e => setIsRent(e.target.checked)}
+							value={isRent}
 							label={isRent ? '대여 가능' : '대여 불가'}
 							id="checkrent"
 						/>

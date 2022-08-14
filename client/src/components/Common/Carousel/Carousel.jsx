@@ -59,7 +59,7 @@ const StyledSlider = styled(Slider)`
 		z-index: 1;
 	}
 `;
-const Carousel = ({ imgSrcList, style, contentHeight }) => {
+const Carousel = ({ imgSrcList, style, contentHeight, ...rest }) => {
 	const settings = {
 		arrows: false,
 		dots: true,
@@ -70,7 +70,7 @@ const Carousel = ({ imgSrcList, style, contentHeight }) => {
 		// prevArrow: <PrevArrow />,
 	};
 	return (
-		<div style={{ ...style }}>
+		<div style={{ ...style }} {...rest}>
 			<StyledSlider {...settings}>
 				{imgSrcList &&
 					imgSrcList.map(src => (
