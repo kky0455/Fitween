@@ -49,7 +49,6 @@ public interface ChatRoomRepository extends CrudRepository<ChatRoom, Long> {
     @Query(value = "SELECT nickname from User k where k.userId = ?1 ")
     public String setUserNickname(String user1Id);
 
-    @Query(value = "SELECT * From Table where idx = (select idx from table where)")
 
 
 
