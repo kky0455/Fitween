@@ -22,7 +22,7 @@ const FeedItem = ({
 	const [liked, setLiked] = useState(isLiked);
 	const [count, setCount] = useState(likeCnt);
 	const navigate = useNavigate();
-
+	const rentPriceComma = rentPrice.toLocaleString();
 	const doHeartClickHandler = async e => {
 		e.stopPropagation();
 		const data = await doArticleLike(articleId);
@@ -100,7 +100,7 @@ const FeedItem = ({
 								text-overflow: ellipsis;
 								word-break: break-word;
 								height: 20px;
-								line-height: 20px;
+								line-height: 18px;
 								display: -webkit-box;
 								-webkit-line-clamp: 1; /* 라인수 */
 								-webkit-box-orient: vertical;
@@ -111,7 +111,7 @@ const FeedItem = ({
 						{/* 대여 가격 */}
 						<div>
 							<span className="fw-400 fs-14" style={{ lineHeight: '20.27px' }}>
-								일 {rentPrice}원
+								일 {rentPriceComma}원
 							</span>
 						</div>
 					</div>
