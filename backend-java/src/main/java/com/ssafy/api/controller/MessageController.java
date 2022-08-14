@@ -145,6 +145,7 @@ public class MessageController {
         ChatRoom chatRoom = chatRoomForm.toEntity();
         chatRoomRepository.setUser1Nickname(newroom.getUser1Id(),newroom.getRoomId());
         chatRoomRepository.setUser2Nickname(newroom.getUser2Id(),newroom.getRoomId());
+        ChatRoom saved = chatRoomRepository.save(chatRoom);
 
 
     return newroom;
