@@ -1,6 +1,7 @@
 package com.ssafy.api.controller;
 
 
+import com.ssafy.api.request.RegionUpdateDto;
 import com.ssafy.api.request.UserProfileDto;
 import com.ssafy.api.request.UserUpdateDto;
 import com.ssafy.api.service.FollowService;
@@ -59,15 +60,28 @@ public class UserController {
         return ResponseEntity.status(200).body(userProfileDto);
     }
     @ApiOperation(value = "회원 정보 수정")
-    @PutMapping("/update")
+    @PutMapping("/modify/info")
     @ApiResponses({ @ApiResponse(code = 200, message = "회원정보 수정 완료"),
 //            @ApiResponse(code = 401, message = "인증 실패"),
 //            @ApiResponse(code = 404, message = "사용자 없음"),
 //            @ApiResponse(code = 500, message = "해당 게시글이 없습니다.")
     })
-    public ResponseEntity<?> update(@RequestBody UserUpdateDto updateUserDto, @ApiIgnore Authentication authentication) throws Exception {
+    public ResponseEntity<?> updateInfo(@RequestBody UserUpdateDto updateUserDto, @ApiIgnore Authentication authentication) throws Exception {
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
         userService.updateUser(userDetails.getUserIdx(), updateUserDto);
+        return ResponseEntity.status(200).body("회원정보 수정 완료");
+    }
+
+    @ApiOperation(value = "회원 정보 수정")
+    @PutMapping("/modify/region")
+    @ApiResponses({ @ApiResponse(code = 200, message = "회원정보 수정 완료"),
+//            @ApiResponse(code = 401, message = "인증 실패"),
+//            @ApiResponse(code = 404, message = "사용자 없음"),
+//            @ApiResponse(code = 500, message = "해당 게시글이 없습니다.")
+    })
+    public ResponseEntity<?> updateRegion(@RequestBody RegionUpdateDto regionUpdateDto, @ApiIgnore Authentication authentication) throws Exception {
+        FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
+        userService.updateRegion(userDetails.getUserIdx(), regionUpdateDto);
         return ResponseEntity.status(200).body("회원정보 수정 완료");
     }
     @ApiOperation(value = "회원 탈퇴")

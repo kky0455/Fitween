@@ -28,6 +28,8 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.security.GeneralSecurityException;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.springframework.security.oauth2.core.endpoint.OAuth2ParameterNames.CLIENT_ID;
 
@@ -48,13 +50,16 @@ public class AuthController {
     private final UserService userService;
 
     @ApiOperation(value = "로그인", notes = "서비스에서 보내준 idToken을 활용하여 로그인 요청")
-    @GetMapping("/{nickname}/duplicationcheck")
-    public ResponseEntity<?> duplicationcheck(@PathVariable String nickname) {
+    @GetMapping("/duplicationcheck")
+    public ResponseEntity<?> duplicationcheck(@RequestParam String nickname) {
         User checkUser = userService.checkNicknameDuplicate(nickname);
+        Map<String, Object> result = new HashMap<>();
         if (checkUser == null) {
-            return ResponseEntity.status(200).body("사용가능한 닉네임입니다.");
+            result.put("isSuccess", true);
+            return ResponseEntity.status(200).body(result);
         } else {
-            return ResponseEntity.status(409).body("중복된 닉네임이 존재합니다.");
+            result.put("isSuccess", false);
+            return ResponseEntity.status(409).body(result);
         }
     }
 
