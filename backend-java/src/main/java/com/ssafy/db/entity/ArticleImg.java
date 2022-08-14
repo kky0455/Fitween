@@ -19,7 +19,8 @@ public class ArticleImg {
     @JoinColumn(name = "article_idx")
     Article article;
 
-    @Column(columnDefinition = "TEXT")
+//    @Column(columnDefinition = "CLOB")
+    @Column(length = 1000)
     String articleImg;
 
     @Builder
