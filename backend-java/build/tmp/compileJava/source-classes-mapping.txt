@@ -156,6 +156,8 @@ com/ssafy/api/controller/UserController.java
  com.ssafy.api.controller.UserController
 com/ssafy/db/dto/GoogleLoginDto.java
  com.ssafy.db.dto.GoogleLoginDto
+com/ssafy/api/request/ArticleImgDto.java
+ com.ssafy.api.request.ArticleImgDto
 com/ssafy/api/service/JwtService.java
  com.ssafy.api.service.JwtService
 com/ssafy/common/auth/FWUserDetailService.java

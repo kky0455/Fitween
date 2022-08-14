@@ -19,13 +19,17 @@ public class ArticleImg {
     @JoinColumn(name = "article_idx")
     Article article;
 
+    @Column
+    String baseUrl;
+
     @Lob
-    @Column(columnDefinition = "BLOB")
+    @Column(columnDefinition = "MEDIUMBLOB")
     byte[] img;
 
     @Builder
-    public ArticleImg(Article article, byte[] img){
+    public ArticleImg(Article article, String baseUrl, byte[] img){
         this.article = article;
+        this.baseUrl = baseUrl;
         this.img = img;
     }
 }

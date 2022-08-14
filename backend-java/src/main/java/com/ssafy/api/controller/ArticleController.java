@@ -1,5 +1,6 @@
 package com.ssafy.api.controller;
 
+import com.ssafy.api.request.ArticleImgDto;
 import com.ssafy.api.request.ArticleInfoDto;
 import com.ssafy.api.request.SaveArticleDto;
 import com.ssafy.api.request.UpdateArticleDto;
@@ -11,6 +12,7 @@ import com.ssafy.common.auth.FWUserDetails;
 import com.ssafy.common.model.response.BaseResponseBody;
 import com.ssafy.db.dto.Response;
 import com.ssafy.db.entity.Article;
+import com.ssafy.db.entity.ArticleImg;
 import com.ssafy.db.entity.User;
 import com.ssafy.db.repository.ArticleRepository;
 import io.swagger.annotations.Api;
@@ -135,7 +137,12 @@ public class ArticleController {
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
         User user = userDetails.getUser();
         boolean likeStatus = likeService.isLike(user, article);
-        ArticleInfoDto articleInfoDto = new ArticleInfoDto(article, likeStatus);
+        List<Object> imgUrl = new ArrayList<>();
+        article.getArticleImgs().forEach(articleImg -> {
+            ArticleImgDto articleImgDto = new ArticleImgDto(articleImg.getBaseUrl(), articleImg.getImg());
+            imgUrl.add(articleImgDto);
+        });
+        ArticleInfoDto articleInfoDto = new ArticleInfoDto(article, likeStatus, imgUrl);
         return ResponseEntity.status(200).body(articleInfoDto);
     }
 

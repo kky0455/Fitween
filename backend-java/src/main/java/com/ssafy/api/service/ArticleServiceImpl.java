@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Base64Utils;
 
 import java.util.Base64;
 import java.util.List;
@@ -32,30 +33,30 @@ public class ArticleServiceImpl implements ArticleService{
 
     @Override
     public long createArticle(SaveArticleDto saveArticleDto, User user) {
-        Article article = new Article();
         List<String> Imgs = saveArticleDto.getPhotos();
-        System.out.println("게시물 생성 1번");
-        article = Article.builder().title(saveArticleDto.getTitle())
-//                .feedImg(saveArticleDto.getFeedImg())
+        Article article = Article.builder().title(saveArticleDto.getTitle())
                 .content(saveArticleDto.getContent())
                 .price(saveArticleDto.getPrice())
                 .user(user)
                 .likesCount(0)
                 .build();
         articleRepository.save(article);
-        System.out.println("게시물 생성 2번" + article);
-        Long articleIdx = article.getArticleIdx() ;
-//        Article article1 = new Article();
-        Article article1 = articleRepository.findById(articleIdx).orElse(null);
-        System.out.println("게시물 생성 3번" + article1);
         Imgs.forEach(Img -> {
-            System.out.println();
-            byte[] decodeImg = Base64.getDecoder().decode(Img);
-            System.out.println(decodeImg);
-            articleImgRepository.save(ArticleImg.builder().img(decodeImg).article(article1).build());
+            String baseUrl = Img.substring(0, Img.indexOf("base64,")+7);
+//            System.out.println(Img.substring(15, Img.indexOf("base64,")+7));
+//            System.out.println(Img.substring(Img.indexOf("base64,")+7, 30));
+            String Url = Img.substring(Img.indexOf("base64,")+7);
+//            String[] result = Img.split()
+//            Img = Img.replace("data:image/png;base64,", "");
+            byte[] decodeImg=null;
+            try {
+                decodeImg = Base64.getDecoder().decode(Url);
+            }catch(Exception e){
+                System.out.println(e);
+            }
+            articleImgRepository.save(ArticleImg.builder().article(article).img(decodeImg).baseUrl(baseUrl).build());
         });
-        System.out.println("저장 테스트");
-        return articleIdx;
+        return article.getArticleIdx();
 //        articleRepository.save(Article.builder()
 //                .title(saveArticleDto.getTitle())
 ////                .feedImg(saveArticleDto.getFeedImg())
