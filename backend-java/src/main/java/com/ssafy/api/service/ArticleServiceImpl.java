@@ -49,7 +49,9 @@ public class ArticleServiceImpl implements ArticleService{
         Article article1 = articleRepository.findById(articleIdx).orElse(null);
         System.out.println("게시물 생성 3번" + article1);
         Imgs.forEach(Img -> {
+            System.out.println();
             byte[] decodeImg = Base64.getDecoder().decode(Img);
+            System.out.println(decodeImg);
             articleImgRepository.save(ArticleImg.builder().img(decodeImg).article(article1).build());
         });
         System.out.println("저장 테스트");
