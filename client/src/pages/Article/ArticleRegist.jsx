@@ -27,7 +27,7 @@ const ArticleRegist = () => {
 			title: title,
 			price: price,
 			content: content,
-			photo: imageSrcs,
+			photos: imageSrcs,
 		};
 		try {
 			const ret = await registArticle(body);

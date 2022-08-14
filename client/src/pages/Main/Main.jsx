@@ -68,12 +68,11 @@ const Main = () => {
 					articleList.map(article => (
 						<FeedItem
 							key={article.articleIdx}
-							// todo : userId, aritlceImg API에서 받아와야 함
 							userId={article.user.userId}
 							nickname={article.user.nickname}
 							articleId={article.articleIdx}
-							// articleImg={article.articleImgList}
-							articleImg={feed_article_img}
+							articleImg={article.articleImgs}
+							// articleImg={feed_article_img}
 							title={article.title}
 							rentPrice={article.price}
 							isLiked={article.likeStatus}
