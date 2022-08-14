@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="test: 파일 한장만 보낼 때 기능 설정">
+    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="chore: 서버 포트 원상복귀">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/StorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/StorageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/db/entity/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/db/entity/Article.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +262,7 @@
       <workItem from="1660207015002" duration="1500000" />
       <workItem from="1660211346813" duration="297000" />
       <workItem from="1660367004989" duration="15847000" />
-      <workItem from="1660450327364" duration="4989000" />
+      <workItem from="1660450327364" duration="15537000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: 유저 info 수정">
       <created>1658995773074</created>
@@ -442,7 +439,70 @@
       <option name="project" value="LOCAL" />
       <updated>1660454485491</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="check">
+      <created>1660456449101</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1660456449101</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat: 회원가입 시 프로필이미지, 이메일 설정(107-108)&#10;signup 시 입력 받은 날짜 기반 나이 설정">
+      <created>1660466048609</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1660466048609</updated>
+    </task>
+    <task id="LOCAL-00028" summary="refactor: 메시지 토큰 삭제 처리">
+      <created>1660466160604</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1660466160604</updated>
+    </task>
+    <task id="LOCAL-00029" summary="refactor: gender String으로 변환">
+      <created>1660466211925</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1660466211925</updated>
+    </task>
+    <task id="LOCAL-00030" summary="refactor: gender String으로 변환&#10;유저 생년월일 처리 변수 생성">
+      <created>1660466235715</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1660466235715</updated>
+    </task>
+    <task id="LOCAL-00031" summary="check">
+      <created>1660466253756</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1660466253756</updated>
+    </task>
+    <task id="LOCAL-00032" summary="fix: 코드 누락">
+      <created>1660466497783</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1660466497783</updated>
+    </task>
+    <task id="LOCAL-00033" summary="check">
+      <created>1660466507624</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1660466507624</updated>
+    </task>
+    <task id="LOCAL-00034" summary="chore: 서버 포트 원상복귀">
+      <created>1660466945184</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1660466945184</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +524,6 @@
     <MESSAGE value="전체 커밋" />
     <MESSAGE value="fix: gitignore typo" />
     <MESSAGE value="feat: oauth2service 생성" />
-    <MESSAGE value="check" />
     <MESSAGE value="refactor: 서버내 사진 저장 위치 설정" />
     <MESSAGE value="feat: dispalyImage controller 구현&#10;(주석문 삭제)" />
     <MESSAGE value="style: 기능 체크용 sout문 삭제" />
@@ -476,7 +535,14 @@
     <MESSAGE value="feat: 파일을 base64 바이너리로 인코딩 기능 추가" />
     <MESSAGE value="style: 주석 수정(제목-&gt;사진)" />
     <MESSAGE value="docs: check" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs: check" />
+    <MESSAGE value="feat: 회원가입 시 프로필이미지, 이메일 설정(107-108)&#10;signup 시 입력 받은 날짜 기반 나이 설정" />
+    <MESSAGE value="refactor: 메시지 토큰 삭제 처리" />
+    <MESSAGE value="refactor: gender String으로 변환" />
+    <MESSAGE value="refactor: gender String으로 변환&#10;유저 생년월일 처리 변수 생성" />
+    <MESSAGE value="fix: 코드 누락" />
+    <MESSAGE value="check" />
+    <MESSAGE value="chore: 서버 포트 원상복귀" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: 서버 포트 원상복귀" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

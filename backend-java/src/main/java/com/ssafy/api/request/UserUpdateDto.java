@@ -38,7 +38,7 @@ public class UserUpdateDto {
 
     @ApiModelProperty(name = "유저 성별")
     @ApiParam(value = "유저 성별", type = "int")
-    int gender;
+    String gender;
 
     @ApiModelProperty(name = "유저 닉네임")
     @ApiParam(value = "유저 닉네임", type = "String")

@@ -15,8 +15,6 @@ import lombok.Setter;
 public class UserRegisterPostReq {
 	@ApiModelProperty(name="유저 ID", example="ssafy_web")
 	String id;
-	@ApiModelProperty(name="유저 Password", example="your_password")
-	String password;
 	@ApiModelProperty(name="유저 고유번호", example = "15612315684")
 	String userId;
 	@ApiModelProperty(name="유저 이름", example = "한세환")
@@ -27,8 +25,10 @@ public class UserRegisterPostReq {
 	String email;
 	@ApiModelProperty(name="유저 나이", example = "28")
 	int age;
-	@ApiModelProperty(name="유저 성별", example = "1:남자 / 2:여자 3: / 성별미상")
-	int gender;
+	@ApiModelProperty(name="유저 생년월일", example = "yyyy/mm/dd")
+	String dateOfBirth;
+	@ApiModelProperty(name="유저 성별", example = "남성 / 여성")
+	String gender;
 	@ApiModelProperty(name="유저 닉네임", example = "씽코")
 	String nickname;
 	@ApiModelProperty(name="유저 키", example = "182")

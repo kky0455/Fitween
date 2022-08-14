@@ -27,6 +27,7 @@ import io.swagger.annotations.Api;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.security.GeneralSecurityException;
+import java.util.Calendar;
 import java.util.Collections;
 
 import static org.springframework.security.oauth2.core.endpoint.OAuth2ParameterNames.CLIENT_ID;
@@ -60,7 +61,7 @@ public class AuthController {
 
     @ApiOperation(value = "로그인", notes = "서비스에서 보내준 idToken을 활용하여 로그인 요청")
     @GetMapping("/login")
-    public ResponseEntity<?> signUp(@RequestParam String authCode) throws GeneralSecurityException, IOException {
+    public ResponseEntity<?> signUp(@RequestParam String authCode,@RequestBody UserRegisterPostReq registerPostReq) throws GeneralSecurityException, IOException {
 
         Message message = new Message();
         HttpHeaders headers= new HttpHeaders();
@@ -103,6 +104,8 @@ public class AuthController {
             String familyName = (String) payload.get("family_name");
             String givenName = (String) payload.get("given_name");
 
+            registerPostReq.setProfileImg(pictureUrl);
+            registerPostReq.setEmail(email);
 
 
             try{
@@ -110,9 +113,9 @@ public class AuthController {
                 UserLoginPostReq userLogin =userService.userLogin(userId);
                 message.setStatus(StatusEnum.OK);
                 message.setResponseType("signIn");
-                message.setUserId(userId);
-                message.setAccessToken(userLogin.getAccessToken());
-                message.setRefreshToken(userLogin.getRefreshToken());
+//                message.setUserId(userId);
+//                message.setAccessToken(userLogin.getAccessToken());
+//                message.setRefreshToken(userLogin.getRefreshToken());
                 headers.add("accessToken",userLogin.getAccessToken());
                 headers.add("refreshToken",userLogin.getRefreshToken());
                 return new ResponseEntity<>(message, headers, HttpStatus.OK);
@@ -135,18 +138,29 @@ public class AuthController {
 
     @ApiOperation(value = "회원가입",notes = "email과 password를 받아서 회원가입을 한다.")
     @PostMapping("/signup")
-    public ResponseEntity<?> signUp(@RequestBody UserRegisterPostReq requestDto){
+    public  ResponseEntity<?> signUp(@RequestBody UserRegisterPostReq requestDto){
 
         Message message = new Message();
         HttpHeaders headers= new HttpHeaders();
         headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
 
+        Calendar now = Calendar.getInstance();
+        Integer currentYear = now.get(Calendar.YEAR);
+        System.out.println(requestDto.getDateOfBirth());
+
+        String str_birthYear[] = (requestDto.getDateOfBirth()).split("-");
+        int year = Integer.parseInt(str_birthYear[0]);
+        int age = (currentYear-year)+1;
+
+        System.out.println(year);
+        System.out.println(age);
+
         try {
             String id = userService.join(requestDto.toEntity());
+            requestDto.setAge(age);
             UserLoginPostReq userLogin =userService.userLogin(requestDto.getUserId());
-            message.setAccessToken(userLogin.getAccessToken());
-            message.setRefreshToken(userLogin.getRefreshToken());
-            message.setStatus(StatusEnum.OK);
+            headers.add("accessToken",userLogin.getAccessToken());
+            headers.add("refreshToken",userLogin.getRefreshToken());
             message.setUserId(id);
             return new ResponseEntity<>(message, headers, HttpStatus.OK);
         } catch (IllegalStateException e){

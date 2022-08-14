@@ -29,8 +29,8 @@ public class UserLoginPostReq {
 	String nickname;
 	@ApiModelProperty(example="20")
 	int age ;
-	@ApiModelProperty(example="1=Male, 2=Female, 3=Unknown")
-	int gender;
+	@ApiModelProperty(example="남성 / 여성")
+	String gender;
 	@ApiModelProperty(example="182.1")
 	double height ;
 	@ApiModelProperty(example="80.5")
