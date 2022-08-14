@@ -11,7 +11,6 @@ export const UserProvider = ({ children }) => {
 		const localStorageUserState = JSON.parse(localStorage.getItem('userState'));
 		return localStorageUserState ? localStorageUserState : { loginedUserId: null };
 	});
-	alert(state.loginedUserId);
 
 	useEffect(() => {
 		localStorage.setItem('userState', JSON.stringify(state));
