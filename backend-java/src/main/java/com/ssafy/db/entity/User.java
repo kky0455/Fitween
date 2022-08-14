@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import com.ssafy.api.request.RegionUpdateDto;
 import com.ssafy.api.request.UserUpdateDto;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
@@ -87,17 +88,16 @@ public class User extends BaseEntity{
 
     @Builder
     public void updateUser(UserUpdateDto userUpdateDto) {
-        this.userId = userUpdateDto.getUserId();
-        this.name = userUpdateDto.getName();
         this.profileImg = userUpdateDto.getProfileImg();
-        this.email = userUpdateDto.getEmail();
-        this.age = userUpdateDto.getAge();
-        this.gender = userUpdateDto.getGender();
         this.nickname = userUpdateDto.getNickname();
         this.height = userUpdateDto.getHeight();
         this.weight = userUpdateDto.getWeight();
         this.footSize = userUpdateDto.getFootSize();
-        this.region = userUpdateDto.getRegion();
+    }
+
+    @Builder
+    public void updateRegion(RegionUpdateDto regionUpdateDto) {
+        this.region = regionUpdateDto.getRegion();
     }
 
 

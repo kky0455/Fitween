@@ -14,31 +14,11 @@ import lombok.Setter;
 public class UserUpdateDto {
 
     @ApiModelProperty(name = "유저 id")
-    String id;
-
-    @ApiModelProperty(name = "유저 id")
-    @ApiParam(value = "유저 id", type = "String")
-    String userId;
-
-    @ApiModelProperty(name = "유저 이름")
-    @ApiParam(value = "유저 이름", type = "String")
-    String name;
+    String userIdx;
 
     @ApiModelProperty(name = "유저 프로필사진")
     @ApiParam(value = "유저 프로필사진(주소)", type = "String")
     String profileImg;
-
-    @ApiModelProperty(name = "유저 이메일")
-    @ApiParam(value = "유저 email", type = "String")
-    String email;
-
-    @ApiModelProperty(name = "유저 나이")
-    @ApiParam(value = "유저 나이", type = "int")
-    int age;
-
-    @ApiModelProperty(name = "유저 성별")
-    @ApiParam(value = "유저 성별", type = "int")
-    int gender;
 
     @ApiModelProperty(name = "유저 닉네임")
     @ApiParam(value = "유저 닉네임", type = "String")
