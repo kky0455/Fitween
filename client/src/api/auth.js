@@ -17,3 +17,12 @@ export const signup = async body => {
 		throw err;
 	}
 };
+
+export const duplicationCheck = async nickname => {
+	try {
+		const res = await API.get('/auth/duplicationcheck', { params: { nickname } });
+		return res.data;
+	} catch (err) {
+		throw err;
+	}
+};

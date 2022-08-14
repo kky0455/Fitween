@@ -1,3 +1,5 @@
+import * as authApi from '../api/auth';
+
 export const checkSpecial = str => {
 	const regExp = /[!?@#$%^&*():;+-=~{}<>\_\[\]\|\\\"\'\,\.\/\`\₩]/g;
 	if (regExp.test(str)) return true;
@@ -32,6 +34,11 @@ export const validateDateOfBirth = dateOfBirth => {
 	return false;
 };
 
+export const checkDuplicationNickName = async nickname => {
+	const { isSuccess } = await authApi.duplicationCheck(nickname);
+	return isSuccess;
+};
+
 export const validateNickName = nickName => {
 	if (checkSpecial(nickName) || checkSpace(nickName) || checkNum(nickName) || checkEmoji(nickName))
 		return { state: false, type: 'notLengthErr' };
@@ -40,23 +47,23 @@ export const validateNickName = nickName => {
 };
 
 export const validateHeight = height => {
-	if (checkLength(height) && height >= 90 && height <= 250) return true;
+	if (height >= 90 && height <= 250) return true;
 	return false;
 };
 
 export const validateWeight = weight => {
-	if (checkLength(weight) && weight >= 30 && weight <= 200) return true;
+	if (weight >= 30 && weight <= 200) return true;
 	return false;
 };
 
 export const validateFootSize = footSize => {
-	if (checkLength(footSize) && footSize >= 0 && footSize <= 350) return true;
+	if (footSize >= 0 && footSize <= 350) return true;
 	return false;
 };
 
 export const validateAllInput = info => {
 	return validateDateOfBirth(info.dateOfBirth) &&
-		validateNickName(info.nickname) &&
+		validateNickName(info.nickname).state &&
 		validateHeight(info.height) &&
 		validateWeight(info.weight) &&
 		validateFootSize(info.footSize)

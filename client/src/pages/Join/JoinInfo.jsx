@@ -5,6 +5,7 @@ import Button from '../../components/Common/Button/Button';
 import Input from '../../components/Common/Input/Input';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import {
+	checkDuplicationNickName,
 	validateFootSize,
 	validateHeight,
 	validateNickName,
@@ -18,23 +19,36 @@ import { Radiobox } from '../../components/Common/CheckBox/Checkbox';
 const JoinInfo = ({ info, onChangeHandler }) => {
 	const [readyState, setReadyState] = useState(false);
 	const [nickNameErrMsg, setNickNameErrMsg] = useState('');
+	const [validateDuplicationNickName, setValidateDuplicationNickName] = useState(true);
 	const navigate = useNavigate();
 
 	useEffect(() => {
 		const { state, type } = validateNickName(info.nickname);
 
-		if (!state) {
-			if (type === 'notLengthErr')
-				setNickNameErrMsg('별명은 특수문자, 이모지, 숫자를 입력받을 수 없습니다.');
-			else if (type === 'lengthErr') setNickNameErrMsg('별명은 2자 이상 8자 이하로 입력해주세요.');
-		}
-
-		if (validateAllInput(info)) {
-			setReadyState(true);
-		} else {
-			setReadyState(false);
-		}
-	}, [info]);
+		const checkAll = async info => {
+			const isDuplicationNickName = await checkDuplicationNickName(info.nickname);
+			if (!state) {
+				if (type === 'notLengthErr')
+					setNickNameErrMsg('별명은 특수문자, 이모지, 숫자를 입력받을 수 없습니다.');
+				else if (type === 'lengthErr')
+					setNickNameErrMsg('별명은 2자 이상 8자 이하로 입력해주세요.');
+			} else {
+				if (isDuplicationNickName) {
+					setNickNameErrMsg('이미 존재하는 별명입니다.');
+					setValidateDuplicationNickName(false);
+				} else {
+					setNickNameErrMsg('');
+					setValidateDuplicationNickName(true);
+				}
+			}
+			if (!isDuplicationNickName && validateAllInput(info)) {
+				setReadyState(true);
+			} else {
+				setReadyState(false);
+			}
+		};
+		checkAll(info);
+	}, [info, validateDuplicationNickName]);
 
 	return (
 		<>
@@ -100,7 +114,12 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 				/>
 				<Input
 					placeholder="별명"
-					error={!(info.nickname.length === 0 || validateNickName(info.nickname).state)}
+					error={
+						!(
+							info.nickname.length === 0 ||
+							(validateNickName(info.nickname).state && validateDuplicationNickName)
+						)
+					}
 					errMsg={nickNameErrMsg}
 					image={nicknameImg}
 					type="text"
