@@ -181,6 +181,7 @@ public class ArticleController {
         List<String> results = new ArrayList<>();
         List<String> imageLocations = new ArrayList<>();
 
+        UUID uid =UUID.randomUUID();
 
         try{
             results = storageService.saveFiles(photo, uid);
