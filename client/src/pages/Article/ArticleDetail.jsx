@@ -37,12 +37,10 @@ const ArticleDetail = () => {
 				}}
 			>
 				{/* 게시글 상세 정보 */}
-				{/* todo : updatetime, article img 받아와야 함 */}
 				{articleDetail && (
 					<ArticleDetailItem
 						key={articleDetail.Id}
-						// articleId={articleDetail.aritcle_idx}
-						articleImg={article_img}
+						articleImg={articleDetail.articleImgs}
 						nickname={articleDetail.nickname}
 						title={articleDetail.title}
 						updateTime={articleDetail.lastUpdateTime}

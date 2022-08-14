@@ -76,7 +76,7 @@ const ArticleModify = () => {
 			price: price,
 			content: content,
 			lendstatus: isRent,
-			photo: imageSrcs,
+			photos: imageSrcs,
 		};
 
 		try {
