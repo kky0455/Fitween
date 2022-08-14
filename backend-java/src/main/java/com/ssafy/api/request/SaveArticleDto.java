@@ -6,6 +6,9 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Data
 @AllArgsConstructor
@@ -15,8 +18,8 @@ public class SaveArticleDto {
     @ApiModelProperty(name = "게시글 제목")
     private String title;
 
-//    @ApiModelProperty(name = "게시글 제목")
-//    private String feedImg;
+    @ApiModelProperty(name = "게시글 제목")
+    List<String> articleImgs = new ArrayList<>();
 
     @ApiModelProperty(name = "내용")
     private String content;

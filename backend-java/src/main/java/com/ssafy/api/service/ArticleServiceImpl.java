@@ -4,7 +4,9 @@ import com.ssafy.api.request.SaveArticleDto;
 import com.ssafy.api.request.UpdateArticleDto;
 import com.ssafy.common.auth.FWUserDetails;
 import com.ssafy.db.entity.Article;
+import com.ssafy.db.entity.ArticleImg;
 import com.ssafy.db.entity.User;
+import com.ssafy.db.repository.ArticleImgRepository;
 import com.ssafy.db.repository.ArticleRepository;
 import com.ssafy.db.repository.LikesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +26,14 @@ public class ArticleServiceImpl implements ArticleService{
     @Autowired
     LikesRepository likesRepository;
 
+    @Autowired
+    ArticleImgRepository articleImgRepository;
+
     @Override
     public long createArticle(SaveArticleDto saveArticleDto, User user) {
-        Article article = new Article();
-        article = Article.builder().title(saveArticleDto.getTitle())
+//        Article article = new Article();
+        List<String> Imgs = saveArticleDto.getArticleImgs();
+        Article article = Article.builder().title(saveArticleDto.getTitle())
 //                .feedImg(saveArticleDto.getFeedImg())
                 .content(saveArticleDto.getContent())
                 .price(saveArticleDto.getPrice())
@@ -35,7 +41,12 @@ public class ArticleServiceImpl implements ArticleService{
                 .likesCount(0)
                 .build();
         articleRepository.save(article);
-        return article.getArticleIdx();
+        Long articleIdx = article.getArticleIdx() ;
+        Article article1 = articleRepository.findById(articleIdx).orElse(null);
+        Imgs.forEach(Img -> {
+            articleImgRepository.save(ArticleImg.builder().articleImg(Img).article(article1).build());
+        });
+        return articleIdx;
 //        articleRepository.save(Article.builder()
 //                .title(saveArticleDto.getTitle())
 ////                .feedImg(saveArticleDto.getFeedImg())

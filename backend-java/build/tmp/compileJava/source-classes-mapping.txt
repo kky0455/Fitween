@@ -22,6 +22,9 @@ com/ssafy/api/request/SaveArticleDto.java
  com.ssafy.api.request.SaveArticleDto
 com/ssafy/api/controller/UserRequestMapper.java
  com.ssafy.api.controller.UserRequestMapper
+com/ssafy/db/entity/ArticleImg.java
+ com.ssafy.db.entity.ArticleImg
+ com.ssafy.db.entity.ArticleImg$ArticleImgBuilder
 com/ssafy/api/request/UserLoginPostReq.java
  com.ssafy.api.request.UserLoginPostReq
  com.ssafy.api.request.UserLoginPostReq$UserLoginPostReqBuilder
@@ -56,6 +59,8 @@ com/ssafy/api/model/ChatMessage.java
  com.ssafy.api.model.ChatMessage$ChatMessageBuilder
 com/ssafy/api/request/SimpleUserInfoDto.java
  com.ssafy.api.request.SimpleUserInfoDto
+com/ssafy/db/repository/ArticleImgRepository.java
+ com.ssafy.db.repository.ArticleImgRepository
 com/ssafy/common/auth/FWUserDetails.java
  com.ssafy.common.auth.FWUserDetails
 com/ssafy/api/response/UserLoginPostRes.java
@@ -133,6 +138,8 @@ com/ssafy/db/dto/StatusEnum.java
  com.ssafy.db.dto.StatusEnum
 com/ssafy/common/auth/JwtAuthenticationFilter.java
  com.ssafy.common.auth.JwtAuthenticationFilter
+com/ssafy/api/service/ArticleImgService.java
+ com.ssafy.api.service.ArticleImgService
 com/ssafy/config/WebMvcConfig.java
  com.ssafy.config.WebMvcConfig
 com/ssafy/api/controller/TokenController.java
