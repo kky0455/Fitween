@@ -116,6 +116,9 @@ com/ssafy/db/dto/UserDto.java
 com/ssafy/db/entity/Article.java
  com.ssafy.db.entity.Article
  com.ssafy.db.entity.Article$ArticleBuilder
+com/ssafy/db/dto/UserDto.java
+ com.ssafy.db.dto.UserDto
+ com.ssafy.db.dto.UserDto$UserDtoBuilder
 com/ssafy/api/request/UserUpdateDto.java
  com.ssafy.api.request.UserUpdateDto
 com/ssafy/common/model/response/BaseResponseBody.java
@@ -137,10 +140,10 @@ com/ssafy/config/WebMvcConfig.java
  com.ssafy.config.WebMvcConfig
 com/ssafy/api/controller/TokenController.java
  com.ssafy.api.controller.TokenController
-com/ssafy/common/exception/handler/CustomApiException.java
- com.ssafy.common.exception.handler.CustomApiException
 com/ssafy/api/service/FollowServiceImpl.java
  com.ssafy.api.service.FollowServiceImpl
+com/ssafy/common/exception/handler/CustomApiException.java
+ com.ssafy.common.exception.handler.CustomApiException
 com/ssafy/config/OAuth2SuccessHandler.java
  com.ssafy.config.OAuth2SuccessHandler
 com/ssafy/db/repository/UserRepository2.java
@@ -149,7 +152,7 @@ com/ssafy/api/controller/UserController.java
  com.ssafy.api.controller.UserController
 com/ssafy/db/dto/GoogleLoginDto.java
  com.ssafy.db.dto.GoogleLoginDto
-com/ssafy/common/auth/FWUserDetailService.java
- com.ssafy.common.auth.FWUserDetailService
 com/ssafy/api/service/JwtService.java
  com.ssafy.api.service.JwtService
+com/ssafy/common/auth/FWUserDetailService.java
+ com.ssafy.common.auth.FWUserDetailService
