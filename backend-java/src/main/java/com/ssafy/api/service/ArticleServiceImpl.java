@@ -14,6 +14,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Base64;
 import java.util.List;
 
 @Service
@@ -48,7 +49,8 @@ public class ArticleServiceImpl implements ArticleService{
         Article article1 = articleRepository.findById(articleIdx).orElse(null);
         System.out.println("게시물 생성 3번" + article1);
         Imgs.forEach(Img -> {
-            articleImgRepository.save(ArticleImg.builder().articleImg(Img).article(article1).build());
+            byte[] decodeImg = Base64.getDecoder().decode(Img);
+            articleImgRepository.save(ArticleImg.builder().img(decodeImg).article(article1).build());
         });
         System.out.println("저장 테스트");
         return articleIdx;
