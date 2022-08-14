@@ -47,17 +47,17 @@ export const validateNickName = nickName => {
 };
 
 export const validateHeight = height => {
-	if (checkLength(height) && height >= 90 && height <= 250) return true;
+	if (height >= 90 && height <= 250) return true;
 	return false;
 };
 
 export const validateWeight = weight => {
-	if (checkLength(weight) && weight >= 30 && weight <= 200) return true;
+	if (weight >= 30 && weight <= 200) return true;
 	return false;
 };
 
 export const validateFootSize = footSize => {
-	if (checkLength(footSize) && footSize >= 0 && footSize <= 350) return true;
+	if (footSize >= 0 && footSize <= 350) return true;
 	return false;
 };
 
