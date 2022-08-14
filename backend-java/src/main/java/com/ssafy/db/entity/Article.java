@@ -62,6 +62,10 @@ public class Article extends BaseEntity{
     @JsonIgnoreProperties({"articles", "user", "likes", "article", "like"})
     private List<Likes> likes = new ArrayList<>();
 
+    @OneToMany(mappedBy = "article", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnoreProperties({"article"})
+    private List<ArticleImg> articleImgs = new ArrayList<>();
+
     public void updateArticle(UpdateArticleDto updateArticleDto){
         this.title = updateArticleDto.getTitle();
 //        this.feedImg = updateArticleDto.getFeedImg();

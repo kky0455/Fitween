@@ -1,16 +1,19 @@
 package com.ssafy.api.request;
 
 import com.ssafy.db.entity.Article;
+import com.ssafy.db.entity.ArticleImg;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.Base64;
+import java.util.List;
 
 @Getter
 @Setter
 public class ArticleInfoDto {
     private String title;
-    private String feedImg;
+    List<Object> feedImg;
     private String content;
     private int price;
     private boolean lendStatus;
@@ -22,9 +25,15 @@ public class ArticleInfoDto {
     private LocalDateTime lastUpdateTime;
 
 
-    public ArticleInfoDto(Article article, boolean likeStatus) {
+    public ArticleInfoDto(Article article, boolean likeStatus, List<Object> articleImgs) {
+//        article.getArticleImgs().forEach(articleImg -> {
+//            String baseUrl = articleImg.getBaseUrl();
+//            byte[] img = articleImg.getImg();
+//            ArticleImgDto articleImgDto = new ArticleImgDto(baseUrl, img);
+//            this.feedImg.add(articleImgDto);
+//        });
+        this.feedImg = articleImgs;
         this.title = article.getTitle();
-//        this.feedImg = article.getFeedImg();
         this.content = article.getContent();
         this.price = article.getPrice();
         this.lendStatus = article.isLendStatus();
