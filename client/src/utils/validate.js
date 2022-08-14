@@ -1,3 +1,5 @@
+import * as authApi from '../api/auth';
+
 export const checkSpecial = str => {
 	const regExp = /[!?@#$%^&*():;+-=~{}<>\_\[\]\|\\\"\'\,\.\/\`\₩]/g;
 	if (regExp.test(str)) return true;
@@ -32,6 +34,11 @@ export const validateDateOfBirth = dateOfBirth => {
 	return false;
 };
 
+export const checkDuplicationNickName = async nickname => {
+	const { isSuccess } = await authApi.duplicationCheck(nickname);
+	return isSuccess;
+};
+
 export const validateNickName = nickName => {
 	if (checkSpecial(nickName) || checkSpace(nickName) || checkNum(nickName) || checkEmoji(nickName))
 		return { state: false, type: 'notLengthErr' };
@@ -56,7 +63,7 @@ export const validateFootSize = footSize => {
 
 export const validateAllInput = info => {
 	return validateDateOfBirth(info.dateOfBirth) &&
-		validateNickName(info.nickname) &&
+		validateNickName(info.nickname).state &&
 		validateHeight(info.height) &&
 		validateWeight(info.weight) &&
 		validateFootSize(info.footSize)
