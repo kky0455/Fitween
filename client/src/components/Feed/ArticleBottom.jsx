@@ -22,7 +22,7 @@ const ArticleBottom = ({ isLiked, likeCnt, rentPrice, writerId }) => {
 	}, []);
 	const [liked, setLiked] = useState(isLiked);
 	const [count, setCount] = useState(likeCnt);
-
+	const rentPriceComma = rentPrice.toLocaleString();
 	const doHeartClickHandler = async () => {
 		const data = await doArticleLike(articleId);
 		if (data === '좋아요 성공') {
@@ -68,7 +68,7 @@ const ArticleBottom = ({ isLiked, likeCnt, rentPrice, writerId }) => {
 				{/* 찜 */}
 				<div onClick={liked ? cancelHeartClickHandler : doHeartClickHandler}>
 					<Heart fill={liked ? 'red' : 'white'} stroke={liked ? 'red' : 'black'} />
-					<div className="fw-500 fs-16" style={{ lineHeight: '22.59px' }}>
+					<div className="fw-500 fs-16" style={{ lineHeight: '22.59px', textAlign: 'center' }}>
 						{count}
 					</div>
 				</div>
@@ -84,7 +84,7 @@ const ArticleBottom = ({ isLiked, likeCnt, rentPrice, writerId }) => {
 						일
 					</span>
 					<span className="fw-700 fs-24" style={{ paddingLeft: '8px', lineHeight: '28.8px' }}>
-						{rentPrice}원
+						{rentPriceComma}원
 					</span>
 				</div>
 			</div>
