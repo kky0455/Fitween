@@ -38,7 +38,7 @@ const IconWrapper = ({ onClick, active, icon, label }) => {
 };
 const BottomNavigation = () => {
 	const { setHasBottom } = useGlobalContext();
-	const { loginUserId } = useUserState();
+	const { loginedUserId } = useUserState();
 	useEffect(() => {
 		setHasBottom(true);
 		return () => {
@@ -78,7 +78,7 @@ const BottomNavigation = () => {
 					<IconWrapper active={isActive} icon={<ChatIcon width={30} height={30} />} label="채팅" />
 				)}
 			</Link>
-			<Link to={`/profile/${loginUserId}`}>
+			<Link to={`/profile/${loginedUserId}`}>
 				{({ isActive }) => (
 					<IconWrapper active={isActive} icon={<PersonIcon width={30} height={30} />} label="나" />
 				)}

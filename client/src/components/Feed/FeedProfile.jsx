@@ -6,8 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import checkbox from '../../assets/checkbox.svg';
 import checkbox2 from '../../assets/checkbox2.svg';
 
-const FeedProfile = ({ imgSrc, nickname, isRent }) => {
-	const { userId } = useParams();
+const FeedProfile = ({ userId, imgSrc, nickname, isRent }) => {
 	const navigate = useNavigate();
 	return (
 		<div

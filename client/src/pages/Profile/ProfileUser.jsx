@@ -33,20 +33,19 @@ const ProfileUser = ({ articleId }) => {
 
 	const logoutClickHandler = () => {
 		userDispatch(setLogout());
-		API.defaults.headers.common['Authorization'] = '';
+		API.defaults.headers.common.Authorization = '';
 	};
 
 	useEffect(() => {
 		const fetch = async () => {
 			const data = await getUserInfo(userId);
-
 			if (data.result === 'fail') {
 				navigate('/main');
 			}
 			setProfileInfo(data);
 		};
 		fetch();
-	}, []);
+	}, [userId]);
 
 	const openModal = () => {
 		setModalVisible(true);
@@ -62,9 +61,9 @@ const ProfileUser = ({ articleId }) => {
 				<TopNavigation
 					backClick
 					onBackClick={() => navigate(-1)}
-					leftContent={<div>{profileInfo.user.userId}</div>}
+					leftContent={<div>{profileInfo.nickname}</div>}
 					rightMenu={
-						loginedUserId === profileInfo.user.userId && (
+						loginedUserId === profileInfo.userId && (
 							<img
 								onClick={() => {
 									openModal();
@@ -113,7 +112,7 @@ const ProfileUser = ({ articleId }) => {
 					{/* 프로필 바이오 */}
 					{profileInfo && (
 						<ProfileTop
-							key={profileInfo.user.userId}
+							key={profileInfo.userId}
 							imgSrc={null_profile}
 							followerCount={profileInfo.userFollowerCount}
 							followingCount={profileInfo.userFollowingCount}
@@ -121,8 +120,12 @@ const ProfileUser = ({ articleId }) => {
 						/>
 					)}
 					{/* 버튼 */}
-					{profileInfo && loginedUserId !== profileInfo.user.userId && (
-						<ProfileButton isFollowed={profileInfo.isFollowed} setProfileInfo={setProfileInfo} />
+					{profileInfo && loginedUserId !== profileInfo.userId && (
+						<ProfileButton
+							userId={profileInfo.userId}
+							isFollowed={profileInfo.followed}
+							setProfileInfo={setProfileInfo}
+						/>
 					)}
 				</div>
 				{/* 옷장 사진 */}
