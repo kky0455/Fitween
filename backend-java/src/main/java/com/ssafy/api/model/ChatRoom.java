@@ -54,12 +54,14 @@ public class ChatRoom {
     }
 
     @Builder // 빌더 패턴 적용! 추후 설명..!
-    public ChatRoom(String roomId, String user1Id, String user2Id,String lastChat,Integer notReadCount,String lastSenderId) {
+    public ChatRoom(String roomId, String user1Id, String user2Id,String lastChat,Integer notReadCount,String lastSenderId,String user1Nickname,String user2Nickname) {
         this.roomId = roomId;
         this.user1Id = user1Id;
         this.user2Id = user2Id;
         this.lastChat = lastChat;
         this.lastSenderId = lastSenderId;
         this.notReadCount= notReadCount;
+        this.user1Nickname = user1Nickname;
+        this.user2Nickname = user2Nickname;
     }
 }

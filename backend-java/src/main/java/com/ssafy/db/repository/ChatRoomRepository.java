@@ -45,14 +45,12 @@ public interface ChatRoomRepository extends CrudRepository<ChatRoom, Long> {
     public void updateLastSenderId(String roomId,String senderId);
 
 
-    @Modifying
-    @Transactional
-    @Query(value = "UPDATE ChatRoom t set  t.user1Nickname = (SELECT nickname from User k where k.userId = ?1) where roomId = ?2")
-    public void setUser1Nickname(String user1Id,String roomId);
-    @Modifying
-    @Transactional
-    @Query(value = "UPDATE ChatRoom t set  t.user2Nickname = (SELECT nickname FROM User k where k.userId = ?1) where roomId = ?2")
-    public void setUser2Nickname(String user2Id,String roomId);
+
+    @Query(value = "SELECT nickname from User k where k.userId = ?1 ")
+    public String setUserNickname(String user1Id);
+
+    @Query(value = "SELECT * From Table where idx = (select idx from table where)")
+
 
 
 
