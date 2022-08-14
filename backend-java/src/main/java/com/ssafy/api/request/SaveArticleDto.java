@@ -15,7 +15,7 @@ public class SaveArticleDto {
     @ApiModelProperty(name = "게시글 제목")
     private String title;
 
-//    @ApiModelProperty(name = "게시글 제목")
+//    @ApiModelProperty(name = "게시글 사진")
 //    private String feedImg;
 
     @ApiModelProperty(name = "내용")
