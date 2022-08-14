@@ -13,6 +13,7 @@ import {
 	validateDateOfBirth,
 } from '../../utils/validate';
 import nicknameImg from '../../assets/nickname.svg';
+import { Radiobox } from '../../components/Common/CheckBox/Checkbox';
 
 const JoinInfo = ({ info, onChangeHandler }) => {
 	const [readyState, setReadyState] = useState(false);
@@ -22,16 +23,16 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 	useEffect(() => {
 		const { state, type } = validateNickName(info.nickname);
 
-		if (validateAllInput(info)) {
-			setReadyState(true);
-		} else {
-			setReadyState(false);
-		}
-
 		if (!state) {
 			if (type === 'notLengthErr')
 				setNickNameErrMsg('별명은 특수문자, 이모지, 숫자를 입력받을 수 없습니다.');
 			else if (type === 'lengthErr') setNickNameErrMsg('별명은 2자 이상 8자 이하로 입력해주세요.');
+		}
+
+		if (validateAllInput(info)) {
+			setReadyState(true);
+		} else {
+			setReadyState(false);
 		}
 	}, [info]);
 
@@ -55,6 +56,35 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 				<h2 className="fs-24 fw-700" style={{ textAlign: 'center', paddingBottom: 30 }}>
 					추가 정보 입력
 				</h2>
+				<div
+					style={{
+						display: 'flex',
+						'justify-content': 'center',
+						'align-items': 'center',
+						width: '100%',
+						'padding-bottom': '30px',
+					}}
+				>
+					<Radiobox
+						id="woman"
+						type="radio"
+						onClick={onChangeHandler}
+						value="여성"
+						name="gender"
+						checked={info.gender === '여성'}
+					/>
+					여성
+					<Radiobox
+						id="man"
+						type="radio"
+						onClick={onChangeHandler}
+						value="남성"
+						name="gender"
+						style={{ 'margin-left': '20px' }}
+						checked={info.gender === '남성'}
+					/>
+					남성
+				</div>
 				<Input
 					placeholder="생년월일"
 					error={!validateDateOfBirth(info.dateOfBirth)}
@@ -63,6 +93,10 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 					onChange={onChangeHandler}
 					value={info.dateOfBirth}
 					name="dateOfBirth"
+					style={{
+						padding: '20px',
+						'font-size': '14px',
+					}}
 				/>
 				<Input
 					placeholder="별명"
@@ -73,6 +107,10 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 					onChange={onChangeHandler}
 					value={info.nickname}
 					name="nickname"
+					style={{
+						padding: '20px',
+						'font-size': '14px',
+					}}
 				/>
 				<Input
 					placeholder="키"
@@ -83,6 +121,10 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 					name="height"
 					onChange={onChangeHandler}
 					value={info.height}
+					style={{
+						padding: '20px',
+						'font-size': '14px',
+					}}
 				/>
 				<Input
 					placeholder="몸무게"
@@ -93,6 +135,10 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 					name="weight"
 					onChange={onChangeHandler}
 					value={info.weight}
+					style={{
+						padding: '20px',
+						'font-size': '14px',
+					}}
 				/>
 				<Input
 					placeholder="발사이즈"
@@ -103,6 +149,10 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 					name="footSize"
 					onChange={onChangeHandler}
 					value={info.footSize}
+					style={{
+						padding: '20px',
+						'font-size': '14px',
+					}}
 				/>
 				<Button
 					style={{
