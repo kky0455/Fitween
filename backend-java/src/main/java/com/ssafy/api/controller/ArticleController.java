@@ -1,5 +1,6 @@
 package com.ssafy.api.controller;
 
+import com.google.api.client.util.Base64;
 import com.ssafy.api.request.ArticleInfoDto;
 import com.ssafy.api.request.SaveArticleDto;
 import com.ssafy.api.request.UpdateArticleDto;
@@ -33,6 +34,7 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
+import java.nio.charset.CharsetDecoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -185,30 +187,35 @@ public class ArticleController {
 //        String headerMsg="";
         List<String> imageList= new ArrayList<>();
 
-        for (int i = 0; i < images.length; i++) {
-
-            //fileName = images[i];
-            Resource resource = storageService.loadFileAsResource(folderName, images[i]);
-            String img;
-
-            try (Reader reader = new InputStreamReader(resource.getInputStream())) {
-               img = FileCopyUtils.copyToString(reader);
-            } catch (IOException e) {
-                throw new UncheckedIOException(e);
-            }
-
+        File[] files=dir.listFiles();
+        for(File file:files){
+            String img=encodeFileToBase64Binary(file);
             imageList.add(img);
-
-            try {
-                contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
-            } catch (IOException ex) {
-                logger.info("Could not determine file type.");
-            }
-//            headerMsg +="attachment; filename=\"" + resource.getFilename() + "\"";
-
-            System.out.println("inside for state");
-
         }
+//        for (int i = 0; i < images.length; i++) {
+//
+//            //fileName = images[i];
+//            Resource resource = storageService.loadFileAsResource(folderName, images[i]);
+//            String img;
+//
+//            try (Reader reader = new InputStreamReader(resource.getInputStream(), "")) {
+//               img = FileCopyUtils.copyToString(reader);
+//            } catch (IOException e) {
+//                throw new UncheckedIOException(e);
+//            }
+//
+////            imageList.add(img);
+//
+//            try {
+//                contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
+//            } catch (IOException ex) {
+//                logger.info("Could not determine file type.");
+//            }
+////            headerMsg +="attachment; filename=\"" + resource.getFilename() + "\"";
+//
+//            System.out.println("inside for state");
+//
+//        }
         // Fallback to the default content type if type could not be determined
         if(contentType == null) {
             contentType = "application/octet-stream";
@@ -220,6 +227,23 @@ public class ArticleController {
                 .body(imageList);
     }
 
+    private static String encodeFileToBase64Binary(File file){
+        String encodedfile = null;
+        try {
+            FileInputStream fileInputStreamReader = new FileInputStream(file);
+            byte[] bytes = new byte[(int)file.length()];
+            fileInputStreamReader.read(bytes);
+            encodedfile = new String(Base64.encodeBase64(bytes), "UTF-8");
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return encodedfile;
+    }
     @GetMapping("/displaytest/{userId}/{articleTitle:.+}")
     public ResponseEntity<Resource> displayImage(@PathVariable String articleTitle,
                                                  @PathVariable String userId,
