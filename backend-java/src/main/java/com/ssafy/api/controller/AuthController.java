@@ -55,11 +55,11 @@ public class AuthController {
         User checkUser = userService.checkNicknameDuplicate(nickname);
         Map<String, Object> result = new HashMap<>();
         if (checkUser == null) {
-            result.put("isSuccess", true);
+            result.put("isSuccess", false);
             return ResponseEntity.status(200).body(result);
         } else {
-            result.put("isSuccess", false);
-            return ResponseEntity.status(409).body(result);
+            result.put("isSuccess", true);
+            return ResponseEntity.status(200).body(result);
         }
     }
 
