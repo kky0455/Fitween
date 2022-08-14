@@ -59,10 +59,10 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 				<div
 					style={{
 						display: 'flex',
-						'justify-content': 'center',
-						'align-items': 'center',
+						justifyContent: 'center',
+						alignItems: 'center',
 						width: '100%',
-						'padding-bottom': '30px',
+						paddingBottom: '30px',
 					}}
 				>
 					<Radiobox
@@ -80,7 +80,7 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 						onClick={onChangeHandler}
 						value="남성"
 						name="gender"
-						style={{ 'margin-left': '20px' }}
+						style={{ marginLeft: '20px' }}
 						checked={info.gender === '남성'}
 					/>
 					남성
@@ -95,7 +95,7 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 					name="dateOfBirth"
 					style={{
 						padding: '20px',
-						'font-size': '14px',
+						fontSize: '14px',
 					}}
 				/>
 				<Input
@@ -109,7 +109,7 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 					name="nickname"
 					style={{
 						padding: '20px',
-						'font-size': '14px',
+						fontSize: '14px',
 					}}
 				/>
 				<Input
@@ -123,7 +123,7 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 					value={info.height}
 					style={{
 						padding: '20px',
-						'font-size': '14px',
+						fontSize: '14px',
 					}}
 				/>
 				<Input
@@ -137,7 +137,7 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 					value={info.weight}
 					style={{
 						padding: '20px',
-						'font-size': '14px',
+						fontSize: '14px',
 					}}
 				/>
 				<Input
@@ -151,7 +151,7 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 					value={info.footSize}
 					style={{
 						padding: '20px',
-						'font-size': '14px',
+						fontSize: '14px',
 					}}
 				/>
 				<Button
