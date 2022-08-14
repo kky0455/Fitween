@@ -31,9 +31,10 @@ public class ArticleServiceImpl implements ArticleService{
 
     @Override
     public long createArticle(SaveArticleDto saveArticleDto, User user) {
-//        Article article = new Article();
-        List<String> Imgs = saveArticleDto.getArticleImgs();
-        Article article = Article.builder().title(saveArticleDto.getTitle())
+        Article article = new Article();
+        List<String> Imgs = saveArticleDto.getPhotos();
+        System.out.println("게시물 생성 1번");
+        article = Article.builder().title(saveArticleDto.getTitle())
 //                .feedImg(saveArticleDto.getFeedImg())
                 .content(saveArticleDto.getContent())
                 .price(saveArticleDto.getPrice())
@@ -41,11 +42,15 @@ public class ArticleServiceImpl implements ArticleService{
                 .likesCount(0)
                 .build();
         articleRepository.save(article);
+        System.out.println("게시물 생성 2번" + article);
         Long articleIdx = article.getArticleIdx() ;
+//        Article article1 = new Article();
         Article article1 = articleRepository.findById(articleIdx).orElse(null);
+        System.out.println("게시물 생성 3번" + article1);
         Imgs.forEach(Img -> {
             articleImgRepository.save(ArticleImg.builder().articleImg(Img).article(article1).build());
         });
+        System.out.println("저장 테스트");
         return articleIdx;
 //        articleRepository.save(Article.builder()
 //                .title(saveArticleDto.getTitle())
@@ -78,10 +83,6 @@ public class ArticleServiceImpl implements ArticleService{
     @Override
     public List<Article> findAllArticle() {
         List<Article> articles = articleRepository.findAll();
-        for (Article article:articles
-             ) {
-            System.out.println(article.toString());
-        }
         return articles;
     }
 

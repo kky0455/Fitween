@@ -18,8 +18,8 @@ public class SaveArticleDto {
     @ApiModelProperty(name = "게시글 제목")
     private String title;
 
-    @ApiModelProperty(name = "게시글 제목")
-    List<String> articleImgs;
+    @ApiModelProperty(name = "게시글 이미지")
+    List<String> photos;
 
     @ApiModelProperty(name = "내용")
     private String content;

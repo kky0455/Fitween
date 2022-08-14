@@ -68,8 +68,9 @@ public class ArticleController {
     })
     public ResponseEntity createArticle(@RequestBody SaveArticleDto saveArticleDto, @ApiIgnore Authentication authentication)
     {
-        System.out.println(authentication);
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
+        System.out.println(saveArticleDto.getPhotos().toArray());
+        System.out.println(saveArticleDto.getPhotos().toString());
         Map<String, Object> result = new HashMap<>();
         try {
 //            articleService.createArticle(saveArticleDto, userDetails.getUser());
