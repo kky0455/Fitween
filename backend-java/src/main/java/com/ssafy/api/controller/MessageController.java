@@ -5,17 +5,15 @@ import com.ssafy.api.model.ChatMessage;
 import com.ssafy.api.model.ChatRoom;
 import com.ssafy.api.model.ChatRoomForm;
 import com.ssafy.db.repository.ChatRepository;
-import com.ssafy.db.repository.ChatRepository;
 
 import com.ssafy.db.repository.ChatRoomRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
+
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
@@ -24,8 +22,8 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 public class MessageController {
-    //메세지를 읽었을때 메세지들을 전부 0으로 만들어야함
-    // receiver가 접근했을때 senderId-receiverId 가 매칭된 채팅로그의 1을 0으로 바꾼다다
+
+
     private final SimpMessageSendingOperations sendingOperations;
     
     @GetMapping("/chat/findRoom")
@@ -57,7 +55,13 @@ public class MessageController {
         return roomList(userId);
 
     }
-
+    //메세지를 읽었을때 메세지들을 전부 0으로 만들어야함
+    // receiver가 접근했을때 senderId-receiverId 가 매칭된 채팅로그의 1을 0으로 바꾼다다
+    // 채팅로그에 roomidx와 입장한 유저의 아이디가 receiverId인 모든 로그의 isRead를 0으로 바꾼다.
+    @GetMapping("API")
+    public void read(String roomId,String receiverId){
+        isReadUpdate(roomId,receiverId);
+    }
 
 
     @MessageMapping("/chat/message")
@@ -139,6 +143,8 @@ public class MessageController {
         chatRoomForm.setUser2Id(newroom.getUser2Id());
 
         ChatRoom chatRoom = chatRoomForm.toEntity();
+        chatRoomRepository.setUser1Nickname(newroom.getUser1Id(),newroom.getRoomId());
+        chatRoomRepository.setUser2Nickname(newroom.getUser2Id(),newroom.getRoomId());
         ChatRoom saved = chatRoomRepository.save(chatRoom);
 
 
@@ -171,7 +177,6 @@ public class MessageController {
 
     public List<ChatRoom> roomList(String user1){
         List<ChatRoom> rooms = chatRoomRepository.findRoomByUser(user1);
-
         return rooms;
 
     }
@@ -192,6 +197,12 @@ public class MessageController {
         chatRoomRepository.notReadMessage(senderId,receiverId,roomId);
 
     }
+
+    public void isReadUpdate(String roomId,String receiverdId){
+        chatMessageRepository.updateIsRead(roomId,receiverdId);
+
+    }
+
 
 
 

@@ -23,6 +23,10 @@ public class ChatRoom {
     @Column
     private String user1Id;
     @Column
+    private String user1Nickname;
+    @Column
+    private String user2Nickname;
+    @Column
     private String user2Id;
 
     @Column
@@ -35,6 +39,9 @@ public class ChatRoom {
 
     @Column
     private Integer notReadCount;
+
+
+
 
 
     public static ChatRoom create(String user1Id,String user2Id) {
