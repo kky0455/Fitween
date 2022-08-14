@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import colors from '../../constants/colors';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
@@ -18,6 +18,7 @@ import trash_modal_icon from '../../assets/trash_modal_Icon.svg';
 import { MAX_BYTE } from '../../constants/config';
 
 const ArticleModify = () => {
+	const { articleId } = useParams();
 	const [title, setTitle] = useState();
 	const [price, setPrice] = useState('');
 	const [content, setContent] = useState('');
@@ -26,11 +27,11 @@ const ArticleModify = () => {
 	const navigate = useNavigate();
 	useEffect(() => {
 		const fetch = async () => {
-			const data = await getArticleDetail();
+			const data = await getArticleDetail(articleId);
 			setTitle(data.title);
 			setPrice(data.price);
 			setContent(data.content);
-			setIsRent(data.lendstatus);
+			setIsRent(data.lendStatus);
 		};
 		fetch();
 	}, []);
@@ -54,8 +55,8 @@ const ArticleModify = () => {
 		};
 
 		try {
-			const ret = await modifyArticle(body);
-			navigate(`/article/${ret.article_idx}`);
+			const ret = await modifyArticle(articleId, body);
+			navigate(`/article/${articleId}`);
 		} catch (error) {
 			alert('다시 시도하세요.');
 		}
