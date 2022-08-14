@@ -35,4 +35,8 @@ public class UserUpdateDto {
     @ApiModelProperty(name = "유저 발사이즈")
     @ApiParam(value = "유저 발사이즈", type = "int")
     int footSize;
+
+    @ApiModelProperty(name = "유저 사는 지역")
+    @ApiParam(value = "유저 사는 지역", type = "String")
+    String region;
 }

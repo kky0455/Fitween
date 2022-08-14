@@ -1,6 +1,5 @@
 package com.ssafy.api.service;
 
-import com.ssafy.api.request.RegionUpdateDto;
 import com.ssafy.api.request.UserLoginPostReq;
 
 import com.ssafy.api.request.UserUpdateDto;
@@ -55,11 +54,6 @@ public class UserService {
 	public void updateUser(Long userIdx, UserUpdateDto userUpdateDto) {
 		User user = userRepository2.findByUserIdx(userIdx).orElse(null);
 		user.updateUser(userUpdateDto);
-	}
-
-	public void updateRegion(Long userIdx, RegionUpdateDto regionUpdateDto) {
-		User user = userRepository2.findByUserIdx(userIdx).orElse(null);
-		user.updateRegion(regionUpdateDto);
 	}
 
 	@Transactional
