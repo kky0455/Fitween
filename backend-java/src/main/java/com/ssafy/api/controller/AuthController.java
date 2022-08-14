@@ -50,8 +50,8 @@ public class AuthController {
     private final UserService userService;
 
     @ApiOperation(value = "로그인", notes = "서비스에서 보내준 idToken을 활용하여 로그인 요청")
-    @GetMapping("/{nickname}/duplicationcheck")
-    public ResponseEntity<?> duplicationcheck(@PathVariable String nickname) {
+    @GetMapping("/duplicationcheck")
+    public ResponseEntity<?> duplicationcheck(@RequestParam String nickname) {
         User checkUser = userService.checkNicknameDuplicate(nickname);
         Map<String, Object> result = new HashMap<>();
         if (checkUser == null) {
