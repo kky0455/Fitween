@@ -63,6 +63,5 @@ public class ChatRoom {
         this.notReadCount= notReadCount;
         this.user1Nickname = user1Nickname;
         this.user2Nickname = user2Nickname;
-
     }
 }

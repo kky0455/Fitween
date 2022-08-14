@@ -20,7 +20,6 @@ public class ChatRoomForm {
 
     private String user2Nickname;
 
-
     //     빌더 패턴으로 객체 생성! 생성자의 변형. 입력 순서가 일치하지 않아도 됨.
     public ChatRoom toEntity() {
         return ChatRoom.builder()
@@ -33,6 +32,7 @@ public class ChatRoomForm {
                 .user1Nickname(user1Nickname)
                 .user2Nickname(user2Nickname)
                 .build();
+
     }
 
 }
