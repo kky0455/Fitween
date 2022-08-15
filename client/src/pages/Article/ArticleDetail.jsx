@@ -40,6 +40,7 @@ const ArticleDetail = () => {
 				{articleDetail && (
 					<ArticleDetailItem
 						key={articleDetail.Id}
+						writerId={articleDetail.writerId}
 						articleImg={articleDetail.articleImgs}
 						nickname={articleDetail.nickname}
 						title={articleDetail.title}

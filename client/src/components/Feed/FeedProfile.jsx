@@ -1,12 +1,12 @@
 import React from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import checkbox from '../../assets/checkbox.svg';
 import checkbox2 from '../../assets/checkbox2.svg';
 
-const FeedProfile = ({ userId, imgSrc, nickname, isRent }) => {
+const FeedProfile = ({ writerId, imgSrc, nickname, isRent }) => {
 	const navigate = useNavigate();
 	return (
 		<div
@@ -28,7 +28,7 @@ const FeedProfile = ({ userId, imgSrc, nickname, isRent }) => {
 					display: flex;
 					align-items: center;
 				`}
-				onClick={() => navigate(`/profile/${userId}`)}
+				onClick={() => navigate(`/profile/${writerId}`)}
 			>
 				{/* todo: 프로필 img api 받아와야 함 */}
 				<img src={imgSrc} />

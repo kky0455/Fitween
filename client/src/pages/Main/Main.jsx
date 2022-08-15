@@ -32,7 +32,6 @@ const Main = () => {
 		const fetch = async () => {
 			const data = await getArticleList();
 			setArticleList(data);
-			console.log(data);
 		};
 		fetch();
 	}, []);
@@ -68,7 +67,7 @@ const Main = () => {
 					articleList.map(article => (
 						<FeedItem
 							key={article.articleIdx}
-							userId={article.user.userId}
+							writerId={article.user.userId}
 							nickname={article.user.nickname}
 							articleId={article.articleIdx}
 							articleImg={article.articleImgs}
