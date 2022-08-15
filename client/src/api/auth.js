@@ -17,3 +17,12 @@ export const signup = async body => {
 		throw err;
 	}
 };
+
+export const refresh = async body => {
+	try {
+		const res = await API.post('/token/refresh', body);
+		return res.data;
+	} catch (err) {
+		throw err;
+	}
+};
