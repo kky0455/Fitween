@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.ssafy.db.entity.User;
 
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 
@@ -20,7 +21,7 @@ public interface ChatRoomRepository extends CrudRepository<ChatRoom, Long> {
     @Query(value = "SELECT roomId FROM ChatRoom t where (t.user1Id= ?1 and t.user2Id = ?2)or(t.user1Id= ?2 and t.user2Id = ?1)")
     String findByUser1and2(String user1Id,String user2Id);
 
-    @Query(value = "SELECT t FROM ChatRoom t where t.user1Id= ?1 or t.user2Id = ?1")
+    @Query(value = "SELECT t FROM ChatRoom t where t.user1Id= ?1 or t.user2Id = ?1 ORDER BY lastChatTime desc " )
     List<ChatRoom> findRoomByUser(String user1Id);
 
 
@@ -32,7 +33,7 @@ public interface ChatRoomRepository extends CrudRepository<ChatRoom, Long> {
     @Modifying
     @Transactional
     @Query(value = "UPDATE ChatRoom t set lastChatTime = ?2 where roomId = ?1")
-    public void updateLastChatTime(String roomId,LocalDateTime dateTime);
+    public void updateLastChatTime(String roomId, ZonedDateTime dateTime);
 
     @Modifying
     @Transactional
