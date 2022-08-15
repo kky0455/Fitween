@@ -139,7 +139,7 @@
       <command value="gradle lombok" />
     </option>
   </component>
-  <component name="RunManager" selected="애플리케이션.GroupCallApplication">
+  <component name="RunManager" selected="Application.GroupCallApplication">
     <configuration name="GroupCallApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ssafy.GroupCallApplication" />
       <module name="ssafy-web-project.main" />
