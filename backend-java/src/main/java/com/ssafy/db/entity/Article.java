@@ -1,15 +1,11 @@
 package com.ssafy.db.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.ssafy.api.request.UpdateArticleDto;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,18 +22,19 @@ public class Article extends BaseEntity{
     @Column
     String title;
 
-//    @Column
-//    String feedImg;
-
     @Column
     String content;
 
     @Column
     int price;
 
-    @Column()
+    @Column
     @ColumnDefault("0")
     boolean lendStatus;
+
+    @Column
+    @Enumerated(EnumType.STRING)
+    Category category;
 
     @Transient
     private long likesCount;
@@ -45,10 +42,6 @@ public class Article extends BaseEntity{
     @Transient
     private boolean likeStatus;
 
-
-    public void updateLikesCount(long likesCount) {
-        this.likesCount = likesCount;
-    }
 
     public void updateLikeStatus(boolean likeStatus) { this.likeStatus = likeStatus; }
 
@@ -68,18 +61,18 @@ public class Article extends BaseEntity{
 
     public void updateArticle(UpdateArticleDto updateArticleDto){
         this.title = updateArticleDto.getTitle();
-//        this.feedImg = updateArticleDto.getFeedImg();
         this.content = updateArticleDto.getContent();
         this.price = updateArticleDto.getPrice();
         this.lendStatus = updateArticleDto.isLendstatus();
+        this.category = updateArticleDto.getCategory();
     }
     @Builder
-    public Article(String title, String feedImg ,String content, int price, User user, int likesCount) {
+    public Article(String title, String content, int price, User user, int likesCount, Category category) {
         this.title = title;
-//        this.feedImg = feedImg;
         this.content = content;
         this.price = price;
         this.user = user;
         this.likesCount = likesCount;
+        this.category = category;
     }
 }

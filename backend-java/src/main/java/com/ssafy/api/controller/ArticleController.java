@@ -9,12 +9,9 @@ import com.ssafy.api.service.LikeService;
 import com.ssafy.api.service.UserService;
 import com.ssafy.api.service.StorageService;
 import com.ssafy.common.auth.FWUserDetails;
-import com.ssafy.common.model.response.BaseResponseBody;
 import com.ssafy.db.dto.Response;
 import com.ssafy.db.entity.Article;
-import com.ssafy.db.entity.ArticleImg;
 import com.ssafy.db.entity.User;
-import com.ssafy.db.repository.ArticleRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -33,7 +30,6 @@ import org.springframework.web.multipart.MultipartFile;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
@@ -49,8 +45,6 @@ public class ArticleController {
     UserService userService;
     @Autowired
     LikeService likeService;
-
-    ArticleRepository articleRepository;
 
     //image upload
     private final StorageService storageService;
@@ -73,15 +67,12 @@ public class ArticleController {
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
         Map<String, Object> result = new HashMap<>();
         try {
-//            articleService.createArticle(saveArticleDto, userDetails.getUser());
             result.put("article_idx", articleService.createArticle(saveArticleDto, userDetails.getUser()));
             result.put("result", "게시물 등록 성공");
             return ResponseEntity.ok().body(result);
         } catch (Exception E) {
             return ResponseEntity.status(500).body("게시물 등록 실패");
         }
-
-//        return ResponseEntity.status(200).body("게시물 등록 성공");
     }
     @ApiOperation(value = "게시글 정보 수정(token)", notes = "게시글 정보 수정")
     @PutMapping("/{article_idx}")
