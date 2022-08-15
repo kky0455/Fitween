@@ -9,7 +9,7 @@ import colors from '../../constants/colors';
 import { ReactComponent as Heart } from '../../assets/heart_active.svg';
 import { doArticleLike, cancelArticleLike } from '../../api/article';
 import { useGlobalContext } from '../../contexts/GlobalContext';
-import { useUserState } from '../../context/User/UserContext';
+import { useUserState } from '../../contexts/User/UserContext';
 
 const ArticleBottom = ({ isLiked, likeCnt, rentPrice, writerId }) => {
 	const { articleId } = useParams();

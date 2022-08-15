@@ -7,8 +7,8 @@ import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import API from '../../api';
 import { setRefreshToken } from '../../storage/Cookie';
 import * as authApi from '../../api/auth';
-import { useUserDispatch, useUserState } from '../../context/User/UserContext';
-import { setLogin } from '../../context/User/UserTypes';
+import { useUserDispatch, useUserState } from '../../contexts/User/UserContext';
+import { setLogin } from '../../contexts/User/UserTypes';
 
 const JoinTown = ({ info }) => {
 	const [location, setLocation] = useState(null);

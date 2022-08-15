@@ -5,7 +5,7 @@ import Loading from '../../components/Common/Loading/Loading';
 import * as authApi from '../../api/auth';
 import { setRefreshToken } from '../../storage/Cookie';
 import API from '../../api';
-import { useUserDispatch } from '../../context/User/UserContext';
+import { useUserDispatch } from '../../contexts/User/UserContext';
 import { setLogin, setSignUp } from '../../context/User/UserTypes';
 
 const Redirect = () => {

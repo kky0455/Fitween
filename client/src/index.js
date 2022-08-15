@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorkerResgistration from './serviceWorkerRegistration';
-import { UserProvider } from './context/User/UserContext';
+import { UserProvider } from './contexts/User/UserContext';
 
 // msw
 import { serviceWorker } from './mocks/browser';

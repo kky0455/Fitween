@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Common/Button/Button';
-import { useUserState } from '../../context/User/UserContext';
+import { useUserState } from '../../contexts/User/UserContext';
 
 const JoinIndex = () => {
 	const naviagte = useNavigate();

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
 
-import { useUserState } from '../../context/User/UserContext';
+import { useUserState } from '../../contexts/User/UserContext';
 
 const PrivateRoute = () => {
 	const { loginedUserId } = useUserState();
