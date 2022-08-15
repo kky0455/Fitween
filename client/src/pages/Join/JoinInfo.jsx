@@ -36,6 +36,8 @@ const JoinInfo = ({ info, onChangeHandler, setInfo }) => {
 
 			if (!state) {
 				setNickNameErrMsg(errMessage);
+			} else {
+				setNickNameErrMsg('');
 			}
 
 			if (await validateAllInput(info)) {
