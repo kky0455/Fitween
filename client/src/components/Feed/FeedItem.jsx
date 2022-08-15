@@ -17,7 +17,7 @@ const FeedItem = ({
 	isLiked,
 	likeCnt,
 	isRent,
-	userId,
+	writerId,
 }) => {
 	const [liked, setLiked] = useState(isLiked);
 	const [count, setCount] = useState(likeCnt);
@@ -52,7 +52,7 @@ const FeedItem = ({
 			`}
 		>
 			{/* 상단부 - 작성자 정보, 대여가능 여부 */}
-			<FeedProfile userId={userId} imgSrc={null_profile} nickname={nickname} isRent={isRent} />
+			<FeedProfile writerId={writerId} imgSrc={null_profile} nickname={nickname} isRent={isRent} />
 			{/* 게시글 이미지 */}
 			<div
 				css={css`
