@@ -16,7 +16,7 @@ import { getUserInfo } from '../../api/user';
 import profile_menu from '../../assets/profile_menu.svg';
 import Modal from '../../components/Common/Modal/Modal';
 import colors from '../../constants/colors';
-import { setLogout } from '../../context/User/UserTypes';
+import { setLogout } from '../../contexts/User/UserTypes';
 
 const Hr = styled.hr`
 	border: none;
