@@ -28,6 +28,7 @@ const Join = () => {
 								return { ...prevState, [e.target.name]: e.target.value };
 							})
 						}
+						setInfo={setInfo}
 					/>
 				}
 			/>

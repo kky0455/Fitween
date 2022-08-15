@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import _ from 'lodash';
 
 import Button from '../../components/Common/Button/Button';
 import Input from '../../components/Common/Input/Input';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import {
-	checkDuplicationNickName,
 	validateFootSize,
 	validateHeight,
 	validateNickName,
@@ -16,39 +16,36 @@ import {
 import nicknameImg from '../../assets/nickname.svg';
 import { Radiobox } from '../../components/Common/CheckBox/Checkbox';
 
-const JoinInfo = ({ info, onChangeHandler }) => {
+const JoinInfo = ({ info, onChangeHandler, setInfo }) => {
 	const [readyState, setReadyState] = useState(false);
 	const [nickNameErrMsg, setNickNameErrMsg] = useState('');
-	const [validateDuplicationNickName, setValidateDuplicationNickName] = useState(true);
+	const [validateNickname, setValidateNickname] = useState(true);
 	const navigate = useNavigate();
 
-	useEffect(() => {
-		const { state, type } = validateNickName(info.nickname);
+	const debounce = _.debounce(e => {
+		setInfo(prevState => {
+			return { ...prevState, [e.target.name]: e.target.value };
+		});
+	}, 500);
 
+	useEffect(() => {
 		const checkAll = async info => {
-			const isDuplicationNickName = await checkDuplicationNickName(info.nickname);
+			const { state, errMessage } = await validateNickName(info.nickname);
+
+			setValidateNickname(state);
+
 			if (!state) {
-				if (type === 'notLengthErr')
-					setNickNameErrMsg('별명은 특수문자, 이모지, 숫자를 입력받을 수 없습니다.');
-				else if (type === 'lengthErr')
-					setNickNameErrMsg('별명은 2자 이상 8자 이하로 입력해주세요.');
-			} else {
-				if (isDuplicationNickName) {
-					setNickNameErrMsg('이미 존재하는 별명입니다.');
-					setValidateDuplicationNickName(false);
-				} else {
-					setNickNameErrMsg('');
-					setValidateDuplicationNickName(true);
-				}
+				setNickNameErrMsg(errMessage);
 			}
-			if (!isDuplicationNickName && validateAllInput(info)) {
+
+			if (await validateAllInput(info)) {
 				setReadyState(true);
 			} else {
 				setReadyState(false);
 			}
 		};
 		checkAll(info);
-	}, [info, validateDuplicationNickName]);
+	}, [info]);
 
 	return (
 		<>
@@ -101,11 +98,10 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 				</div>
 				<Input
 					placeholder="생년월일"
-					error={!validateDateOfBirth(info.dateOfBirth)}
+					error={!(info.dateOfBirth.length === 0 || validateDateOfBirth(info.dateOfBirth))}
 					errMsg="생년월일을 입력해주세요."
 					type="date"
 					onChange={onChangeHandler}
-					value={info.dateOfBirth}
 					name="dateOfBirth"
 					style={{
 						padding: '20px',
@@ -114,17 +110,11 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 				/>
 				<Input
 					placeholder="별명"
-					error={
-						!(
-							info.nickname.length === 0 ||
-							(validateNickName(info.nickname).state && validateDuplicationNickName)
-						)
-					}
+					error={!(info.nickname.length === 0 || validateNickname)}
 					errMsg={nickNameErrMsg}
 					image={nicknameImg}
 					type="text"
-					onChange={onChangeHandler}
-					value={info.nickname}
+					onChange={debounce}
 					name="nickname"
 					style={{
 						padding: '20px',
@@ -139,7 +129,6 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 					type="number"
 					name="height"
 					onChange={onChangeHandler}
-					value={info.height}
 					style={{
 						padding: '20px',
 						fontSize: '14px',
@@ -153,7 +142,6 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 					type="number"
 					name="weight"
 					onChange={onChangeHandler}
-					value={info.weight}
 					style={{
 						padding: '20px',
 						fontSize: '14px',
@@ -167,7 +155,6 @@ const JoinInfo = ({ info, onChangeHandler }) => {
 					type="number"
 					name="footSize"
 					onChange={onChangeHandler}
-					value={info.footSize}
 					style={{
 						padding: '20px',
 						fontSize: '14px',
