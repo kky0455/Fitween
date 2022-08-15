@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.UUID;
 
 
@@ -32,7 +33,7 @@ public class ChatRoom {
     @Column
     private String lastChat;
     @Column
-    private LocalDateTime lastChatTime;
+    private ZonedDateTime lastChatTime;
 
     @Column
     private String lastSenderId;
