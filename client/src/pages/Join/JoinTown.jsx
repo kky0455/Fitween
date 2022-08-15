@@ -4,11 +4,10 @@ import axios from 'axios';
 
 import Button from '../../components/Common/Button/Button';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
-import API from '../../api';
-import { setRefreshToken } from '../../storage/Cookie';
 import * as authApi from '../../api/auth';
 import { useUserDispatch, useUserState } from '../../contexts/User/UserContext';
 import { setLogin } from '../../contexts/User/UserTypes';
+import { onLogin } from '../../utils/auth';
 
 const JoinTown = ({ info }) => {
 	const [location, setLocation] = useState(null);
@@ -26,11 +25,10 @@ const JoinTown = ({ info }) => {
 			};
 
 			const res = await authApi.signup(body);
-			const { userId, accessToken } = res.accessToken;
+			const { refreshToken, accessToken, userId } = res;
 
-			setRefreshToken(res.refreshToken);
+			onLogin(refreshToken, accessToken);
 			dispatch(setLogin(userId));
-			API.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
 			navigate('/main');
 		} catch (err) {
 			throw err;
