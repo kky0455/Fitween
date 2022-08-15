@@ -3,6 +3,8 @@ import Button from '../../components/Common/Button/Button';
 import Logo from '../../assets/FitweenLogoBg.png';
 import { login } from '../../api/auth';
 
+import axios from 'axios';
+
 const callKakaoLoginHandler = () => {
 	window.location.href = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${process.env.REACT_APP_KAKAO_REST_API_KEY}&redirect_uri=${process.env.REACT_APP_CLIENT_URI}/kakao`;
 };
@@ -29,7 +31,13 @@ const onGoogleFailure = err => {
 
 const Index = () => {
 	const googleButtonRef = useRef(null);
-
+	useEffect(() => {
+		const fetch = async () => {
+			const res = axios.get('https://koo.fitween.kro.kr/api/acturator/info');
+			console.log(res);
+		};
+		fetch();
+	}, []);
 	useEffect(() => {
 		const loadScript = src =>
 			new Promise((resolve, reject) => {
