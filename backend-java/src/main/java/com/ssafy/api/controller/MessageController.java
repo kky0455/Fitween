@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDateTime;
+//import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -91,10 +93,14 @@ public class MessageController {
 
             message.setRoomId(roomnum);
         }
-
-        LocalDateTime datetime = LocalDateTime.now();
+        ZonedDateTime datetime =  ZonedDateTime.now(ZoneId.of("Asia/Seoul"));
+        //LocalDateTime datetime = LocalDateTime.now();
         message.setSenddatetime(datetime);
-        message.setIsRead(1);
+        Integer isRead = 1;
+        // if(subscribe == True){
+        //      isRead = 0
+        // }
+        message.setIsRead(isRead);
         saveMessage(message.getRoomId(), message.getSenderId(), message.getReceiverId(), message.getMessage(),message.getIsRead());
 
         updateLastChat(message.getRoomId(),message.getMessage(),message.getSenddatetime(), message.getSenderId(), message.getReceiverId());
@@ -202,7 +208,7 @@ public class MessageController {
         return roomNum;
 
     }
-    public void updateLastChat(String roomId,String message,LocalDateTime dateTime,String senderId,String receiverId){
+    public void updateLastChat(String roomId,String message,ZonedDateTime dateTime,String senderId,String receiverId){
         chatRoomRepository.updateLastChat(roomId,message);
         chatRoomRepository.updateLastChatTime(roomId,dateTime);
         chatRoomRepository.updateLastSenderId(roomId,senderId);

@@ -20,8 +20,6 @@ com/ssafy/db/entity/BaseEntity.java
  com.ssafy.db.entity.BaseEntity
 com/ssafy/api/request/SaveArticleDto.java
  com.ssafy.api.request.SaveArticleDto
-com/ssafy/api/request/RegionUpdateDto.java
- com.ssafy.api.request.RegionUpdateDto
 com/ssafy/api/controller/UserRequestMapper.java
  com.ssafy.api.controller.UserRequestMapper
 com/ssafy/db/entity/ArticleImg.java

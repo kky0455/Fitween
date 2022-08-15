@@ -6,6 +6,7 @@ import lombok.Data;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZonedDateTime;
 
 @Data
 public class ChatMessageForm {
@@ -18,7 +19,7 @@ public class ChatMessageForm {
     //내용
     private String message;
 
-    private LocalDateTime senddatetime;
+    private ZonedDateTime senddatetime;
 
     private Integer isRead;
 
