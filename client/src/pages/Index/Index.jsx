@@ -33,7 +33,7 @@ const Index = () => {
 	const googleButtonRef = useRef(null);
 	useEffect(() => {
 		const fetch = async () => {
-			const res = axios.get('https://koo.fitween.kro.kr/api/acturator/info');
+			const res = await axios.get('https://koo.fitween.kro.kr/api/acturator/info');
 			console.log(res);
 		};
 		fetch();
