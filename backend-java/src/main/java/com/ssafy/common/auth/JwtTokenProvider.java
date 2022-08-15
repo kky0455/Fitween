@@ -37,7 +37,7 @@ import java.util.List;
 @Component
 public class JwtTokenProvider {
 
-    private static String secretKey = "fitweenSecretadiosfhaiodhfaiodhfiadflkadfklnad,mf";
+    private static String secretKey = "fitweenSecretadiosfhaiodhfaiodhfiadflkadfklnadmf";
 
     //토큰 유효시간 == 1일
     private static final long expireTime = 24*60*60*1000L;

@@ -2,6 +2,7 @@ package com.ssafy.api.request;
 
 import com.ssafy.db.entity.Article;
 import com.ssafy.db.entity.ArticleImg;
+import com.ssafy.db.entity.Category;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,18 +21,15 @@ public class ArticleInfoDto {
     private String nickname;
     private boolean likeStatus;
 
+    private Category category;
+
     private int likesCount;
     private String writerId;
     private LocalDateTime lastUpdateTime;
 
 
     public ArticleInfoDto(Article article, boolean likeStatus, List<Object> articleImgs) {
-//        article.getArticleImgs().forEach(articleImg -> {
-//            String baseUrl = articleImg.getBaseUrl();
-//            byte[] img = articleImg.getImg();
-//            ArticleImgDto articleImgDto = new ArticleImgDto(baseUrl, img);
-//            this.feedImg.add(articleImgDto);
-//        });
+        this.category = article.getCategory();
         this.feedImg = articleImgs;
         this.title = article.getTitle();
         this.content = article.getContent();

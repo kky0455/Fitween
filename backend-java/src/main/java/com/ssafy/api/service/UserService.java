@@ -10,11 +10,12 @@ import com.ssafy.db.repository.UserRepository;
 import com.ssafy.db.repository.UserRepository2;
 import lombok.RequiredArgsConstructor;
 
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.nio.file.AccessDeniedException;
+import java.util.List;
+import java.util.Optional;
 
 /**
  *	유저 관련 비즈니스 로직 처리를 위한 서비스 인터페이스 정의.
@@ -25,8 +26,6 @@ public class UserService {
 	private final UserRepository userRepository;
 	private final UserRepository2 userRepository2;
 	private final JwtTokenProvider jwtTokenProvider;
-
-	PasswordEncoder passwordEncoder;
 
 
 
@@ -138,4 +137,5 @@ public class UserService {
 	public void socialLogin(String email, String refreshToken){
 		userRepository.socialLogin(email, refreshToken);
 	}
+
 }
