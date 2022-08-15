@@ -22,6 +22,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.Key;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 
@@ -29,7 +30,7 @@ import java.util.List;
 @Component
 public class JwtTokenProvider {
 
-    private static String secretKey = "fitweenSecretadiosfhaiodhfaiodhfiadflkadfklnad,mf";
+    private static String secretKey = "fitweenSecretadiosfhaiodhfaiodhfiadflkadfklnadmf";
 
     //토큰 유효시간 == 1일
     private static final long expireTime = 24*60*60*1000L;
@@ -130,7 +131,9 @@ public class JwtTokenProvider {
     }
 
     public String getUserPk(String token){
-        return Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token).getBody().getSubject();
+        return Jwts.parserBuilder()
+                .setSigningKey(Base64.getEncoder().encodeToString(secretKey.getBytes()))
+                .build().parseClaimsJws(token).getBody().getSubject();
     }
 
     // Request의 Header에서 token 값을 가져옴 "X-AUTH-TOKEN" : "TOKEN"
