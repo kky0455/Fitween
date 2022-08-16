@@ -7,6 +7,7 @@ const Main = ({ padding, gap, children }) => {
 		<div
 			css={css`
 				padding: ${padding ? padding : '16px 14px'};
+				overflow: hidden;
 				overflow-y: scroll;
 				width: 100%;
 				height: 100%;

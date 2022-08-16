@@ -7,7 +7,7 @@ import Button from '../../components/Common/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import { doFollow, cancelFollow } from '../../api/user';
 
-const ProfileButton = ({ userId, isFollowed, setProfileInfo }) => {
+const ProfileButton = ({ userId, userNickname, isFollowed, setProfileInfo }) => {
 	const navigate = useNavigate();
 	const [followed, setFollowed] = useState(isFollowed);
 
@@ -90,7 +90,7 @@ const ProfileButton = ({ userId, isFollowed, setProfileInfo }) => {
 				label="CHAT"
 				onClick={() =>
 					navigate('/chat/room', {
-						state: { roomId: null, receiverId: userId },
+						state: { roomId: null, receiverId: userId, nickname: userNickname },
 					})
 				}
 			/>

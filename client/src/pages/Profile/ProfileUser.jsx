@@ -54,7 +54,6 @@ const ProfileUser = ({ articleId }) => {
 	const closeModal = () => {
 		setModalVisible(false);
 	};
-
 	return (
 		<>
 			{profileInfo && (
@@ -123,6 +122,7 @@ const ProfileUser = ({ articleId }) => {
 					{profileInfo && loginedUserId !== profileInfo.userId && (
 						<ProfileButton
 							userId={profileInfo.userId}
+							userNickname={profileInfo.nickname}
 							isFollowed={profileInfo.followed}
 							setProfileInfo={setProfileInfo}
 						/>
