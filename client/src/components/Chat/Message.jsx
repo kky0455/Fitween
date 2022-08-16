@@ -24,6 +24,7 @@ const Message = ({ isMine, message, isRead, sendTime }) => {
 					font-size: 14px;
 					line-height: 20px;
 					font-family: 'Regular';
+					word-break: break-all;
 				`}
 			>
 				<span>{message}</span>
@@ -41,7 +42,7 @@ const Message = ({ isMine, message, isRead, sendTime }) => {
 					color: ${colors.grey200};
 				`}
 			>
-				{isRead && <span>읽음</span>}
+				{isMine && isRead === 0 && <span>읽음</span>}
 				<span>{sendTime}</span>
 			</div>
 		</div>

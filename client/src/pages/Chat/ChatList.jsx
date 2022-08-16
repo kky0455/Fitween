@@ -12,6 +12,7 @@ import Main from '../../components/Common/Main/Main';
 import RoomItem from '../../components/Chat/RoomItem';
 import { useNavigate } from 'react-router-dom';
 import * as ChatApi from '../../api/chat';
+import { useUserState } from '../../context/User/UserContext';
 
 const EditButton = () => {
 	return (
@@ -35,20 +36,17 @@ const ChatList = () => {
 	const navigate = useNavigate();
 	const [chatList, setChatList] = useState(null);
 
-	// todo: 유저정보 가져와야함
-	const [userId, setUserId] = useState('testId');
+	const { loginedUserId } = useUserState();
 	const fetchAndSetChatList = async () => {
 		try {
-			const data = await ChatApi.getChatRoomLists();
+			const data = await ChatApi.getChatRoomLists(loginedUserId);
 			setChatList(data);
 		} catch (err) {
 			console.log(err);
 		}
 	};
 
-	const onMessageReceived = payload => {
-		let payloadData = JSON.parse(payload.body);
-		console.log(payloadData);
+	const onMessageReceived = () => {
 		fetchAndSetChatList();
 	};
 
@@ -58,7 +56,8 @@ const ChatList = () => {
 	};
 	const onConnected = () => {
 		console.log('연결완료');
-		stompClient.subscribe(`/topic/chat/wait/${userId}`, onMessageReceived);
+		stompClient.debug = null;
+		stompClient.subscribe(`/topic/chat/wait/${loginedUserId}`, onMessageReceived);
 	};
 
 	useEffect(() => {
@@ -85,12 +84,22 @@ const ChatList = () => {
 							key={chatRoom.roomId}
 							// todo : img 받아서 구현 필요
 							imgSrc={logo}
-							partnerName={chatRoom.partnerName}
-							message={chatRoom.lastMessage}
-							unreadCnt={chatRoom.unreadMsgCnt}
+							partnerName={
+								chatRoom.user1Id === loginedUserId ? chatRoom.user2Nickname : chatRoom.user1Nickname
+							}
+							message={chatRoom.lastChat}
+							unreadCnt={chatRoom.lastSenderId === loginedUserId ? 0 : chatRoom.notReadCount}
 							onClickHander={() =>
 								navigate('/chat/room', {
-									state: { roomId: chatRoom.roomId, receiverId: chatRoom.partnerId },
+									state: {
+										roomId: chatRoom.roomId,
+										receiverId:
+											chatRoom.user1Id === loginedUserId ? chatRoom.user2Id : chatRoom.user1Id,
+										nickname:
+											chatRoom.user1Id === loginedUserId
+												? chatRoom.user2Nickname
+												: chatRoom.user1Nickname,
+									},
 								})
 							}
 						/>
