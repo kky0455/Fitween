@@ -1,8 +1,10 @@
 package com.ssafy.api.service;
 
+import com.ssafy.api.request.ArticleRecommendDto;
 import com.ssafy.api.request.SaveArticleDto;
 import com.ssafy.api.request.UpdateArticleDto;
 import com.ssafy.db.entity.Article;
+import com.ssafy.db.entity.Category;
 import com.ssafy.db.entity.User;
 import org.springframework.security.core.Authentication;
 
@@ -19,4 +21,6 @@ public interface ArticleService {
     public void deleteArticle(Article article);
 
     public List<Article> findAllArticle();
+
+    public List<ArticleRecommendDto> findAllTest(Category categotyCode, User user);
 }

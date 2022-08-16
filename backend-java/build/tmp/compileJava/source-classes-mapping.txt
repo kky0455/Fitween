@@ -131,6 +131,9 @@ com/ssafy/api/request/UserUpdateDto.java
  com.ssafy.api.request.UserUpdateDto
 com/ssafy/common/model/response/BaseResponseBody.java
  com.ssafy.common.model.response.BaseResponseBody
+com/ssafy/api/request/ArticleRecommendDto.java
+ com.ssafy.api.request.ArticleRecommendDto
+ com.ssafy.api.request.ArticleRecommendDto$ArticleRecommendDtoBuilder
 com/ssafy/api/service/FollowService.java
  com.ssafy.api.service.FollowService
 com/ssafy/db/dto/Message.java
