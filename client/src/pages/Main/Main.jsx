@@ -10,8 +10,9 @@ import feed_article_img from '../../assets/feed_article_img.png';
 import logo_h from '../../assets/logo_h.png';
 import add_box from '../../assets/add_box.svg';
 import { getArticleList } from '../../api/article';
+import FeedCategory from '../../components/Category/FeedCategory';
 
-const LeftContent = ({}) => {
+const LeftContent = () => {
 	return (
 		<Link to="/main">
 			<img
@@ -28,13 +29,21 @@ const LeftContent = ({}) => {
 
 const Main = () => {
 	const [articleList, setArticleList] = useState(null);
+	const [activeCategoryCode, setActiveCategoryCode] = useState('all');
 	useEffect(() => {
 		const fetch = async () => {
-			const data = await getArticleList();
-			setArticleList(data);
+			try {
+				const data = await getArticleList(activeCategoryCode);
+				setArticleList(data);
+			} catch (err) {
+				console.log(err);
+			}
 		};
 		fetch();
-	}, []);
+	}, [activeCategoryCode]);
+	const categoryClickHandler = async e => {
+		setActiveCategoryCode(e.target.id);
+	};
 	return (
 		<>
 			<TopNavigation
@@ -45,7 +54,6 @@ const Main = () => {
 							src={add_box}
 							alt=""
 							css={css`
-								/* padding-right: 26px; */
 								width: 27px;
 								height: 27px;
 								margin-right: 20px;
@@ -62,16 +70,22 @@ const Main = () => {
 					overflowY: 'scroll',
 				}}
 			>
+				<FeedCategory
+					activeCategoryCode={activeCategoryCode}
+					onClickHandler={categoryClickHandler}
+				/>
 				{/* 피드item */}
 				{articleList &&
 					articleList.map(article => (
 						<FeedItem
 							key={article.articleIdx}
-							writerId={article.user.userId}
-							nickname={article.user.nickname}
+							userId={article.userId}
+							nickname={article.nickname}
 							articleId={article.articleIdx}
-							articleImg={article.articleImgs}
-							// articleImg={feed_article_img}
+							articleImg={
+								article.feedArticleImg.length > 0 &&
+								article.feedArticleImg[0].baseUrl + article.feedArticleImg[0].img
+							}
 							title={article.title}
 							rentPrice={article.price}
 							isLiked={article.likeStatus}
