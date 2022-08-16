@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import checkbox from '../../assets/checkbox.svg';
 import checkbox2 from '../../assets/checkbox2.svg';
 
-const FeedProfile = ({ writerId, imgSrc, nickname, isRent }) => {
+const FeedProfile = ({ userId, imgSrc, nickname, isRent }) => {
 	const navigate = useNavigate();
 	return (
 		<div
@@ -28,7 +28,7 @@ const FeedProfile = ({ writerId, imgSrc, nickname, isRent }) => {
 					display: flex;
 					align-items: center;
 				`}
-				onClick={() => navigate(`/profile/${writerId}`)}
+				onClick={() => navigate(`/profile/${userId}`)}
 			>
 				{/* todo: 프로필 img api 받아와야 함 */}
 				<img src={imgSrc} />
