@@ -36,7 +36,7 @@ const ArticleDetailItem = ({
 	content,
 	profileImg,
 	isRent,
-	writerId,
+	userId,
 }) => {
 	return (
 		<div>
@@ -47,7 +47,7 @@ const ArticleDetailItem = ({
 				imgSrcList={articleImg.map(articleImg => articleImg.baseUrl + articleImg.img)}
 			/>
 			{/* 작성자 정보, 대여 가능 여부 */}
-			<FeedProfile writerId={writerId} imgSrc={profileImg} nickname={nickname} isRent={isRent} />
+			<FeedProfile userId={userId} imgSrc={profileImg} nickname={nickname} isRent={isRent} />
 			{/* 게시글 제목, 내용 */}
 			<div
 				css={css`

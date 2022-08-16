@@ -39,6 +39,7 @@ const ArticleDetail = () => {
 						key={articleDetail.Id}
 						articleImg={articleDetail.feedImg}
 						nickname={articleDetail.nickname}
+						userId={articleDetail.writerId}
 						title={articleDetail.title}
 						updateTime={articleDetail.lastUpdateTime}
 						content={articleDetail.content}
