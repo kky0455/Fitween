@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import ArticleDetailItem from '../../components/Feed/ArticleDetailItem';
-import article_img from '../../assets/article_img.jpg';
 import null_profile from '../../assets/null_profile_img.png';
 import ArticleBottom from '../../components/Feed/ArticleBottom';
 import { getArticleDetail } from '../../api/article';
@@ -40,8 +37,7 @@ const ArticleDetail = () => {
 				{articleDetail && (
 					<ArticleDetailItem
 						key={articleDetail.Id}
-						writerId={articleDetail.writerId}
-						articleImg={articleDetail.articleImgs}
+						articleImg={articleDetail.feedImg}
 						nickname={articleDetail.nickname}
 						title={articleDetail.title}
 						updateTime={articleDetail.lastUpdateTime}

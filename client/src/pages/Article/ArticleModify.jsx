@@ -18,9 +18,11 @@ import trash_modal_icon from '../../assets/trash_modal_Icon.svg';
 import { MAX_BYTE } from '../../constants/config';
 import { useRef } from 'react';
 import Carousel from '../../components/Common/Carousel/Carousel';
+import ArticleCategory from '../../components/Category/ArticleCategory';
 
 const ArticleModify = () => {
 	const { articleId } = useParams();
+	const [activeCategory, setActiveCategory] = useState('etc');
 	const [title, setTitle] = useState('');
 	const [price, setPrice] = useState('');
 	const [content, setContent] = useState('');
@@ -32,10 +34,13 @@ const ArticleModify = () => {
 	useEffect(() => {
 		const fetch = async () => {
 			const data = await getArticleDetail(articleId);
+			console.log(data);
 			setTitle(data.title);
 			setPrice(data.price);
 			setContent(data.content);
 			setIsRent(data.lendStatus);
+			setActiveCategory(data.category);
+			setImageSrcs(data.feedImg.map(img => img.baseUrl + img.img));
 		};
 		fetch();
 	}, []);
@@ -66,17 +71,25 @@ const ArticleModify = () => {
 	const closeModal = () => {
 		setModalVisible(false);
 	};
+	const categoryClickHandler = async e => {
+		setActiveCategory(e.target.id);
+	};
 	const onContentChangeHandler = e => {
 		e.preventDefault();
 		if (getByte(e.target.value) <= MAX_BYTE) setContent(e.target.value);
 	};
 	const onModifyClickHandler = async () => {
+		if (imageSrcs.length === 0) {
+			alert('사진을 등록해주세요');
+			return;
+		}
 		const body = {
 			title: title,
 			price: price,
 			content: content,
 			lendstatus: isRent,
 			photos: imageSrcs,
+			category: activeCategory,
 		};
 
 		try {
@@ -199,9 +212,19 @@ const ArticleModify = () => {
 					css={css`
 						display: flex;
 						flex-direction: column;
-						padding: 30px 25px;
+						padding: 0px 25px 30px 25px;
 					`}
 				>
+					<div
+						css={css`
+							margin-bottom: 30px;
+						`}
+					>
+						<ArticleCategory
+							activeCategory={activeCategory}
+							onClickHandler={categoryClickHandler}
+						/>
+					</div>
 					{/* 제목 */}
 					<Input
 						css={css`
