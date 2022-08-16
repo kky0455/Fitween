@@ -1,9 +1,6 @@
 package com.ssafy.api.controller;
 
-import com.ssafy.api.request.ArticleImgDto;
-import com.ssafy.api.request.ArticleInfoDto;
-import com.ssafy.api.request.SaveArticleDto;
-import com.ssafy.api.request.UpdateArticleDto;
+import com.ssafy.api.request.*;
 import com.ssafy.api.service.ArticleService;
 import com.ssafy.api.service.LikeService;
 import com.ssafy.api.service.UserService;
@@ -11,6 +8,7 @@ import com.ssafy.api.service.StorageService;
 import com.ssafy.common.auth.FWUserDetails;
 import com.ssafy.db.dto.Response;
 import com.ssafy.db.entity.Article;
+import com.ssafy.db.entity.Category;
 import com.ssafy.db.entity.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -111,15 +109,11 @@ public class ArticleController {
     }
     @ApiOperation(value="게시글 전체 조회", notes="<strong>게시글을 전체 조회를</strong>시켜줍니다.")
     @GetMapping("/list")
-    public ResponseEntity<?> findAllArticle(@ApiIgnore Authentication authentication){
+    public ResponseEntity<?> findRecommendArticle(@RequestParam Category categoryCode, @ApiIgnore Authentication authentication){
 
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
-        List<Article> articles = articleService.findAllArticle();
-        articles.forEach(article -> {
-            article.setLikesCount(article.getLikes().size());
-            article.updateLikeStatus(likeService.isLike(userDetails.getUser(), article));
-        });
-        return ResponseEntity.status(200).body(articles);
+        List<ArticleRecommendDto> articleList = articleService.findAllTest(categoryCode, userDetails.getUser());
+        return ResponseEntity.status(200).body(articleList);
     }
     @GetMapping("/detail/{article_idx}")
     @ApiOperation(value ="게시글 상세  조회", notes ="해당 article_idx 게시판 정보 출력")
@@ -168,55 +162,5 @@ public class ArticleController {
         Article article = articleService.findArticle(article_idx);
         likeService.unLikes(user, article);
         return ResponseEntity.status(200).body("좋아요 취소");
-    }
-
-    @PostMapping("/registtest")
-    public ResponseEntity<?> upload(@RequestParam (value="photo",required = false) MultipartFile[] photo, @RequestParam String title ) throws Exception {
-        Response res = new Response();
-        List<String> results = new ArrayList<>();
-        List<String> imageLocations = new ArrayList<>();
-        System.out.println(photo);
-        System.out.println(title);
-
-        try{
-            results = storageService.saveFiles(photo, title);
-            for(String result : results){
-                imageLocations.add("/"+title+"/"+result);
-            }
-            res.setImageLocations(imageLocations);
-            res.setMessage("done");
-            res.setSuccess(true);
-            return new ResponseEntity<Response>(res, HttpStatus.OK);
-        }catch (Exception e){
-            res.setMessage("failed");
-            res.setSuccess(false);
-            return new ResponseEntity<Response>(res, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    @GetMapping("/display/{userId}/{articleTitle:.+}")
-    public ResponseEntity<Resource> displayImage(@PathVariable String articleTitle,
-                                                 @PathVariable String userId,
-                                                 HttpServletRequest request) {
-        // Load file as Resource
-        Resource resource = storageService.loadFileAsResource(userId, articleTitle);
-
-        // Try to determine file's content type
-        String contentType = null;
-        try {
-            contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
-        } catch (IOException ex) {
-            logger.info("Could not determine file type.");
-        }
-
-        // Fallback to the default content type if type could not be determined
-        if(contentType == null) {
-            contentType = "application/octet-stream";
-        }
-
-        return ResponseEntity.ok()
-                .contentType(MediaType.parseMediaType(contentType))
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
-                .body(resource);
     }
 }
