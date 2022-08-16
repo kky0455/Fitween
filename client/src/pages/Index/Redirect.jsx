@@ -35,28 +35,24 @@ const Redirect = () => {
 				};
 			}
 
-			setTimeout(async () => {
-				console.log('asd');
-				try {
-					const res = await authApi.login(body);
+			try {
+				const res = await authApi.login(body);
+				if (res.responseType === 'signIn') {
+					const { accessToken, userId } = res;
 
-					if (res.responseType === 'signIn') {
-						const { accessToken, userId } = res;
+					setRefreshToken(res.refreshToken);
+					dispatch(setLogin(userId));
+					API.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
+					navigate('/main');
+				} else if (res.responseType === 'signUp') {
+					const { userId } = res;
 
-						setRefreshToken(res.refreshToken);
-						dispatch(setLogin(userId));
-						API.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
-						navigate('/main');
-					} else if (res.responseType === 'signUp') {
-						const { userId } = res;
-
-						dispatch(setSignUp(userId));
-						navigate('/join/index');
-					}
-				} catch (err) {
-					console.log(err);
+					dispatch(setSignUp(userId));
+					navigate('/join/index');
 				}
-			}, 10000);
+			} catch (err) {
+				console.log(err);
+			}
 		};
 		login();
 	}, []);
