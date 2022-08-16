@@ -11,8 +11,8 @@ import { UserProvider } from './context/User/UserContext';
 import { serviceWorker } from './mocks/browser';
 import { GlobalContextProvider } from './contexts/GlobalContext';
 
-serviceWorker.start({ onUnhandledRequest: 'bypass' });
-serviceWorkerResgistration.register();
+// serviceWorker.start({ onUnhandledRequest: 'bypass' });
+// serviceWorkerResgistration.register();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
