@@ -48,8 +48,8 @@ public class JwtTokenProvider {
 //        secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
 //    }
 
-    public String createToken(String userPk, List<String> roles) throws UnsupportedEncodingException {
-        Claims claims = Jwts.claims().setSubject(userPk); // JWT payLood에 저장되는 정보 단위
+    public String createToken(String userId, List<String> roles) throws UnsupportedEncodingException {
+        Claims claims = Jwts.claims().setSubject(userId); // JWT payLood에 저장되는 정보 단위
         claims.put("roles", roles); // 정보는 key-value 쌍으로 저장
         Date now = new Date();
         SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS512;
@@ -61,7 +61,7 @@ public class JwtTokenProvider {
                 );
 
         return JWT.create()
-                .withSubject(userPk)
+                .withSubject(userId)
                 .withExpiresAt(new Date(now.getTime() + expireTime))
                 .withIssuer(ISSUER)
                 .withIssuedAt(Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant()))
@@ -131,9 +131,9 @@ public class JwtTokenProvider {
     }
 
     public String getUserPk(String token){
-        return Jwts.parserBuilder()
-                .setSigningKey(Base64.getEncoder().encodeToString(secretKey.getBytes()))
-                .build().parseClaimsJws(token).getBody().getSubject();
+
+       return Jwts.parserBuilder().setSigningKey(Base64.getEncoder().encodeToString(secretKey.getBytes())).build().parseClaimsJws(token).getBody().getSubject();
+       // return (String) Jwts.parserBuilder().setSigningKey(Base64.getEncoder().encodeToString(secretKey.getBytes())).build().parseClaimsJws(token).getBody().get("userId");
     }
 
     // Request의 Header에서 token 값을 가져옴 "X-AUTH-TOKEN" : "TOKEN"
@@ -165,7 +165,8 @@ public class JwtTokenProvider {
     // 토큰의 유효성 + 만료일자 확인
     public boolean validateToken(String jwtToken){
         try {
-            Jws<Claims> claims = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(jwtToken);
+            Jws<Claims> claims = Jwts.parserBuilder()
+                    .setSigningKey(Base64.getEncoder().encodeToString(secretKey.getBytes())).build().parseClaimsJws(jwtToken);
             return !claims.getBody().getExpiration().before(new Date());
         } catch (ExpiredJwtException e){
             e.printStackTrace();
@@ -179,7 +180,10 @@ public class JwtTokenProvider {
     public String createRefreshToken(String userId, List<String> roles) throws UnsupportedEncodingException {
         Claims claims = Jwts.claims().setSubject(userId); // JWT payLood에 저장되는 정보 단위
         claims.put("roles", roles); // 정보는 key-value 쌍으로 저장
+        claims.put("userId",userId);
         Date now = new Date();
+
+        System.out.println("createRefreshToken 완료");
         return Jwts.builder()
                 .setClaims(claims)
                 .setIssuedAt(now)
