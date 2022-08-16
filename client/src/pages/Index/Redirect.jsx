@@ -5,7 +5,7 @@ import Loading from '../../components/Common/Loading/Loading';
 import * as authApi from '../../api/auth';
 import { useUserDispatch } from '../../contexts/User/UserContext';
 import { setLogin, setSignUp } from '../../contexts/User/UserTypes';
-import { onLogin } from '../../utils/auth';
+import { onLoginSuccess } from '../../utils/auth';
 
 const Redirect = () => {
 	const [searchParams] = useSearchParams();
@@ -39,7 +39,7 @@ const Redirect = () => {
 				if (res.responseType === 'signIn') {
 					const { refreshToken, accessToken, userId } = res;
 
-					onLogin(refreshToken, accessToken);
+					onLoginSuccess(refreshToken, accessToken);
 					dispatch(setLogin(userId));
 					navigate('/main');
 				} else if (res.responseType === 'signUp') {

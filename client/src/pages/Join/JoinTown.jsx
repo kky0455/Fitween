@@ -7,7 +7,7 @@ import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import * as authApi from '../../api/auth';
 import { useUserDispatch, useUserState } from '../../contexts/User/UserContext';
 import { setLogin } from '../../contexts/User/UserTypes';
-import { onLogin } from '../../utils/auth';
+import { onLoginSuccess } from '../../utils/auth';
 
 const JoinTown = ({ info }) => {
 	const [location, setLocation] = useState(null);
@@ -27,7 +27,7 @@ const JoinTown = ({ info }) => {
 			const res = await authApi.signup(body);
 			const { refreshToken, accessToken, userId } = res;
 
-			onLogin(refreshToken, accessToken);
+			onLoginSuccess(refreshToken, accessToken);
 			dispatch(setLogin(userId));
 			navigate('/main');
 		} catch (err) {
