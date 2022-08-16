@@ -110,9 +110,9 @@ public class AuthController {
                 userLogin.setProfileImg(pictureUrl);
                 message.setStatus(StatusEnum.OK);
                 message.setResponseType("signIn");
-//                message.setUserId(userId);
-//                message.setAccessToken(userLogin.getAccessToken());
-//                message.setRefreshToken(userLogin.getRefreshToken());
+                message.setUserId(userId);
+                message.setAccessToken(userLogin.getAccessToken());
+                message.setRefreshToken(userLogin.getRefreshToken());
                 headers.add("accessToken",userLogin.getAccessToken());
                 headers.add("refreshToken",userLogin.getRefreshToken());
                 return new ResponseEntity<>(message, headers, HttpStatus.OK);
