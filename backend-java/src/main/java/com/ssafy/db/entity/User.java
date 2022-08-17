@@ -46,7 +46,7 @@ public class User extends BaseEntity{
     int age;
 
     @Column
-    int gender;
+    String gender;
 
     @Column
     String nickname;

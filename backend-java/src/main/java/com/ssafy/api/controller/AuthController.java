@@ -27,6 +27,7 @@ import io.swagger.annotations.Api;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.security.GeneralSecurityException;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -71,7 +72,6 @@ public class AuthController {
         HttpHeaders headers= new HttpHeaders();
         headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
 
-
         // oauth properties client id 받아오기
         Environment env = context.getEnvironment();
         String clientId = env.getProperty("spring.security.oauth2.client.registration.google.client-id");
@@ -90,7 +90,6 @@ public class AuthController {
         // (Receive idTokenString by HTTPS POST)
 
         GoogleIdToken idToken = verifier.verify(authCode);
-        System.out.println(authCode);
 
         if (idToken != null) {
             GoogleIdToken.Payload payload = idToken.getPayload();
@@ -109,10 +108,11 @@ public class AuthController {
             String givenName = (String) payload.get("given_name");
 
 
-
             try{
                 //User user = userService.getUserByUserId(userId);
                 UserLoginPostReq userLogin =userService.userLogin(userId);
+                userLogin.setEmail(email);
+                userLogin.setProfileImg(pictureUrl);
                 message.setStatus(StatusEnum.OK);
                 message.setResponseType("signIn");
                 message.setUserId(userId);
@@ -140,18 +140,26 @@ public class AuthController {
 
     @ApiOperation(value = "회원가입",notes = "email과 password를 받아서 회원가입을 한다.")
     @PostMapping("/signup")
-    public ResponseEntity<?> signUp(@RequestBody UserRegisterPostReq requestDto){
+    public  ResponseEntity<?> signUp(@RequestBody UserRegisterPostReq requestDto){
 
         Message message = new Message();
         HttpHeaders headers= new HttpHeaders();
         headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
 
+        Calendar now = Calendar.getInstance();
+        Integer currentYear = now.get(Calendar.YEAR);
+        System.out.println(requestDto.getDateOfBirth());
+
+        String str_birthYear[] = (requestDto.getDateOfBirth()).split("-");
+        int year = Integer.parseInt(str_birthYear[0]);
+        int age = (currentYear-year)+1;
+
         try {
             String id = userService.join(requestDto.toEntity());
+            requestDto.setAge(age);
             UserLoginPostReq userLogin =userService.userLogin(requestDto.getUserId());
-            message.setAccessToken(userLogin.getAccessToken());
-            message.setRefreshToken(userLogin.getRefreshToken());
-            message.setStatus(StatusEnum.OK);
+            headers.add("accessToken",userLogin.getAccessToken());
+            headers.add("refreshToken",userLogin.getRefreshToken());
             message.setUserId(id);
             return new ResponseEntity<>(message, headers, HttpStatus.OK);
         } catch (IllegalStateException e){
@@ -166,7 +174,24 @@ public class AuthController {
             return new ResponseEntity<>(message, headers,  HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
+    }
 
+    @ApiOperation(value = "로그아웃 요청.",notes = "refresh 토큰으로 로그아웃을 요청한다.")
+    @GetMapping("/logout")
+    public ResponseEntity<?> logout(@RequestHeader(value="refreshToken") String refreshToken) {
+        Message message = new Message();
+        HttpHeaders headers= new HttpHeaders();
+        headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
+        try {
+            userService.logoutMember(refreshToken);
+            message.setStatus(StatusEnum.OK);
+            message.setResponseType("로그아웃 성공");
+            return new ResponseEntity<>(message, headers, HttpStatus.OK);
+        } catch (Exception e){
+            message.setStatus(StatusEnum.BAD_REQUEST);
+            message.setResponseType("ACCESS TOKEN이 일치하지 않습니다.");
+            return new ResponseEntity<>(message, headers, HttpStatus.BAD_REQUEST);
+        }
     }
 
 

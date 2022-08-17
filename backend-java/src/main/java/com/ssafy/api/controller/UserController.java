@@ -67,7 +67,7 @@ public class UserController {
     })
     public ResponseEntity<?> updateInfo(@RequestBody UserUpdateDto updateUserDto, @ApiIgnore Authentication authentication) throws Exception {
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
-        userService.updateUser(userDetails.getUserIdx(), updateUserDto);
+        userService.updateUser(userDetails.getUserId(), updateUserDto);
         return ResponseEntity.status(200).body("회원정보 수정 완료");
     }
     @ApiOperation(value = "회원 탈퇴")

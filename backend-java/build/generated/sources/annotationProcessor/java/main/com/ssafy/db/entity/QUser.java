@@ -35,7 +35,7 @@ public class QUser extends EntityPathBase<User> {
 
     public final NumberPath<Integer> footSize = createNumber("footSize", Integer.class);
 
-    public final NumberPath<Integer> gender = createNumber("gender", Integer.class);
+    public final StringPath gender = createString("gender");
 
     public final NumberPath<Double> height = createNumber("height", Double.class);
 

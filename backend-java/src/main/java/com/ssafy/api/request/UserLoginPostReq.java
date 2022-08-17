@@ -21,6 +21,8 @@ public class UserLoginPostReq {
 	String refreshToken;
 	@ApiModelProperty(example="user_idx 번호")
 	Long id;
+	@ApiModelProperty(example = "프로필 img")
+	String profileImg;
 	@ApiModelProperty(example="156461325451")
 	String userId;
 	@ApiModelProperty(example="han123@gmail.com")
@@ -29,8 +31,8 @@ public class UserLoginPostReq {
 	String nickname;
 	@ApiModelProperty(example="20")
 	int age ;
-	@ApiModelProperty(example="1=Male, 2=Female, 3=Unknown")
-	int gender;
+	@ApiModelProperty(example="남성 / 여성")
+	String gender;
 	@ApiModelProperty(example="182.1")
 	double height ;
 	@ApiModelProperty(example="80.5")
