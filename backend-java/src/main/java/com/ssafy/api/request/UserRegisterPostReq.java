@@ -25,7 +25,7 @@ public class UserRegisterPostReq {
 	String email;
 	@ApiModelProperty(name="유저 나이", example = "28")
 	int age;
-	@ApiModelProperty(name="유저 생년월일", example = "yyyy/mm/dd")
+	@ApiModelProperty(name="유저 생년월일", example = "yyyy-mm-dd")
 	String dateOfBirth;
 	@ApiModelProperty(name="유저 성별", example = "남성 / 여성")
 	String gender;

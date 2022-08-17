@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="chore: 서버 포트 원상복귀">
+    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="check">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,12 +101,14 @@
     &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelOrder2&quot;: &quot;2&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth2&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/multicampus/Desktop/testFolder/backend-java/src/main/java/com/ssafy/api/controller&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/ssafy/fitween_gitlab/backend-java&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -115,8 +117,13 @@
     &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;1c625e95bb42363b964eadb5c496c14e&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;4d5ccf52c089962272be744a09d77f19&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -133,9 +140,10 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="gradle lombok" />
+      <command value="import module" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.backend-java [lombok]">
+  <component name="RunManager" selected="Spring Boot.GroupCallApplication">
     <configuration name="GroupCallApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ssafy.GroupCallApplication" />
       <module name="ssafy-web-project.main" />
@@ -263,48 +271,10 @@
       <workItem from="1660211346813" duration="297000" />
       <workItem from="1660367004989" duration="15847000" />
       <workItem from="1660450327364" duration="15537000" />
-    </task>
-    <task id="LOCAL-00001" summary="refactor: 유저 info 수정">
-      <created>1658995773074</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1658995773074</updated>
-    </task>
-    <task id="LOCAL-00002" summary="전체 커밋">
-      <created>1659064716363</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1659064716363</updated>
-    </task>
-    <task id="LOCAL-00003" summary="fix: gitignore typo">
-      <created>1659064961402</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1659064961402</updated>
-    </task>
-    <task id="LOCAL-00004" summary="check">
-      <created>1659064974139</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1659064974139</updated>
-    </task>
-    <task id="LOCAL-00005" summary="check">
-      <created>1659070264836</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1659070264836</updated>
-    </task>
-    <task id="LOCAL-00006" summary="check">
-      <created>1659322415511</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1659322415511</updated>
+      <workItem from="1660494571102" duration="2620000" />
+      <workItem from="1660551817433" duration="28083000" />
+      <workItem from="1660650615881" duration="27000" />
+      <workItem from="1660696003350" duration="5353000" />
     </task>
     <task id="LOCAL-00007" summary="check">
       <created>1659322547006</created>
@@ -509,7 +479,147 @@
       <option name="project" value="LOCAL" />
       <updated>1660467497721</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="merge by sehwan">
+      <created>1660468044226</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1660468044226</updated>
+    </task>
+    <task id="LOCAL-00037" summary="style: 주석 삭제 및 사용하지 않는 import 삭제">
+      <created>1660480800756</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1660480800756</updated>
+    </task>
+    <task id="LOCAL-00038" summary="refactor: 프로필 이미지 설정 변수 생성">
+      <created>1660480825389</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1660480825389</updated>
+    </task>
+    <task id="LOCAL-00039" summary="refactor: 로그인 할때 이메일,프로필 이미지 설정">
+      <created>1660480941796</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1660480941796</updated>
+    </task>
+    <task id="LOCAL-00040" summary="refactor: secret key ',' 삭제 (필히 요망!)&#10;setSignKey 함수 재설정">
+      <created>1660552625466</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1660552625466</updated>
+    </task>
+    <task id="LOCAL-00041" summary="check">
+      <created>1660616024774</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1660616024774</updated>
+    </task>
+    <task id="LOCAL-00042" summary="원상복귀">
+      <created>1660616059568</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1660616059568</updated>
+    </task>
+    <task id="LOCAL-00043" summary="refactor: userid string 형태 변환">
+      <created>1660616086556</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1660616086556</updated>
+    </task>
+    <task id="LOCAL-00044" summary="feat: 토큰 refresh 기능 구현">
+      <created>1660616182325</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1660616182325</updated>
+    </task>
+    <task id="LOCAL-00045" summary="refactor: 메시지에 엑세스, 리프레스 토큰 추가">
+      <created>1660616211991</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1660616211991</updated>
+    </task>
+    <task id="LOCAL-00046" summary="feat: 토큰 리프래시 기능 컨트롤러 생성">
+      <created>1660616258716</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1660616258716</updated>
+    </task>
+    <task id="LOCAL-00047" summary="refactor: userid로 검색">
+      <created>1660616284055</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1660616284055</updated>
+    </task>
+    <task id="LOCAL-00048" summary="style: 스웨거 형식 수정">
+      <created>1660616305615</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1660616305615</updated>
+    </task>
+    <task id="LOCAL-00049" summary="refactor: 기존 이메일 형식 검색을 id로 변환">
+      <created>1660616350841</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1660616350841</updated>
+    </task>
+    <task id="LOCAL-00050" summary="refactor: 유저 아이디로 검색하여서 해당 리프레시토큰 참조 후 갱신">
+      <created>1660616511108</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1660616511110</updated>
+    </task>
+    <task id="LOCAL-00051" summary="check">
+      <created>1660616559114</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1660616559114</updated>
+    </task>
+    <task id="LOCAL-00052" summary="check">
+      <created>1660627780910</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1660627780910</updated>
+    </task>
+    <task id="LOCAL-00053" summary="feat: 로그아웃 기능 구현">
+      <created>1660696602689</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1660696602689</updated>
+    </task>
+    <task id="LOCAL-00054" summary="refactor: json형태 response수정">
+      <created>1660696635806</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1660696635806</updated>
+    </task>
+    <task id="LOCAL-00055" summary="feat: 로그아웃기능 설정">
+      <created>1660696663206</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1660696663206</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,29 +637,32 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: 유저 info 수정" />
-    <MESSAGE value="전체 커밋" />
-    <MESSAGE value="fix: gitignore typo" />
-    <MESSAGE value="feat: oauth2service 생성" />
-    <MESSAGE value="refactor: 서버내 사진 저장 위치 설정" />
-    <MESSAGE value="feat: dispalyImage controller 구현&#10;(주석문 삭제)" />
-    <MESSAGE value="style: 기능 체크용 sout문 삭제" />
-    <MESSAGE value="refactor: 변수명 수정" />
-    <MESSAGE value="refactor: {upload} title-&gt; uuid에 따른 폴더 경로 수정&#10;style: {displayImage} apioperation 추가" />
-    <MESSAGE value="refactor: {getRandomStr} 사용하지 않는 기능 수정" />
-    <MESSAGE value="docs: workspace.xml" />
-    <MESSAGE value="test: 파일 한장만 보낼 때 기능 설정" />
-    <MESSAGE value="feat: 파일을 base64 바이너리로 인코딩 기능 추가" />
-    <MESSAGE value="style: 주석 수정(제목-&gt;사진)" />
     <MESSAGE value="docs: check" />
     <MESSAGE value="feat: 회원가입 시 프로필이미지, 이메일 설정(107-108)&#10;signup 시 입력 받은 날짜 기반 나이 설정" />
     <MESSAGE value="refactor: 메시지 토큰 삭제 처리" />
     <MESSAGE value="refactor: gender String으로 변환" />
     <MESSAGE value="refactor: gender String으로 변환&#10;유저 생년월일 처리 변수 생성" />
     <MESSAGE value="fix: 코드 누락" />
-    <MESSAGE value="check" />
     <MESSAGE value="chore: 서버 포트 원상복귀" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: 서버 포트 원상복귀" />
+    <MESSAGE value="merge by sehwan" />
+    <MESSAGE value="style: 주석 삭제 및 사용하지 않는 import 삭제" />
+    <MESSAGE value="refactor: 프로필 이미지 설정 변수 생성" />
+    <MESSAGE value="refactor: 로그인 할때 이메일,프로필 이미지 설정" />
+    <MESSAGE value="refactor: secret key ',' 삭제 (필히 요망!)&#10;setSignKey 함수 재설정" />
+    <MESSAGE value="원상복귀" />
+    <MESSAGE value="refactor: userid string 형태 변환" />
+    <MESSAGE value="feat: 토큰 refresh 기능 구현" />
+    <MESSAGE value="refactor: 메시지에 엑세스, 리프레스 토큰 추가" />
+    <MESSAGE value="feat: 토큰 리프래시 기능 컨트롤러 생성" />
+    <MESSAGE value="refactor: userid로 검색" />
+    <MESSAGE value="style: 스웨거 형식 수정" />
+    <MESSAGE value="refactor: 기존 이메일 형식 검색을 id로 변환" />
+    <MESSAGE value="refactor: 유저 아이디로 검색하여서 해당 리프레시토큰 참조 후 갱신" />
+    <MESSAGE value="check" />
+    <MESSAGE value="feat: 로그아웃 기능 구현" />
+    <MESSAGE value="refactor: json형태 response수정" />
+    <MESSAGE value="feat: 로그아웃기능 설정" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 로그아웃기능 설정" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -21,6 +21,8 @@ public class UserLoginPostReq {
 	String refreshToken;
 	@ApiModelProperty(example="user_idx 번호")
 	Long id;
+	@ApiModelProperty(example = "프로필 img")
+	String profileImg;
 	@ApiModelProperty(example="156461325451")
 	String userId;
 	@ApiModelProperty(example="han123@gmail.com")

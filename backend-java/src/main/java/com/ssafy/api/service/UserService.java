@@ -26,10 +26,6 @@ public class UserService {
 	private final UserRepository2 userRepository2;
 	private final JwtTokenProvider jwtTokenProvider;
 
-	PasswordEncoder passwordEncoder;
-
-
-
 	public User getUserByUserId(String userId) {
 		// 디비에 유저 정보 조회 (userId 를 통한 조회).
 		System.out.println("유저ID 체크" + userId);
@@ -51,8 +47,8 @@ public class UserService {
 		return user;
 	}
 
-	public void updateUser(Long userIdx, UserUpdateDto userUpdateDto) {
-		User user = userRepository2.findByUserIdx(userIdx).orElse(null);
+	public void updateUser(String userId, UserUpdateDto userUpdateDto) {
+		User user = userRepository.findById(userId);
 		user.updateUser(userUpdateDto);
 	}
 
@@ -84,7 +80,7 @@ public class UserService {
 		// 리프레쉬 토큰 발급
 		user.changeRefreshToken(jwtTokenProvider.createRefreshToken(userId, user.getRoles()));
 		UserLoginPostReq userLoginPostReq = UserLoginPostReq.builder()
-//				.userId(userId)
+				.userId(userId)
 				.accessToken(jwtTokenProvider.createToken(userId, user.getRoles()))
 				.refreshToken(user.getRefreshToken())
 //				.nickname(user.getNickname())
@@ -98,24 +94,24 @@ public class UserService {
 	}
 
 	@Transactional
-	public UserLoginPostReq refreshToken(String token, String refreshToken) throws Exception {
+	public UserLoginPostReq refreshToken(String refreshToken) throws Exception {
 
 		//if(userRepository.isLogout(jwtTokenProvider.getUserPk(token))) throw new AccessDeniedException("");
 		// 아직 만료되지 않은 토큰으로는 refresh 할 수 없음
-		if(jwtTokenProvider.validateToken(token)) throw new AccessDeniedException("token이 만료되지 않음");
+		//if(jwtTokenProvider.validateToken(token)) throw new AccessDeniedException("token이 만료되지 않음");
 
-		User user = userRepository.findByEmail(jwtTokenProvider.getUserPk(refreshToken));
-		System.out.println(user.getRefreshToken());
+
+		User user = userRepository.findById(jwtTokenProvider.getUserPk(refreshToken));
 		if(!refreshToken.equals(user.getRefreshToken())) throw new AccessDeniedException("해당 멤버가 존재하지 않습니다.");
 
 		if(!jwtTokenProvider.validateToken(user.getRefreshToken()))
 			throw new IllegalStateException("다시 로그인 해주세요.");
 
-		user.changeRefreshToken(jwtTokenProvider.createRefreshToken(user.getEmail(), user.getRoles()));
+		user.changeRefreshToken(jwtTokenProvider.createRefreshToken(user.getUserId(), user.getRoles()));
 
 		UserLoginPostReq userDto = UserLoginPostReq.builder()
 				.email(user.getEmail())
-				.accessToken(jwtTokenProvider.createToken(user.getEmail(), user.getRoles()))
+				.accessToken(jwtTokenProvider.createToken(user.getUserId(), user.getRoles()))
 				.refreshToken(user.getRefreshToken())
 				.userId(user.getUserId()).nickname(user.getNickname())
 				.gender(user.getGender()).age(user.getAge())
@@ -137,5 +133,12 @@ public class UserService {
 	@Transactional
 	public void socialLogin(String email, String refreshToken){
 		userRepository.socialLogin(email, refreshToken);
+	}
+
+	public void logoutMember(String refreshToken) {
+		boolean result = jwtTokenProvider.validateToken(refreshToken);
+		if(!result) throw new IllegalStateException("토큰 만료 되었습니다.");
+		User user = userRepository.findById(jwtTokenProvider.getUserPk(refreshToken));
+		user.changeRefreshToken("invalidate");
 	}
 }
