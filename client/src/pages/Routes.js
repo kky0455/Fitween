@@ -1,6 +1,7 @@
 import { Route, Routes as ReactRouterRoutes, Navigate } from 'react-router-dom';
 
 import PrivateRoute from '../components/Route/PrivateRoute';
+import About from './About/About';
 import ArticleDetail from './Article/ArticleDetail';
 import ArticleModify from './Article/ArticleModify';
 import ArticleRegist from './Article/ArticleRegist';
@@ -80,6 +81,9 @@ export const Routes = () => {
 
 			{/* 초기화면  */}
 			<Route exact path="/" element={<Index />} />
+
+			{/* about 소개 페이지 */}
+			<Route exact path="/about" element={<About />} />
 			{/* 소셜 로그인 리다이렉트  */}
 			<Route exact path="/oauth/redirect" element={<Redirect />} />
 
