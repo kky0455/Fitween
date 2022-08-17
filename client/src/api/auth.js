@@ -44,3 +44,12 @@ export const refresh = async body => {
 		throw err;
 	}
 };
+
+export const deleteUser = async () => {
+	try {
+		const res = await API.delete('/users');
+		return res.data;
+	} catch (err) {
+		throw err;
+	}
+};
