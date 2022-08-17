@@ -159,11 +159,11 @@ com/ssafy/common/exception/handler/CustomApiException.java
  com.ssafy.common.exception.handler.CustomApiException
 com/ssafy/config/OAuth2SuccessHandler.java
  com.ssafy.config.OAuth2SuccessHandler
+com/ssafy/db/repository/UserRepository2.java
+ com.ssafy.db.repository.UserRepository2
 com/ssafy/api/request/ArticleLikeDto.java
  com.ssafy.api.request.ArticleLikeDto
  com.ssafy.api.request.ArticleLikeDto$ArticleLikeDtoBuilder
-com/ssafy/db/repository/UserRepository2.java
- com.ssafy.db.repository.UserRepository2
 com/ssafy/api/controller/UserController.java
  com.ssafy.api.controller.UserController
 com/ssafy/db/dto/GoogleLoginDto.java
