@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import colors from '../../../constants/colors';
@@ -6,13 +6,14 @@ import getByte from '../../../utils/getByte';
 
 const TextArea = ({ error, maxByte, value, onChange, ...rest }) => {
 	const textAreaRef = useRef(null);
-	const handleResizeHeight = useCallback(() => {
+	useEffect(() => {
 		if (textAreaRef === null || textAreaRef.current === null) {
 			return;
 		}
+		if (getByte(value) > maxByte) return;
 		textAreaRef.current.style.height = 'auto';
 		textAreaRef.current.style.height = textAreaRef.current.scrollHeight + 4 + 'px';
-	}, []);
+	}, [value]);
 	return (
 		<div
 			css={css`
@@ -47,7 +48,6 @@ const TextArea = ({ error, maxByte, value, onChange, ...rest }) => {
 				ref={textAreaRef}
 				value={value}
 				onChange={onChange}
-				onInput={handleResizeHeight}
 				{...rest}
 			/>
 			{maxByte && (
