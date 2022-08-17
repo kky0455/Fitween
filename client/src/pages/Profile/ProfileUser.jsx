@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { css } from '@emotion/react';
 import styled from 'styled-components';
 
-import API from '../../api';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import BottomNavigation from '../../components/Common/BottomNavigation/BottomNavigation';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -17,6 +16,7 @@ import profile_menu from '../../assets/profile_menu.svg';
 import Modal from '../../components/Common/Modal/Modal';
 import colors from '../../constants/colors';
 import { setLogout } from '../../context/User/UserTypes';
+import { onLogout } from '../../utils/auth';
 
 const Hr = styled.hr`
 	border: none;
@@ -31,9 +31,10 @@ const ProfileUser = ({ articleId }) => {
 	const [profileInfo, setProfileInfo] = useState(null);
 	const [modalVisible, setModalVisible] = useState(false);
 
-	const logoutClickHandler = () => {
+	const logoutClickHandler = async () => {
+		await onLogout();
 		userDispatch(setLogout());
-		API.defaults.headers.common.Authorization = '';
+		navigate('/');
 	};
 
 	useEffect(() => {
@@ -97,7 +98,7 @@ const ProfileUser = ({ articleId }) => {
 							<Hr />
 							<div style={{ padding: '5px' }}>내 동네 수정</div>
 							<Hr />
-							<div style={{ padding: '5px' }} onClick={() => logoutClickHandler}>
+							<div style={{ padding: '5px' }} onClick={logoutClickHandler}>
 								로그아웃
 							</div>
 							<Hr />
