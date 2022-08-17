@@ -272,35 +272,9 @@
       <workItem from="1660367004989" duration="15847000" />
       <workItem from="1660450327364" duration="15537000" />
       <workItem from="1660494571102" duration="2620000" />
-      <workItem from="1660551817433" duration="18570000" />
-    </task>
-    <task id="LOCAL-00003" summary="fix: gitignore typo">
-      <created>1659064961402</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1659064961402</updated>
-    </task>
-    <task id="LOCAL-00004" summary="check">
-      <created>1659064974139</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1659064974139</updated>
-    </task>
-    <task id="LOCAL-00005" summary="check">
-      <created>1659070264836</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1659070264836</updated>
-    </task>
-    <task id="LOCAL-00006" summary="check">
-      <created>1659322415511</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1659322415511</updated>
+      <workItem from="1660551817433" duration="28083000" />
+      <workItem from="1660650615881" duration="27000" />
+      <workItem from="1660696003350" duration="5353000" />
     </task>
     <task id="LOCAL-00007" summary="check">
       <created>1659322547006</created>
@@ -617,7 +591,35 @@
       <option name="project" value="LOCAL" />
       <updated>1660616559114</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="check">
+      <created>1660627780910</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1660627780910</updated>
+    </task>
+    <task id="LOCAL-00053" summary="feat: 로그아웃 기능 구현">
+      <created>1660696602689</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1660696602689</updated>
+    </task>
+    <task id="LOCAL-00054" summary="refactor: json형태 response수정">
+      <created>1660696635806</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1660696635806</updated>
+    </task>
+    <task id="LOCAL-00055" summary="feat: 로그아웃기능 설정">
+      <created>1660696663206</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1660696663206</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,9 +637,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test: 파일 한장만 보낼 때 기능 설정" />
-    <MESSAGE value="feat: 파일을 base64 바이너리로 인코딩 기능 추가" />
-    <MESSAGE value="style: 주석 수정(제목-&gt;사진)" />
     <MESSAGE value="docs: check" />
     <MESSAGE value="feat: 회원가입 시 프로필이미지, 이메일 설정(107-108)&#10;signup 시 입력 받은 날짜 기반 나이 설정" />
     <MESSAGE value="refactor: 메시지 토큰 삭제 처리" />
@@ -660,7 +659,10 @@
     <MESSAGE value="refactor: 기존 이메일 형식 검색을 id로 변환" />
     <MESSAGE value="refactor: 유저 아이디로 검색하여서 해당 리프레시토큰 참조 후 갱신" />
     <MESSAGE value="check" />
-    <option name="LAST_COMMIT_MESSAGE" value="check" />
+    <MESSAGE value="feat: 로그아웃 기능 구현" />
+    <MESSAGE value="refactor: json형태 response수정" />
+    <MESSAGE value="feat: 로그아웃기능 설정" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 로그아웃기능 설정" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
