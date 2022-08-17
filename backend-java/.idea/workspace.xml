@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="check">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="refactor : 게시물 업데이트 API 수정 및 머지">
+      <change beforePath="$PROJECT_DIR$/ssafy-web.log.2022-08-04.0.gz" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +91,9 @@
     <option name="sortByName" value="true" />
   </component>
   <component name="ProjectId" id="2CVbq4w5QD6p4TX6Qf4VPFRbkKe" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -275,13 +277,6 @@
       <workItem from="1660551817433" duration="28083000" />
       <workItem from="1660650615881" duration="27000" />
       <workItem from="1660696003350" duration="5353000" />
-    </task>
-    <task id="LOCAL-00007" summary="check">
-      <created>1659322547006</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1659322547006</updated>
     </task>
     <task id="LOCAL-00008" summary="docs: check">
       <created>1659588357926</created>
@@ -619,7 +614,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660696663206</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="refactor : 게시물 업데이트 API 수정 및 머지">
+      <created>1660712796733</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1660712796734</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +639,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="docs: check" />
     <MESSAGE value="feat: 회원가입 시 프로필이미지, 이메일 설정(107-108)&#10;signup 시 입력 받은 날짜 기반 나이 설정" />
     <MESSAGE value="refactor: 메시지 토큰 삭제 처리" />
     <MESSAGE value="refactor: gender String으로 변환" />
@@ -662,7 +663,8 @@
     <MESSAGE value="feat: 로그아웃 기능 구현" />
     <MESSAGE value="refactor: json형태 response수정" />
     <MESSAGE value="feat: 로그아웃기능 설정" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 로그아웃기능 설정" />
+    <MESSAGE value="refactor : 게시물 업데이트 API 수정 및 머지" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor : 게시물 업데이트 API 수정 및 머지" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
