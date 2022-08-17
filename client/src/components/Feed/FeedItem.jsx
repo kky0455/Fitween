@@ -18,6 +18,7 @@ const FeedItem = ({
 	likeCnt,
 	isRent,
 	userId,
+	removeItem,
 }) => {
 	const [liked, setLiked] = useState(isLiked);
 	const [count, setCount] = useState(likeCnt);
@@ -38,6 +39,7 @@ const FeedItem = ({
 		if (data === '좋아요 취소') {
 			setLiked(!liked);
 			setCount(count - 1);
+			removeItem && removeItem(articleId);
 		}
 	};
 
