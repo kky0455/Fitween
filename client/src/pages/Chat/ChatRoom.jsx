@@ -30,6 +30,7 @@ const ChatRoom = () => {
 	const navigate = useNavigate();
 	const scrollRef = useRef(null);
 	const sendChatHandler = async () => {
+		if (message === '') return;
 		const chatMessage = {
 			senderId: loginedUserId,
 			receiverId: receiverId,
@@ -64,7 +65,7 @@ const ChatRoom = () => {
 	const onConnected = () => {
 		console.log('연결완료');
 		if (stompClient.connected) {
-			// stompClient.debug = null;
+			stompClient.debug = null;
 			stompClient.subscribe(`/topic/chat/room/${roomId}`, onMessageReceived);
 		}
 	};
@@ -169,6 +170,9 @@ const ChatRoom = () => {
 					ref={inputRef}
 					value={message}
 					onChange={e => setMessage(e.target.value)}
+					onKeyDown={e => {
+						if (e.key === 'Enter') sendChatHandler();
+					}}
 					type="text"
 					placeholder="메시지를 입력하세요"
 					css={css`

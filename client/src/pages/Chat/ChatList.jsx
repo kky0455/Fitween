@@ -76,13 +76,12 @@ const ChatList = () => {
 	}, []);
 	return (
 		<>
-			<TopNavigation centerContent="채팅" rightMenu={<EditButton />} />
+			<TopNavigation centerContent="채팅" />
 			<Main>
 				{chatList ? (
 					chatList.map(chatRoom => (
 						<RoomItem
 							key={chatRoom.roomId}
-							// todo : img 받아서 구현 필요
 							imgSrc={logo}
 							partnerName={
 								chatRoom.user1Id === loginedUserId ? chatRoom.user2Nickname : chatRoom.user1Nickname
@@ -105,7 +104,6 @@ const ChatList = () => {
 						/>
 					))
 				) : (
-					// todo : 로딩컴퍼넌트로 넘겨주자
 					<div />
 				)}
 			</Main>
