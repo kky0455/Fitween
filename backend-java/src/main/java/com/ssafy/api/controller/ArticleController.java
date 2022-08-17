@@ -163,4 +163,14 @@ public class ArticleController {
         likeService.unLikes(user, article);
         return ResponseEntity.status(200).body("좋아요 취소");
     }
+
+    @ApiOperation(value="좋아요한 게시글 조회", notes="<strong>전체 좋아요한 게시물 중에서 사용자에게 맞게 반환</strong>시켜줍니다.")
+    @GetMapping("/likelist")
+    public ResponseEntity<?> findLikesArticle(@RequestParam Category categoryCode, @ApiIgnore Authentication authentication){
+
+        FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
+        List<ArticleLikeDto> articleList = articleService.findLikeArticle(categoryCode, userDetails.getUser());
+        return ResponseEntity.status(200).body(articleList);
+    }
+
 }

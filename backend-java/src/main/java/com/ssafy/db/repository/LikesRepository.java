@@ -18,6 +18,5 @@ public interface LikesRepository extends JpaRepository<Likes, Long> {
 
     Optional<Likes> findByUserAndArticle(User user, Article article);
 
-    int countAllByArticle(Article article);
 
 }
