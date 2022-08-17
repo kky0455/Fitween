@@ -101,8 +101,8 @@ const ArticleModify = () => {
 	};
 	const onDeleteClickHandler = async () => {
 		try {
-			const ret = await deleteArticle();
-			navigate('/article/list');
+			const ret = await deleteArticle(articleId);
+			navigate('/main');
 		} catch (error) {
 			alert('다시 시도하세요.');
 		}
