@@ -1,5 +1,6 @@
 package com.ssafy.api.service;
 
+import com.ssafy.api.request.ArticleLikeDto;
 import com.ssafy.api.request.ArticleRecommendDto;
 import com.ssafy.api.request.SaveArticleDto;
 import com.ssafy.api.request.UpdateArticleDto;
@@ -23,4 +24,6 @@ public interface ArticleService {
     public List<Article> findAllArticle();
 
     public List<ArticleRecommendDto> findAllTest(Category categotyCode, User user);
+
+    public List<ArticleLikeDto> findLikeArticle(Category category, User user);
 }
