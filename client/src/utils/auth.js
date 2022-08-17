@@ -36,3 +36,13 @@ export const onLogout = async () => {
 		console.log(err);
 	}
 };
+
+export const onDeleteUser = async () => {
+	try {
+		await authApi.deleteUser();
+		removeRefreshToken();
+		API.defaults.headers.common['Authorization'] = '';
+	} catch (err) {
+		throw err;
+	}
+};
