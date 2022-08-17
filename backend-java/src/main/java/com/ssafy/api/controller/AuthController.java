@@ -169,7 +169,24 @@ public class AuthController {
             return new ResponseEntity<>(message, headers,  HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
+    }
 
+    @ApiOperation(value = "로그아웃 요청.",notes = "refresh 토큰으로 로그아웃을 요청한다.")
+    @GetMapping("/logout")
+    public ResponseEntity<?> logout(@RequestHeader(value="refreshToken") String refreshToken) {
+        Message message = new Message();
+        HttpHeaders headers= new HttpHeaders();
+        headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
+        try {
+            userService.logoutMember(refreshToken);
+            message.setStatus(StatusEnum.OK);
+            message.setResponseType("로그아웃 성공");
+            return new ResponseEntity<>(message, headers, HttpStatus.OK);
+        } catch (Exception e){
+            message.setStatus(StatusEnum.BAD_REQUEST);
+            message.setResponseType("ACCESS TOKEN이 일치하지 않습니다.");
+            return new ResponseEntity<>(message, headers, HttpStatus.BAD_REQUEST);
+        }
     }
 
 
