@@ -16,7 +16,7 @@ import profile_menu from '../../assets/profile_menu.svg';
 import Modal from '../../components/Common/Modal/Modal';
 import colors from '../../constants/colors';
 import { setLogout } from '../../context/User/UserTypes';
-import { onLogout } from '../../utils/auth';
+import { onDeleteUser, onLogout } from '../../utils/auth';
 
 const Hr = styled.hr`
 	border: none;
@@ -35,6 +35,16 @@ const ProfileUser = ({ articleId }) => {
 		await onLogout();
 		userDispatch(setLogout());
 		navigate('/');
+	};
+
+	const deleteUserClickHandler = async () => {
+		try {
+			await onDeleteUser();
+			userDispatch(setLogout());
+			navigate('/');
+		} catch (err) {
+			throw err;
+		}
 	};
 
 	useEffect(() => {
@@ -102,7 +112,9 @@ const ProfileUser = ({ articleId }) => {
 								로그아웃
 							</div>
 							<Hr />
-							<div style={{ padding: '5px' }}>탈퇴하기</div>
+							<div style={{ padding: '5px' }} onClick={deleteUserClickHandler}>
+								탈퇴하기
+							</div>
 							<Hr />
 						</div>
 					</Modal>
