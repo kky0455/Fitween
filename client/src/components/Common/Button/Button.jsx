@@ -43,9 +43,9 @@ const getBtnStyle = type => {
 			`;
 		case btnType.google:
 			return css`
-				color: ${colors.white};
-				background-color: ${colors.google};
-				border: 1px solid ${colors.green100};
+				color: ${colors.google};
+				background-color: ${colors.background};
+				border: 1px solid ${colors.white};
 			`;
 		default:
 			return css`
