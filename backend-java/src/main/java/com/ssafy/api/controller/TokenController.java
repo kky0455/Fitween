@@ -47,6 +47,7 @@ public class TokenController {
 
             String userid = loginPostReq.getUserId();
             String accesstoken = loginPostReq.getAccessToken();
+            String new_refreshToken = loginPostReq.getRefreshToken();
 
             System.out.println(accesstoken+"    : access");
             System.out.println(userid+"    :   userid ");
@@ -54,7 +55,7 @@ public class TokenController {
             message.setStatus(StatusEnum.OK);
             message.setUserId(userid);
             message.setAccessToken(accesstoken);
-            message.setRefreshToken(refreshToken);
+            message.setRefreshToken(new_refreshToken);
             return new ResponseEntity<>(message, headers, HttpStatus.OK);
     } catch (AccessDeniedException e) {
         e.printStackTrace();
