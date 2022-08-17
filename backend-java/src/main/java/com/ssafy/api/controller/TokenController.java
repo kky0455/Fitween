@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.nio.charset.Charset;
 import java.nio.file.AccessDeniedException;
+import java.util.Map;
 
 @RequiredArgsConstructor
 @RestController
@@ -32,18 +33,21 @@ public class TokenController {
     }
     @ApiOperation(value = "access token 재발급 요청", notes = "refreshtoken으로 accesstoken 재발급")
     @PostMapping("/token/refresh")
-    public ResponseEntity<?> tokenRefresh(@RequestBody String refreshToken) throws Exception {
+    public ResponseEntity<?> tokenRefresh(@RequestBody Map<String,String> body) throws Exception {
     Message message = new Message();
     HttpHeaders headers = new HttpHeaders();
     headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
 
-        System.out.println(refreshToken+"  : refresh");
+        String refreshToken = body.get("refreshToken");
+        System.out.println(refreshToken + "  : refresh");
 
         try {
             loginPostReq = userService.refreshToken(refreshToken);
             System.out.println("check");
+
             String userid = loginPostReq.getUserId();
             String accesstoken = loginPostReq.getAccessToken();
+
             System.out.println(accesstoken+"    : access");
             System.out.println(userid+"    :   userid ");
 
@@ -54,8 +58,9 @@ public class TokenController {
             return new ResponseEntity<>(message, headers, HttpStatus.OK);
     } catch (AccessDeniedException e) {
         e.printStackTrace();
+        message.setResponseType("AccessDeniedException");
         message.setStatus(StatusEnum.UNAUTHORIZED);
-        return new ResponseEntity<>(message, headers, HttpStatus.OK);
+        return new ResponseEntity<>(message, headers, HttpStatus.UNAUTHORIZED);
     } catch (IllegalStateException e) {
         e.printStackTrace();
         return new ResponseEntity<String>("RE LOGIN", HttpStatus.PAYMENT_REQUIRED);
