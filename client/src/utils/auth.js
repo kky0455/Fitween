@@ -4,12 +4,12 @@ import API from '../api';
 import * as authApi from '../api/auth';
 
 export const onRefresh = async () => {
-	const refreshToken = {
+	const body = {
 		refreshToken: getRefreshToken(),
 	};
 
 	try {
-		const { refreshToken, accessToken } = await authApi.refresh(refreshToken);
+		const { refreshToken, accessToken } = await authApi.refresh(body);
 		onLoginSuccess(refreshToken, accessToken);
 	} catch (err) {
 		console.log(err);
