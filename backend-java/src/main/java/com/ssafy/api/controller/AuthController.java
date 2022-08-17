@@ -61,12 +61,11 @@ public class AuthController {
 
     @ApiOperation(value = "로그인", notes = "서비스에서 보내준 idToken을 활용하여 로그인 요청")
     @GetMapping("/login")
-    public ResponseEntity<?> signUp(@RequestParam String authCode,@RequestBody UserRegisterPostReq registerPostReq) throws GeneralSecurityException, IOException {
+    public ResponseEntity<?> signUp(@RequestParam String authCode) throws GeneralSecurityException, IOException {
 
         Message message = new Message();
         HttpHeaders headers= new HttpHeaders();
         headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
-
 
         // oauth properties client id 받아오기
         Environment env = context.getEnvironment();
@@ -86,7 +85,6 @@ public class AuthController {
         // (Receive idTokenString by HTTPS POST)
 
         GoogleIdToken idToken = verifier.verify(authCode);
-        System.out.println(authCode);
 
         if (idToken != null) {
             GoogleIdToken.Payload payload = idToken.getPayload();
@@ -104,18 +102,17 @@ public class AuthController {
             String familyName = (String) payload.get("family_name");
             String givenName = (String) payload.get("given_name");
 
-            registerPostReq.setProfileImg(pictureUrl);
-            registerPostReq.setEmail(email);
-
 
             try{
                 //User user = userService.getUserByUserId(userId);
                 UserLoginPostReq userLogin =userService.userLogin(userId);
+                userLogin.setEmail(email);
+                userLogin.setProfileImg(pictureUrl);
                 message.setStatus(StatusEnum.OK);
                 message.setResponseType("signIn");
-//                message.setUserId(userId);
-//                message.setAccessToken(userLogin.getAccessToken());
-//                message.setRefreshToken(userLogin.getRefreshToken());
+                message.setUserId(userId);
+                message.setAccessToken(userLogin.getAccessToken());
+                message.setRefreshToken(userLogin.getRefreshToken());
                 headers.add("accessToken",userLogin.getAccessToken());
                 headers.add("refreshToken",userLogin.getRefreshToken());
                 return new ResponseEntity<>(message, headers, HttpStatus.OK);
@@ -152,9 +149,6 @@ public class AuthController {
         int year = Integer.parseInt(str_birthYear[0]);
         int age = (currentYear-year)+1;
 
-        System.out.println(year);
-        System.out.println(age);
-
         try {
             String id = userService.join(requestDto.toEntity());
             requestDto.setAge(age);
@@ -175,7 +169,24 @@ public class AuthController {
             return new ResponseEntity<>(message, headers,  HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
+    }
 
+    @ApiOperation(value = "로그아웃 요청.",notes = "refresh 토큰으로 로그아웃을 요청한다.")
+    @GetMapping("/logout")
+    public ResponseEntity<?> logout(@RequestHeader(value="refreshToken") String refreshToken) {
+        Message message = new Message();
+        HttpHeaders headers= new HttpHeaders();
+        headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
+        try {
+            userService.logoutMember(refreshToken);
+            message.setStatus(StatusEnum.OK);
+            message.setResponseType("로그아웃 성공");
+            return new ResponseEntity<>(message, headers, HttpStatus.OK);
+        } catch (Exception e){
+            message.setStatus(StatusEnum.BAD_REQUEST);
+            message.setResponseType("ACCESS TOKEN이 일치하지 않습니다.");
+            return new ResponseEntity<>(message, headers, HttpStatus.BAD_REQUEST);
+        }
     }
 
 

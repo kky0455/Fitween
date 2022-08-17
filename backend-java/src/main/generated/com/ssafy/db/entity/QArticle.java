@@ -22,9 +22,17 @@ public class QArticle extends EntityPathBase<Article> {
 
     public static final QArticle article = new QArticle("article");
 
+    public final QBaseEntity _super = new QBaseEntity(this);
+
     public final NumberPath<Long> articleIdx = createNumber("articleIdx", Long.class);
 
     public final StringPath content = createString("content");
+
+    //inherited
+    public final DateTimePath<java.time.LocalDateTime> createTime = _super.createTime;
+
+    //inherited
+    public final DateTimePath<java.time.LocalDateTime> lastUpdateTime = _super.lastUpdateTime;
 
     public final BooleanPath lendStatus = createBoolean("lendStatus");
 

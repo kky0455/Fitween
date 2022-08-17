@@ -35,11 +35,11 @@ public class UserRepository {
         return true;
     }
 
-    public User findByEmail(String email) throws IllegalStateException {
-        List<User> memberList = em.createQuery("select m from User m where m.email = :email", User.class)
-                .setParameter("email", email)
+    public User findById(String userId) throws IllegalStateException {
+        List<User> memberList = em.createQuery("select m from User m where m.userId = :userId", User.class)
+                .setParameter("userId", userId)
                 .getResultList();
-        if(memberList.size() == 0) throw new IllegalStateException("해당 이메일을 가진 사용자가 없습니다.");
+        if(memberList.size() == 0) throw new IllegalStateException("해당 유저아이디를 가진 사용자가 없습니다.");
         return memberList.get(0);
     }
 
@@ -52,7 +52,7 @@ public class UserRepository {
 
 
     public void socialLogin(String email, String refresh){
-        User user = findByEmail(email);
+        User user = findById(email);
         user.changeRefreshToken(refresh);
     }
 
