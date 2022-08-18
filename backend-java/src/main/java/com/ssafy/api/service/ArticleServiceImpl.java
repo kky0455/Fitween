@@ -6,15 +6,13 @@ import com.ssafy.db.repository.ArticleImgRepository;
 import com.ssafy.db.repository.ArticleRepository;
 import com.ssafy.db.repository.LikesRepository;
 import com.ssafy.db.repository.UserRepository2;
+import javassist.runtime.Desc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Base64;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Service
 @Transactional
@@ -84,44 +82,30 @@ public class ArticleServiceImpl implements ArticleService{
 
     @Override
     public List<ArticleRecommendDto> findAllTest(Category categoryCode, User currentUser) {
-        // 리턴할 배열 생성
         List<ArticleRecommendDto> articleRecommendDtoList = new ArrayList<>();
-        // 전체 사용자 정보 가져오기
-//        Sort.by(Sort.Direction.DESC, "createTime")
         List<User> users = userRepository2.findAll();
-        // 지역 비교용 리스트 생성
         String[] region = currentUser.getRegion().split(" ");
-        // 카테고리가 all일 때,
         if (categoryCode == Category.all) {
-            // 유저 리스트에 있는 유저 목록 탐색
             users.forEach(user -> {
-                // 탐색한 유저와 내 지역이 일치하지 않으면 컨티뉴
                 String[] userRegion = user.getRegion().split(" ");
                 if (!Objects.equals(region[1], userRegion[1])) {
                     System.out.println(region[1] + userRegion[1]);
                     return;
                 }
-                // 의류와 신발 TF
                 boolean clothTF = false;
                 boolean shoesTF = false;
-                // 신체사이즈 차이 기록
                 double diffHeight = user.getHeight() - currentUser.getHeight();
                 double diffWeight = user.getWeight() - currentUser.getWeight();
-                // 키와 몸무게 차이가 둘 다 10 이내인 경우
                 if ((Math.abs(diffHeight) < 10) && (Math.abs(diffWeight)) < 10) {
                     clothTF = true;
                 }
-                // 발 사이즈가 똑같은 경우
                 if (user.getFootSize() == currentUser.getFootSize()) {
                     shoesTF = true;
                 }
-                // 해당 유저가 작성한 게시물 목록 탐색
                 List<Article> articleList = user.getArticles();
                 boolean finalClothTF = clothTF;
                 boolean finalShoesTF = shoesTF;
-                // 목록 탐색
                 articleList.forEach(article -> {
-                    // 좋아요 여부 판단용 likeStatus
                     boolean likeStatus;
                     Likes likes = likesRepository.findByUserAndArticle(currentUser, article).orElse(null);
                     if (likes == null) {
@@ -129,7 +113,6 @@ public class ArticleServiceImpl implements ArticleService{
                     } else {
                         likeStatus = true;
                     }
-                    // 게시물 카테고리가 신발이 아니고 신체 사이즈 비슷할 경우
                     if ((article.getCategory() != Category.shoes) && finalClothTF == true) {
                         List<Object> Imgs = new ArrayList<>();
                         if (article.getArticleImgs().size() != 0) {

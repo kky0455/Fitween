@@ -14,6 +14,7 @@ import com.ssafy.db.entity.Article;
 import com.ssafy.db.entity.ArticleImg;
 import com.ssafy.db.entity.Follow;
 import com.ssafy.db.entity.User;
+import com.ssafy.db.repository.ArticleRepository;
 import com.ssafy.db.repository.FollowRepository;
 import com.ssafy.db.repository.UserRepository;
 import com.ssafy.db.repository.UserRepository2;
@@ -54,6 +55,8 @@ public class UserController {
     UserRepository userRepository;
     @Autowired
     UserRepository2 userRepository2;
+    @Autowired
+    ArticleRepository articleRepository;
     @ApiOperation(value = "사용자의 상세 정보를 반환한다.", response = User.class)
     @GetMapping("/{userId}")
     public ResponseEntity<?> findUser(@PathVariable String userId, @ApiIgnore Authentication authentication){
@@ -75,20 +78,20 @@ public class UserController {
 
         List<Object> articleList = new ArrayList<>();
         User user = userRepository2.findUserByUserId(userId).orElse(null);
-        if (user.getArticles().size() != 0) {
-            List<Article> articles = user.getArticles();
-            articles.forEach(article -> {
-                Map<String, Object> result = new HashMap<>();
-                result.put("baseUrl" ,article.getArticleImgs().get(0).getBaseUrl());
-                result.put("img", article.getArticleImgs().get(0).getImg());
-                ArticleListDto articleListDto = new ArticleListDto(article.getArticleIdx(), result);
-                articleList.add(articleListDto);
-            });
-            return ResponseEntity.status(200).body(articleList);
+        if (user != null) {
+            List<Article> articles = articleRepository.findAllByUser(user).orElse(null);
+            if (articles != null) {
+                articles.forEach(article -> {
+                    Map<String, Object> result = new HashMap<>();
+                    result.put("baseUrl" ,article.getArticleImgs().get(0).getBaseUrl());
+                    result.put("img", article.getArticleImgs().get(0).getImg());
+                    ArticleListDto articleListDto = new ArticleListDto(article.getArticleIdx(), result);
+                    articleList.add(articleListDto);
+                });
+                return ResponseEntity.status(200).body(articleList);
+            }
         }
-        else {
-            return ResponseEntity.status(200).body(articleList);
-        }
+        return ResponseEntity.status(200).body(articleList);
 
     }
     @ApiOperation(value = "회원 정보 수정")
@@ -132,7 +135,7 @@ public class UserController {
                 .nickname(user.getNickname())
                 .height(user.getHeight())
                 .weight(user.getWeight())
-                .footsize(user.getFootSize())
+                .footSize(user.getFootSize())
                 .gender(user.getGender())
                 .region(user.getRegion())
                 .dateOfBirth(user.getDateOfBirth())
