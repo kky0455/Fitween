@@ -34,7 +34,6 @@ const ArticleModify = () => {
 	useEffect(() => {
 		const fetch = async () => {
 			const data = await getArticleDetail(articleId);
-			console.log(data);
 			setTitle(data.title);
 			setPrice(data.price);
 			setContent(data.content);
@@ -94,7 +93,9 @@ const ArticleModify = () => {
 
 		try {
 			const ret = await modifyArticle(articleId, body);
-			navigate(`/article/${articleId}`);
+			navigate(`/article/${articleId}`, {
+				state: { prevRouter: `/main` },
+			});
 		} catch (error) {
 			alert('다시 시도하세요.');
 		}
@@ -272,10 +273,10 @@ const ArticleModify = () => {
 						`}
 					>
 						<Checkbox
-							checked={isRent}
-							onChange={e => setIsRent(e.target.checked)}
-							value={isRent}
-							label={isRent ? '대여 가능' : '대여 불가'}
+							checked={!isRent}
+							onChange={e => setIsRent(!e.target.checked)}
+							value={!isRent}
+							label={isRent ? '대여 불가' : '대여 가능'}
 							id="checkrent"
 						/>
 					</div>

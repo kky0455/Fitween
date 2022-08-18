@@ -37,7 +37,7 @@ export const getuserDetailInfo = async () => {
 };
 
 // 회원 피드 목록 가져오기
-export const getUserArticleList = async () => {
-	const res = await API.get('/users/articleList');
+export const getUserArticleList = async userId => {
+	const res = await API.get('/users/articlelist', { params: { userId } });
 	return res.data;
 };

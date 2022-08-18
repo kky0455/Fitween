@@ -11,7 +11,7 @@ import { doArticleLike, cancelArticleLike } from '../../api/article';
 import { useGlobalContext } from '../../contexts/GlobalContext';
 import { useUserState } from '../../contexts/User/UserContext';
 
-const ArticleBottom = ({ isLiked, likeCnt, rentPrice, writerId }) => {
+const ArticleBottom = ({ isLiked, likeCnt, rentPrice, writerId, nickname }) => {
 	const { articleId } = useParams();
 	const { setHasBottom } = useGlobalContext();
 	useEffect(() => {
@@ -105,7 +105,7 @@ const ArticleBottom = ({ isLiked, likeCnt, rentPrice, writerId }) => {
 						onClick={() =>
 							// todo : 채팅방 옮길때 추가정보 필요했는데 기억안남 나중에수정
 							navigate('/chat/room', {
-								state: { roomId: null, receiverId: writerId },
+								state: { roomId: null, receiverId: writerId, nickname },
 							})
 						}
 					/>

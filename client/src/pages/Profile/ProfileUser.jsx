@@ -7,11 +7,10 @@ import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import BottomNavigation from '../../components/Common/BottomNavigation/BottomNavigation';
 import { useNavigate, useParams } from 'react-router-dom';
 import null_profile from '../../assets/null_profile_img.png';
-import gallery_img from '../../assets/gallery_img.png';
 import ProfileTop from '../../components/Profile/ProfileTop';
 import ProfileButton from '../../components/Profile/ProfileButton';
 import { useUserDispatch, useUserState } from '../../contexts/User/UserContext';
-import { getUserInfo } from '../../api/user';
+import { getUserArticleList, getUserInfo } from '../../api/user';
 import profile_menu from '../../assets/profile_menu.svg';
 import Modal from '../../components/Common/Modal/Modal';
 import colors from '../../constants/colors';
@@ -23,12 +22,13 @@ const Hr = styled.hr`
 	border-bottom: 1px solid ${colors.grey50};
 `;
 
-const ProfileUser = ({ articleId }) => {
+const ProfileUser = () => {
 	const { userId } = useParams();
 	const { loginedUserId } = useUserState();
 	const navigate = useNavigate();
 	const userDispatch = useUserDispatch();
 	const [profileInfo, setProfileInfo] = useState(null);
+	const [articleList, setArticleList] = useState(null);
 	const [modalVisible, setModalVisible] = useState(false);
 
 	const logoutClickHandler = async () => {
@@ -61,6 +61,18 @@ const ProfileUser = ({ articleId }) => {
 		};
 		fetch();
 	}, [navigate, userId]);
+
+	//유저 피드 fetch
+	useEffect(() => {
+		const fetch = async () => {
+			const data = await getUserArticleList(userId);
+			if (data.result === 'fail') {
+				navigate('/main');
+			}
+			setArticleList(data);
+		};
+		fetch();
+	}, [userId]);
 
 	const openModal = () => {
 		setModalVisible(true);
@@ -164,16 +176,24 @@ const ProfileUser = ({ articleId }) => {
 							padding: 10px;
 						`}
 					>
-						<img
-							css={css`
-								display: flex;
-								width: 100%;
-								height: 100%;
-							`}
-							src={gallery_img}
-							alt=""
-							onClick={() => navigate(`/article/${articleId}`)}
-						/>
+						{articleList &&
+							articleList.map(article => (
+								<img
+									css={css`
+										display: flex;
+										width: 100%;
+										height: 100%;
+									`}
+									key={article.articleIdx}
+									src={article.articleImg.baseUrl + article.articleImg.img}
+									alt=""
+									onClick={() =>
+										navigate(`/article/${article.articleIdx}`, {
+											state: { prevRouter: `/profile/${userId}` },
+										})
+									}
+								/>
+							))}
 					</div>
 				</div>
 			</div>

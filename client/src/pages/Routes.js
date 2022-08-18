@@ -7,7 +7,6 @@ import ArticleModify from './Article/ArticleModify';
 import ArticleRegist from './Article/ArticleRegist';
 import ChatList from './Chat/ChatList';
 import ChatRoom from './Chat/ChatRoom';
-import DummyPage from './DummyPage/DummyPage';
 import Index from './Index/Index';
 import Redirect from './Index/Redirect';
 import Join from './Join/Join';
@@ -76,12 +75,8 @@ const Profile = () => {
 export const Routes = () => {
 	return (
 		<ReactRouterRoutes>
-			{/* 테스트용 더미 페이지 */}
-			<Route exact path="dummy" element={<DummyPage />} />
-
 			{/* 초기화면  */}
 			<Route exact path="/" element={<Index />} />
-
 			{/* about 소개 페이지 */}
 			<Route exact path="/about" element={<About />} />
 			{/* 소셜 로그인 리다이렉트  */}
@@ -109,7 +104,7 @@ export const Routes = () => {
 			<Route exact path="/" element={<PrivateRoute />}>
 				<Route path="profile/*" element={<Profile />} />
 			</Route>
-			<Route path="*" element={<Navigate replace to="dummy" />} />
+			<Route path="*" element={<Navigate replace to="/" />} />
 		</ReactRouterRoutes>
 	);
 };

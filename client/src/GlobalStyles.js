@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
 ${reset}
           -ms-overflow-style: none !important; 
           scrollbar-width: none !important; 
+         
           ::-webkit-scrollbar {
             display: none !important; 
             width: 0 !important;  
@@ -20,6 +21,7 @@ ${reset}
   }
 	body {
           height: 100vh;
+          cursor: default;
 	        font-family : apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell , 'Helvetica Neue', sans-serif;
 	        font-size : 15px;
 	        background-color : $background;
@@ -27,6 +29,9 @@ ${reset}
           padding-top: ${({ hasTop }) => (hasTop ? common.topHeaderHeight : 0)};
           padding-bottom: ${({ hasBottom }) => (hasBottom ? common.bottomHeaderHeight : 0)};
           overflow: hidden;
+          svg,img,button{
+            cursor: pointer;
+          }
         }
   *{
             box-sizing: border-box;
