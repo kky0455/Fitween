@@ -20,7 +20,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const startRendering = async () => {
 	try {
 		await onRefresh();
-
+	} catch (err) {
+		throw err;
+	} finally {
 		root.render(
 			// <React.StrictMode>
 			<GlobalContextProvider>
@@ -32,8 +34,6 @@ const startRendering = async () => {
 			</GlobalContextProvider>,
 			// </React.StrictMode>,
 		);
-	} catch (err) {
-		throw err;
 	}
 };
 
