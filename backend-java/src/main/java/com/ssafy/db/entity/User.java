@@ -94,13 +94,12 @@ public class User extends BaseEntity{
 
     @Builder
     public void updateUser(UserUpdateDto userUpdateDto) {
-        this.profileImg = userUpdateDto.getProfileImg();
         this.nickname = userUpdateDto.getNickname();
         this.dateOfBirth = userUpdateDto.getDateOfBirth();
-        this.age = userUpdateDto.getAge();
         this.height = userUpdateDto.getHeight();
         this.weight = userUpdateDto.getWeight();
         this.footSize = userUpdateDto.getFootSize();
         this.region = userUpdateDto.getRegion();
+        this.gender = userUpdateDto.getGender();
     }
 }
