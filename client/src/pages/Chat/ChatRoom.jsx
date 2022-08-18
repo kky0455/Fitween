@@ -183,7 +183,6 @@ const ChatRoom = () => {
 						border-radius: 31px;
 						&:active,
 						&:focus {
-							229,13
 							outline: none;
 						}
 					`}
