@@ -13,4 +13,6 @@ import java.util.Optional;
 public interface ArticleRepository extends JpaRepository<Article, Long> {
     @Query("select a from Article a where a.user=:user order by a.articleIdx desc ")
     Optional<List<Article>> findAllByUser(User user);
+    @Query("select a from Article a order by a.articleIdx desc")
+    Optional<List<Article>> findAllDesc();
 }

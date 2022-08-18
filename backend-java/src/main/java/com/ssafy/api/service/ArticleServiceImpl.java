@@ -356,4 +356,122 @@ public class ArticleServiceImpl implements ArticleService{
 
         return articleLikeDtoList;
     }
+
+    public List<ArticleRecommendDto> findAll(Category categoryCode, User user){
+        List<ArticleRecommendDto> articleRecommendDtoList = new ArrayList<>();
+        List<User> clothUser = userRepository2.findAllCloth(user.getHeight(), user.getWeight()).orElse(null);
+        List<User> footUser = userRepository2.findAllShoes(user.getFootSize()).orElse(null);
+        List<Article> articles = articleRepository.findAllDesc().orElse(null);
+        if (categoryCode == Category.all) {
+            articles.forEach(article -> {
+                if (article.getCategory() != Category.shoes && clothUser.contains(article.getUser())){
+                    boolean likeStatus;
+                    Likes likes = likesRepository.findByUserAndArticle(user, article).orElse(null);
+                    if (likes == null) {
+                        likeStatus = false;
+                    } else {
+                        likeStatus = true;
+                    }
+                    List<Object> Imgs = new ArrayList<>();
+                    if (article.getArticleImgs().size() != 0) {
+                        ArticleImgDto articleImgDto = new ArticleImgDto(article.getArticleImgs().get(0).getBaseUrl(), article.getArticleImgs().get(0).getImg());
+                        Imgs.add(articleImgDto);
+                    }
+                    articleRecommendDtoList.add(ArticleRecommendDto.builder()
+                            .articleIdx(article.getArticleIdx())
+                            .title(article.getTitle())
+                            .price(article.getPrice())
+                            .nickname(user.getNickname())
+                            .lendStatus(article.isLendStatus())
+                            .likeStatus(likeStatus)
+                            .likesCount(article.getLikes().size())
+                            .userId(user.getUserId())
+                            .feedArticleImg(Imgs)
+                            .build());
+                }
+                if (article.getCategory() == Category.shoes && footUser.contains(article.getUser())){
+                    boolean likeStatus;
+                    Likes likes = likesRepository.findByUserAndArticle(user, article).orElse(null);
+                    if (likes == null) {
+                        likeStatus = false;
+                    } else {
+                        likeStatus = true;
+                    }
+                    List<Object> Imgs = new ArrayList<>();
+                    if (article.getArticleImgs().size() != 0) {
+                        ArticleImgDto articleImgDto = new ArticleImgDto(article.getArticleImgs().get(0).getBaseUrl(), article.getArticleImgs().get(0).getImg());
+                        Imgs.add(articleImgDto);
+                    }
+                    articleRecommendDtoList.add(ArticleRecommendDto.builder()
+                            .articleIdx(article.getArticleIdx())
+                            .title(article.getTitle())
+                            .price(article.getPrice())
+                            .nickname(user.getNickname())
+                            .lendStatus(article.isLendStatus())
+                            .likeStatus(likeStatus)
+                            .likesCount(article.getLikes().size())
+                            .userId(user.getUserId())
+                            .feedArticleImg(Imgs)
+                            .build());
+                }
+            });
+        } else {
+            articles.forEach(article -> {
+                if (categoryCode != Category.shoes) {
+                    if (article.getCategory() == categoryCode && clothUser.contains(article.getUser())){
+                        boolean likeStatus;
+                        Likes likes = likesRepository.findByUserAndArticle(user, article).orElse(null);
+                        if (likes == null) {
+                            likeStatus = false;
+                        } else {
+                            likeStatus = true;
+                        }
+                        List<Object> Imgs = new ArrayList<>();
+                        if (article.getArticleImgs().size() != 0) {
+                            ArticleImgDto articleImgDto = new ArticleImgDto(article.getArticleImgs().get(0).getBaseUrl(), article.getArticleImgs().get(0).getImg());
+                            Imgs.add(articleImgDto);
+                        }
+                        articleRecommendDtoList.add(ArticleRecommendDto.builder()
+                                .articleIdx(article.getArticleIdx())
+                                .title(article.getTitle())
+                                .price(article.getPrice())
+                                .nickname(user.getNickname())
+                                .lendStatus(article.isLendStatus())
+                                .likeStatus(likeStatus)
+                                .likesCount(article.getLikes().size())
+                                .userId(user.getUserId())
+                                .feedArticleImg(Imgs)
+                                .build());
+                    }
+                } else {
+                    if (article.getCategory() == categoryCode && footUser.contains(article.getUser())){
+                        boolean likeStatus;
+                        Likes likes = likesRepository.findByUserAndArticle(user, article).orElse(null);
+                        if (likes == null) {
+                            likeStatus = false;
+                        } else {
+                            likeStatus = true;
+                        }
+                        List<Object> Imgs = new ArrayList<>();
+                        if (article.getArticleImgs().size() != 0) {
+                            ArticleImgDto articleImgDto = new ArticleImgDto(article.getArticleImgs().get(0).getBaseUrl(), article.getArticleImgs().get(0).getImg());
+                            Imgs.add(articleImgDto);
+                        }
+                        articleRecommendDtoList.add(ArticleRecommendDto.builder()
+                                .articleIdx(article.getArticleIdx())
+                                .title(article.getTitle())
+                                .price(article.getPrice())
+                                .nickname(user.getNickname())
+                                .lendStatus(article.isLendStatus())
+                                .likeStatus(likeStatus)
+                                .likesCount(article.getLikes().size())
+                                .userId(user.getUserId())
+                                .feedArticleImg(Imgs)
+                                .build());
+                    }
+                }
+            });
+        }
+        return articleRecommendDtoList;
+    }
 }
