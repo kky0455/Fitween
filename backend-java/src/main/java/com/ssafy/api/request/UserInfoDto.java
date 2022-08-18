@@ -12,7 +12,7 @@ public class UserInfoDto {
     double weight;
     double height;
     String dateOfBirth;
-    int footsize;
+    int footSize;
     String region;
     String gender;
 }
