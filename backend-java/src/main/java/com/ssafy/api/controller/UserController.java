@@ -132,7 +132,7 @@ public class UserController {
                 .nickname(user.getNickname())
                 .height(user.getHeight())
                 .weight(user.getWeight())
-                .footsize(user.getFootSize())
+                .footSize(user.getFootSize())
                 .gender(user.getGender())
                 .region(user.getRegion())
                 .dateOfBirth(user.getDateOfBirth())
