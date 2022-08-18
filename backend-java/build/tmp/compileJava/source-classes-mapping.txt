@@ -102,6 +102,7 @@ com/ssafy/api/service/UserService.java
  com.ssafy.api.service.UserService
 com/ssafy/api/request/ArticleListDto.java
  com.ssafy.api.request.ArticleListDto
+ com.ssafy.api.request.ArticleListDto$ArticleListDtoBuilder
 com/ssafy/db/dto/Response.java
  com.ssafy.db.dto.Response
 com/ssafy/db/entity/Category.java

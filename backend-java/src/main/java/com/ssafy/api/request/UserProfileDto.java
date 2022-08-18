@@ -11,7 +11,7 @@ public class UserProfileDto {
     private String userId;
     private String nickname;
     private int articleCount;
-    //    private String feedImg;
+
     private int userFollowerCount;
     private int userFollowingCount;
     private boolean isFollowed;

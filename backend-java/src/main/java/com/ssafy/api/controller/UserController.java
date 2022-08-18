@@ -2,12 +2,16 @@ package com.ssafy.api.controller;
 
 
 import com.ssafy.api.request.UserInfoDto;
+import com.ssafy.api.request.ArticleImgDto;
+import com.ssafy.api.request.ArticleListDto;
 import com.ssafy.api.request.UserProfileDto;
 import com.ssafy.api.request.UserUpdateDto;
 import com.ssafy.api.service.FollowService;
 import com.ssafy.api.service.UserService;
 import com.ssafy.common.auth.FWUserDetails;
 import com.ssafy.db.dto.Message;
+import com.ssafy.db.entity.Article;
+import com.ssafy.db.entity.ArticleImg;
 import com.ssafy.db.entity.User;
 import com.ssafy.db.repository.FollowRepository;
 import com.ssafy.db.repository.UserRepository;
@@ -26,6 +30,10 @@ import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
 import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 유저 관련 API 요청 처리를 위한 컨트롤러 정의.
@@ -58,6 +66,29 @@ public class UserController {
         boolean isFollowed = followService.isFollow(userDetails.getUser(), user);
         UserProfileDto userProfileDto = new UserProfileDto(user.getUserId(), user.getNickname(), articleCount, followerCount, followingCount, isFollowed);
         return ResponseEntity.status(200).body(userProfileDto);
+    }
+
+    @ApiOperation(value = "사용자의 상세 정보를 반환한다.", response = User.class)
+    @GetMapping("/articlelist")
+    public ResponseEntity<?> findArticle(@RequestParam String userId, @ApiIgnore Authentication authentication){
+
+        List<Object> articleList = new ArrayList<>();
+        User user = userRepository2.findUserByUserId(userId).orElse(null);
+        if (user.getArticles().size() != 0) {
+            List<Article> articles = user.getArticles();
+            articles.forEach(article -> {
+                Map<String, Object> result = new HashMap<>();
+                result.put("baseUrl" ,article.getArticleImgs().get(0).getBaseUrl());
+                result.put("img", article.getArticleImgs().get(0).getImg());
+                ArticleListDto articleListDto = new ArticleListDto(article.getArticleIdx(), result);
+                articleList.add(articleListDto);
+            });
+            return ResponseEntity.status(200).body(articleList);
+        }
+        else {
+            return ResponseEntity.status(200).body(articleList);
+        }
+
     }
     @ApiOperation(value = "회원 정보 수정")
     @PutMapping()
