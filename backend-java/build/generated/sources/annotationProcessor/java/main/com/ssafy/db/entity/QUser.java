@@ -29,6 +29,8 @@ public class QUser extends EntityPathBase<User> {
     //inherited
     public final DateTimePath<java.time.LocalDateTime> createTime = _super.createTime;
 
+    public final StringPath dateOfBirth = createString("dateOfBirth");
+
     public final StringPath email = createString("email");
 
     public final BooleanPath enable = createBoolean("enable");
