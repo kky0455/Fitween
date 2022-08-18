@@ -26,4 +26,6 @@ public interface ArticleService {
     public List<ArticleRecommendDto> findAllTest(Category categotyCode, User user);
 
     public List<ArticleLikeDto> findLikeArticle(Category category, User user);
+
+    List<ArticleRecommendDto> findAll(Category categoryCode, User user);
 }
