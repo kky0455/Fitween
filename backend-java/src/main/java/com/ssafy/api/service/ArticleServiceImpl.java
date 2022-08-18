@@ -376,13 +376,13 @@ public class ArticleServiceImpl implements ArticleService{
         String[] region = user.getRegion().split(" ");
         if (categoryCode == Category.all) {
             articles.forEach(article -> {
+                String[] userRegion = article.getUser().getRegion().split(" ");
+                if (!Objects.equals(region[1], userRegion[1])) {
+                    return;
+                }
                 if (article.getCategory() != Category.shoes && clothUser.contains(article.getUser())){
                     boolean likeStatus;
                     Likes likes = likesRepository.findByUserAndArticle(user, article).orElse(null);
-                    String[] userRegion = article.getUser().getRegion().split(" ");
-                    if (!Objects.equals(region[1], userRegion[1])) {
-                        return;
-                    }
                     if (likes == null) {
                         likeStatus = false;
                     } else {
