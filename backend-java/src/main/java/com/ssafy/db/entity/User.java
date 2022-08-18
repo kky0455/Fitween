@@ -72,6 +72,7 @@ public class User extends BaseEntity{
     @Column(name = "refresh_token")
     private String refreshToken;
 
+
     @ElementCollection(fetch = FetchType.EAGER)
     @Builder.Default
     private List<String> roles = new ArrayList<>();
