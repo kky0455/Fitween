@@ -12,7 +12,7 @@ import Main from '../../components/Common/Main/Main';
 import RoomItem from '../../components/Chat/RoomItem';
 import { useNavigate } from 'react-router-dom';
 import * as ChatApi from '../../api/chat';
-import { useUserState } from '../../context/User/UserContext';
+import { useUserState } from '../../contexts/User/UserContext';
 
 const EditButton = () => {
 	return (

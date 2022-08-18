@@ -15,7 +15,7 @@ import Main from '../../components/Common/Main/Main';
 import Message from '../../components/Chat/Message';
 import Date from '../../components/Chat/Date';
 import * as ChatApi from '../../api/chat';
-import { useUserState } from '../../context/User/UserContext';
+import { useUserState } from '../../contexts/User/UserContext';
 import { getDay } from '../../utils/getDate';
 
 let stompClient = null;
