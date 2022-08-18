@@ -283,7 +283,7 @@ public class ArticleServiceImpl implements ArticleService{
                             .userId(user.getUserId())
                             .feedArticleImg(Imgs)
                             .build());
-                } else if (article.getCategory() == Category.shoes && finalShoesTF == true) {
+                } if (article.getCategory() == Category.shoes && finalShoesTF == true) {
                     List<Object> Imgs = new ArrayList<>();
                     if (article.getArticleImgs().size() != 0) {
                         ArticleImgDto articleImgDto = new ArticleImgDto(article.getArticleImgs().get(0).getBaseUrl(), article.getArticleImgs().get(0).getImg());
