@@ -50,6 +50,7 @@ public class UserService {
 		return user;
 	}
 
+	@Transactional
 	public void updateUser(String userId, UserUpdateDto userUpdateDto) {
 		User user = userRepository.findById(userId);
 		user.updateUser(userUpdateDto);
