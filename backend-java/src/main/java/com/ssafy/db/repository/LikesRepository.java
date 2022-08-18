@@ -14,7 +14,7 @@ import java.util.Optional;
 @Repository
 public interface LikesRepository extends JpaRepository<Likes, Long> {
 
-    @Query("SELECT p FROM Likes p ORDER BY p.article.articleIdx ASC ")
+    @Query("SELECT p FROM Likes p ORDER BY p.article.articleIdx DESC ")
     Optional<List<Likes>> findAllByUser(User user);
 
 
