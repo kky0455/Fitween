@@ -171,8 +171,7 @@ const ChatRoom = () => {
 					value={message}
 					onChange={e => setMessage(e.target.value)}
 					onKeyDown={e => {
-						if (e.isComposing) return;
-						if (e.key === 'Enter') sendChatHandler();
+						if (e.keyCode === 13) sendChatHandler();
 					}}
 					type="text"
 					placeholder="메시지를 입력하세요"
@@ -185,6 +184,7 @@ const ChatRoom = () => {
 						border-radius: 31px;
 						&:active,
 						&:focus {
+							229,13
 							outline: none;
 						}
 					`}
