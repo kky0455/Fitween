@@ -1,12 +1,12 @@
 import React from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
 
-import { useUserState } from '../../context/User/UserContext';
+import { getRefreshToken } from '../../storage/Cookie';
 
 const PrivateRoute = () => {
-	const { loginedUserId } = useUserState();
+	const refreshToken = getRefreshToken();
 
-	return loginedUserId ? <Outlet /> : <Navigate to="/" />;
+	return refreshToken ? <Outlet /> : <Navigate to="/" />;
 };
 
 export default PrivateRoute;

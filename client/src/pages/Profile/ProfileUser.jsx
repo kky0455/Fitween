@@ -10,12 +10,12 @@ import null_profile from '../../assets/null_profile_img.png';
 import gallery_img from '../../assets/gallery_img.png';
 import ProfileTop from '../../components/Profile/ProfileTop';
 import ProfileButton from '../../components/Profile/ProfileButton';
-import { useUserDispatch, useUserState } from '../../context/User/UserContext';
+import { useUserDispatch, useUserState } from '../../contexts/User/UserContext';
 import { getUserInfo } from '../../api/user';
 import profile_menu from '../../assets/profile_menu.svg';
 import Modal from '../../components/Common/Modal/Modal';
 import colors from '../../constants/colors';
-import { setLogout } from '../../context/User/UserTypes';
+import { setLogout } from '../../contexts/User/UserTypes';
 import { onDeleteUser, onLogout } from '../../utils/auth';
 
 const Hr = styled.hr`

@@ -3,10 +3,9 @@ import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
 
 import Loading from '../../components/Common/Loading/Loading';
 import * as authApi from '../../api/auth';
-import { setRefreshToken } from '../../storage/Cookie';
-import API from '../../api';
-import { useUserDispatch } from '../../context/User/UserContext';
-import { setLogin, setSignUp } from '../../context/User/UserTypes';
+import { useUserDispatch } from '../../contexts/User/UserContext';
+import { setLogin, setSignUp } from '../../contexts/User/UserTypes';
+import { onLoginSuccess } from '../../utils/auth';
 
 const Redirect = () => {
 	const [searchParams] = useSearchParams();
@@ -38,11 +37,10 @@ const Redirect = () => {
 			try {
 				const res = await authApi.login(body);
 				if (res.responseType === 'signIn') {
-					const { accessToken, userId } = res;
+					const { refreshToken, accessToken, userId } = res;
 
-					setRefreshToken(res.refreshToken);
+					onLoginSuccess(refreshToken, accessToken);
 					dispatch(setLogin(userId));
-					API.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
 					navigate('/main');
 				} else if (res.responseType === 'signUp') {
 					const { userId } = res;

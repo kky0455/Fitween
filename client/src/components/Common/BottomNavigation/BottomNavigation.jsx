@@ -11,7 +11,7 @@ import styled from 'styled-components';
 import common from '../../../constants/commonStyle';
 import colors from '../../../constants/colors';
 import { useGlobalContext } from '../../../contexts/GlobalContext';
-import { useUserState } from '../../../context/User/UserContext';
+import { useUserState } from '../../../contexts/User/UserContext';
 
 const Link = styled(NavLink)`
 	width: 25%;

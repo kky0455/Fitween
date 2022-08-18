@@ -12,7 +12,7 @@ export const onRefresh = async () => {
 		const { refreshToken, accessToken } = await authApi.refresh(body);
 		onLoginSuccess(refreshToken, accessToken);
 	} catch (err) {
-		console.log(err);
+		throw err;
 	}
 };
 

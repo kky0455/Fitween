@@ -5,6 +5,7 @@ import './styles/app.scss';
 import GlobalStyles from './GlobalStyles';
 import { Routes } from './pages/Routes';
 import { useGlobalContext } from './contexts/GlobalContext';
+
 function Layout({ children }) {
 	return (
 		<div
@@ -21,8 +22,10 @@ function Layout({ children }) {
 		</div>
 	);
 }
+
 function App() {
 	const { hasTop, hasBottom } = useGlobalContext();
+
 	return (
 		<>
 			<Layout>
