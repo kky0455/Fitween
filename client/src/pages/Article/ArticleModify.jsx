@@ -93,7 +93,9 @@ const ArticleModify = () => {
 
 		try {
 			const ret = await modifyArticle(articleId, body);
-			navigate(`/article/${articleId}`);
+			navigate(`/article/${articleId}`, {
+				state: { prevRouter: `/main` },
+			});
 		} catch (error) {
 			alert('다시 시도하세요.');
 		}

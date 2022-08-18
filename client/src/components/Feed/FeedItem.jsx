@@ -60,7 +60,11 @@ const FeedItem = ({
 				css={css`
 					width: 100%;
 				`}
-				onClick={() => navigate(`/article/${articleId}`)}
+				onClick={() =>
+					navigate(`/article/${articleId}`, {
+						state: { prevRouter: `/main` },
+					})
+				}
 			>
 				<img
 					src={articleImg}
