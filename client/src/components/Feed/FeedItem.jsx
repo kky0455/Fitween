@@ -59,6 +59,7 @@ const FeedItem = ({
 			<div
 				css={css`
 					width: 100%;
+					height: 200px;
 				`}
 				onClick={() => navigate(`/article/${articleId}`)}
 			>
@@ -70,6 +71,10 @@ const FeedItem = ({
 						justify-content: center;
 						align-items: center;
 						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						border-left: 1.5px solid #f0f0f0;
+						border-right: 1.5px solid #f0f0f0;
 					`}
 				/>
 				{/* 하단부 - 제목, 가격, 좋아요 수, 시간 */}
