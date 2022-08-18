@@ -180,13 +180,13 @@ public class AuthController {
     }
 
     @ApiOperation(value = "로그아웃 요청.",notes = "refresh 토큰으로 로그아웃을 요청한다.")
-    @GetMapping("/logout")
-    public ResponseEntity<?> logout(@RequestHeader(value="refreshToken") String refreshToken) {
+    @PostMapping("/logout")
+    public ResponseEntity<?> logout(@RequestBody Map<String,String> body) {
         Message message = new Message();
         HttpHeaders headers= new HttpHeaders();
         headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
         try {
-            userService.logoutMember(refreshToken);
+            userService.logoutMember(body.get("refreshToken"));
             message.setStatus(StatusEnum.OK);
             message.setResponseType("로그아웃 성공");
             return new ResponseEntity<>(message, headers, HttpStatus.OK);
