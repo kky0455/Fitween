@@ -43,6 +43,9 @@ public class User extends BaseEntity{
     String email;
 
     @Column
+    String dateOfBirth;
+
+    @Column
     int age;
 
     @Column
@@ -92,6 +95,8 @@ public class User extends BaseEntity{
     public void updateUser(UserUpdateDto userUpdateDto) {
         this.profileImg = userUpdateDto.getProfileImg();
         this.nickname = userUpdateDto.getNickname();
+        this.dateOfBirth = userUpdateDto.getDateOfBirth();
+        this.age = userUpdateDto.getAge();
         this.height = userUpdateDto.getHeight();
         this.weight = userUpdateDto.getWeight();
         this.footSize = userUpdateDto.getFootSize();
