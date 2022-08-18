@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="refactor : 게시물 업데이트 API 수정 및 머지">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="56028ca8-3c2c-41fd-adb1-577c3a07c509" name="변경" comment="check by SH">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +145,7 @@
       <command value="import module" />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.GroupCallApplication">
+  <component name="RunManager" selected="Gradle.backend-java [lombok]">
     <configuration name="GroupCallApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ssafy.GroupCallApplication" />
       <module name="ssafy-web-project.main" />
@@ -286,20 +277,6 @@
       <workItem from="1660551817433" duration="28083000" />
       <workItem from="1660650615881" duration="27000" />
       <workItem from="1660696003350" duration="5353000" />
-    </task>
-    <task id="LOCAL-00008" summary="docs: check">
-      <created>1659588357926</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1659588357927</updated>
-    </task>
-    <task id="LOCAL-00009" summary="feat: oauth2service 생성">
-      <created>1659588499516</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1659588499517</updated>
     </task>
     <task id="LOCAL-00010" summary="check">
       <created>1660269444991</created>
@@ -630,7 +607,21 @@
       <option name="project" value="LOCAL" />
       <updated>1660712796734</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="fix: /signup시 body에 토큰 넣어서 보냄">
+      <created>1660719980393</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1660719980393</updated>
+    </task>
+    <task id="LOCAL-00058" summary="check by SH">
+      <created>1660719995464</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1660719995464</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -648,8 +639,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: 회원가입 시 프로필이미지, 이메일 설정(107-108)&#10;signup 시 입력 받은 날짜 기반 나이 설정" />
-    <MESSAGE value="refactor: 메시지 토큰 삭제 처리" />
     <MESSAGE value="refactor: gender String으로 변환" />
     <MESSAGE value="refactor: gender String으로 변환&#10;유저 생년월일 처리 변수 생성" />
     <MESSAGE value="fix: 코드 누락" />
@@ -673,7 +662,9 @@
     <MESSAGE value="refactor: json형태 response수정" />
     <MESSAGE value="feat: 로그아웃기능 설정" />
     <MESSAGE value="refactor : 게시물 업데이트 API 수정 및 머지" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor : 게시물 업데이트 API 수정 및 머지" />
+    <MESSAGE value="fix: /signup시 body에 토큰 넣어서 보냄" />
+    <MESSAGE value="check by SH" />
+    <option name="LAST_COMMIT_MESSAGE" value="check by SH" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

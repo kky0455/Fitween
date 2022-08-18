@@ -60,7 +60,7 @@ public class UserController {
         return ResponseEntity.status(200).body(userProfileDto);
     }
     @ApiOperation(value = "회원 정보 수정")
-    @PutMapping("/{userId}")
+    @PutMapping()
     @ApiResponses({ @ApiResponse(code = 200, message = "회원정보 수정 완료"),
 //            @ApiResponse(code = 401, message = "인증 실패"),
 //            @ApiResponse(code = 404, message = "사용자 없음"),
@@ -72,7 +72,7 @@ public class UserController {
         return ResponseEntity.status(200).body("회원정보 수정 완료");
     }
     @ApiOperation(value = "회원 탈퇴")
-    @DeleteMapping("/{userId}")
+    @DeleteMapping()
     @ApiResponses({ @ApiResponse(code = 200, message = "회원 탈퇴 성공"),
 //            @ApiResponse(code = 401, message = "인증 실패"),
 //            @ApiResponse(code = 404, message = "사용자 없음"),
