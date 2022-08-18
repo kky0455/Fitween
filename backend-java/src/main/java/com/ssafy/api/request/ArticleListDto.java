@@ -14,9 +14,10 @@ public class ArticleListDto {
 
     private Long articleIdx;
 
-    private Map<String, byte[]> articleImg;
 
-    public ArticleListDto(Long articleIdx, Map<String, byte[]> articleImg){
+    private Map<String, Object> articleImg;
+
+    public ArticleListDto(Long articleIdx, Map<String, Object> articleImg){
         this.articleIdx = articleIdx;
         this.articleImg = articleImg;
     }

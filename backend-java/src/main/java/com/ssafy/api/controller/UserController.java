@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -70,18 +71,23 @@ public class UserController {
     @GetMapping("/articlelist")
     public ResponseEntity<?> findArticle(@RequestParam String userId, @ApiIgnore Authentication authentication){
 
-        List<Object> articleList = null;
+        List<Object> articleList = new ArrayList<>();
         User user = userRepository2.findUserByUserId(userId).orElse(null);
-        List<Article> articles = user.getArticles();
-        articles.forEach(article -> {
-            Map<String, byte[]> result = new HashMap<>();
-            result.put(article.getArticleImgs().get(0).getBaseUrl(), article.getArticleImgs().get(0).getImg());
-            System.out.println(article.getArticleIdx());
-            System.out.println(result);
-            ArticleListDto articleListDto = new ArticleListDto(article.getArticleIdx(), result);
-            articleList.add(articleListDto);
-        });
-        return ResponseEntity.status(200).body(articleList);
+        if (user.getArticles().size() != 0) {
+            List<Article> articles = user.getArticles();
+            articles.forEach(article -> {
+                Map<String, Object> result = new HashMap<>();
+                result.put("baseUrl" ,article.getArticleImgs().get(0).getBaseUrl());
+                result.put("img", article.getArticleImgs().get(0).getImg());
+                ArticleListDto articleListDto = new ArticleListDto(article.getArticleIdx(), result);
+                articleList.add(articleListDto);
+            });
+            return ResponseEntity.status(200).body(articleList);
+        }
+        else {
+            return ResponseEntity.status(200).body(articleList);
+        }
+
     }
     @ApiOperation(value = "회원 정보 수정")
     @PutMapping("/{userId}")

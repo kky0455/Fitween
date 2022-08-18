@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="21fbbbfe-8cea-4416-b179-31c72c9c96a6" name="Changes" comment="refactor : 게시물 업데이트 API 수정 및 머지">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/ssafy/db/entity/QUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/com/ssafy/db/entity/QUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/request/ArticleListDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/request/ArticleListDto.java" afterDir="false" />
     </list>
