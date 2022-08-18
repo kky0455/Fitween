@@ -84,6 +84,9 @@ public class User extends BaseEntity{
     public void changeRefreshToken(String refreshToken){
         this.refreshToken = refreshToken;
     }
+    public void deleteRefreshToken(){
+        this.refreshToken = null;
+    }
 
     @Builder
     public void updateUser(UserUpdateDto userUpdateDto) {
