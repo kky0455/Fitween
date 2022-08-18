@@ -268,7 +268,7 @@ public class ArticleServiceImpl implements ArticleService{
                 }
                 boolean finalClothTF = clothTF;
                 boolean finalShoesTF = shoesTF;
-                if (categoryCode != Category.shoes && finalClothTF == true) {
+                if (article.getCategory() != Category.shoes && finalClothTF == true) {
                     List<Object> Imgs = new ArrayList<>();
                     if (article.getArticleImgs().size() != 0) {
                         ArticleImgDto articleImgDto = new ArticleImgDto(article.getArticleImgs().get(0).getBaseUrl(), article.getArticleImgs().get(0).getImg());
