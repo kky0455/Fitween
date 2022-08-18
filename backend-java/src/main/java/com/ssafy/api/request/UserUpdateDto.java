@@ -25,6 +25,10 @@ public class UserUpdateDto {
     @ApiParam(value = "유저 키", type = "double")
     double height;
 
+    @ApiModelProperty(name = "유저 성별")
+    @ApiParam(value = "유저 성별", type = "String")
+    String gender;
+
     @ApiModelProperty(name = "유저 몸무게")
     @ApiParam(value = "유저 몸무게", type = "double")
     double weight;
