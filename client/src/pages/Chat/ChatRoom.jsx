@@ -171,6 +171,7 @@ const ChatRoom = () => {
 					value={message}
 					onChange={e => setMessage(e.target.value)}
 					onKeyDown={e => {
+						if (e.isComposing) return;
 						if (e.key === 'Enter') sendChatHandler();
 					}}
 					type="text"
