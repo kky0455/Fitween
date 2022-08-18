@@ -37,9 +37,9 @@ const FollowCnt = ({ followerCnt, followingCnt }) => {
 					padding: 10px;
 				`}
 			>
-				<sapn className="fw-500 fs-24" style={{ lineHeight: '33.6px' }}>
+				<span className="fw-500 fs-24" style={{ lineHeight: '33.6px' }}>
 					{followingCnt}
-				</sapn>
+				</span>
 				<span className="fw-500 fs-16" style={{ lineHeight: '19.2px' }}>
 					Following
 				</span>

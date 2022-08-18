@@ -63,9 +63,7 @@ const ChatRoom = () => {
 		throw err;
 	};
 	const onConnected = () => {
-		console.log('연결완료');
 		if (stompClient.connected) {
-			stompClient.debug = null;
 			stompClient.subscribe(`/topic/chat/room/${roomId}`, onMessageReceived);
 		}
 	};
@@ -85,6 +83,7 @@ const ChatRoom = () => {
 	useEffect(() => {
 		let Sock = new SockJS(process.env.REACT_APP_SOCKET_URI);
 		stompClient = over(Sock);
+		stompClient.debug = null;
 		stompClient.connect({}, onConnected, onError);
 		const doRead = async () => {
 			const ret = await ChatApi.doRead(roomId, loginedUserId, receiverId);
@@ -171,7 +170,7 @@ const ChatRoom = () => {
 					value={message}
 					onChange={e => setMessage(e.target.value)}
 					onKeyDown={e => {
-						if (e.key === 'Enter') sendChatHandler();
+						if (e.keyCode === 13) sendChatHandler();
 					}}
 					type="text"
 					placeholder="메시지를 입력하세요"

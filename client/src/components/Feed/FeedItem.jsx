@@ -60,7 +60,11 @@ const FeedItem = ({
 				css={css`
 					width: 100%;
 				`}
-				onClick={() => navigate(`/article/${articleId}`)}
+				onClick={() =>
+					navigate(`/article/${articleId}`, {
+						state: { prevRouter: `/main` },
+					})
+				}
 			>
 				<img
 					src={articleImg}
@@ -70,6 +74,10 @@ const FeedItem = ({
 						justify-content: center;
 						align-items: center;
 						width: 100%;
+						height: 200px;
+						object-fit: cover;
+						border-left: 1.5px solid #f0f0f0;
+						border-right: 1.5px solid #f0f0f0;
 					`}
 				/>
 				{/* 하단부 - 제목, 가격, 좋아요 수, 시간 */}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import ArticleDetailItem from '../../components/Feed/ArticleDetailItem';
@@ -9,6 +9,7 @@ import { getArticleDetail } from '../../api/article';
 
 const ArticleDetail = () => {
 	const { articleId } = useParams();
+	const { state } = useLocation();
 	const navigate = useNavigate();
 	const [articleDetail, setArticleDetail] = useState(null);
 	useEffect(() => {
@@ -22,7 +23,7 @@ const ArticleDetail = () => {
 		<>
 			<TopNavigation
 				backClick
-				onBackClick={() => navigate(-1)}
+				onBackClick={() => navigate(state.prevRouter)}
 				leftContent={<span>FITWEEN</span>}
 			/>
 			<div
@@ -54,6 +55,7 @@ const ArticleDetail = () => {
 					likeCnt={articleDetail.likesCount}
 					rentPrice={articleDetail.price}
 					writerId={articleDetail.writerId}
+					nickname={articleDetail.nickname}
 				/>
 			)}
 		</>
