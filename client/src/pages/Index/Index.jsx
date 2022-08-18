@@ -8,7 +8,6 @@ const callKakaoLoginHandler = () => {
 };
 
 const onGoogleSuccess = async googleUser => {
-	console.log(googleUser.getAuthResponse().id_token);
 	const token = googleUser.getAuthResponse().id_token;
 
 	const body = {
@@ -17,14 +16,16 @@ const onGoogleSuccess = async googleUser => {
 	};
 
 	// 서버로 id_token, 구글토큰임을 알리고
-	const res = await login(body);
-	console.log(res);
+	try {
+		const res = await login(body);
+	} catch (err) {
+		throw err;
+	}
 	// 로그인 회원가입 정하기
 };
 
-const onGoogleFailure = err => {
+const onGoogleFailure = () => {
 	alert('구글 로그인에 실패하였습니다');
-	console.log('err', err);
 };
 
 const Index = () => {
@@ -35,6 +36,7 @@ const Index = () => {
 			new Promise((resolve, reject) => {
 				if (document.querySelector(`script[src="${src}"]`)) return resolve();
 				const script = document.createElement('script');
+
 				script.src = src;
 				script.onload = () => resolve();
 				script.onerror = err => reject(err);

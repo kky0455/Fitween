@@ -19,7 +19,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const startRendering = async () => {
 	try {
-		alert('startRendering');
 		await onRefresh();
 
 		root.render(
