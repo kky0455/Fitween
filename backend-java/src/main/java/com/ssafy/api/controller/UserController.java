@@ -1,6 +1,7 @@
 package com.ssafy.api.controller;
 
 
+import com.ssafy.api.request.UserInfoDto;
 import com.ssafy.api.request.UserProfileDto;
 import com.ssafy.api.request.UserUpdateDto;
 import com.ssafy.api.service.FollowService;
@@ -77,10 +78,29 @@ public class UserController {
 //            @ApiResponse(code = 404, message = "사용자 없음"),
 //            @ApiResponse(code = 500, message = "해당 게시글이 없습니다.")
     })
-    public ResponseEntity<String> userdelete(@ApiIgnore Authentication authentication) throws Exception {
+    public ResponseEntity<String> userdelete( @ApiIgnore Authentication authentication) throws Exception {
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
         User user = userDetails.getUser();
         userRepository2.delete(user);
         return ResponseEntity.status(200).body("회원 탈퇴 성공");
+    }
+
+    @ApiOperation(value = "사용자의 상세 정보를 반환한다.", response = User.class)
+    @GetMapping("/info")
+    public ResponseEntity<?> findUser(@ApiIgnore Authentication authentication){
+
+        FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
+        String userId = userDetails.getUser().getUserId();
+        User user = userRepository2.findUserByUserId(userId).orElse(null);
+        UserInfoDto userInfoDto = UserInfoDto.builder()
+                .nickname(user.getNickname())
+                .height(user.getHeight())
+                .weight(user.getWeight())
+                .footsize(user.getFootSize())
+                .gender(user.getGender())
+                .region(user.getRegion())
+                .build();
+        return ResponseEntity.status(200).body(userInfoDto);
+
     }
 }
