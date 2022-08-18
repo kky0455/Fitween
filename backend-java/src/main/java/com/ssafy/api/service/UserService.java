@@ -138,11 +138,12 @@ public class UserService {
 		userRepository.socialLogin(email, refreshToken);
 	}
 
+	@Transactional
 	public void logoutMember(String refreshToken) {
 		boolean result = jwtTokenProvider.validateToken(refreshToken);
 		if(!result) throw new IllegalStateException("토큰 만료 되었습니다.");
 		User user = userRepository.findById(jwtTokenProvider.getUserPk(refreshToken));
-		user.changeRefreshToken("invalidate");
+		user.deleteRefreshToken();
 	}
 
 }
