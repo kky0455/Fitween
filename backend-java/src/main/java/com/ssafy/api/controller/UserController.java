@@ -70,18 +70,18 @@ public class UserController {
     @GetMapping("/articlelist")
     public ResponseEntity<?> findArticle(@RequestParam String userId, @ApiIgnore Authentication authentication){
 
-        List<Object> articleListDtos = null;
+        List<Object> articleList = null;
         User user = userRepository2.findUserByUserId(userId).orElse(null);
         List<Article> articles = user.getArticles();
         articles.forEach(article -> {
-            Map<String, Object> result = new HashMap<>();
+            Map<String, byte[]> result = new HashMap<>();
             result.put(article.getArticleImgs().get(0).getBaseUrl(), article.getArticleImgs().get(0).getImg());
             System.out.println(article.getArticleIdx());
             System.out.println(result);
             ArticleListDto articleListDto = new ArticleListDto(article.getArticleIdx(), result);
-            articleListDtos.add(articleListDto);
+            articleList.add(articleListDto);
         });
-        return ResponseEntity.status(200).body(articleListDtos);
+        return ResponseEntity.status(200).body(articleList);
     }
     @ApiOperation(value = "회원 정보 수정")
     @PutMapping("/{userId}")
