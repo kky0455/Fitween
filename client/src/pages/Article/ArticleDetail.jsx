@@ -55,6 +55,7 @@ const ArticleDetail = () => {
 					likeCnt={articleDetail.likesCount}
 					rentPrice={articleDetail.price}
 					writerId={articleDetail.writerId}
+					nickname={articleDetail.nickname}
 				/>
 			)}
 		</>

@@ -44,6 +44,7 @@ const ArticleRegist = () => {
 				});
 			}
 		} catch (error) {
+			alert(error);
 			alert('다시 시도하세요.');
 		}
 	};
