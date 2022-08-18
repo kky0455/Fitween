@@ -1,8 +1,11 @@
 package com.ssafy.api.request;
 
 import com.ssafy.db.entity.User;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Builder;
 import lombok.Getter;
+
+import java.util.List;
 
 @Builder
 @Getter
@@ -11,7 +14,7 @@ public class UserProfileDto {
     private String userId;
     private String nickname;
     private int articleCount;
-    //    private String feedImg;
+
     private int userFollowerCount;
     private int userFollowingCount;
     private boolean isFollowed;
