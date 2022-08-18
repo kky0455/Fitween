@@ -112,7 +112,7 @@ public class ArticleController {
     public ResponseEntity<?> findRecommendArticle(@RequestParam Category categoryCode, @ApiIgnore Authentication authentication){
 
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
-        List<ArticleRecommendDto> articleList = articleService.findAllTest(categoryCode, userDetails.getUser());
+        List<ArticleRecommendDto> articleList = articleService.findAll(categoryCode, userDetails.getUser());
         return ResponseEntity.status(200).body(articleList);
     }
     @GetMapping("/detail/{article_idx}")
