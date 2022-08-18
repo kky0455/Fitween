@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { css } from '@emotion/react';
 import styled from 'styled-components';
 
-import API from '../../api';
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import BottomNavigation from '../../components/Common/BottomNavigation/BottomNavigation';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -17,6 +16,7 @@ import profile_menu from '../../assets/profile_menu.svg';
 import Modal from '../../components/Common/Modal/Modal';
 import colors from '../../constants/colors';
 import { setLogout } from '../../contexts/User/UserTypes';
+import { onDeleteUser, onLogout } from '../../utils/auth';
 
 const Hr = styled.hr`
 	border: none;
@@ -31,9 +31,20 @@ const ProfileUser = ({ articleId }) => {
 	const [profileInfo, setProfileInfo] = useState(null);
 	const [modalVisible, setModalVisible] = useState(false);
 
-	const logoutClickHandler = () => {
+	const logoutClickHandler = async () => {
+		await onLogout();
 		userDispatch(setLogout());
-		API.defaults.headers.common.Authorization = '';
+		navigate('/');
+	};
+
+	const deleteUserClickHandler = async () => {
+		try {
+			await onDeleteUser();
+			userDispatch(setLogout());
+			navigate('/');
+		} catch (err) {
+			throw err;
+		}
 	};
 
 	useEffect(() => {
@@ -54,7 +65,6 @@ const ProfileUser = ({ articleId }) => {
 	const closeModal = () => {
 		setModalVisible(false);
 	};
-
 	return (
 		<>
 			{profileInfo && (
@@ -98,11 +108,13 @@ const ProfileUser = ({ articleId }) => {
 							<Hr />
 							<div style={{ padding: '5px' }}>내 동네 수정</div>
 							<Hr />
-							<div style={{ padding: '5px' }} onClick={() => logoutClickHandler}>
+							<div style={{ padding: '5px' }} onClick={logoutClickHandler}>
 								로그아웃
 							</div>
 							<Hr />
-							<div style={{ padding: '5px' }}>탈퇴하기</div>
+							<div style={{ padding: '5px' }} onClick={deleteUserClickHandler}>
+								탈퇴하기
+							</div>
 							<Hr />
 						</div>
 					</Modal>
@@ -123,6 +135,7 @@ const ProfileUser = ({ articleId }) => {
 					{profileInfo && loginedUserId !== profileInfo.userId && (
 						<ProfileButton
 							userId={profileInfo.userId}
+							userNickname={profileInfo.nickname}
 							isFollowed={profileInfo.followed}
 							setProfileInfo={setProfileInfo}
 						/>

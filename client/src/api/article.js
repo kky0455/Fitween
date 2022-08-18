@@ -1,7 +1,17 @@
 import API from './index';
 
-export const getArticleList = async () => {
-	const res = await API.get('/article/list');
+export const getArticleList = async categoryCode => {
+	const queryString = {
+		categoryCode,
+	};
+	const res = await API.get('/article/list', { params: queryString });
+	return res.data;
+};
+export const getLikeArticleList = async categoryCode => {
+	const queryString = {
+		categoryCode,
+	};
+	const res = await API.get('/article/likelist', { params: queryString });
 	return res.data;
 };
 

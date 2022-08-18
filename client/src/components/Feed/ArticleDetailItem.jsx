@@ -3,6 +3,7 @@ import React from 'react';
 import { css } from '@emotion/react';
 
 import FeedProfile from '../../components/Feed/FeedProfile';
+import Carousel from '../Common/Carousel/Carousel';
 
 function timeForToday(value) {
 	const today = new Date();
@@ -35,22 +36,18 @@ const ArticleDetailItem = ({
 	content,
 	profileImg,
 	isRent,
+	writerId,
 }) => {
 	return (
 		<div>
 			{/* 상세이미지 */}
-			<div
-				css={css`
-					display: flex;
-					justify-content: center;
-					width: 100%;
-					height: 330px;
-				`}
-			>
-				<img src={articleImg} alt="" />
-			</div>
+
+			<Carousel
+				contentHeight="300px"
+				imgSrcList={articleImg.map(articleImg => articleImg.baseUrl + articleImg.img)}
+			/>
 			{/* 작성자 정보, 대여 가능 여부 */}
-			<FeedProfile imgSrc={profileImg} nickname={nickname} isRent={isRent} />
+			<FeedProfile writerId={writerId} imgSrc={profileImg} nickname={nickname} isRent={isRent} />
 			{/* 게시글 제목, 내용 */}
 			<div
 				css={css`

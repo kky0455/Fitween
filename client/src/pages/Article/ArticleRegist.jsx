@@ -13,8 +13,10 @@ import TextArea from '../../components/Common/TextArea/TextArea';
 import getByte from '../../utils/getByte';
 import { MAX_BYTE } from '../../constants/config';
 import Carousel from '../../components/Common/Carousel/Carousel';
+import ArticleCategory from '../../components/Category/ArticleCategory';
 
 const ArticleRegist = () => {
+	const [activeCategory, setActiveCategory] = useState('etc');
 	const [title, setTitle] = useState('');
 	const [price, setPrice] = useState('');
 	const [content, setContent] = useState('');
@@ -23,11 +25,16 @@ const ArticleRegist = () => {
 
 	const navigate = useNavigate();
 	const onSubmitHandler = async () => {
+		if (imageSrcs.length === 0) {
+			alert('사진을 등록해주세요');
+			return;
+		}
 		const body = {
 			title: title,
 			price: price,
 			content: content,
-			photo: imageSrcs,
+			photos: imageSrcs,
+			category: activeCategory,
 		};
 		try {
 			const ret = await registArticle(body);
@@ -57,6 +64,9 @@ const ArticleRegist = () => {
 		} else {
 			alert('최대 5개만 업로드할 수 있습니다.');
 		}
+	};
+	const categoryClickHandler = async e => {
+		setActiveCategory(e.target.id);
 	};
 	const onContentChangeHandler = e => {
 		e.preventDefault();
@@ -101,9 +111,19 @@ const ArticleRegist = () => {
 					css={css`
 						display: flex;
 						flex-direction: column;
-						padding: 30px 25px 12px 25px;
+						padding: 0px 25px 12px 25px;
 					`}
 				>
+					<div
+						css={css`
+							margin-bottom: 30px;
+						`}
+					>
+						<ArticleCategory
+							activeCategory={activeCategory}
+							onClickHandler={categoryClickHandler}
+						/>
+					</div>
 					{/* 제목 */}
 					<Input
 						css={css`

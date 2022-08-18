@@ -15,6 +15,8 @@ import Main from '../../components/Common/Main/Main';
 import Message from '../../components/Chat/Message';
 import Date from '../../components/Chat/Date';
 import * as ChatApi from '../../api/chat';
+import { useUserState } from '../../context/User/UserContext';
+import { getDay } from '../../utils/getDate';
 
 let stompClient = null;
 const ChatRoom = () => {
@@ -23,29 +25,37 @@ const ChatRoom = () => {
 	const { state } = useLocation();
 	const [roomId, setRoomId] = useState(state.roomId);
 	const [receiverId, setReceiverId] = useState(state.receiverId);
-	// todo: 유저정보 컨텍스트에서 가져와야함.
-	const [userId, setUserId] = useState('myId');
+	const { loginedUserId } = useUserState();
 	const [chats, setChats] = useState([]);
 	const navigate = useNavigate();
-	const sendChatHandler = () => {
-		console.log('채팅전송개발중');
+	const scrollRef = useRef(null);
+	const sendChatHandler = async () => {
+		if (message === '') return;
+		const chatMessage = {
+			senderId: loginedUserId,
+			receiverId: receiverId,
+			roomId: roomId,
+			message,
+		};
 		if (stompClient) {
-			const chatMessage = {
-				senderId: userId,
-				receiverId: receiverId,
-				roomId: roomId,
-				message,
-			};
+			if (roomId === -1) {
+				const ret = await ChatApi.makeRoom(receiverId, loginedUserId);
+				console.log(ret);
+				setRoomId(ret);
+				chatMessage.roomId = ret;
+			}
 			stompClient.send(`/app/chat/message`, {}, JSON.stringify(chatMessage));
 		}
 		setMessage('');
 		inputRef.current.focus();
 	};
-
-	const onMessageReceived = payload => {
+	const scrollToBottom = () => {
+		scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+	};
+	const onMessageReceived = async payload => {
 		let payloadData = JSON.parse(payload.body);
-		chats.push(payloadData);
-		setChats([...chats]);
+		await ChatApi.doRead(roomId, loginedUserId, receiverId);
+		setChats(prev => [...prev, payloadData]);
 	};
 
 	const onError = err => {
@@ -54,7 +64,10 @@ const ChatRoom = () => {
 	};
 	const onConnected = () => {
 		console.log('연결완료');
-		stompClient.subscribe(`/topic/chat/room/${roomId}`, onMessageReceived);
+		if (stompClient.connected) {
+			stompClient.debug = null;
+			stompClient.subscribe(`/topic/chat/room/${roomId}`, onMessageReceived);
+		}
 	};
 
 	const { setHasBottom } = useGlobalContext();
@@ -64,9 +77,19 @@ const ChatRoom = () => {
 			setHasBottom(false);
 		};
 	}, []);
-
-	// roomId에 따라 채팅로그 받아오기
 	useEffect(() => {
+		scrollToBottom();
+	}, [chats]);
+
+	// 소켓연결
+	useEffect(() => {
+		let Sock = new SockJS(process.env.REACT_APP_SOCKET_URI);
+		stompClient = over(Sock);
+		stompClient.connect({}, onConnected, onError);
+		const doRead = async () => {
+			const ret = await ChatApi.doRead(roomId, loginedUserId, receiverId);
+		};
+		doRead();
 		const fetchChatLogs = async () => {
 			try {
 				const data = await ChatApi.getChagLogs(roomId);
@@ -77,43 +100,56 @@ const ChatRoom = () => {
 		};
 		const findRoom = async () => {
 			try {
-				const { roomId } = await ChatApi.findRoom(receiverId);
+				const roomId = await ChatApi.findRoom(receiverId, loginedUserId);
 				setRoomId(roomId);
 			} catch (err) {
 				console.log(err);
 			}
 		};
-		if (roomId) {
+		if (roomId && roomId !== -1) {
 			fetchChatLogs();
 		} else {
 			findRoom();
 		}
-	}, [roomId]);
-
-	// 소켓연결
-	useEffect(() => {
-		let Sock = new SockJS(process.env.REACT_APP_SOCKET_URI);
-		stompClient = over(Sock);
-		stompClient.connect({}, onConnected, onError);
-
 		return () => {
 			if (stompClient.connected) stompClient.disconnect();
 		};
-	}, []);
+	}, [roomId]);
+	let lastDate = '';
 	return (
 		<>
-			<TopNavigation backClick onBackClick={() => navigate(-1)} centerContent={receiverId} />
+			<TopNavigation backClick onBackClick={() => navigate(-1)} centerContent={state.nickname} />
 			<Main>
-				{/* todo : 날짜 달라질떄 Date 컴포넌트 렌더링 필요 */}
-				{chats.map(chat => (
-					<Message
-						key={uuid()}
-						message={chat.message}
-						isMine={chat.senderId === userId}
-						sendTime={chat.sendTime}
-						isRead={chat.isRead}
-					/>
-				))}
+				{chats.map(chat => {
+					const DATETIME = chat.senddatetime.replace('T', ' ').split(' ')[0];
+					const DATE = chat.senddatetime.replace('T', ' ').split(' ')[1].slice(0, 5);
+					if (DATETIME === lastDate)
+						return (
+							<Message
+								key={uuid()}
+								message={chat.message}
+								isMine={chat.senderId === loginedUserId}
+								sendTime={DATE}
+								isRead={chat.isRead}
+							/>
+						);
+					else {
+						lastDate = DATETIME;
+						return (
+							<>
+								<Date date={DATETIME + ' ' + getDay(chat.senddatetime)} key={uuid()} />
+								<Message
+									key={uuid()}
+									message={chat.message}
+									isMine={chat.senderId === loginedUserId}
+									sendTime={DATE}
+									isRead={chat.isRead}
+								/>
+							</>
+						);
+					}
+				})}
+				<div ref={scrollRef} />
 			</Main>
 			<div
 				className="input-wrapper"
@@ -134,6 +170,9 @@ const ChatRoom = () => {
 					ref={inputRef}
 					value={message}
 					onChange={e => setMessage(e.target.value)}
+					onKeyDown={e => {
+						if (e.key === 'Enter') sendChatHandler();
+					}}
 					type="text"
 					placeholder="메시지를 입력하세요"
 					css={css`

@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import TopNavigation from '../../components/Common/TopNavigation/TopNavigation';
 import ArticleDetailItem from '../../components/Feed/ArticleDetailItem';
-import article_img from '../../assets/article_img.jpg';
 import null_profile from '../../assets/null_profile_img.png';
 import ArticleBottom from '../../components/Feed/ArticleBottom';
 import { getArticleDetail } from '../../api/article';
@@ -37,12 +34,10 @@ const ArticleDetail = () => {
 				}}
 			>
 				{/* 게시글 상세 정보 */}
-				{/* todo : updatetime, article img 받아와야 함 */}
 				{articleDetail && (
 					<ArticleDetailItem
 						key={articleDetail.Id}
-						// articleId={articleDetail.aritcle_idx}
-						articleImg={article_img}
+						articleImg={articleDetail.feedImg}
 						nickname={articleDetail.nickname}
 						title={articleDetail.title}
 						updateTime={articleDetail.lastUpdateTime}

@@ -1,10 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import React from 'react';
-import styled from 'styled-components';
 import colors from '../../../constants/colors';
 
-function Input({ value, onChange, error, errMsg, unit, ...rest }) {
+function Input({ onChange, error, errMsg, unit, ...rest }) {
 	return (
 		<div
 			css={css`
@@ -16,7 +15,6 @@ function Input({ value, onChange, error, errMsg, unit, ...rest }) {
 		>
 			<input
 				type="text"
-				value={value}
 				onChange={onChange}
 				css={css`
 					padding: 24px;

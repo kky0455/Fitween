@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import Button from '../../components/Common/Button/Button';
-import Logo from '../../assets/FitweenLogoBg.png';
+import Logo from '../../assets/logo.svg';
 import { login } from '../../api/auth';
+import { useNavigate } from 'react-router-dom';
 
 const callKakaoLoginHandler = () => {
 	window.location.href = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${process.env.REACT_APP_KAKAO_REST_API_KEY}&redirect_uri=${process.env.REACT_APP_CLIENT_URI}/kakao`;
@@ -24,12 +25,17 @@ const onGoogleSuccess = async googleUser => {
 	// 로그인 회원가입 정하기
 };
 
-const onGoogleFailure = () => {
-	alert('구글 로그인에 실패하였습니다');
+const onGoogleFailure = err => {
+	console.log('err', err);
 };
 
 const Index = () => {
 	const googleButtonRef = useRef(null);
+	const navigate = useNavigate();
+
+	const aboutClickHandler = () => {
+		navigate('/about');
+	};
 
 	useEffect(() => {
 		const loadScript = src =>
@@ -77,20 +83,57 @@ const Index = () => {
 		<div
 			className="wrapper"
 			style={{
-				padding: '30px',
+				display: 'flex',
+				flexDirection: 'column',
+				justifyContent: 'center',
+				alignItems: 'center',
+				padding: '30px 30px 240px',
 				width: '100%',
 				height: '100%',
 				position: 'relative',
+				backgroundColor: '#63D8B1',
 			}}
 		>
 			<div>
-				<img src={Logo} alt="" />
+				<img
+					src={Logo}
+					alt=""
+					style={{
+						padding: '30px',
+					}}
+				/>
 			</div>
-			<h2 className="fs-17 fw-700">너와 나의 공유 옷장</h2>
-			<h1 className="fs-47 fw-900 fc-g100">FITWEEN</h1>
-			<div style={{ marginTop: '100px' }}>
-				<Button type="kakao" label="카카오톡으로 계속하기" onClick={callKakaoLoginHandler} />
-				<Button type="google" label="구글로 계속하기" ref={googleButtonRef} />
+			<h2 className="fs-17 fw-700 fc-w">너와 나의 공유 옷장</h2>
+			<h1 className="fs-47 fw-900 fc-w">FITWEEN</h1>
+			<Button
+				type="outlined"
+				label="About →"
+				className="fc-w"
+				onClick={aboutClickHandler}
+				style={{
+					display: 'inline-block',
+					padding: '0 18px',
+					margin: '10px 0',
+					width: 'auto',
+					fontFamily: 'Medium',
+					border: 'none',
+				}}
+			/>
+			<div
+				style={{
+					position: 'absolute',
+					bottom: '100px',
+					width: '80%',
+				}}
+			>
+				<Button
+					type="google"
+					label="구글로 계속하기"
+					ref={googleButtonRef}
+					style={{
+						borderRadius: '10px',
+					}}
+				/>
 			</div>
 		</div>
 	);

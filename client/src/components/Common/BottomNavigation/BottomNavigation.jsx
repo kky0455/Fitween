@@ -73,7 +73,7 @@ const BottomNavigation = () => {
 					<IconWrapper active={isActive} icon={<HeartIcon width={30} height={30} />} label="찜" />
 				)}
 			</Link>
-			<Link to="/chat">
+			<Link to="/chat/list">
 				{({ isActive }) => (
 					<IconWrapper active={isActive} icon={<ChatIcon width={30} height={30} />} label="채팅" />
 				)}

@@ -15,9 +15,9 @@ const CheckBoxContainer = styled.div`
 const CheckBoxLabel = styled.label`
 	display: inline-block;
 	cursor: pointer;
-
-	width: 30px;
-	height: 30px;
+	margin: 0 10px;
+	width: 25px;
+	height: 25px;
 	border: ${({ checked }) => (checked ? 'none' : `2px solid ${colors.text}`)};
 	border-radius: 7px;
 	& > svg {
@@ -57,6 +57,18 @@ export const Checkbox = ({ id, checked, onChange, label }) => {
 		</CheckBoxContainer>
 	);
 };
+
+export const Radiobox = ({ id, checked, onClick, ...rest }) => {
+	return (
+		<CheckBoxContainer>
+			<CheckBoxLabel htmlFor={id} checked={checked}>
+				<CheckBoxInput id={id} type="radio" checked={checked} onClick={onClick} {...rest} />
+				{checked && <CheckedIcon />}
+			</CheckBoxLabel>
+		</CheckBoxContainer>
+	);
+};
+
 export const FeedCheckbox = ({ id, checked, onChange, label }) => {
 	return (
 		<CheckBoxContainer>

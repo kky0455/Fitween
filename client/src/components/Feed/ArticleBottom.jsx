@@ -103,6 +103,7 @@ const ArticleBottom = ({ isLiked, likeCnt, rentPrice, writerId }) => {
 						label="채팅하기"
 						style={{ padding: 10 }}
 						onClick={() =>
+							// todo : 채팅방 옮길때 추가정보 필요했는데 기억안남 나중에수정
 							navigate('/chat/room', {
 								state: { roomId: null, receiverId: writerId },
 							})

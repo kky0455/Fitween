@@ -1,3 +1,5 @@
+import * as authApi from '../api/auth';
+
 export const checkSpecial = str => {
 	const regExp = /[!?@#$%^&*():;+-=~{}<>\_\[\]\|\\\"\'\,\.\/\`\₩]/g;
 	if (regExp.test(str)) return true;
@@ -22,35 +24,54 @@ export const checkSpace = str => {
 	return false;
 };
 
-export const checkLength = str => {
-	if (str.length < 2 || str.length > 8) return true;
+export const checkLength = (str, start = 1, end = 10000) => {
+	if (str.length >= start && str.length <= end) return true;
 	return false;
 };
 
-export const validateNickName = nickName => {
+export const validateDateOfBirth = dateOfBirth => {
+	if (checkLength(dateOfBirth)) return true;
+	return false;
+};
+
+export const checkDuplicationNickName = async nickname => {
+	const { isSuccess } = await authApi.duplicationCheck(nickname);
+	return isSuccess;
+};
+
+export const validateNickName = async nickName => {
 	if (checkSpecial(nickName) || checkSpace(nickName) || checkNum(nickName) || checkEmoji(nickName))
-		return { state: false, type: 'notLengthErr' };
-	if (checkLength(nickName)) return { state: false, type: 'lengthErr' };
+		return { state: false, errMessage: '별명은 특수문자, 이모지, 숫자를 입력받을 수 없습니다.' };
+
+	if (!checkLength(nickName, 2, 8))
+		return { state: false, errMessage: '별명은 2자 이상 8자 이하로 입력해주세요.' };
+
+	const isDuplicationNickName = await checkDuplicationNickName(nickName);
+	if (isDuplicationNickName) return { state: false, errMessage: '이미 존재하는 별명입니다.' };
+
 	return { state: true };
 };
 
 export const validateHeight = height => {
-	if (height >= 90 && height <= 250) return true;
+	if (checkLength(height) && height >= 90 && height <= 250) return true;
 	return false;
 };
 
 export const validateWeight = weight => {
-	if (weight >= 30 && weight <= 200) return true;
+	if (checkLength(weight) && weight >= 30 && weight <= 200) return true;
 	return false;
 };
 
 export const validateFootSize = footSize => {
-	if (footSize >= 0 && footSize <= 350) return true;
+	if (checkLength(footSize) && footSize >= 0 && footSize <= 350) return true;
 	return false;
 };
 
-export const validateAllInput = info => {
-	return validateNickName(info.nickname) &&
+export const validateAllInput = async info => {
+	const { state } = await validateNickName(info.nickname);
+
+	return state &&
+		validateDateOfBirth(info.dateOfBirth) &&
 		validateHeight(info.height) &&
 		validateWeight(info.weight) &&
 		validateFootSize(info.footSize)
