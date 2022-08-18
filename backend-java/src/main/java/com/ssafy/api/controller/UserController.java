@@ -12,6 +12,7 @@ import com.ssafy.common.auth.FWUserDetails;
 import com.ssafy.db.dto.Message;
 import com.ssafy.db.entity.Article;
 import com.ssafy.db.entity.ArticleImg;
+import com.ssafy.db.entity.Follow;
 import com.ssafy.db.entity.User;
 import com.ssafy.db.repository.FollowRepository;
 import com.ssafy.db.repository.UserRepository;
@@ -112,6 +113,10 @@ public class UserController {
     public ResponseEntity<String> userdelete( @ApiIgnore Authentication authentication) throws Exception {
         FWUserDetails userDetails = (FWUserDetails) authentication.getDetails();
         User user = userDetails.getUser();
+        List<Follow> followList = followRepository.findAllByFrom(user);
+        followList.forEach(follow -> {
+            followRepository.delete(follow);
+        });
         userRepository2.delete(user);
         return ResponseEntity.status(200).body("회원 탈퇴 성공");
     }

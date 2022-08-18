@@ -16,11 +16,11 @@ public class Follow{
     @Column(name = "follow_idx")
     private Long followIdx;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "from_user_id")
     User from;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "to_user_id")
     User to;
 
