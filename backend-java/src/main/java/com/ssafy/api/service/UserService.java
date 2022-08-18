@@ -56,6 +56,13 @@ public class UserService {
 	}
 
 	@Transactional
+	public void setAge(String userId, int age, String dateOfBirth){
+		User user = userRepository.findById(userId);
+		user.setAge(age);
+		user.setDateOfBirth(dateOfBirth);
+	}
+
+	@Transactional
 	public String join(User user){
 		checkIdDuplicate(user.getUserId()); // 중복 회원 검증
 		user.setEnable(false);
