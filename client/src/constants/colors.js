@@ -12,7 +12,7 @@ const colors = {
 	text: '#212121',
 
 	green50: '#e2faf1',
-	green100: '#6cc4a1',
+	green100: '#63d8b1',
 	green200: '#03ae82',
 
 	red: '#ff0000',
