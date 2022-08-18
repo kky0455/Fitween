@@ -16,7 +16,7 @@
 
   ##### 매칭 시스템
 
-- ##### 프로젝트 세부 사항 노션 링크: https://www.notion.so/151958/FITWEEN-4a6746ec06ff428ebf2cedb6100b8230?p=fa546bfa4e304756bd6dd641a9279b3d&pm=s
+- ##### 프로젝트 세부 사항 노션 링크: https://www.notion.so/151958/FITWEEN-4a6746ec06ff428ebf2cedb6100b8230
 
 - ##### 서비스 특징
 
