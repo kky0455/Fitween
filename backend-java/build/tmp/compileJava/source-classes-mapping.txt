@@ -30,6 +30,9 @@ com/ssafy/db/entity/ArticleImg.java
 com/ssafy/api/request/UserLoginPostReq.java
  com.ssafy.api.request.UserLoginPostReq
  com.ssafy.api.request.UserLoginPostReq$UserLoginPostReqBuilder
+com/ssafy/api/request/UserInfoDto.java
+ com.ssafy.api.request.UserInfoDto
+ com.ssafy.api.request.UserInfoDto$UserInfoDtoBuilder
 com/ssafy/db/entity/Follow.java
  com.ssafy.db.entity.Follow
  com.ssafy.db.entity.Follow$FollowBuilder
