@@ -34,7 +34,6 @@ const Main = () => {
 			try {
 				const data = await getArticleList();
 				setArticleList(data);
-				console.log(data);
 			} catch (err) {
 				throw err;
 			}
