@@ -7,7 +7,6 @@ import ArticleModify from './Article/ArticleModify';
 import ArticleRegist from './Article/ArticleRegist';
 import ChatList from './Chat/ChatList';
 import ChatRoom from './Chat/ChatRoom';
-import DummyPage from './DummyPage/DummyPage';
 import Index from './Index/Index';
 import Redirect from './Index/Redirect';
 import Join from './Join/Join';
@@ -76,9 +75,6 @@ const Profile = () => {
 export const Routes = () => {
 	return (
 		<ReactRouterRoutes>
-			{/* 테스트용 더미 페이지 */}
-			<Route exact path="dummy" element={<DummyPage />} />
-
 			{/* 초기화면  */}
 			<Route exact path="/" element={<Index />} />
 			{/* about 소개 페이지 */}
