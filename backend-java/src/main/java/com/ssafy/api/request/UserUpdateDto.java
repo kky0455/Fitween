@@ -13,13 +13,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class UserUpdateDto {
 
-    @ApiModelProperty(name = "유저 id")
-    String id;
-
-    @ApiModelProperty(name = "유저 프로필사진")
-    @ApiParam(value = "유저 프로필사진(주소)", type = "String")
-    String profileImg;
-
     @ApiModelProperty(name = "유저 닉네임")
     @ApiParam(value = "유저 닉네임", type = "String")
     String nickname;
@@ -27,10 +20,6 @@ public class UserUpdateDto {
     @ApiModelProperty(name = "유저 생년월일")
     @ApiParam(value = "유저 생년월일", type = "String")
     String dateOfBirth;
-
-    @ApiModelProperty(name = "유저 나이")
-    @ApiParam(value = "유저 나이", type = "int")
-    int age;
 
     @ApiModelProperty(name = "유저 키")
     @ApiParam(value = "유저 키", type = "double")
