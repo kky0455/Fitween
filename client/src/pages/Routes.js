@@ -62,11 +62,11 @@ const Profile = () => {
 			</Route>
 			{/* 내정보수정 */}
 			<Route exact path="/" element={<PrivateRoute />}>
-				<Route path="modify/info/:userId" element={<ProfileInfoModify />} />
+				<Route path="modify/info/" element={<ProfileInfoModify />} />
 			</Route>
 			{/* 내동네수정 */}
 			<Route exact path="/" element={<PrivateRoute />}>
-				<Route path="modify/town/:userId" element={<ProfileTownModify />} />
+				<Route path="modify/town/" element={<ProfileTownModify />} />
 			</Route>
 			<Route path="*" element={<Navigate replace to="/" />} />
 		</ReactRouterRoutes>

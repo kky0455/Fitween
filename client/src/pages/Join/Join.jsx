@@ -3,7 +3,7 @@ import { Route, Routes as ReactRouterRoutes, Navigate } from 'react-router-dom';
 import JoinIndex from './JoinIndex';
 import JoinInfo from './JoinInfo';
 import JoinTown from './JoinTown';
-// todo : 회원가입 쪽 설계 다시 고민
+
 const Join = () => {
 	const [info, setInfo] = useState({
 		gender: '여성',
@@ -13,6 +13,7 @@ const Join = () => {
 		height: '',
 		footSize: '',
 	});
+
 	return (
 		<ReactRouterRoutes>
 			{/* 회원가입 안내페이지 */}
@@ -38,4 +39,5 @@ const Join = () => {
 		</ReactRouterRoutes>
 	);
 };
+
 export default Join;

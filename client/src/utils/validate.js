@@ -25,8 +25,15 @@ export const checkSpace = str => {
 };
 
 export const checkLength = (str, start = 1, end = 10000) => {
-	if (str.length >= start && str.length <= end) return true;
-	return false;
+	if (typeof str === 'string') {
+		if (str.length >= start && str.length <= end) return true;
+		return false;
+	}
+
+	if (typeof str === 'number') {
+		if (str !== null) return true;
+		return false;
+	}
 };
 
 export const validateDateOfBirth = dateOfBirth => {
