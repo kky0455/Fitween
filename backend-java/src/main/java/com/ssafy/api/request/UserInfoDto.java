@@ -11,6 +11,7 @@ public class UserInfoDto {
     String nickname;
     double weight;
     double height;
+    String dateOfBirth;
     int footsize;
     String region;
     String gender;

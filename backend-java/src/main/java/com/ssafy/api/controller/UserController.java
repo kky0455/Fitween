@@ -99,6 +99,7 @@ public class UserController {
                 .footsize(user.getFootSize())
                 .gender(user.getGender())
                 .region(user.getRegion())
+                .dateOfBirth(user.getDateOfBirth())
                 .build();
         return ResponseEntity.status(200).body(userInfoDto);
 
