@@ -22,7 +22,7 @@ const ArticleDetail = () => {
 		<>
 			<TopNavigation
 				backClick
-				onBackClick={() => navigate(-1)}
+				onBackClick={() => navigate('/main')}
 				leftContent={<span>FITWEEN</span>}
 			/>
 			<div
