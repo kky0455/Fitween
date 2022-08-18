@@ -104,7 +104,7 @@ export const Routes = () => {
 			<Route exact path="/" element={<PrivateRoute />}>
 				<Route path="profile/*" element={<Profile />} />
 			</Route>
-			<Route path="*" element={<Navigate replace to="dummy" />} />
+			<Route path="*" element={<Navigate replace to="/" />} />
 		</ReactRouterRoutes>
 	);
 };
