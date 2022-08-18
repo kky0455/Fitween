@@ -28,14 +28,20 @@ const LeftContent = ({}) => {
 
 const Main = () => {
 	const [articleList, setArticleList] = useState(null);
+
 	useEffect(() => {
 		const fetch = async () => {
-			const data = await getArticleList();
-			setArticleList(data);
-			console.log(data);
+			try {
+				const data = await getArticleList();
+				setArticleList(data);
+				console.log(data);
+			} catch (err) {
+				throw err;
+			}
 		};
 		fetch();
 	}, []);
+
 	return (
 		<>
 			<TopNavigation
