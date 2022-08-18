@@ -34,7 +34,6 @@ const ArticleModify = () => {
 	useEffect(() => {
 		const fetch = async () => {
 			const data = await getArticleDetail(articleId);
-			console.log(data);
 			setTitle(data.title);
 			setPrice(data.price);
 			setContent(data.content);
