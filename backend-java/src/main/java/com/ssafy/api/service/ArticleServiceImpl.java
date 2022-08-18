@@ -392,11 +392,11 @@ public class ArticleServiceImpl implements ArticleService{
                             .articleIdx(article.getArticleIdx())
                             .title(article.getTitle())
                             .price(article.getPrice())
-                            .nickname(user.getNickname())
+                            .nickname(article.getUser().getNickname())
                             .lendStatus(article.isLendStatus())
                             .likeStatus(likeStatus)
                             .likesCount(article.getLikes().size())
-                            .userId(user.getUserId())
+                            .userId(article.getUser().getUserId())
                             .feedArticleImg(Imgs)
                             .build());
                 }
@@ -417,11 +417,11 @@ public class ArticleServiceImpl implements ArticleService{
                             .articleIdx(article.getArticleIdx())
                             .title(article.getTitle())
                             .price(article.getPrice())
-                            .nickname(user.getNickname())
+                            .nickname(article.getUser().getNickname())
                             .lendStatus(article.isLendStatus())
                             .likeStatus(likeStatus)
                             .likesCount(article.getLikes().size())
-                            .userId(user.getUserId())
+                            .userId(article.getUser().getUserId())
                             .feedArticleImg(Imgs)
                             .build());
                 }
@@ -446,11 +446,11 @@ public class ArticleServiceImpl implements ArticleService{
                                 .articleIdx(article.getArticleIdx())
                                 .title(article.getTitle())
                                 .price(article.getPrice())
-                                .nickname(user.getNickname())
+                                .nickname(article.getUser().getNickname())
                                 .lendStatus(article.isLendStatus())
                                 .likeStatus(likeStatus)
                                 .likesCount(article.getLikes().size())
-                                .userId(user.getUserId())
+                                .userId(article.getUser().getUserId())
                                 .feedArticleImg(Imgs)
                                 .build());
                     }
@@ -472,11 +472,11 @@ public class ArticleServiceImpl implements ArticleService{
                                 .articleIdx(article.getArticleIdx())
                                 .title(article.getTitle())
                                 .price(article.getPrice())
-                                .nickname(user.getNickname())
+                                .nickname(article.getUser().getNickname())
                                 .lendStatus(article.isLendStatus())
                                 .likeStatus(likeStatus)
                                 .likesCount(article.getLikes().size())
-                                .userId(user.getUserId())
+                                .userId(article.getUser().getUserId())
                                 .feedArticleImg(Imgs)
                                 .build());
                     }
