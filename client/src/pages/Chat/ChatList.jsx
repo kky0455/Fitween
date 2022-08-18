@@ -55,8 +55,6 @@ const ChatList = () => {
 		throw err;
 	};
 	const onConnected = () => {
-		console.log('연결완료');
-		stompClient.debug = null;
 		stompClient.subscribe(`/topic/chat/wait/${loginedUserId}`, onMessageReceived);
 	};
 
@@ -68,8 +66,8 @@ const ChatList = () => {
 	useEffect(() => {
 		let Sock = new SockJS(process.env.REACT_APP_SOCKET_URI);
 		stompClient = over(Sock);
+		stompClient.debug = null;
 		stompClient.connect({}, onConnected, onError);
-
 		return () => {
 			if (stompClient.connected) stompClient.disconnect();
 		};
