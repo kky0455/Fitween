@@ -81,7 +81,6 @@ export const Routes = () => {
 
 			{/* 초기화면  */}
 			<Route exact path="/" element={<Index />} />
-
 			{/* about 소개 페이지 */}
 			<Route exact path="/about" element={<About />} />
 			{/* 소셜 로그인 리다이렉트  */}
