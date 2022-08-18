@@ -373,11 +373,16 @@ public class ArticleServiceImpl implements ArticleService{
         List<User> clothUser = userRepository2.findAllCloth(user.getHeight(), user.getWeight()).orElse(null);
         List<User> footUser = userRepository2.findAllShoes(user.getFootSize()).orElse(null);
         List<Article> articles = articleRepository.findAllDesc().orElse(null);
+        String[] region = user.getRegion().split(" ");
         if (categoryCode == Category.all) {
             articles.forEach(article -> {
                 if (article.getCategory() != Category.shoes && clothUser.contains(article.getUser())){
                     boolean likeStatus;
                     Likes likes = likesRepository.findByUserAndArticle(user, article).orElse(null);
+                    String[] userRegion = article.getUser().getRegion().split(" ");
+                    if (!Objects.equals(region[1], userRegion[1])) {
+                        return;
+                    }
                     if (likes == null) {
                         likeStatus = false;
                     } else {
@@ -428,6 +433,10 @@ public class ArticleServiceImpl implements ArticleService{
             });
         } else {
             articles.forEach(article -> {
+                String[] userRegion = article.getUser().getRegion().split(" ");
+                if (!Objects.equals(region[1], userRegion[1])) {
+                    return;
+                }
                 if (categoryCode != Category.shoes) {
                     if (article.getCategory() == categoryCode && clothUser.contains(article.getUser())){
                         boolean likeStatus;

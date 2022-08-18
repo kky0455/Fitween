@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56028ca8-3c2c-41fd-adb1-577c3a07c509" name="변경" comment="refactor : 게시물 정렬 기준 로직 수정" />
+    <list default="true" id="56028ca8-3c2c-41fd-adb1-577c3a07c509" name="변경" comment="refactor : 게시물 정렬 기준 로직 수정">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/api/service/ArticleServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
