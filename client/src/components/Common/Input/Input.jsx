@@ -16,6 +16,7 @@ function Input({ onChange, error, errMsg, unit, ...rest }) {
 			<input
 				type="text"
 				onChange={onChange}
+				onWheel={e => e.target.blur()}
 				css={css`
 					padding: 24px;
 					width: 100%;

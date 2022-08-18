@@ -59,7 +59,6 @@ const FeedItem = ({
 			<div
 				css={css`
 					width: 100%;
-					height: 200px;
 				`}
 				onClick={() => navigate(`/article/${articleId}`)}
 			>
@@ -71,7 +70,7 @@ const FeedItem = ({
 						justify-content: center;
 						align-items: center;
 						width: 100%;
-						height: 100%;
+						height: 200px;
 						object-fit: cover;
 						border-left: 1.5px solid #f0f0f0;
 						border-right: 1.5px solid #f0f0f0;
