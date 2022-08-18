@@ -24,6 +24,14 @@ public class UserUpdateDto {
     @ApiParam(value = "유저 닉네임", type = "String")
     String nickname;
 
+    @ApiModelProperty(name = "유저 생년월일")
+    @ApiParam(value = "유저 생년월일", type = "String")
+    String dateOfBirth;
+
+    @ApiModelProperty(name = "유저 나이")
+    @ApiParam(value = "유저 나이", type = "int")
+    int age;
+
     @ApiModelProperty(name = "유저 키")
     @ApiParam(value = "유저 키", type = "double")
     double height;

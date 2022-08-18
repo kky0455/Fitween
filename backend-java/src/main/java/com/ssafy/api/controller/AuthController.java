@@ -148,16 +148,16 @@ public class AuthController {
 
         Calendar now = Calendar.getInstance();
         Integer currentYear = now.get(Calendar.YEAR);
-        System.out.println(requestDto.getDateOfBirth());
+        String userBirthday = requestDto.getDateOfBirth();
 
-        String str_birthYear[] = (requestDto.getDateOfBirth()).split("-");
+        String str_birthYear[] = userBirthday.split("-");
         int year = Integer.parseInt(str_birthYear[0]);
         int age = (currentYear-year)+1;
 
         try {
             String id = userService.join(requestDto.toEntity());
-            requestDto.setAge(age);
             UserLoginPostReq userLogin =userService.userLogin(requestDto.getUserId());
+            userService.setAge(id,age,userBirthday);
 
             headers.add("accessToken",userLogin.getAccessToken());
             headers.add("refreshToken",userLogin.getRefreshToken());

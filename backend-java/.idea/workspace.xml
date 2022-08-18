@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56028ca8-3c2c-41fd-adb1-577c3a07c509" name="변경" comment="check by SH">
+    <list default="true" id="56028ca8-3c2c-41fd-adb1-577c3a07c509" name="변경" comment="check">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -145,7 +145,7 @@
       <command value="import module" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.backend-java [lombok]">
+  <component name="RunManager" selected="Spring Boot.GroupCallApplication">
     <configuration name="GroupCallApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ssafy.GroupCallApplication" />
       <module name="ssafy-web-project.main" />
@@ -277,41 +277,6 @@
       <workItem from="1660551817433" duration="28083000" />
       <workItem from="1660650615881" duration="27000" />
       <workItem from="1660696003350" duration="5353000" />
-    </task>
-    <task id="LOCAL-00010" summary="check">
-      <created>1660269444991</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1660269444991</updated>
-    </task>
-    <task id="LOCAL-00011" summary="check">
-      <created>1660269451115</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1660269451115</updated>
-    </task>
-    <task id="LOCAL-00012" summary="refactor: 서버내 사진 저장 위치 설정">
-      <created>1660371515125</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1660371515125</updated>
-    </task>
-    <task id="LOCAL-00013" summary="feat: dispalyImage controller 구현&#10;(주석문 삭제)">
-      <created>1660371590574</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1660371590574</updated>
-    </task>
-    <task id="LOCAL-00014" summary="style: 기능 체크용 sout문 삭제">
-      <created>1660371681130</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1660371681130</updated>
     </task>
     <task id="LOCAL-00015" summary="refactor: 변수명 수정">
       <created>1660371705850</created>
@@ -621,7 +586,42 @@
       <option name="project" value="LOCAL" />
       <updated>1660719995464</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="refactor: 유저의 나이와 생년월일을 넣어줌">
+      <created>1660832974831</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1660832974831</updated>
+    </task>
+    <task id="LOCAL-00060" summary="refactor: 유저의 나이와 생년월일 생성">
+      <created>1660832991373</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1660832991373</updated>
+    </task>
+    <task id="LOCAL-00061" summary="feat: 유저의 나이 설정">
+      <created>1660833015237</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1660833015237</updated>
+    </task>
+    <task id="LOCAL-00062" summary="feat: 유저의 나이 설정">
+      <created>1660833021344</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1660833021344</updated>
+    </task>
+    <task id="LOCAL-00063" summary="check">
+      <created>1660833032541</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1660833032541</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,9 +639,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: gender String으로 변환" />
-    <MESSAGE value="refactor: gender String으로 변환&#10;유저 생년월일 처리 변수 생성" />
-    <MESSAGE value="fix: 코드 누락" />
     <MESSAGE value="chore: 서버 포트 원상복귀" />
     <MESSAGE value="merge by sehwan" />
     <MESSAGE value="style: 주석 삭제 및 사용하지 않는 import 삭제" />
@@ -657,14 +654,28 @@
     <MESSAGE value="style: 스웨거 형식 수정" />
     <MESSAGE value="refactor: 기존 이메일 형식 검색을 id로 변환" />
     <MESSAGE value="refactor: 유저 아이디로 검색하여서 해당 리프레시토큰 참조 후 갱신" />
-    <MESSAGE value="check" />
     <MESSAGE value="feat: 로그아웃 기능 구현" />
     <MESSAGE value="refactor: json형태 response수정" />
     <MESSAGE value="feat: 로그아웃기능 설정" />
     <MESSAGE value="refactor : 게시물 업데이트 API 수정 및 머지" />
     <MESSAGE value="fix: /signup시 body에 토큰 넣어서 보냄" />
     <MESSAGE value="check by SH" />
-    <option name="LAST_COMMIT_MESSAGE" value="check by SH" />
+    <MESSAGE value="refactor: 유저의 나이와 생년월일을 넣어줌" />
+    <MESSAGE value="refactor: 유저의 나이와 생년월일 생성" />
+    <MESSAGE value="feat: 유저의 나이 설정" />
+    <MESSAGE value="check" />
+    <option name="LAST_COMMIT_MESSAGE" value="check" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ssafy/api/controller/AuthController.java</url>
+          <line>161</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
