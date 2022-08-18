@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56028ca8-3c2c-41fd-adb1-577c3a07c509" name="변경" comment="feat : 프로필 게시물 불러오기 및 머지">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="56028ca8-3c2c-41fd-adb1-577c3a07c509" name="변경" comment="feat : 프로필 게시물 불러오기 및 머지" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -277,7 +275,7 @@
       <workItem from="1660650615881" duration="27000" />
       <workItem from="1660696003350" duration="5353000" />
       <workItem from="1660828316108" duration="1284000" />
-      <workItem from="1660837792099" duration="1006000" />
+      <workItem from="1660837792099" duration="1314000" />
     </task>
     <task id="LOCAL-00008" summary="docs: check">
       <created>1659588357926</created>
