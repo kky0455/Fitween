@@ -47,7 +47,10 @@ const ProfileUser = () => {
 		}
 	};
 
-	//유저 프로필 fetch
+	const updateUserClickHandler = () => {
+		navigate('/profile/modify/info/');
+	};
+
 	useEffect(() => {
 		const fetch = async () => {
 			const data = await getUserInfo(userId);
@@ -57,7 +60,7 @@ const ProfileUser = () => {
 			setProfileInfo(data);
 		};
 		fetch();
-	}, [userId]);
+	}, [navigate, userId]);
 
 	//유저 피드 fetch
 	useEffect(() => {
@@ -78,6 +81,7 @@ const ProfileUser = () => {
 	const closeModal = () => {
 		setModalVisible(false);
 	};
+
 	return (
 		<>
 			{profileInfo && (
@@ -117,9 +121,9 @@ const ProfileUser = () => {
 								line-height: 20px;
 							`}
 						>
-							<div style={{ padding: '5px' }}>내 정보 수정</div>
-							<Hr />
-							<div style={{ padding: '5px' }}>내 동네 수정</div>
+							<div style={{ padding: '5px' }} onClick={updateUserClickHandler}>
+								내 정보 수정
+							</div>
 							<Hr />
 							<div style={{ padding: '5px' }} onClick={logoutClickHandler}>
 								로그아웃

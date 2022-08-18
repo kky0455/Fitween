@@ -2,7 +2,7 @@ import API from './index';
 
 // 정보 수정
 export const modifyInfo = async body => {
-	const res = await API.put('/users/modify/info', body);
+	const res = await API.put('/users', body);
 	return res.data;
 };
 
@@ -27,6 +27,12 @@ export const cancelFollow = async toUserId => {
 // 회원 정보 가져오기
 export const getUserInfo = async userId => {
 	const res = await API.get(`/users/${userId}`);
+	return res.data;
+};
+
+// 회원 정보 수정 시 추가입력 받았던 정보 가져오기
+export const getuserDetailInfo = async () => {
+	const res = await API.get('/users/info');
 	return res.data;
 };
 
