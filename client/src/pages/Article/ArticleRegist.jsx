@@ -39,7 +39,9 @@ const ArticleRegist = () => {
 		try {
 			const ret = await registArticle(body);
 			if (ret.result === '게시물 등록 성공') {
-				navigate(`/article/${ret.article_idx}`);
+				navigate(`/article/${ret.article_idx}`, {
+					state: { prevRouter: `/main` },
+				});
 			}
 		} catch (error) {
 			alert('다시 시도하세요.');

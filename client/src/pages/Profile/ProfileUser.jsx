@@ -183,7 +183,11 @@ const ProfileUser = () => {
 									key={article.articleIdx}
 									src={article.articleImg.baseUrl + article.articleImg.img}
 									alt=""
-									onClick={() => navigate(`/article/${article.articleIdx}`)}
+									onClick={() =>
+										navigate(`/article/${article.articleIdx}`, {
+											state: { prevRouter: `/profile/${userId}` },
+										})
+									}
 								/>
 							))}
 					</div>
