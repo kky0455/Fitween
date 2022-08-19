@@ -76,13 +76,15 @@
 
 ### DB 주요 계정
 
-작성 요망
+**계정 ID**
+`posi`
+
+**계정 비밀번호**
+`ctrlc104`
 
 ### 프로퍼티가 정의된 파일 목록
 
-작성요망
-
-
+backend-java.src.main.resource.application-properties
 
 ## 빌드 실행 방법
 
@@ -276,7 +278,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 <img src="/uploads/a26c11613bd8a94d055a8a0a12e77c7a/그림14.png" alt="그림14" width="300px" />
 
-1. 프로필 정보 수정 페이지도 이동합니다.
+1. 프로필 정보 수정 페이지로 이동합니다.
 2. 로그아웃을 진행합니다.
 3. 회원 탈퇴를 진행합니다.
 
