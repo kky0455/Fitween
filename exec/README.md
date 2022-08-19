@@ -154,6 +154,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 ### 홈페이지
 
 **FITWEEN의 첫 페이지입니다.**
+
 <img src="/uploads/a5f82733c901443222896fac7bf00054/그림1.png" alt="그림1" width="300px" />
 
 
@@ -163,12 +164,14 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 ### About 페이지
 
 **FITWEEN의 서비스 설명을 볼 수 있습니다.**
+
  <img src="/uploads/db3ad0feeb095f20dbf19b1a93073867/그림2.png" alt="그림2" width="800px" />
 
 
 ### 구글 로그인 페이지
 
 **구글 계정이 있다면 FITWEEN 구글 계정으로 로그인을 진행할 수 있습니다.**
+
 <img src="/uploads/4f658ac2539273ccd3f7c7eb0ca190e1/그림3.png" alt="그림3" width="300px" />
 
 
@@ -177,6 +180,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 ### 개인정보 동의 페이지
 
 **FITWEEN 서비스를 진행하면서 필요한 약관 동의를 요청합니다.**
+
 <img src="/uploads/175171ae7ad1e71f8267abea74f0c311/그림4.png" alt="그림4" width="300px" />
 
 
@@ -186,6 +190,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 ### 추가정보 입력 페이지 (동네 등록 미포함)
 
 **회원가입에 필요한 추가정보를 입력합니다.**
+
 <img src="/uploads/4b60d4604c2844ac9f6ad802a08e420b/그림5.png" alt="그림5" width="300px" />
 
 
@@ -195,6 +200,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 ### 추가정보 입력 페이지 (동네 등록 포함)
 
 **현재 동네를 탐색할 수 있습니다.**
+
 <img src="/uploads/bc9d5d0acc245a6c022aaf7d2fd1ce60/그림6.png" alt="그림6" width="300px" />
 
 
@@ -204,6 +210,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 ### 게시글 목록 페이지
 
 **비슷한 사이즈, 같은 동네에 있는 사람의 게시글을 카테고리 별로 볼 수 있습니다.**
+
 <img src="/uploads/d02759bcdfdf9e21a3501146a47ac0f1/그림9.png" alt="그림9" width="300px" />
 
 
@@ -220,6 +227,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 ### 게시글 상세 페이지
 
 **게시글의 상세 내용을 확인할 수 있습니다.**
+
 <img src="/uploads/74d36ccb34b0af670bafc39b91e0fb84/그림8.png" alt="그림8" width="300px" />
 
 
@@ -232,6 +240,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 ### 게시글 생성 및 수정 페이지
 
 **게시글을 생성 및 수정할 수 있습니다.**
+
 <img src="/uploads/4380c2211394c67814584e5d66e73dd4/그림7.png" alt="그림7" width="300px" />
 
 
@@ -242,6 +251,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 ### 찜 목록 페이지
 
 **내가 찜한 목록들을 확인할 수 있습니다.**
+
 <img src="/uploads/539e5f8efca16f56f5846a241f59a393/그림10.png" alt="그림10" width="300px" />
 
 
@@ -250,6 +260,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 ### 채팅 목록 페이지
 
 **채팅방 목록을 확인할 수 있습니다.**
+
 <img src="/uploads/bd987d498260da005772b114661f6646/그림11.png" alt="그림11" width="300px" />
 
 
@@ -258,6 +269,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 ### 채팅 페이지
 
 **타 사용자와 채팅을 진행할 수 있습니다.**
+
 <img src="/uploads/bce22902dc7012d37dd0a40217e9c249/그림12.png" alt="그림12" width="300px" />
 
 
@@ -267,6 +279,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 ### 마이 페이지
 
 **나에 대한 정보를 확인할 수 있습니다.**
+
 <img src="/uploads/051918a15991c608a555222589464068/그림13.png" alt="그림13" width="300px" />
 
 
