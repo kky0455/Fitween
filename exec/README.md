@@ -151,7 +151,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### 홈페이지
 
-<img src="/uploads/652d0776940d743cbfb9bb07f75c2c10/그림1.png" alt="그림1" style="zoom:25%;" />
+<img src="/uploads/a5f82733c901443222896fac7bf00054/그림1.png" alt="그림1" style="zoom:25%;" />
 
 **FITWEEN의 첫 페이지입니다.**
 
@@ -160,7 +160,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### About 페이지
 
-### <img src="/uploads/90c90600a63500ff53cd629cd223892e/그림2.png" alt="그림2" style="zoom:25%;" />
+ <img src="/uploads/90c90600a63500ff53cd629cd223892e/그림2.png" alt="그림2" style="zoom:25%;" />
 
 **FITWEEN의 서비스 설명을 볼 수 있습니다.**
 
