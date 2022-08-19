@@ -145,7 +145,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ## DB 덤프 파일
 
-작성 요망
+C104.sql
 
 
 
