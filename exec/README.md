@@ -160,7 +160,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### About 페이지
 
- <img src="/uploads/db3ad0feeb095f20dbf19b1a93073867/그림2.png" alt="그림2" width="600px" />
+ <img src="/uploads/db3ad0feeb095f20dbf19b1a93073867/그림2.png" alt="그림2" width="800px" />
 
 **FITWEEN의 서비스 설명을 볼 수 있습니다.**
 
