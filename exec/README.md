@@ -144,8 +144,6 @@ API 소스 주소 : https://dapi.kakao.com/v2/local/geo/coord2address.json
 
 활용 키 : REACT_APP_KAKAO_REST_API_KEY=6ab4f97909eb049024ba0d032f05c39b
 
-작성 요망
-
 ## DB 덤프 파일
 
 C104.sql
