@@ -11,8 +11,6 @@
 7. [DB 덤프 파일](#db-덤프-파일)
 8. [시연 시나리오](#시연-시나리오)
 
-
-
 ## Frontend 기술 스택 및 라이브러리
 
 | Stack             | Version | Description         |
@@ -31,8 +29,6 @@
 | stompjs           | 2.3.3   |                     |
 | styled-components | 5.3.5   |                     |
 | uuid              | 8.3.2   |                     |
-
-
 
 ## Backend 기술 스택 및 라이브러리
 
@@ -59,8 +55,6 @@
 | io.springfox:springfox-boot-starter                        | 3.0.0   |             |
 | io.springfox:springfox-swagger-ui                          | 3.0.0   |             |
 
-
-
 ## 배포 및 CI/CD 기술스택 및 라이브러리
 
 | Stack   | Version   | Description                      |
@@ -69,8 +63,6 @@
 | Docker  | 20.10.17  |                                  |
 | Nginx   | 1.18.0    | Web Server, Reverse Proxy Server |
 | Ubuntu  | 20.04 LTS |                                  |
-
-
 
 ## DB 접속 정보
 
@@ -95,12 +87,13 @@ client 폴더 안에서 아래의 명령어를 실행한다.
 ```
 환경변수 설정 (.env)
 
-REACT_APP_KAKAO_REST_API_KEY=
-REACT_APP_GOOGLE_CLIENT_KEY=
-REACT_APP_CLIENT_URI=
-REACT_APP_API_URI=
-REACT_APP_MOCK_API_URI=
-REACT_APP_SOCKET_URI=
+REACT_APP_KAKAO_REST_API_KEY=6ab4f97909eb049024ba0d032f05c39b
+REACT_APP_GOOGLE_CLIENT_KEY=956905247248-cstoigvrq4o6dr1pum5sjmrsreh8geps.apps.googleusercontent.com
+REACT_APP_CLIENT_URI=http://localhost:3000
+REACT_APP_API_URI=http://i7c104.p.ssafy.io:8090
+REACT_APP_MOCK_API_URI=http://localhost:5000
+REACT_APP_SOCKET_URI=http://i7c104.p.ssafy.io:8090/ws/chat
+
 ```
 
 ```
@@ -129,25 +122,29 @@ $ ./gradlew build
 $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 ```
 
-
-
 ## 외부 서비스 정보 활용 정보
 
-### Google Oauth 
+### Google Oauth
 
-작성 요망
+구글 oauth 로그인을 위한 API
+
+API 소스 주소 : https://apis.google.com/js/platform.js?onload=init
+
+활용 키
+REACT_APP_GOOGLE_CLIENT_KEY=956905247248-cstoigvrq4o6dr1pum5sjmrsreh8geps.apps.googleusercontent.com
+REACT_APP_CLIENT_URI=http://localhost:3000
 
 ### Kakao Map API
 
+브라우저에서 받은 위치정보를 지역으로 바꾸기 위한 API
+API 소스 주소 : https://dapi.kakao.com/v2/local/geo/coord2address.json
+활용 키 : REACT_APP_KAKAO_REST_API_KEY=6ab4f97909eb049024ba0d032f05c39b
+
 작성 요망
-
-
 
 ## DB 덤프 파일
 
 작성 요망
-
-
 
 ## 시연 시나리오
 
@@ -156,7 +153,6 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 **FITWEEN의 첫 페이지입니다.**
 
 <img src="/uploads/a5f82733c901443222896fac7bf00054/그림1.png" alt="그림1" width="300px" />
-
 
 1. About 페이지로 이동합니다.
 2. 구글 로그인 페이지로 이동합니다.
@@ -167,13 +163,11 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
  <img src="/uploads/db3ad0feeb095f20dbf19b1a93073867/그림2.png" alt="그림2" width="800px" />
 
-
 ### 구글 로그인 페이지
 
 **구글 계정이 있다면 FITWEEN 구글 계정으로 로그인을 진행할 수 있습니다.**
 
 <img src="/uploads/4f658ac2539273ccd3f7c7eb0ca190e1/그림3.png" alt="그림3" width="300px" />
-
 
 1. 해당 계정으로 로그인 및 회원가입이 진행됩니다.
 
@@ -182,7 +176,6 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 **FITWEEN 서비스를 진행하면서 필요한 약관 동의를 요청합니다.**
 
 <img src="/uploads/175171ae7ad1e71f8267abea74f0c311/그림4.png" alt="그림4" width="300px" />
-
 
 1. 약관을 확인하고 체크합니다.
 2. 체크가 완료되면 회원가입 페이지로 이동할 수 있습니다.
@@ -193,7 +186,6 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 <img src="/uploads/4b60d4604c2844ac9f6ad802a08e420b/그림5.png" alt="그림5" width="300px" />
 
-
 1. 성별, 생년월일, 별명, 키, 무게, 발사이즈를 입력합니다.
 2. 입력이 끝나면 동네인증 페이지로 넘어갈 수 있습니다.
 
@@ -203,7 +195,6 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 <img src="/uploads/bc9d5d0acc245a6c022aaf7d2fd1ce60/그림6.png" alt="그림6" width="300px" />
 
-
 1. 현재 위치를 탐색할 수 있습니다.
 2. 탐색이 완료되면 회원가입을 완료하고 게시글 목록 페이지로 이동합니다.
 
@@ -212,7 +203,6 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 **비슷한 사이즈, 같은 동네에 있는 사람의 게시글을 카테고리 별로 볼 수 있습니다.**
 
 <img src="/uploads/d02759bcdfdf9e21a3501146a47ac0f1/그림9.png" alt="그림9" width="300px" />
-
 
 1. 카테고리를 선택할 수 있습니다.
 2. 게시글을 클릭해 상세 페이지로 이동할 수 있습니다.
@@ -230,7 +220,6 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 <img src="/uploads/74d36ccb34b0af670bafc39b91e0fb84/그림8.png" alt="그림8" width="300px" />
 
-
 1. 게시글을 올린 사용자를 확인할 수 있고, 클릭할 시 해당 사용자의 프로필 페이지로 이동합니다.
 2. 대여가능 여부를 확인할 수 있습니다.
 3. 게시글의 상세 내용을 확인할 수 있습니다.
@@ -243,7 +232,6 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 <img src="/uploads/4380c2211394c67814584e5d66e73dd4/그림7.png" alt="그림7" width="300px" />
 
-
 1. 제품의 카테고리를 선택합니다.
 2. 제품의 상세 내용을 입력합니다.
 3. 게시글의 등록 및 수정을 완료합니다.
@@ -254,7 +242,6 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 <img src="/uploads/539e5f8efca16f56f5846a241f59a393/그림10.png" alt="그림10" width="300px" />
 
-
 1. 게시글 상세 페이지로 이동합니다.
 
 ### 채팅 목록 페이지
@@ -262,7 +249,6 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 **채팅방 목록을 확인할 수 있습니다.**
 
 <img src="/uploads/bd987d498260da005772b114661f6646/그림11.png" alt="그림11" width="300px" />
-
 
 1. 채팅 페이지로 이동합니다.
 
@@ -272,7 +258,6 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 <img src="/uploads/bce22902dc7012d37dd0a40217e9c249/그림12.png" alt="그림12" width="300px" />
 
-
 1. 채팅 글, 읽음 여부, 보낸 시간을 확인할 수 있습니다.
 2. 메시지를 보내 채팅을 진행합니다.
 
@@ -281,7 +266,6 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 **나에 대한 정보를 확인할 수 있습니다.**
 
 <img src="/uploads/051918a15991c608a555222589464068/그림13.png" alt="그림13" width="300px" />
-
 
 1. 나의 별명, 프로필 사진, 팔로우, 팔로워, 게시글 수를 확인할 수 있습니다.
 2. 나의 게시글 상세페이지로 이동합니다.
