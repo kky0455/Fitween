@@ -126,7 +126,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### Google Oauth
 
-####구글 oauth 로그인을 위한 API
+#### 구글 oauth 로그인을 위한 API
 
 API 소스 주소 : https://apis.google.com/js/platform.js?onload=init
 
@@ -138,7 +138,7 @@ REACT_APP_CLIENT_URI=http://localhost:3000
 
 ### Kakao Map API
 
-####브라우저에서 받은 위치정보를 지역으로 바꾸기 위한 API
+#### 브라우저에서 받은 위치정보를 지역으로 바꾸기 위한 API
 
 API 소스 주소 : https://dapi.kakao.com/v2/local/geo/coord2address.json
 
