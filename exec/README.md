@@ -151,7 +151,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### 홈페이지
 
-<img src="/Users/singco/Documents/dev자료/fitween/그림1.png" alt="그림1" style="zoom:25%;" />
+<img src="/uploads/652d0776940d743cbfb9bb07f75c2c10/그림1.png" alt="그림1" style="zoom:25%;" />
 
 **FITWEEN의 첫 페이지입니다.**
 
@@ -160,13 +160,13 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### About 페이지
 
-### <img src="/Users/singco/Documents/dev자료/fitween/그림2.png" alt="그림2" style="zoom:25%;" />
+### <img src="/uploads/90c90600a63500ff53cd629cd223892e/그림2.png" alt="그림2" style="zoom:25%;" />
 
 **FITWEEN의 서비스 설명을 볼 수 있습니다.**
 
 ### 구글 로그인 페이지
 
-<img src="/Users/singco/Documents/dev자료/fitween/그림3.png" alt="그림3" style="zoom:25%;" />
+<img src="/uploads/1adbdea2591682b16bb41d5af582312d/그림3.png" alt="그림3" style="zoom:25%;" />
 
 **구글 계정이 있다면 FITWEEN 구글 계정으로 로그인을 진행할 수 있습니다.**
 
@@ -174,7 +174,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### 개인정보 동의 페이지
 
-<img src="/Users/singco/Documents/dev자료/fitween/그림4.png" alt="그림4" style="zoom:25%;" />
+<img src="/uploads/10db6f1d5ffaf85a2c0d7f9bb4220187/그림4.png" alt="그림4" style="zoom:25%;" />
 
 **FITWEEN 서비스를 진행하면서 필요한 약관 동의를 요청합니다.**
 
@@ -183,7 +183,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### 추가정보 입력 페이지 (동네 등록 미포함)
 
-<img src="/Users/singco/Documents/dev자료/fitween/그림5.png" alt="그림5" style="zoom:25%;" />
+<img src="/uploads/39fe0d7cb9068628ca6c194559603903/그림5.png" alt="그림5" style="zoom:25%;" />
 
 **회원가입에 필요한 추가정보를 입력합니다.**
 
@@ -192,7 +192,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### 추가정보 입력 페이지 (동네 등록 포함)
 
-<img src="/Users/singco/Documents/dev자료/fitween/그림6.png" alt="그림6" style="zoom:25%;" />
+<img src="/uploads/cd866eb2e03f368feaba505ff3912549/그림6.png" alt="그림6" style="zoom:25%;" />
 
 **현재 동네를 탐색할 수 있습니다.**
 
@@ -201,7 +201,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### 게시글 목록 페이지
 
-<img src="/Users/singco/Documents/dev자료/fitween/그림9.png" alt="그림9" style="zoom:25%;" />
+<img src="/uploads/ed68ac3b98209c25d7d500fb478c22f4/그림9.png" alt="그림9" style="zoom:25%;" />
 
 **비슷한 사이즈, 같은 동네에 있는 사람의 게시글을 카테고리 별로 볼 수 있습니다.**
 
@@ -217,7 +217,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### 게시글 상세 페이지
 
-<img src="/Users/singco/Documents/dev자료/fitween/그림8.png" alt="그림8" style="zoom:25%;" />
+<img src="/uploads/586b2f6e874feef1ffcfe5ae8dcd8824/그림8.png" alt="그림8" style="zoom:25%;" />
 
 **게시글의 상세 내용을 확인할 수 있습니다.**
 
@@ -229,7 +229,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### 게시글 생성 및 수정 페이지
 
-<img src="/Users/singco/Documents/dev자료/fitween/그림7.png" alt="그림7" style="zoom:25%;" />
+<img src="/uploads/a7b2e50d3c5da7f19f0f026ebf2f4506/그림7.png" alt="그림7" style="zoom:25%;" />
 
 **게시글을 생성 및 수정할 수 있습니다.**
 
@@ -239,7 +239,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### 찜 목록 페이지
 
-<img src="/Users/singco/Documents/dev자료/fitween/그림10.png" alt="그림10" style="zoom:25%;" />
+<img src="/uploads/9ad18550cada67079b50371eeb1b7f42/그림10.png" alt="그림10" style="zoom:25%;" />
 
 **내가 찜한 목록들을 확인할 수 있습니다.**
 
@@ -247,7 +247,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### 채팅 목록 페이지
 
-<img src="/Users/singco/Documents/dev자료/fitween/그림11.png" alt="그림11" style="zoom:25%;" />
+<img src="/uploads/1accaedc2dd65aae06a9db24dea6ee79/그림11.png" alt="그림11" style="zoom:25%;" />
 
 **채팅방 목록을 확인할 수 있습니다.**
 
@@ -255,7 +255,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### 채팅 페이지
 
-<img src="/Users/singco/Documents/dev자료/fitween/그림12.png" alt="그림12" style="zoom:25%;" />
+<img src="/uploads/10750d1d2bceabf11106281fb4564990/그림12.png" alt="그림12" style="zoom:25%;" />
 
 **타 사용자와 채팅을 진행할 수 있습니다.**
 
@@ -264,7 +264,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### 마이 페이지
 
-<img src="/Users/singco/Documents/dev자료/fitween/그림13.png" alt="그림13" style="zoom:25%;" />
+<img src="/uploads/f655abf234066b51eb782d717ca476c7/그림13.png" alt="그림13" style="zoom:25%;" />
 
 **나에 대한 정보를 확인할 수 있습니다.**
 
@@ -274,7 +274,7 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### 마이페이지 모달 메뉴
 
-<img src="/Users/singco/Documents/dev자료/fitween/그림14.png" alt="그림14" style="zoom:25%;" />
+<img src="/uploads/8c0900060f846f0f62605dcc22c0a7b4/그림14.png" alt="그림14" style="zoom:25%;" />
 
 1. 프로필 정보 수정 페이지도 이동합니다.
 2. 로그아웃을 진행합니다.
@@ -282,8 +282,8 @@ $ java -jar ssafy-web-project-1.0-SNAPSHOT.jar
 
 ### 프로필 수정 페이지 (동네 등록 미포함)
 
-[추가정보 입력 페이지 (동네 등록 미포함)](###추가정보-입력-페이지-(동네-등록-미포함))와 동일합니다.
+[추가정보 입력 페이지 (동네 등록 미포함)](##추가정보-입력-페이지-(-동네-등록-미포함-))와 동일합니다.
 
 ### 프로필 수정 페이지 (동네 등록 포함)
 
-[추가정보 입력 페이지 (동네 등록 포함)](###추가정보-입력-페이지-(동네-등록-포함))와 동일합니다.
+[추가정보 입력 페이지 (동네 등록 포함)](##추가정보-입력-페이지-(-동네-등록-포함-))와 동일합니다.
