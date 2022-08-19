@@ -10,7 +10,7 @@
       <td align="center"><a href="https://github.com/abovenormal"><img src="https://avatars.githubusercontent.com/u/51263415?v=4" width="100px;" height="120px;" alt=""/><br /><sub><b>한세환<br>Back-end,<br/>BE-Navigator</b></sub></a><br /></td>
       <td align="center"><a href="https://github.com/kky0455"><img src="/uploads/ca1ed84549493590ab9fb259e389de9f/KakaoTalk_20220819_113647399.jpg" width="100px;" height="120px;" alt=""/><br /><sub><b>김광용<br>Back-end</b></sub></a><br /></td>
       <td align="center"><a href="https://github.com/choijinhap"><img src="/uploads/04877aa4d879cebd324a7adbdff561cb/증명사진2___40_1__41____40_1__41_.jpg" width="100px;" height="120px;" alt=""/><br /><sub><b>최진합<br>Front-end, <br>FE-Navigator</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/SingTheCode/"><img src="/uploads/6641a6d212341727a3e25dd0ba179e7a/IMG_6285.JPG" width="100px;" height="120px;" alt=""/><br /><sub><b>박재현<br>Front-end</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/SingTheCode/"><img src="/uploads/4f46a04cbf35cb2a576f83286aaa47ec/IMG_6285.JPG" width="100px;" height="120px;" alt=""/><br /><sub><b>박재현<br>Front-end</b></sub></a><br /></td>
       <td align="center"><a href="https://github.com/YoonJuhye"><img src="/uploads/0da829915185dca0408988f2a110814c/윤주혜19960421증명사진.jpg" width="100px;" height="120px;" alt=""/><br /><sub><b>윤주혜<br>Front-end</b></sub></a><br /></td>
 
   </tr>
@@ -28,7 +28,7 @@
 
 - #### 목표: 지역데이터 + 신체데이터를 활용하여 의류공유를 진행할수 있는 유저를 연결해주는 매칭 시스템
 
-- #### 프로젝트 세부 사항 노션 링크: [fitween 작업 노션](https://www.notion.so/151958/FITWEEN-4a6746ec06ff428ebf2cedb6100b8230)
+- #### [fitween 진행 내용 (by notion)](https://www.notion.so/151958/FITWEEN-4a6746ec06ff428ebf2cedb6100b8230)
 
 - #### 서비스 특징
 
@@ -112,8 +112,6 @@
 ### Frontend
 
 <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/><img alt="CSS3" src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white"/><img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
-<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white">
-
 <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white">
 
 ### Backend
