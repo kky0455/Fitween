@@ -2,30 +2,42 @@
 
 ##### 안녕하세요 팀 컨트롤(CTRL) 입니다
 
-##### 피드윈 서비스 소개
+### :raising_hand: 팀원소개
+
+<table>
+  <tr>
+      <td align="center"><a href="https://github.com/positivehun/"><img src="https://avatars.githubusercontent.com/u/46879750?v=4" width="100px;" height="120px;" alt=""/><br /><sub><b>김지헌<br>Back-end,팀장</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/abovenormal"><img src="https://avatars.githubusercontent.com/u/51263415?v=4" width="100px;" height="120px;" alt=""/><br /><sub><b>한세환<br>Back-end,<br/>BE-Navigator</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/positivehun/"><img src="/uploads/ca1ed84549493590ab9fb259e389de9f/KakaoTalk_20220819_113647399.jpg" width="100px;" height="120px;" alt=""/><br /><sub><b>김광용<br>Back-end</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/positivehun/"><img src="/uploads/04877aa4d879cebd324a7adbdff561cb/증명사진2___40_1__41____40_1__41_.jpg" width="100px;" height="120px;" alt=""/><br /><sub><b>최진합<br>Front-end, <br>FE-Navigator</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/positivehun/"><img src="/uploads/73dd86d958189d434d05452f5f7a4417/KakaoTalk_20220819_115703066.jpg" width="100px;" height="120px;" alt=""/><br /><sub><b>박재현<br>Front-end</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/positivehun/"><img src="/uploads/0da829915185dca0408988f2a110814c/윤주혜19960421증명사진.jpg" width="100px;" height="120px;" alt=""/><br /><sub><b>윤주혜<br>Front-end</b></sub></a><br /></td>
+      
+  </tr>
+</table>
+
+### 피드윈 서비스 소개
 
 #####
 
-- ##### 프로젝트명 : 너와 나의 공유 옷장 FITWEEN
+- #### 프로젝트명 : 너와 나의 공유 옷장 FITWEEN
 
-- ##### 진행 기간: 2022.07.05 ~ 2022.08.19
+- #### 진행 기간: 2022.07.05 ~ 2022.08.19
 
-- ##### 팀명: 컨트롤(CTRL)
+- #### 팀명: 컨트롤(CTRL)
 
-- ##### 목표: 지역데이터 + 신체데이터를 활용하여 의류공유를 진행할수 있는 유저를 연결해주는
+- #### 목표: 지역데이터 + 신체데이터를 활용하여 의류공유를 진행할수 있는 유저를 연결해주는 매칭 시스템
 
-  ##### 매칭 시스템
+- #### 프로젝트 세부 사항 노션 링크: https://www.notion.so/151958/FITWEEN-4a6746ec06ff428ebf2cedb6100b8230
 
-- ##### 프로젝트 세부 사항 노션 링크: https://www.notion.so/151958/FITWEEN-4a6746ec06ff428ebf2cedb6100b8230
-
-- ##### 서비스 특징
+- #### 서비스 특징
 
   - ##### 무분별한 피드 공개보다는 회원가입시 사용된 위치/신체데이터를 활용하여 선택적으로 필요한 정보를 제공하여 소비자 경험에 편의성을 제공합니다
 
   - ##### 모바일 웹으로 이동하면서 사용이 가능하고, 웹소켓과 채팅DB를 활용하여 실시간 채팅 및 채팅내역 불러오기가 가능합니다
 
   - ##### Google Oauth로그인을 활용하여 쉽고 간편하게 로그인 및 회원가입이 가능합니다
-- ##### 주요 기능
+- #### 주요 기능
 
   | 서비스             | 주요 기능                                                                                                                                                                 |
   | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -33,7 +45,7 @@
   | 피드 시스템        | 사용자의 이용지역 근처에, 사용자의 신체사이즈가 비슷한 사람들의 피드를 노출해주고, 팔로우,팔로잉,메세지전송 등의 서비스를 이용할 수 있다                                  |
   | 채팅 시스템         | 채팅을 통해 의류대여 및 구매에 관련된 일정을 의논할수 있다. 채팅서버는 메세지저장, 읽음확인, 알림기능 등을 지원합니다                                                     |
 
-- ##### 상세기능
+- #### 상세기능
 
   - ##### 소셜로그인
 
@@ -56,32 +68,32 @@
 
     - ##### 피드 작성/수정 페이지
 
-      - ##### [피드 작성/수정 페이지 내용]
+      - ##### 공유할 옷의 카테고리 , 글 제목 ,가격 내용으로 글을 등록할 수 있습니다
+      - ##### 공유할 옷의 카테고리 , 글 제목 ,가격 내용, 대여가능여부를 수정 할 수 있습니다
       
     - ##### 상세 피드 페이지
 
-      - ##### [상세 피드 페이지 내용]
+      - ##### 피드의 자세한 내용을 확인할 수 있습니다
+      - ##### 작성자의 프로필 페이지로 이동할 수 있습니다
+      - ##### 작성자와 채팅을 할 수 있습니다
+      - ##### 자신이 작성한 글은 수정페이지로 이동할 수 있습니다
+      - ##### 하트를 눌러 찜 목록에서 확인할 수 있습니다
 
 
-    - ##### 카테고리 페이지
-
-      - ##### [카테고리 페이지 내용]
-
-    - ##### 본인 프로필 페이지
-
-      - ##### [본인 프로필 페이지 내용]
-
-    - ##### 타인 페이지
-
-      - ##### [타인 페이지 내용]
+    - ##### 프로필 페이지
+      
+      - ##### 해당 사용자의 팔로워수 , 팔로잉수를 확인할 수 있습니다.
+      - ##### 해당 사용자의 게시글 수를 확인할 수 있습니다.
+      - ##### 해당 사용자의 게시글 미리보기를 확인할 수 있고 상세페이지로 이동할 수 있습니다.
+      - ##### 본인 프로필 페이지에서는 정보수정,로그아웃,탈퇴를 진행 할 수 있습니다.
 
     - ##### 내 정보 수정 페이지
 
-      - ##### [내 정보 수정 페이지 내용]
+      - ##### 성별, 생년월일, 별명, 키, 몸무게, 발사이즈를 수정할 수 있습니다
 
     - ##### 내 동네 수정 페이지
 
-      - ##### [내 동네 수정 페이지 내용]
+      - ##### 살고있는 동네를 수정할 수 있습니다.
 
     - ##### 채팅 목록 페이지
 
@@ -93,30 +105,17 @@
       - ##### 지금까지 진행했던 대화 내용을 불러옵니다.
 
 
-  - ##### 사용설명서
+  - #### 사용설명서
 
     - ##### [사용설명서 작성]
-## :raising_hand: 팀원소개
 
-<table>
-  <tr>
-      <td align="center"><a href="https://github.com/positivehun/"><img src="https://avatars.githubusercontent.com/u/46879750?v=4" width="100px;" alt=""/><br /><sub><b>김지헌<br>Back-end,팀장</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/abovenormal"><img src="https://avatars.githubusercontent.com/u/51263415?v=4" width="100px;" alt=""/><br /><sub><b>한세환<br>Back-end,<br/>BE_Navigator</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/positivehun/"><img src="https://avatars.githubusercontent.com/u/46879750?v=4" width="100px;" alt=""/><br /><sub><b>김지헌<br>Back-end,팀장</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/positivehun/"><img src="https://avatars.githubusercontent.com/u/46879750?v=4" width="100px;" alt=""/><br /><sub><b>김지헌<br>Back-end,팀장</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/positivehun/"><img src="https://avatars.githubusercontent.com/u/46879750?v=4" width="100px;" alt=""/><br /><sub><b>김지헌<br>Back-end,팀장</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/positivehun/"><img src="https://avatars.githubusercontent.com/u/46879750?v=4" width="100px;" alt=""/><br /><sub><b>김지헌<br>Back-end,팀장</b></sub></a><br /></td>
-      
-  </tr>
-</table>
 
 ## :wrench: 기술스택
 
 ### Frontend
 
-<img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/><img alt="CSS3" src="md-images/css3%20-%25231572B6-16535238240812.svg"/><img alt="JavaScript" src="md-images/JavaScript%20-F7DF1E-16535238822015.svg"/><img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6.svg?&style=for-the-badge&logo=TypeScript&logoColor=white"/><br />
-
-<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white"><img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white">
+<img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/><img alt="CSS3" src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white"/><img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white">
 
 ### Backend
 
@@ -132,7 +131,7 @@
 
 ### Server
 
-<img src="https://img.shields.io/badge/Amazon AWS-232F3E?style=for-the-badge&logo=Amazon AWS&logoColor=white"><img src="https://img.shields.io/badge/Amazon S3-D24939?style=for-the-badge&logo=Amazon S3&logoColor=white"> <br />
+<img src="https://img.shields.io/badge/Amazon AWS-232F3E?style=for-the-badge&logo=Amazon AWS&logoColor=white"> <br />
 
 <img src="https://img.shields.io/badge/Nginx-RED?style=for-the-badge&logo=Nginx&logoColor=white"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=Docker&logoColor=white"><img src="https://img.shields.io/badge/JENKINS-D24939?style=for-the-badge&logo=jenkins&logoColor=white"> <br />
 
@@ -144,32 +143,26 @@
 
 <img src="https://img.shields.io/badge/Jira Software-0052CC?style=for-the-badge&logo=Jira Software&logoColor=white"> <br />
 
-### :bookmark_tabs: 페이지 소개
-
-#### 비로그인
-
-![비로그인](비로그인시 화면이미지)
-
-- ##### 피트윈의 서비스를 이용하기 위해서는 로그인을 해야 됩니다.
-
-- ##### 로그인을 하지않으면 피드페이지로 이동할 수 없습니다
-
-#### 로그인
-
-![로그인](로그인시 화면이미지)
-
-- ##### 구글 로그인을 하면 작성 페이지로 이동합니다.
-
-#### 피드페이지
-
-![피드페이지](피드페이지 화면이미지)
-
-- ##### [피드페이지 인터랙션 내용 작성하기]
 
 
 
+
+## 실행방법
+
+직접 실행하기 싫으면 [배포 사이트](https://koo.fiwteen.kro.kr)로 접속!!
 
 #### Frontend
+
+```
+환경변수 설정 (.env)
+
+REACT_APP_KAKAO_REST_API_KEY=
+REACT_APP_GOOGLE_CLIENT_KEY=
+REACT_APP_CLIENT_URI=
+REACT_APP_API_URI=
+REACT_APP_MOCK_API_URI=
+REACT_APP_SOCKET_URI=
+```
 
 ```
 패키지 설치
@@ -186,5 +179,5 @@ $ npm run start
 ##### Spring <br />
 
 ```
-$ java jar jar파일명
+$ java -jar jar파일명
 ```
