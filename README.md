@@ -8,10 +8,10 @@
   <tr>
       <td align="center"><a href="https://github.com/positivehun/"><img src="https://avatars.githubusercontent.com/u/46879750?v=4" width="100px;" height="120px;" alt=""/><br /><sub><b>김지헌<br>Back-end,팀장</b></sub></a><br /></td>
       <td align="center"><a href="https://github.com/abovenormal"><img src="https://avatars.githubusercontent.com/u/51263415?v=4" width="100px;" height="120px;" alt=""/><br /><sub><b>한세환<br>Back-end,<br/>BE-Navigator</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/kky0455"><img src="/uploads/ca1ed84549493590ab9fb259e389de9f/KakaoTalk_20220819_113647399.jpg" width="100px;" height="120px;" alt=""/><br /><sub><b>김광용<br>Back-end</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/choijinhap"><img src="/uploads/04877aa4d879cebd324a7adbdff561cb/증명사진2___40_1__41____40_1__41_.jpg" width="100px;" height="120px;" alt=""/><br /><sub><b>최진합<br>Front-end, <br>FE-Navigator</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/SingTheCode/"><img src="/uploads/8beab5047633a91697f7cde226fb3432/IMG_0655.JPG" width="90px;" height="120px;" alt=""/><br /><sub><b>박재현<br>Front-end</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/YoonJuhye"><img src="/uploads/0da829915185dca0408988f2a110814c/윤주혜19960421증명사진.jpg" width="100px;" height="120px;" alt=""/><br /><sub><b>윤주혜<br>Front-end</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/kky0455"><img src="https://avatars.githubusercontent.com/u/97174109?v=4" width="100px;" height="120px;" alt=""/><br /><sub><b>김광용<br>Back-end</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/choijinhap"><img src="https://avatars.githubusercontent.com/u/48246705?v=4" width="100px;" height="120px;" alt=""/><br /><sub><b>최진합<br>Front-end, <br>FE-Navigator</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/SingTheCode/"><img src="https://avatars.githubusercontent.com/u/65025333?v=4" width="90px;" height="120px;" alt=""/><br /><sub><b>박재현<br>Front-end</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/YoonJuhye"><img src="https://avatars.githubusercontent.com/u/97590562?v=4" width="100px;" height="120px;" alt=""/><br /><sub><b>윤주혜<br>Front-end</b></sub></a><br /></td>
 
   </tr>
 </table>
